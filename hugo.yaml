@@ -1,4 +1,4 @@
-baseURL: https://hugo-toha.github.io
+baseURL: https://qingbo12.github.io
 
 languageCode: bn
 title: "John's Blog"
@@ -68,7 +68,7 @@ params:
     favicon: /images/site/favicon.png
 
   # GitHub repo of your site
-  gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
+  gitRepo: https://github.com/qingbo12/qingbo12.github.io
   # Default branch of your Git repo
   gitBranch: main
 
@@ -102,11 +102,11 @@ params:
       showAuthor: true # shows the author of post (defaults true)
       # Share post on different social media
       shareButtons:
-        facebook: true
-        twitter: true
-        linkedin: true
-        reddit: true
-        whatsapp: true
+        facebook: false
+        twitter: false
+        linkedin: false
+        reddit: false
+        whatsapp: false
         email: true
         # tumblr: true
         # pocket: true
@@ -153,7 +153,7 @@ params:
 
     # Enable Analytics
     analytics:
-      enabled: true
+      enabled: false
       services:
         # Google Analytics
         google:

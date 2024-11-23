@@ -1,6 +1,6 @@
-module github.com/hugo-toha/hugo-toha.github.io
+module github.com/qingbo12/qingbo12.github.io
 
-go 1.21
+go 1.23
 
 require github.com/hugo-toha/toha/v4 v4.6.0 // indirect
 

@@ -29,18 +29,6 @@ This sample post tests the followings:
 
 {{< vs >}}
 
-### Tweet Sample
-
-{{< tweet user="SanDiegoZoo" id="1453110110599868418" >}}
-
-{{< vs >}}
-
-### YouTube Video Sample
-
-{{< youtube ZJthWmvUzzc >}}
-
-{{< vs >}}
-
 ### Vimeo Video Sample
 
 {{< vimeo 48912912 >}}
