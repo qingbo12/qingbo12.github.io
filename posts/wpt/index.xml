@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Wireless Power Transfer on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/wpt/</link><description>Recent content in Wireless Power Transfer on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 20 Nov 2024 16:02:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/wpt/index.xml" rel="self" type="application/rss+xml"/><item><title>Matrix Base</title><link>https://qingbo12.github.io/posts/wpt/matrix-base/</link><pubDate>Wed, 20 Nov 2024 16:02:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/matrix-base/</guid><description>&lt;h2 id="determinant-of-matrix-product">Determinant of Matrix Product&lt;/h2>
+&lt;h3 id="theorem">Theorem&lt;/h3>
+&lt;p>Let $\mathbf{A}, \mathbf{B}$ be a square matrices of order n.&lt;/p>
+&lt;p>Let $ det(A) $ be the determinant of $ A $.&lt;/p>
+&lt;p>Let $$ AB $$ be the matrix product of
+$$ A $$ and
+$$ B $$.&lt;/p>
+&lt;p>Then:&lt;/p>
+&lt;p>$$ det(AB) = det(A)det(B) $$&lt;/p>
+&lt;h3 id="proof">Proof&lt;/h3>
+&lt;p>Consider two cases:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>$$ A $$ is singular.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$$ A $$ is nonsingular.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>proof of case1&lt;/strong>&lt;/p>
+&lt;p>Assume $$ A $$ is singular.&lt;/p></description></item></channel></rss>
