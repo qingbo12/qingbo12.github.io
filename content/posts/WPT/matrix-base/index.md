@@ -235,3 +235,58 @@ T^{-1} A T = diag\\{\lambda_1, \lambda_2, ..., \lambda_n\\}
 $$
 
 Therefore, a real symmetric matrix must be orthogonally diagonalizable.
+
+### Theorem
+If $ A $ is a real symmetric matrix of order n. $ \lambda $ is an r-fold root of its characteristic polynomial
+
+Then the matrix $ A - \lambda E $ has a rank of $ n - r $. This implies that there are exactly $ r $ linearly independent eigenvectors associated with the eigenvalue $ \lambda $.
+
+### Proof
+
+Suppose that $ A's $ r -fold root is $ \lambda_k $.
+
+Because $ A $ is real symmetric matrix, so we have orthogonal matrix $ P $ such that:
+
+$$
+P^{-1} A P = 
+\begin{pmatrix}
+   \lambda_1 & 0 & 0 & 0 & 0 & 0 & 0 & \cdots & 0 & \cdots & 0 \\\\
+   0 & \lambda_2 & 0 & 0 & 0 & 0 & 0 & \cdots & 0 & \cdots & 0 \\\\
+   \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \cdots & \vdots & \vdots & \vdots \\\\
+   0 & 0 & 0 & 0 & \blue{\lambda_{k}} & 0 & 0 & \cdots & 0 & \cdots & 0 \\\\
+   0 & 0 & 0 & 0 & 0 & \blue{\lambda_{k}} & 0 & \cdots & 0 & \cdots & 0 \\\\
+   0 & 0 & 0 & 0 & 0 & 0 & \blue{\lambda_{k}} & \cdots & 0 & \cdots & 0 \\\\
+   \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \cdots & \vdots & \vdots & \vdots \\\\
+   0 & 0 & 0 & 0 & 0 & 0 & 0 & \cdots & \blue{\lambda_{k}} & \cdots & 0 \\\\
+   \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \cdots & \vdots & \vdots & \vdots \\\\
+   0 & 0 & 0 & 0 & 0 & 0 & 0 & \cdots & 0 & \cdots & \lambda_n
+\end{pmatrix}
+$$
+
+We don't care whether $ \lambda_i $ is 0 or not.
+
+For matrix $ A - \lambda_k E $, we have:
+
+$$
+P^{-1} (A - \lambda_k E) P = P^{-1} A P - \lambda_k P^{-1} E P = 
+$$
+
+$$
+\varLambda - \lambda_k E = 
+\begin{pmatrix}
+   \lambda_1 - \blue{\lambda_{k}} & 0 & 0 & 0 & 0 & 0 & 0 & \cdots & 0 & \cdots & 0 \\\\
+   0 & \lambda_2 - \blue{\lambda_{k}} & 0 & 0 & 0 & 0 & 0 & \cdots & 0 & \cdots & 0 \\\\
+   \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \cdots & \vdots & \vdots & \vdots \\\\
+   0 & 0 & 0 & 0 & \blue{0} & 0 & 0 & \cdots & 0 & \cdots & 0 \\\\
+   0 & 0 & 0 & 0 & 0 & \blue{0} & 0 & \cdots & 0 & \cdots & 0 \\\\
+   0 & 0 & 0 & 0 & 0 & 0 & \blue{0} & \cdots & 0 & \cdots & 0 \\\\
+   \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \cdots & \vdots & \vdots & \vdots \\\\
+   0 & 0 & 0 & 0 & 0 & 0 & 0 & \cdots & \blue{0} & \cdots & 0 \\\\
+   \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \cdots & \vdots & \vdots & \vdots \\\\
+   0 & 0 & 0 & 0 & 0 & 0 & 0 & \cdots & 0 & \cdots & \lambda_n - \blue{\lambda_{k}}
+\end{pmatrix}
+$$
+
+$\because \lambda_i \neq \lambda_k \Rightarrow \lambda_i - \lambda_k \neq 0, (i \neq k) $
+
+$ \therefore rank(A - \lambda_k E) = rank(\varLambda - \lambda_k E) = n - r $
