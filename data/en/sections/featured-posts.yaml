@@ -7,6 +7,7 @@ section:
   hideTitle: false # Can optionally hide the title in sections (default: false)
 
 # posts to feature
+# - markdown-sample
+# - shortcodes
 posts:
   - markdown-sample
-  - shortcodes
