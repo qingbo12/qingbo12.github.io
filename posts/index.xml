@@ -1,24 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/</link><description>Recent content in Posts on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 20 Nov 2024 16:02:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Matrix Base</title><link>https://qingbo12.github.io/posts/wpt/matrix-base/</link><pubDate>Wed, 20 Nov 2024 16:02:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/matrix-base/</guid><description>&lt;h2 id="determinant-of-matrix-product">Determinant of Matrix Product&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/</link><description>Recent content in Posts on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 24 Nov 2024 17:36:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Building issues</title><link>https://qingbo12.github.io/posts/building-issues/</link><pubDate>Sun, 24 Nov 2024 17:36:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/building-issues/</guid><description>&lt;h3 id="issues">Issues&lt;/h3>
+&lt;p>&lt;strong>1. Built-in Shortcode leads to Hugo timeout.&lt;/strong>&lt;/p>
+&lt;p>Because of the networks, I can&amp;rsquo;t send requests to Twitter, YouTube, etc. So I delete the contents about Twitter and YouTube. They are in content\posts\category\sub-category\rich-content\index.md, content\posts\category\sub-category\rich-content\index.bn.md,
+hugo.yaml shareButtons:,
+data\en\sections\about.yaml socialLinks:.&lt;/p>
+&lt;p>&lt;strong>2. Only readme when deploying to github pages.&lt;/strong>&lt;/p>
+&lt;p>Need to set your deployment branch to gh-pages.&lt;/p>
+&lt;p>&lt;img alt="deployBranchSetting" src="https://qingbo12.github.io/posts/building-issues/deployBranchSetting.png">&lt;/p></description></item><item><title>Matrix Base</title><link>https://qingbo12.github.io/posts/wpt/matrix-base/</link><pubDate>Wed, 20 Nov 2024 16:02:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/matrix-base/</guid><description>&lt;h2 id="determinant-of-matrix-product">Determinant of Matrix Product&lt;/h2>
 &lt;h3 id="theorem">Theorem&lt;/h3>
-&lt;p>Let $\mathbf{A}, \mathbf{B}$ be a square matrices of order n.&lt;/p>
+&lt;p>Let $ A, B $ be a square matrices of order n.&lt;/p>
 &lt;p>Let $ det(A) $ be the determinant of $ A $.&lt;/p>
-&lt;p>Let $$ AB $$ be the matrix product of
-$$ A $$ and
-$$ B $$.&lt;/p>
+&lt;p>Let $ AB $ be the matrix product of
+$ A $ and
+$ B $.&lt;/p>
 &lt;p>Then:&lt;/p>
-&lt;p>$$ det(AB) = det(A)det(B) $$&lt;/p>
+&lt;p>$ det(AB) = det(A)det(B) $&lt;/p>
 &lt;h3 id="proof">Proof&lt;/h3>
 &lt;p>Consider two cases:&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>$$ A $$ is singular.&lt;/p>
+&lt;p>$ A $ is singular.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>$$ A $$ is nonsingular.&lt;/p>
+&lt;p>$ A $ is nonsingular.&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;p>&lt;strong>proof of case1&lt;/strong>&lt;/p>
-&lt;p>Assume $$ A $$ is singular.&lt;/p></description></item><item><title>Introduction</title><link>https://qingbo12.github.io/posts/introduction/</link><pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate><guid>https://qingbo12.github.io/posts/introduction/</guid><description>&lt;p>Greeting! This is an introduction post. This post tests the followings:&lt;/p>
+&lt;p>Assume $ A $ is singular.&lt;/p></description></item><item><title>Introduction</title><link>https://qingbo12.github.io/posts/introduction/</link><pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate><guid>https://qingbo12.github.io/posts/introduction/</guid><description>&lt;p>Greeting! This is an introduction post. This post tests the followings:&lt;/p>
 &lt;ul>
 &lt;li>Hero image is in the same directory as the post.&lt;/li>
 &lt;li>This post should be at top of the sidebar.&lt;/li>
