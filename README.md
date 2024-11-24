@@ -14,4 +14,4 @@ data\en\sections\about.yaml socialLinks:.
 
 Need to set your deployment branch to gh-pages.
 
-![deployBranchSetting](/images/others/deployBranchSetting.png)
+![deployBranchSetting](assets\images\others\deployBranchSetting.png)
