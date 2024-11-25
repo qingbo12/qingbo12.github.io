@@ -8,14 +8,11 @@ $ B $.&lt;/p>
 &lt;p>Then:&lt;/p>
 &lt;p>$ det(AB) = det(A)det(B) $&lt;/p>
 &lt;h3 id="proof">Proof&lt;/h3>
+&lt;p>The proof I provide is based on &lt;a href="https://proofwiki.org/wiki/Determinant_of_Matrix_Product" target="_blank" rel="noopener">Determinant of Matrix Product&lt;/a>&lt;/p>
 &lt;p>Consider two cases:&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>$ A $ is singular.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>$ A $ is nonsingular.&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>&lt;strong>proof of case1&lt;/strong>&lt;/p>
-&lt;p>Assume $ A $ is singular.&lt;/p></description></item></channel></rss>
+&lt;p>$ A $ is nonsingular.&lt;/p></description></item></channel></rss>
