@@ -30,6 +30,8 @@ $ det(AB) = det(A)det(B) $
 
 ### Proof
 
+The proof I provide is based on [Determinant of Matrix Product](https://proofwiki.org/wiki/Determinant_of_Matrix_Product)
+
 Consider two cases:
 
 1. $ A $ is singular.
@@ -111,19 +113,23 @@ $ det(AB)=det(A)det(B) $
 
 ## Real Symmetric Matrix
 
-### Theorem
+### Theorem: all real eigenvalues
 
 If $ A $ is a (real) $ n \times n $ symmetric matrix, then $ A $ has n real eigenvalues (counted bytheir multiplicities). For each eigenvalue, we can find a real eigenvector associated with it.
 
 ### Proof
 
+The proof I provide is based on [Orthogonally Diagonalizable Matrices](https://www.math.wustl.edu/~freiwald/309orthogdiag.pdf)
+
 ![proofofrealEigenvalues](images/realEigenvalues.png)
 
-### Theorem
+### Theorem: orthogonally diagonalizable
 
 A real symmetric matrix must be orthogonally diagonalizable.
 
 ### Proof 
+
+The proof I provide is based on [Orthogonally Diagonalizable Matrices](https://www.math.wustl.edu/~freiwald/309orthogdiag.pdf)
 
 This is a proof by induction, and it uses some simple facts about partitioned matrices and change of coordinates.
 
@@ -236,12 +242,16 @@ $$
 
 Therefore, a real symmetric matrix must be orthogonally diagonalizable.
 
-### Theorem
+### Theorem: r-fold root, $ A - \lambda E $ has a rank of $ n - r $ 
+
 If $ A $ is a real symmetric matrix of order n. $ \lambda $ is an r-fold root of its characteristic polynomial
 
 Then the matrix $ A - \lambda E $ has a rank of $ n - r $. This implies that there are exactly $ r $ linearly independent eigenvectors associated with the eigenvalue $ \lambda $.
 
 ### Proof
+
+
+The proof I provide is based on [Yiwen's Zhihu Answer](https://www.zhihu.com/question/462622563/answer/1918454726)
 
 Suppose that $ A's $ r -fold root is $ \lambda_k $.
 
@@ -290,3 +300,27 @@ $$
 $\because \lambda_i \neq \lambda_k \Rightarrow \lambda_i - \lambda_k \neq 0, (i \neq k) $
 
 $ \therefore rank(A - \lambda_k E) = rank(\varLambda - \lambda_k E) = n - r $
+
+## Vector spaces associated with a matrix or linear transformation.
+
+### Theorem: rank-nullity theorem
+
+For $ A \in M_{m, n}(\mathbf{F}) $, we have:
+
+$$
+rank(A) + nullity(A) = n
+$$
+
+### Proof
+
+The proof I provide is based on [The Rank-Nullity Theorem](https://www.math.purdue.edu/files/academic/courses/2010spring/MA26200/4-9.pdf).
+
+If $ rank(A) = n $, then by the Invertible Matrix Theorem, the only solution to $ Ax = 0 $ is the trivial solution $ x = 0 $. Hence, in this case, $ nullspace(A) = {0} $, so $ nullity(A) = 0 $ and Equation holds.
+
+Now suppose $ rank(A) = r \lt n $. In this case, there are $ n − r > 0 $ free variables in the solution to $ Ax = 0 $. Let $ t_{1}, t_{2},...,t_{n−r} $ denote these free variables (chosen as those variables not attached to a leading one in any row-echelon form of $ A $), and let $ x_1, x_2,..., x_{n−r} $ denote the solutions obtained by sequentially setting each free variable to 1 and the remaining free variables to zero. Note that $ \\{ x_1, x_2,..., x_{n−r} \\} $ is linearly independent. Moreover, every solution to $ Ax = 0 $ is a linear combination of $ x_1, x_2,..., x_{n−r} $:
+
+$$
+x = t_1x_1 + t_2x_2 +···+ t_{n−r}x_{n−r},
+$$
+
+which shows that $ \\{ x_1, x_2,..., x_{n−r} \\} $ spans $nullspace(A) $. Thus, $ \\{ x_1, x_2,..., x_{n−r} \\} $ is a basis for nullspace(A), so $ nullity(A) = n − r $ and Equation holds. 
