@@ -80,17 +80,17 @@ badges:
 
 - type: soft-skill-indicator
   name: Learning
-  percentage: 60
+  percentage: 80
   color: blue
 
 - type: soft-skill-indicator
   name: Sports
-  percentage: 20
+  percentage: 70
   color: yellow
 
 - type: soft-skill-indicator
-  name: Reading
-  percentage: 20
+  name: Literacy
+  percentage: 60
   color: orange
 
 # you can also provide color code instead of the color name

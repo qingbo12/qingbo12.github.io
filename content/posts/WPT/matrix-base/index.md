@@ -301,7 +301,61 @@ $\because \lambda_i \neq \lambda_k \Rightarrow \lambda_i - \lambda_k \neq 0, (i 
 
 $ \therefore rank(A - \lambda_k E) = rank(\varLambda - \lambda_k E) = n - r $
 
-## Vector spaces associated with a matrix or linear transformation.
+## Vector spaces associated with a matrix or linear transformation
+
+$ A \in M_{m,n}(\mathbf{F}) $ as a linear transformation $ x \rightarrow Ax $ from $ F^n $ to $ F^m $.
+The domain of this linear transformation is $ F^n $; its range is 
+$ range A = \\{y \in F^m : y =Ax \\} $ for some $ x \in F^n $; 
+its null space is $ nullspace A = {x \in F^n : Ax = 0} $. The range of
+$ A $ is a subspace of $ F^m $, and the null space of $ A $ is a 
+subspace of $ F^n $. The dimension of $ nullspace A $ is denoted by 
+$ nullity A $; the dimension of $ range A $ is denoted by $ rank A $.
+
+### The dimension of $ range A $ is denoted by $ rank A $
+
+The proof I provide is based on [rank-of-matrix-equals-dimension-of-range](https://math.stackexchange.com/a/3540031)
+
+Suppose that we are given that the $ A \in M_{m, n}(\mathbf{F}) $ 
+has column-rank (and therefore coincident row-rank) $ r $. 
+That is, the maximal set of linearly independent columns of $ A $ 
+contains $ r $ vectors. It follows that the span of the columns of $ A $, 
+henceforth the column space of $ A $, is an r-dimensional subspace 
+of $ R^m $.
+
+Each column of $ A $ is a vector with $ m $ entries, 
+so the columns live in $ F^m $. If $ n \gt m $, These columns 
+must be dependent, so their dimension $ r \leq m $. Hence, the column space of $ A $ is a subspace of 
+$ F^m $.
+
+Let $ a_1, \cdots, a_n $ denote the columns of $ A $. Consider an 
+arbitrary element $ y $ inside the column space of $ A $. By definition, 
+this mean that there exist coefficients $ x_1, \cdots, x_n $ such that
+
+$$
+y = a_1 x_1 + a_2 x_2 + \cdots + a_n x_n
+$$
+
+Note that we can rewrite the above sum as a product. In particular, 
+we have
+
+$$
+y = 
+\begin{pmatrix}
+   a_1 & a_2 & \cdots & a_n
+\end{pmatrix}
+
+\begin{pmatrix}
+   x_1 \\\\ x_2 \\\\ \vdots \\\\ x_n
+\end{pmatrix}
+
+= A x
+$$
+
+where $ x = (x_1, x_2, \cdots, x_n)^{\top} \in R^n $. So, any element 
+$ y $ from the column space of $ A $ is also an element of 
+the range of $ A $. 
+
+So the dimension of $ range A $ is denoted by $ rank A $.
 
 ### Theorem: rank-nullity theorem
 
