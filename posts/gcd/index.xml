@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Generalized Category Discovery on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/gcd/</link><description>Recent content in Generalized Category Discovery on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 12 Sep 2024 11:23:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/gcd/index.xml" rel="self" type="application/rss+xml"/><item><title>transformer Read</title><link>https://qingbo12.github.io/posts/gcd/transformer/</link><pubDate>Thu, 12 Sep 2024 11:23:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/gcd/transformer/</guid><description>&lt;h2 id="questions">Questions&lt;/h2>
+&lt;ol>
+&lt;li>What&amp;rsquo;s the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions ?&lt;/li>
+&lt;/ol>
+&lt;h2 id="extended-learning">Extended Learning&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Attention mechanisms with a recurrent network.&lt;/p>
+&lt;p>Bahdanau, Dzmitry. &amp;ldquo;Neural machine translation by jointly learning to align and translate.&amp;rdquo; arXiv preprint arXiv:1409.0473 (2014).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Use convolutional neural networks to compute hidden representations in parallel.&lt;/p>
+&lt;p>Gehring, Jonas, et al. &amp;ldquo;Convolutional sequence to sequence learning.&amp;rdquo; International conference on machine learning. PMLR, 2017.&lt;/p></description></item><item><title>DINO Read</title><link>https://qingbo12.github.io/posts/gcd/dino/</link><pubDate>Fri, 06 Sep 2024 09:57:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/gcd/dino/</guid><description>&lt;h2 id="questions">Questions&lt;/h2>
+&lt;ol>
+&lt;li>What&amp;rsquo;s the function of centering $ C $ and sharpening parameter $ \tau_t $ ?&lt;/li>
+&lt;/ol>
+&lt;h2 id="extended-learning">Extended Learning&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Multi-crop training.&lt;/p>
+&lt;p>Caron, Mathilde, et al. &amp;ldquo;Unsupervised learning of visual features by contrasting cluster assignments.&amp;rdquo; Advances in neural information processing systems 33 (2020): 9912-9924.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Use a noise contrastive estimator (NCE) to compare instances instead of classifying them.&lt;/p>
+&lt;p>Wu, Zhirong, et al. &amp;ldquo;Unsupervised feature learning via non-parametric instance discrimination.&amp;rdquo; Proceedings of the IEEE conference on computer vision and pattern recognition. 2018.&lt;/p></description></item><item><title>SimGCD Read</title><link>https://qingbo12.github.io/posts/gcd/simgcd/</link><pubDate>Mon, 02 Sep 2024 09:57:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/gcd/simgcd/</guid><description>&lt;h2 id="research-task">Research Task&lt;/h2>
+&lt;p>&lt;strong>Generalized Category Discovery (GCD)&lt;/strong> relaxes the assumption of traditional semi-supervised learning by assuming the unlabelled data can also contain different but related categories from the labelled data. The goal of GCD is to learn a model that is able to classify the already-seen categories in the labelled data, and more importantly, jointly discover the new categories in the unlabelled data and make correct classifications.&lt;/p>
+&lt;h2 id="limitations-of-previous-methods">Limitations of Previous Methods&lt;/h2>
+&lt;p>Previous methods can be categorized into two distinct approaches:&lt;/p></description></item></channel></rss>
