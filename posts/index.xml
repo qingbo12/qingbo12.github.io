@@ -5,7 +5,7 @@ hugo.yaml shareButtons:,
 data\en\sections\about.yaml socialLinks:.&lt;/p>
 &lt;p>&lt;strong>2. Only readme when deploying to github pages.&lt;/strong>&lt;/p>
 &lt;p>Need to set your deployment branch to gh-pages.&lt;/p>
-&lt;p>&lt;img alt="deployBranchSetting" src="https://qingbo12.github.io/posts/building-issues/deployBranchSetting.png">&lt;/p></description></item><item><title>Matrix Base</title><link>https://qingbo12.github.io/posts/wpt/matrix-base/</link><pubDate>Wed, 20 Nov 2024 16:02:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/matrix-base/</guid><description>&lt;h2 id="determinant-of-matrix-product">Determinant of Matrix Product&lt;/h2>
+&lt;p>&lt;img alt="deployBranchSetting" src="https://qingbo12.github.io/posts/building-issues/deployBranchSetting.png">&lt;/p></description></item><item><title>Matrix Base</title><link>https://qingbo12.github.io/posts/miscellanea/matrix-base/</link><pubDate>Wed, 20 Nov 2024 16:02:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/matrix-base/</guid><description>&lt;h2 id="determinant-of-matrix-product">Determinant of Matrix Product&lt;/h2>
 &lt;h3 id="theorem">Theorem&lt;/h3>
 &lt;p>Let $ A, B $ be a square matrices of order n.&lt;/p>
 &lt;p>Let $ det(A) $ be the determinant of $ A $.&lt;/p>
@@ -20,7 +20,7 @@ data\en\sections\about.yaml socialLinks:.&lt;/p>
 &lt;p>$ A $ is singular.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>$ A $ is nonsingular.&lt;/p></description></item><item><title>MagMIMOHotspot Read</title><link>https://qingbo12.github.io/posts/wpt/magmimohotspot/</link><pubDate>Thu, 07 Nov 2024 15:09:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/magmimohotspot/</guid><description>&lt;h2 id="magnetic-mimo-how-to-charge-your-phone-in-your-pocket">Magnetic MIMO: how to charge your phone in your pocket&lt;/h2>
+&lt;p>$ A $ is nonsingular.&lt;/p></description></item><item><title>MagMIMOHotspot Read</title><link>https://qingbo12.github.io/posts/wpt/magmimohotspot/</link><pubDate>Thu, 07 Nov 2024 15:09:01 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/magmimohotspot/</guid><description>&lt;h2 id="magnetic-mimo-how-to-charge-your-phone-in-your-pocket">Magnetic MIMO: how to charge your phone in your pocket&lt;/h2>
 &lt;h3 id="motivation">Motivation&lt;/h3>
 &lt;ol>
 &lt;li>&lt;strong>Current wireless chargers&lt;/strong> need to remember to regularly charge our mobile phones which &lt;strong>is not the wireless charging we hoped for&lt;/strong>. We would like to have our cell phones charged in our pockets, and never again worry about forgetting to charge the phone.&lt;/li>
@@ -37,7 +37,172 @@ data\en\sections\about.yaml socialLinks:.&lt;/p>
 &lt;center>&lt;strong>Figure 1:&lt;/strong> Illustration of the analogies between standard MIMO and MagMIMO.&lt;/center>
 &lt;/div>
 &lt;br>
-&lt;p>For a 2-antenna MIMO transmitter.&lt;/p></description></item><item><title>transformer Read</title><link>https://qingbo12.github.io/posts/gcd/transformer/</link><pubDate>Thu, 12 Sep 2024 11:23:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/gcd/transformer/</guid><description>&lt;h2 id="questions">Questions&lt;/h2>
+&lt;p>For a 2-antenna MIMO transmitter.&lt;/p></description></item><item><title>Circuit Base</title><link>https://qingbo12.github.io/posts/miscellanea/circuit/</link><pubDate>Thu, 07 Nov 2024 15:09:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/circuit/</guid><description>&lt;h2 id="basic-circuit">Basic circuit&lt;/h2>
+&lt;p>&lt;strong>Charge&lt;/strong> It is defined in terms of the ampere by counting the total charge that passes through an arbitrary cross section of a wire during an interval of one second. In the SI system, the fundamental unit of charge is the coulomb (C).&lt;/p>
+&lt;p>&lt;strong>Current&lt;/strong> We define the current at a specific point and flowing in a specified direction as the instantaneous rate at which net positive charge is moving past that point in the specified direction. Current
+is symbolized by I or i, and so&lt;/p></description></item><item><title>First glance</title><link>https://qingbo12.github.io/posts/wpt/first-glance/</link><pubDate>Thu, 31 Oct 2024 17:44:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/first-glance/</guid><description>&lt;h1 id="scheduling-layer">Scheduling Layer&lt;/h1>
+&lt;h3 id="pte-optimization">PTE Optimization&lt;/h3>
+&lt;h4 id="requirement-driven-magnetic-beamforming-for-mimo-wireless-power-transfer-optimization">Requirement-Driven Magnetic Beamforming for MIMO Wireless Power Transfer Optimization&lt;/h4>
+&lt;p>&lt;strong>Motivation:&lt;/strong> In MIMO MRC-WPT system, we need to consider the scenario
+when different RXs have different requirements of power.
+&lt;br/>&lt;/p>
+&lt;p>&lt;strong>Problem formulation:&lt;/strong> weighted sum-power maximization
+$WSPMax = max_{{i_n^{tx}}} \sum_q w_q |i^{rx}_q|^2 r^{rx}_q $&lt;/p>
+&lt;p>Subject to:
+&lt;br/>&lt;/p>
+&lt;p>$$ \sum_n \left|i_n^{tx}\right|^2 r_n^{tx} + \sum_q \left|i_q^{rx}\right|^2 r_q^{rx} \leq P_{\text{max}}, \ $$&lt;/p>
+&lt;p>$$ \left|i_n^{tx}\right|^2 \leq A_n^{tx}, \quad \forall 1 \leq n \leq N, \ $$&lt;/p></description></item><item><title>Multimodal-fusion research</title><link>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</link><pubDate>Wed, 16 Oct 2024 04:58:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</guid><description>&lt;h2 id="fusion-stage">Fusion stage&lt;/h2>
+&lt;div>
+&lt;center>&lt;img src="images/mindmap-of-DeepMultimodalLearning.png"
+alt="Mind map of Deep Multimodal Learning" />&lt;/center>
+&lt;center>&lt;strong>Figure 1:&lt;/strong> Mind map of Deep Multimodal Learning&lt;/center>
+&lt;/div>
+&lt;h2 id="inference-mechanism-for-multi-sensors-fusion">Inference mechanism for multi-sensors fusion&lt;/h2>
+&lt;div>
+&lt;center>&lt;img src="images/mindmap-of-InferenceForFusion.png" alt="Mind map of Inference For Fusion" />&lt;/center>
+&lt;center>&lt;strong>Figure 2:&lt;/strong> Mind map of A comparative review on multi-modal sensors fusion based on deep learning&lt;/center>
+&lt;/div></description></item><item><title>Recommendation Progress</title><link>https://qingbo12.github.io/posts/miscellanea/recommendation-progress/</link><pubDate>Thu, 10 Oct 2024 07:58:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/recommendation-progress/</guid><description>&lt;h2 id="个人情况">个人情况&lt;/h2>
+&lt;p>&lt;strong>本科：&lt;/strong> 重庆大学&lt;/p>
+&lt;p>&lt;strong>专业：&lt;/strong> 计算机科学与技术&lt;/p>
+&lt;p>&lt;strong>排名：&lt;/strong> 1.3% (rank 3)&lt;/p>
+&lt;p>&lt;strong>英语：&lt;/strong> 六级 547&lt;/p>
+&lt;p>&lt;strong>荣誉：&lt;/strong> 国家奖学金、重庆市三好学生&lt;/p>
+&lt;p>&lt;strong>竞赛：&lt;/strong> 无竞赛&lt;/p>
+&lt;p>&lt;strong>科研：&lt;/strong> 有 CV 领域相关经历，面试时有 NIPS 二作在投&lt;/p>
+&lt;p>&lt;strong>最终去向：&lt;/strong> 中国科学技术大学-计算机科学与技术学院&lt;/p>
+&lt;h2 id="夏令营情况">夏令营情况&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">院校&lt;/th>
+&lt;th style="text-align: center">类型&lt;/th>
+&lt;th style="text-align: center">入营&lt;/th>
+&lt;th style="text-align: center">offer&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">南京大学-计算机科学与技术学院&lt;/td>
+&lt;td style="text-align: center">硕士&lt;/td>
+&lt;td style="text-align: center">√&lt;/td>
+&lt;td style="text-align: center">候补&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">清华大学-深圳国际研究生院(数据与信息研究院人工智能项目)&lt;/td>
+&lt;td style="text-align: center">硕士&lt;/td>
+&lt;td style="text-align: center">×&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">清华大学-网络研究院&lt;/td>
+&lt;td style="text-align: center">硕士&lt;/td>
+&lt;td style="text-align: center">×&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">南京大学-人工智能学院&lt;/td>
+&lt;td style="text-align: center">硕士&lt;/td>
+&lt;td style="text-align: center">×&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">中国人民大学-高瓴人工智能学院&lt;/td>
+&lt;td style="text-align: center">直博&lt;/td>
+&lt;td style="text-align: center">√&lt;/td>
+&lt;td style="text-align: center">时间冲突，放弃参营&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">上海交通大学-人工智能学院&lt;/td>
+&lt;td style="text-align: center">直博&lt;/td>
+&lt;td style="text-align: center">√&lt;/td>
+&lt;td style="text-align: center">不合格（斩杀）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">中国科学技术大学-计算机科学与技术学院&lt;/td>
+&lt;td style="text-align: center">硕士&lt;/td>
+&lt;td style="text-align: center">√&lt;/td>
+&lt;td style="text-align: center">学硕&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;br/>
+&lt;p>&lt;strong>南京大学-计算机科学与技术学院&lt;/strong>
+线上测试过了，线下机试 0 分。。。&lt;/p>
+&lt;p>&lt;strong>南京大学-人工智能学院&lt;/strong>
+入了计院，不让入人工智能学院？&lt;/p>
+&lt;p>&lt;strong>上海交通大学-人工智能学院&lt;/strong>
+没有提前联系好老师，科研积累太少。&lt;/p>
+&lt;h2 id="预推免情况">预推免情况&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">院校&lt;/th>
+&lt;th style="text-align: center">类型&lt;/th>
+&lt;th style="text-align: center">入营&lt;/th>
+&lt;th style="text-align: center">offer&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">清华大学-软件学院&lt;/td>
+&lt;td style="text-align: center">专硕&lt;/td>
+&lt;td style="text-align: center">√&lt;/td>
+&lt;td style="text-align: center">×&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">浙江大学-计算机科学与技术学院&lt;/td>
+&lt;td style="text-align: center">硕士&lt;/td>
+&lt;td style="text-align: center">√&lt;/td>
+&lt;td style="text-align: center">专硕&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;br>
+&lt;p>总结：入营基本都能入，但自身实力差。南大机试报零，面试差导致上交直博不合格。&lt;/p></description></item><item><title>C language lecture 1</title><link>https://qingbo12.github.io/posts/miscellanea/c-lecture/</link><pubDate>Fri, 13 Sep 2024 20:30:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/c-lecture/</guid><description>&lt;h3 id="怎么和计算机打交道">怎么和计算机打交道&lt;/h3>
+&lt;div style="display: flex; justify-content: space-between;">
+&lt;img src="images/PunchingMachine.jpg" alt="Punching Machine" style="width: 45%"/>
+&lt;img src="images/Papertape.jpg" alt="Papertape" style="width: 45%"/>
+&lt;/div>
+&lt;div style="text-align: center;">
+&lt;strong>Figure 1:&lt;/strong> 早期将穿孔纸带输入计算机
+&lt;/div>
+&lt;br>
+&lt;div style="display: flex; justify-content: space-between;">
+&lt;img src="images/asm-01.png" alt="asm" style="width: 45%"/>
+&lt;img src="images/riscv.png" alt="riscv" style="width: 45%"/>
+&lt;/div>
+&lt;div style="text-align: center;">
+&lt;strong>Figure 2:&lt;/strong> 使用汇编语言编程
+&lt;/div>
+&lt;br>
+&lt;div>
+&lt;center>&lt;img src="images/c-asm-01.png" alt="c-asm-01" />&lt;/center>
+&lt;center>&lt;strong>Figure 3:&lt;/strong> 使用高级语言C语言编程&lt;/center>
+&lt;/div>
+&lt;h3 id="为什么要学-c-语言">为什么要学 C 语言&lt;/h3>
+&lt;ol>
+&lt;li>基础性强：C 语言是一门底层语言，靠近计算机硬件。学习 C 语言能够帮助你理解计算机是如何工作的，如内存管理、指针操作和硬件交互等。很多高级语言（如 C++、Python）都基于 C 语言。&lt;/li>
+&lt;li>高效性能：C 语言生成的代码通常比很多高级语言效率更高，特别适合对性能要求高的场景，比如实时系统、游戏引擎等。&lt;/li>
+&lt;li>。。。&lt;/li>
+&lt;/ol>
+&lt;h3 id="怎么开始学习-cc-语言">怎么开始学习 C/C++ 语言&lt;/h3>
+&lt;p>首先需要一个写代码的好地方，推荐 VS Code&lt;/p>
+&lt;ol>
+&lt;li>安装 VS Code&lt;/li>
+&lt;li>安装 C/C++ 扩展&lt;/li>
+&lt;li>安装 &lt;a href="https://www.msys2.org/" target="_blank" rel="noopener">MinGW-w64&lt;/a> 编译工具，并检查&lt;/li>
+&lt;li>向编程世界打声招呼&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c++" data-lang="c++">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">using&lt;/span> &lt;span style="color:#66d9ef">namespace&lt;/span> std;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cout &lt;span style="color:#f92672">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Hello, World!&amp;#34;&lt;/span> &lt;span style="color:#f92672">&amp;lt;&amp;lt;&lt;/span> endl;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>transformer Read</title><link>https://qingbo12.github.io/posts/gcd/transformer/</link><pubDate>Thu, 12 Sep 2024 11:23:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/gcd/transformer/</guid><description>&lt;h2 id="questions">Questions&lt;/h2>
 &lt;ol>
 &lt;li>What&amp;rsquo;s the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions ?&lt;/li>
 &lt;/ol>

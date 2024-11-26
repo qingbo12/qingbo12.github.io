@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Wireless Power Transfer on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/wpt/</link><description>Recent content in Wireless Power Transfer on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 20 Nov 2024 16:02:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/wpt/index.xml" rel="self" type="application/rss+xml"/><item><title>Matrix Base</title><link>https://qingbo12.github.io/posts/wpt/matrix-base/</link><pubDate>Wed, 20 Nov 2024 16:02:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/matrix-base/</guid><description>&lt;h2 id="determinant-of-matrix-product">Determinant of Matrix Product&lt;/h2>
-&lt;h3 id="theorem">Theorem&lt;/h3>
-&lt;p>Let $ A, B $ be a square matrices of order n.&lt;/p>
-&lt;p>Let $ det(A) $ be the determinant of $ A $.&lt;/p>
-&lt;p>Let $ AB $ be the matrix product of $ A $ and $ B $.&lt;/p>
-&lt;p>Then:&lt;/p>
-&lt;p>$ det(AB) = det(A)det(B) $&lt;/p>
-&lt;h3 id="proof">Proof&lt;/h3>
-&lt;p>The proof I provide is based on &lt;a href="https://proofwiki.org/wiki/Determinant_of_Matrix_Product" target="_blank" rel="noopener">Determinant of Matrix Product&lt;/a>&lt;/p>
-&lt;p>Consider two cases:&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>$ A $ is singular.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>$ A $ is nonsingular.&lt;/p></description></item><item><title>MagMIMOHotspot Read</title><link>https://qingbo12.github.io/posts/wpt/magmimohotspot/</link><pubDate>Thu, 07 Nov 2024 15:09:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/magmimohotspot/</guid><description>&lt;h2 id="magnetic-mimo-how-to-charge-your-phone-in-your-pocket">Magnetic MIMO: how to charge your phone in your pocket&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Wireless Power Transfer on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/wpt/</link><description>Recent content in Wireless Power Transfer on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 07 Nov 2024 15:09:01 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/wpt/index.xml" rel="self" type="application/rss+xml"/><item><title>MagMIMOHotspot Read</title><link>https://qingbo12.github.io/posts/wpt/magmimohotspot/</link><pubDate>Thu, 07 Nov 2024 15:09:01 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/magmimohotspot/</guid><description>&lt;h2 id="magnetic-mimo-how-to-charge-your-phone-in-your-pocket">Magnetic MIMO: how to charge your phone in your pocket&lt;/h2>
 &lt;h3 id="motivation">Motivation&lt;/h3>
 &lt;ol>
 &lt;li>&lt;strong>Current wireless chargers&lt;/strong> need to remember to regularly charge our mobile phones which &lt;strong>is not the wireless charging we hoped for&lt;/strong>. We would like to have our cell phones charged in our pockets, and never again worry about forgetting to charge the phone.&lt;/li>
@@ -30,4 +15,15 @@
 &lt;center>&lt;strong>Figure 1:&lt;/strong> Illustration of the analogies between standard MIMO and MagMIMO.&lt;/center>
 &lt;/div>
 &lt;br>
-&lt;p>For a 2-antenna MIMO transmitter.&lt;/p></description></item></channel></rss>
+&lt;p>For a 2-antenna MIMO transmitter.&lt;/p></description></item><item><title>First glance</title><link>https://qingbo12.github.io/posts/wpt/first-glance/</link><pubDate>Thu, 31 Oct 2024 17:44:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/first-glance/</guid><description>&lt;h1 id="scheduling-layer">Scheduling Layer&lt;/h1>
+&lt;h3 id="pte-optimization">PTE Optimization&lt;/h3>
+&lt;h4 id="requirement-driven-magnetic-beamforming-for-mimo-wireless-power-transfer-optimization">Requirement-Driven Magnetic Beamforming for MIMO Wireless Power Transfer Optimization&lt;/h4>
+&lt;p>&lt;strong>Motivation:&lt;/strong> In MIMO MRC-WPT system, we need to consider the scenario
+when different RXs have different requirements of power.
+&lt;br/>&lt;/p>
+&lt;p>&lt;strong>Problem formulation:&lt;/strong> weighted sum-power maximization
+$WSPMax = max_{{i_n^{tx}}} \sum_q w_q |i^{rx}_q|^2 r^{rx}_q $&lt;/p>
+&lt;p>Subject to:
+&lt;br/>&lt;/p>
+&lt;p>$$ \sum_n \left|i_n^{tx}\right|^2 r_n^{tx} + \sum_q \left|i_q^{rx}\right|^2 r_q^{rx} \leq P_{\text{max}}, \ $$&lt;/p>
+&lt;p>$$ \left|i_n^{tx}\right|^2 \leq A_n^{tx}, \quad \forall 1 \leq n \leq N, \ $$&lt;/p></description></item></channel></rss>
