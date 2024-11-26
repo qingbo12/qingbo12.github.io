@@ -20,9 +20,7 @@ Let $ A, B $ be a square matrices of order n.
 
 Let $ det(A) $ be the determinant of $ A $.
 
-Let $ AB $ be the matrix product of 
-$ A $ and 
-$ B $.
+Let $ AB $ be the matrix product of $ A $ and $ B $.
 
 Then:
 
