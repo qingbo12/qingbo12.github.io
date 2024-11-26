@@ -9,9 +9,7 @@ data\en\sections\about.yaml socialLinks:.&lt;/p>
 &lt;h3 id="theorem">Theorem&lt;/h3>
 &lt;p>Let $ A, B $ be a square matrices of order n.&lt;/p>
 &lt;p>Let $ det(A) $ be the determinant of $ A $.&lt;/p>
-&lt;p>Let $ AB $ be the matrix product of
-$ A $ and
-$ B $.&lt;/p>
+&lt;p>Let $ AB $ be the matrix product of $ A $ and $ B $.&lt;/p>
 &lt;p>Then:&lt;/p>
 &lt;p>$ det(AB) = det(A)det(B) $&lt;/p>
 &lt;h3 id="proof">Proof&lt;/h3>
@@ -22,7 +20,24 @@ $ B $.&lt;/p>
 &lt;p>$ A $ is singular.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>$ A $ is nonsingular.&lt;/p></description></item><item><title>transformer Read</title><link>https://qingbo12.github.io/posts/gcd/transformer/</link><pubDate>Thu, 12 Sep 2024 11:23:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/gcd/transformer/</guid><description>&lt;h2 id="questions">Questions&lt;/h2>
+&lt;p>$ A $ is nonsingular.&lt;/p></description></item><item><title>MagMIMOHotspot Read</title><link>https://qingbo12.github.io/posts/wpt/magmimohotspot/</link><pubDate>Thu, 07 Nov 2024 15:09:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/magmimohotspot/</guid><description>&lt;h2 id="magnetic-mimo-how-to-charge-your-phone-in-your-pocket">Magnetic MIMO: how to charge your phone in your pocket&lt;/h2>
+&lt;h3 id="motivation">Motivation&lt;/h3>
+&lt;ol>
+&lt;li>&lt;strong>Current wireless chargers&lt;/strong> need to remember to regularly charge our mobile phones which &lt;strong>is not the wireless charging we hoped for&lt;/strong>. We would like to have our cell phones charged in our pockets, and never again worry about forgetting to charge the phone.&lt;/li>
+&lt;li>MIMO RF techniques power phones remotely, however, delivering a large amount of power via radiation can cause local heating inside the human body.&lt;/li>
+&lt;/ol>
+&lt;h3 id="contribution">Contribution&lt;/h3>
+&lt;ol>
+&lt;li>They propose a novel design that focuses the magnetic flux from multiple coils in a steerable beam and points it at the phone, in a manner analogous to multi-antenna beamforming in wireless communications.&lt;/li>
+&lt;li>The design can charge unmodified smart phones &lt;strong>at distances up to 40 cm, and works regardless of the phone orientation&lt;/strong> with respect to the charging pad.&lt;/li>
+&lt;/ol>
+&lt;h3 id="magnetic-beamforming">Magnetic-Beamforming&lt;/h3>
+&lt;div>
+&lt;center>&lt;img src="images/AnalogiesBetweenStandardMIMOandMagMIMO.png" alt="Analogies Between Standard MIMO and Magnetic MIMO" />&lt;/center>
+&lt;center>&lt;strong>Figure 1:&lt;/strong> Illustration of the analogies between standard MIMO and MagMIMO.&lt;/center>
+&lt;/div>
+&lt;br>
+&lt;p>For a 2-antenna MIMO transmitter.&lt;/p></description></item><item><title>transformer Read</title><link>https://qingbo12.github.io/posts/gcd/transformer/</link><pubDate>Thu, 12 Sep 2024 11:23:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/gcd/transformer/</guid><description>&lt;h2 id="questions">Questions&lt;/h2>
 &lt;ol>
 &lt;li>What&amp;rsquo;s the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions ?&lt;/li>
 &lt;/ol>
