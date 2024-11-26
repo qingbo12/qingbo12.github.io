@@ -10,6 +10,8 @@ menu:
     identifier: GCD-transformer
     parent: GCD
     weight: 10
+
+hero: cub-dataset-cover.jpg
 ---
 
 ## Questions

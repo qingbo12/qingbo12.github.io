@@ -10,6 +10,8 @@ menu:
     identifier: GCD-SimGCD
     parent: GCD
     weight: 10
+
+hero: cub-dataset-cover.jpg
 ---
 
 ## Research Task

@@ -1,7 +1,7 @@
 ---
 title: "MagMIMOHotspot Read"
-date: 2024-11-07T15:09:00+08:00
-
+date: 2024-11-07T15:09:01+08:00
+description: Learning the basics from first two papers in MIMO-WPT feild
 author:
   name: Jinpeng Ma
 menu:

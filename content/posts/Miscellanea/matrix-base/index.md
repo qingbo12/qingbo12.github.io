@@ -1,15 +1,17 @@
 ---
 title: "Matrix Base"
 date: 2024-11-20T16:02:00+08:00
-
+description: Notes of matrix learning
 author:
   name: Jinpeng Ma
 menu:
   sidebar:
     name: Matrix Base
-    identifier: WPT-matrix
-    parent: WPT
+    identifier: Miscellanea-matrix
+    parent: Miscellanea
     weight: 10
+
+hero: images/image-miscellanea.jpg
 ---
 
 ## Determinant of Matrix Product
