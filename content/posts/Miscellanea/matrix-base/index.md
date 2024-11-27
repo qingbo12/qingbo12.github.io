@@ -419,7 +419,11 @@ $ \alpha_{i + 1}, \cdots, \alpha_n \notin kerB $, we have that
 $ B \alpha_i \neq 0 $ for $ i \in \\{ r \lt i \lt n + 1 \\} $.
 
 We show that $ \\{B \alpha_{r+1}, \cdots, B \alpha_n \\} $ is 
-linear independent. If we can show that, then we would have $ dim ker A \geq n - r $.
+linear independent. If we can show that, then we would have $ dim ker A \geq n - r $. 
+(Note: $ dim ker A \neq dim ker (AB) $, Because $ B \alpha_i = 0 $, for $ i \in \\{ 1 \leq i \leq r \\} $, 
+if we add $ B \alpha_1 $ to $ \\{B \alpha_{r+1}, \cdots, B \alpha_n \\} $, 
+we would have $ \\{ B \alpha_1, B \alpha_{r+1}, \cdots, B \alpha_n \\} $ is linear dependent. 
+So we could only say $ dim ker A \geq n - r $.)
 
 Assume that there exist scalars $ \lambda_1, \cdots, \lambda_n $, 
 not all zero, such that $ \sum_{i = r + 1}^n \lambda_i B \alpha_i = 0 $. 
