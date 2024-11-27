@@ -11,7 +11,7 @@ menu:
     parent: Miscellanea
     weight: 10
 
-hero: "/images/posts/image-miscellanea.jpg"
+hero: images/image-miscellanea.jpg
 ---
 
 ## Determinant of Matrix Product
