@@ -258,7 +258,7 @@ $$ rank(Y - \tilde{Y} - \frac{\Delta \vec{v_T}\Delta \vec{v_T^{\top}}}{\Delta \v
 \leq rank(Y - \tilde{Y}) - 1 - 1
 $$
 
-$$ ... $$
+$$ \cdots $$
 
 When $ rank(Y - \tilde{Y}) = 0 $, 
 $ Y - \tilde{Y} = O $,

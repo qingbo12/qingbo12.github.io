@@ -11,7 +11,7 @@ menu:
     parent: Miscellanea
     weight: 10
 
-hero: images/image-miscellanea.jpg
+hero: "images/image-miscellanea.jpg"
 ---
 
 ## Basic circuit
