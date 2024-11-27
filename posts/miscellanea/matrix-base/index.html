@@ -141,7 +141,11 @@ a basis for $ ker(AB) $. Suppose $ \{\alpha_1, \cdots, \alpha_r,
 \alpha_{r+1}, \cdots, \alpha_n \} $ be basis for $ ker(AB) $. Since
 $ \alpha_{i + 1}, \cdots, \alpha_n \notin kerB $, we have that
 $ B \alpha_i \neq 0 $ for $ i \in \{ r \lt i \lt n + 1 \} $.</p><p>We show that $ \{B \alpha_{r+1}, \cdots, B \alpha_n \} $ is
-linear independent. If we can show that, then we would have $ dim ker A \geq n - r $.</p><p>Assume that there exist scalars $ \lambda_1, \cdots, \lambda_n $,
+linear independent. If we can show that, then we would have $ dim ker A \geq n - r $.
+(Note: $ dim ker A \neq dim ker (AB) $, Because $ B \alpha_i = 0 $, for $ i \in \{ 1 \leq i \leq r \} $,
+if we add $ B \alpha_1 $ to $ \{B \alpha_{r+1}, \cdots, B \alpha_n \} $,
+we would have $ \{ B \alpha_1, B \alpha_{r+1}, \cdots, B \alpha_n \} $ is linear dependent.
+So we could only say $ dim ker A \geq n - r $.)</p><p>Assume that there exist scalars $ \lambda_1, \cdots, \lambda_n $,
 not all zero, such that $ \sum_{i = r + 1}^n \lambda_i B \alpha_i = 0 $.
 Since $ B $ is linear, we have $ B \sum_{i = r + 1}^n \lambda_i \alpha_i = 0 $,
 so that $ \sum_{i = r + 1}^n \lambda_i \alpha_i $ belongs to the kernel
