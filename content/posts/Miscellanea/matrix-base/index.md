@@ -301,7 +301,7 @@ $\because \lambda_i \neq \lambda_k \Rightarrow \lambda_i - \lambda_k \neq 0, (i 
 
 $ \therefore rank(A - \lambda_k E) = rank(\varLambda - \lambda_k E) = n - r $
 
-## Vector spaces associated with a matrix or linear transformation
+## Vector spaces
 
 $ A \in M_{m,n}(\mathbf{F}) $ as a linear transformation $ x \rightarrow Ax $ from $ F^n $ to $ F^m $.
 The domain of this linear transformation is $ F^n $; its range is 
@@ -357,7 +357,7 @@ the range of $ A $.
 
 So the dimension of $ range A $ is denoted by $ rank A $.
 
-### Theorem: rank-nullity theorem
+### Rank-nullity theorem
 
 For $ A \in M_{m, n}(\mathbf{F}) $, we have:
 
@@ -378,3 +378,66 @@ x = t_1x_1 + t_2x_2 +···+ t_{n−r}x_{n−r},
 $$
 
 which shows that $ \\{ x_1, x_2,..., x_{n−r} \\} $ spans $nullspace(A) $. Thus, $ \\{ x_1, x_2,..., x_{n−r} \\} $ is a basis for nullspace(A), so $ nullity(A) = n − r $ and Equation holds. 
+
+## Rank
+
+### Sylvester inequality
+
+If $ A \in M_{m,k} (F) $ and $ B \in M_{k,n} (F) $, then
+
+$$
+(rank A  + rank B) - k \leq rank (AB)
+$$
+
+### Proof
+
+The proof I provide is based on [Prove Sylvester rank inequality](https://math.stackexchange.com/a/269622).
+
+If we prove that $ dim ker A + dim ker B \geq dim ker (AB) $. 
+By using the rank-nullity theorem, we can then deduce 
+that $ (rank A  + rank B) - k \leq rank (AB) $.
+
+Firstly, we show that $ kerB \subseteq ker(AB) $.
+
+Any $ x \in kerB $, we have:
+
+$$ B x = 0 $$
+
+Now, applying the matrix $ A $ to both sides of this equation:
+
+$$ A B x = A 0 = 0 \Rightarrow x \in ker(AB) $$
+
+Thus $ kerB \subseteq ker(AB) $. 
+
+Then we show that $ dim ker A + dim ker B \geq dim ker (AB) $.
+
+Let $ \beta = \\{\alpha_1,…,\alpha_r\\} $ be a basis for $ kerB $.
+Because $ kerB \subseteq ker(AB) $, so we can extend $ \beta $ to 
+a basis for $ ker(AB) $. Suppose $ \\{\alpha_1, \cdots, \alpha_r, 
+\alpha_{r+1}, \cdots, \alpha_n \\} $ be basis for $ ker(AB) $. Since 
+$ \alpha_{i + 1}, \cdots, \alpha_n \notin kerB $, we have that 
+$ B \alpha_i \neq 0 $ for $ i \in \\{ r \lt i \lt n + 1 \\} $.
+
+We show that $ \\{B \alpha_{r+1}, \cdots, B \alpha_n \\} $ is 
+linear independent. If we can show that, then we would have $ dim ker A \geq n - r $.
+
+Assume that there exist scalars $ \lambda_1, \cdots, \lambda_n $, 
+not all zero, such that $ \sum_{i = r + 1}^n \lambda_i B \alpha_i = 0 $. 
+Since $ B $ is linear, we have $ B \sum_{i = r + 1}^n \lambda_i \alpha_i = 0 $, 
+so that $ \sum_{i = r + 1}^n \lambda_i \alpha_i $ belongs to the kernel 
+of $ B $. On other hand, we already know that $ \beta = \\{\alpha_1,…,\alpha_r\\} $ be a basis for $ kerB $. 
+Next since the set $ \\{\alpha_1, \cdots, \alpha_r, \alpha_{r+1}, \cdots, 
+\alpha_n \\} $ is an independent set, we infer that $ \lambda_i $ must be 
+zero for all $ i = r + 1, \cdots, n $.
+
+Now one can see that
+
+$$
+dim ker A + dim ker B \geq n - r + r = n \Rightarrow dim ker A + dim ker B \geq dim ker (AB)
+$$
+
+Using the rank-nullity theorem, we have
+
+$$
+k - rank A + n - rank B \geq n - rank (AB) \Rightarrow (rank A + rank B) - k \leq rank (AB)
+$$
