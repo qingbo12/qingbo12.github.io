@@ -40,18 +40,7 @@ data\en\sections\about.yaml socialLinks:.&lt;/p>
 &lt;p>For a 2-antenna MIMO transmitter.&lt;/p></description></item><item><title>Circuit Base</title><link>https://qingbo12.github.io/posts/miscellanea/circuit/</link><pubDate>Thu, 07 Nov 2024 15:09:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/circuit/</guid><description>&lt;h2 id="basic-circuit">Basic circuit&lt;/h2>
 &lt;p>&lt;strong>Charge&lt;/strong> It is defined in terms of the ampere by counting the total charge that passes through an arbitrary cross section of a wire during an interval of one second. In the SI system, the fundamental unit of charge is the coulomb (C).&lt;/p>
 &lt;p>&lt;strong>Current&lt;/strong> We define the current at a specific point and flowing in a specified direction as the instantaneous rate at which net positive charge is moving past that point in the specified direction. Current
-is symbolized by I or i, and so&lt;/p></description></item><item><title>First glance</title><link>https://qingbo12.github.io/posts/wpt/first-glance/</link><pubDate>Thu, 31 Oct 2024 17:44:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/first-glance/</guid><description>&lt;h1 id="scheduling-layer">Scheduling Layer&lt;/h1>
-&lt;h3 id="pte-optimization">PTE Optimization&lt;/h3>
-&lt;h4 id="requirement-driven-magnetic-beamforming-for-mimo-wireless-power-transfer-optimization">Requirement-Driven Magnetic Beamforming for MIMO Wireless Power Transfer Optimization&lt;/h4>
-&lt;p>&lt;strong>Motivation:&lt;/strong> In MIMO MRC-WPT system, we need to consider the scenario
-when different RXs have different requirements of power.
-&lt;br/>&lt;/p>
-&lt;p>&lt;strong>Problem formulation:&lt;/strong> weighted sum-power maximization
-$WSPMax = max_{{i_n^{tx}}} \sum_q w_q |i^{rx}_q|^2 r^{rx}_q $&lt;/p>
-&lt;p>Subject to:
-&lt;br/>&lt;/p>
-&lt;p>$$ \sum_n \left|i_n^{tx}\right|^2 r_n^{tx} + \sum_q \left|i_q^{rx}\right|^2 r_q^{rx} \leq P_{\text{max}}, \ $$&lt;/p>
-&lt;p>$$ \left|i_n^{tx}\right|^2 \leq A_n^{tx}, \quad \forall 1 \leq n \leq N, \ $$&lt;/p></description></item><item><title>Multimodal-fusion research</title><link>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</link><pubDate>Wed, 16 Oct 2024 04:58:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</guid><description>&lt;h2 id="fusion-stage">Fusion stage&lt;/h2>
+is symbolized by I or i, and so&lt;/p></description></item><item><title>Multimodal-fusion research</title><link>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</link><pubDate>Wed, 16 Oct 2024 04:58:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</guid><description>&lt;h2 id="fusion-stage">Fusion stage&lt;/h2>
 &lt;div>
 &lt;center>&lt;img src="images/mindmap-of-DeepMultimodalLearning.png"
 alt="Mind map of Deep Multimodal Learning" />&lt;/center>
