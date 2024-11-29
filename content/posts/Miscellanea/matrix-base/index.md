@@ -359,13 +359,15 @@ So the dimension of $ range A $ is denoted by $ rank A $.
 
 ### Rank-nullity theorem
 
+#### Matrices
+
 For $ A \in M_{m, n}(\mathbf{F}) $, we have:
 
 $$
 rank(A) + nullity(A) = n
 $$
 
-### Proof
+#### Proof
 
 The proof I provide is based on [The Rank-Nullity Theorem](https://www.math.purdue.edu/files/academic/courses/2010spring/MA26200/4-9.pdf).
 
@@ -378,6 +380,126 @@ x = t_1x_1 + t_2x_2 +···+ t_{n−r}x_{n−r},
 $$
 
 which shows that $ \\{ x_1, x_2,..., x_{n−r} \\} $ spans $nullspace(A) $. Thus, $ \\{ x_1, x_2,..., x_{n−r} \\} $ is a basis for nullspace(A), so $ nullity(A) = n − r $ and Equation holds. 
+
+#### Linear transformations
+
+Let $ T:V \rightarrow W $ be a linear transformation between 
+two vector spaces where $ T $ 's domain $ V $ is finite 
+dimensional. Then 
+
+$$
+rank(T) + nullity(T) = dim V
+$$
+
+#### Proof
+
+The proof I provide is based on [Rank–nullity theorem](https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem#First_proof).
+
+Let $ V, W $ be vector spaces over some field $ F $, and $ T $ defined as in the statement of the theorem with $ \dim V = n $.
+
+As $ \operatorname{Ker}T \subset V $ is a subspace, 
+there exists a basis for it. Suppose 
+$ \dim\operatorname{Ker}T = k $ and let 
+$ \mathcal{K} := \\{v_1, \ldots, v_k\\} \subset 
+\operatorname{Ker}(T) $ be such a basis.
+
+We may now, by the Steinitz exchange lemma, extend 
+$ \mathcal{K} $ with $ n-k $ linearly independent vectors 
+$ w_1, \ldots, w_{n-k} $ to form a full basis of $ V $.
+
+Let
+
+$
+\mathcal{S} := \\{w_1, \ldots, w_{n-k}\\} \subset 
+V \setminus \operatorname{Ker}(T)
+$
+
+such that
+
+$
+\mathcal{B} := \mathcal{K} \cup \mathcal{S} = 
+\\{v_1, \ldots, v_k, w_1, \ldots, w_{n-k}\\} \subset V
+$
+
+is a basis for $ V $.
+From this, we know that
+
+$$
+\operatorname{Im} T = \operatorname{Span}T(\mathcal{B}) = 
+\operatorname{Span}\\{T(v_1), \ldots, T(v_k), 
+T(w_1), \ldots, T(w_{n-k})\\} = 
+\operatorname{Span}\{T(w_1), \ldots, T(w_{n-k})\} = 
+\operatorname{Span}T(\mathcal{S}). 
+$$
+
+We now claim that $ T(\mathcal{S}) $ is a basis for 
+$ \operatorname{Im} T $. The above equality already 
+states that $ T(\mathcal{S}) $ is a generating set 
+for $ \operatorname{Im} T $; 
+it remains to be shown that it is also linearly independent 
+to conclude that it is a basis.
+
+Suppose $ T(\mathcal{S}) $ is not linearly independent, 
+and let
+
+$ \sum_{j=1}^{n-k} \alpha _j T(w_j) = 0_W $
+
+for some $ \alpha _j \in F $.
+
+Thus, owing to the linearity of $ T $, it follows that
+
+$$
+T \left(\sum_{j=1}^{n-k} \alpha_j w_j \right) = 0_W 
+\implies \left(\sum_{j=1}^{n-k} \alpha_j w_j \right) 
+\in \operatorname{Ker} T = \operatorname{Span} \mathcal{K} 
+\subset V.
+$$
+
+This is a contradiction to $ \mathcal{B} $ being a basis, 
+unless all $ \alpha _j $ are equal to zero. 
+This shows that $ T(\mathcal{S}) $ is linearly independent, 
+and more specifically that it is a basis for 
+$ \operatorname{Im}T $.
+
+To summarize, we have $ \mathcal{K} $, a basis for 
+$ \operatorname{Ker}T $, and $ T(\mathcal{S}) $, 
+a basis for $ \operatorname{Im}T $.
+
+Finally we may state that
+
+$$
+\operatorname{Rank}(T) + \operatorname{Nullity}(T) = 
+\dim \operatorname{Im} T + \dim \operatorname{Ker}T = 
+|T(\mathcal{S})| + |\mathcal{K}| = 
+(n-k) + k = n = \dim V . 
+$$
+
+This concludes our proof.
+
+#### Application $ \dim C(AB) = \dim C(B) - \dim ( \operatorname{Null} (A) \cap C(B)) $
+
+The application I provide is based on [$ \dim C(AB) = \dim C(B) - \dim ( \operatorname{Null} (A) \cap C(B)) $](https://math.stackexchange.com/a/1155035)
+
+considering the map $ T: C(B) \rightarrow C(AB) $ given by 
+$ T(y) = Ay $, for all $ y \in C(B) $.
+
+the kernel of $ T $ is $ \operatorname{Null} (A) \cap C(B) $. 
+Indeed, $ y \in \operatorname{Ker} (T) $ if and only if 
+$ y \in C(B) $ and $ A y = 0 $, if and only if 
+$ y \in \operatorname{Null} (A) \cap C(B) $.
+
+Now use the rank-nullity theorem, we have
+
+$$
+\operatorname{Rank}(T) + \operatorname{Nullity}(T) = 
+\dim C(AB) + \dim (\operatorname{Null} (A) \cap C(B)) = 
+\dim C(B) = 
+\dim V.
+$$
+
+$$
+\dim C(AB) = \dim C(B) - \dim (\operatorname{Null} (A) \cap C(B))
+$$
 
 ## Rank
 
@@ -445,3 +567,118 @@ Using the rank-nullity theorem, we have
 $$
 k - rank A + n - rank B \geq n - rank (AB) \Rightarrow (rank A + rank B) - k \leq rank (AB)
 $$
+
+### Frobenius inequality
+
+Let $ A \in M_{m \times k}(\bf F) $, 
+$ B \in M_{k \times p}(\bf F) $ and $ C \in M_{p \times n}(\bf F) $, 
+then $ \operatorname{rank}(AB) + \operatorname{rank}(BC) \leq 
+\operatorname{rank}(B) + \operatorname{rank}(ABC) $
+
+### Proof
+
+The proof I provide is based on [Frobenius rank inequality](https://math.stackexchange.com/a/1191064).
+
+We can use the rank-nullity theorem to show that
+
+$$
+\tag{1}
+\operatorname{rank}(AB) = \operatorname{rank}(B) - 
+\dim (\operatorname{im}(B) \cap \operatorname{ker} (A))
+$$
+
+Since $ \operatorname{im}(BC) \subseteq \operatorname{im}(B) $,
+we have
+
+$$
+\tag{2}
+\operatorname{im}(BC) \cap \operatorname{ker}(A) \subseteq 
+\operatorname{im}(B) \cap \operatorname{ker}(A)
+$$
+
+Now we want to write $ \operatorname{rank}(ABC) $ 
+in such a way that $ \operatorname{im}(BC) \cap 
+\operatorname{ker}(A) $ pops up, so we could make use of *(2)*. 
+Analogously to *(1)*:
+
+$$
+\tag{3}
+\operatorname{rank} (ABC) = \operatorname{rank} (BC) - 
+\dim (\operatorname{im} (BC) \cap \operatorname{ker} (A))
+$$
+
+From *(1)* and *(3)*, we have
+
+$$
+\operatorname{rank}(AB) + \operatorname{rank}(BC) = 
+\operatorname{rank}(B) + \operatorname{rank}(ABC) + 
+\underbrace{
+\dim (\operatorname{im} (BC) \cap \operatorname{ker} (A)) - 
+\dim (\operatorname{im}(B) \cap \operatorname{ker} (A))
+}_{\leq 0 \text{ due to (2)}}
+$$
+
+which implies the desired inequality.
+
+### Left or right multiplication by a nonsingular matrix leaves rank unchanged
+
+If $ A \in M_m(\bf F) $ and $ C \in M_n(\bf F) $ are 
+nonsingular and $ B \in M_{m,n}(\bf F) $, then $ \operatorname{rank} AB =
+\operatorname{rank} B = \operatorname{rank} BC = 
+\operatorname{rank} ABC $; that is, 
+left or right multiplication by a nonsingular matrix leaves 
+rank unchanged.
+
+### Proof
+
+Firstly, we show that $ \operatorname{rank} (B) = 
+\operatorname{rank} (BC) $.
+
+The proof is based on [How to prove that $ \operatorname{im}(B) = \operatorname{im}(BA)$?](https://math.stackexchange.com/a/3797397).
+
+We know that $ C $ is a linear transformation from 
+$ \bf F^n $ to $ \operatorname{im} (C) $. Since $ C $ is 
+nonsingular, it follows that $ C $ is onto, 
+implying $ \operatorname{im} (C) = \bf F^n $. 
+
+Now consider the linear transformation $ BC $. 
+This composition can be viewed in two stages:
+
+1. The transformation $ x \rightarrow Cx $, where 
+$ C: \bf F^n \rightarrow \bf F^n $.
+
+2. The transformation $ Cx \rightarrow BCx $, where $ B: 
+\bf F^n $ to $ \operatorname{im} (BC) $.
+
+$ Cx $ spans all of $ \bf F^n $, which aligns with the domain 
+of $ B $. Thus, the transformation $ Cx \rightarrow BCx $ 
+behaves exactly as $ B $, mapping $ \bf F^n $ to 
+$ \operatorname{im} (B) $.
+
+Hence, $ \operatorname{im} (BC) = \operatorname{im} (B) $.
+
+This concludes our proof.
+
+Then we show that $ \operatorname{rank} (AB) = 
+\operatorname{rank} (B) $.
+
+We know that $ A $ is a linear transformation from $ \bf F^m $ 
+to $ \operatorname{im} (A) $. Since $ A $ is nonsingular, 
+it follows that $ A $ is onto, meaning 
+$ \operatorname{im} (A) = \bf F^m $. Furthermore, because 
+$ \dim(\operatorname{im}(A)) = \dim(\text{domain of }A) = m $, 
+$ A $ is injective as well.
+
+Now consider the linear transformation $ AB $. 
+This composition can be viewed in two stages:
+
+1. The transformation $ x \rightarrow Bx $, where $ B: \bf F^n 
+\rightarrow \operatorname{im} (B) $. 
+
+2. Then $ Bx \rightarrow ABx $, where $ A: 
+\operatorname{im} (B) $ to $ \operatorname{im} (AB) $. 
+
+Since A is injective, $ \dim (\operatorname{im} (AB)) = 
+\dim (\operatorname{im} (B)) $. 
+
+This concludes our proof.
