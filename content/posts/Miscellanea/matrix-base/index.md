@@ -311,6 +311,12 @@ $ A $ is a subspace of $ F^m $, and the null space of $ A $ is a
 subspace of $ F^n $. The dimension of $ nullspace A $ is denoted by 
 $ nullity A $; the dimension of $ range A $ is denoted by $ rank A $.
 
+> To avoid ambiguities,<br>
+> The range of a linear transformation can be denoted as $ \operatorname{range} A $, $ \operatorname{im} A $.<br>
+> The dimension of the range of a linear transformation can be denoted as $ \operatorname{rank} A $.<br>
+> The null space of a linear transformation can be denoted as $ \operatorname{nullspace} A $, $ \operatorname{ker} A $.<br>
+> The dimension of the null space of a linear transformation can be denoted as $ \operatorname{nullity} A $.
+
 ### The dimension of $ range A $ is denoted by $ rank A $
 
 The proof I provide is based on [rank-of-matrix-equals-dimension-of-range](https://math.stackexchange.com/a/3540031)
@@ -343,11 +349,9 @@ y =
 \begin{pmatrix}
    a_1 & a_2 & \cdots & a_n
 \end{pmatrix}
-
 \begin{pmatrix}
    x_1 \\\\ x_2 \\\\ \vdots \\\\ x_n
 \end{pmatrix}
-
 = A x
 $$
 
@@ -476,29 +480,29 @@ $$
 
 This concludes our proof.
 
-#### Application $ \dim C(AB) = \dim C(B) - \dim ( \operatorname{Null} (A) \cap C(B)) $
+#### Application $ \dim C(AB) = \dim C(B) - \dim ( \operatorname{nullspace} (A) \cap C(B)) $
 
-The application I provide is based on [$ \dim C(AB) = \dim C(B) - \dim ( \operatorname{Null} (A) \cap C(B)) $](https://math.stackexchange.com/a/1155035)
+The application I provide is based on [$ \dim C(AB) = \dim C(B) - \dim ( \operatorname{nullspace} (A) \cap C(B)) $](https://math.stackexchange.com/a/1155035)
 
 considering the map $ T: C(B) \rightarrow C(AB) $ given by 
 $ T(y) = Ay $, for all $ y \in C(B) $.
 
-the kernel of $ T $ is $ \operatorname{Null} (A) \cap C(B) $. 
+the kernel of $ T $ is $ \operatorname{nullspace} (A) \cap C(B) $. 
 Indeed, $ y \in \operatorname{Ker} (T) $ if and only if 
 $ y \in C(B) $ and $ A y = 0 $, if and only if 
-$ y \in \operatorname{Null} (A) \cap C(B) $.
+$ y \in \operatorname{nullspace} (A) \cap C(B) $.
 
 Now use the rank-nullity theorem, we have
 
 $$
 \operatorname{Rank}(T) + \operatorname{Nullity}(T) = 
-\dim C(AB) + \dim (\operatorname{Null} (A) \cap C(B)) = 
+\dim C(AB) + \dim (\operatorname{nullspace} (A) \cap C(B)) = 
 \dim C(B) = 
 \dim V.
 $$
 
 $$
-\dim C(AB) = \dim C(B) - \dim (\operatorname{Null} (A) \cap C(B))
+\dim C(AB) = \dim C(B) - \dim (\operatorname{nullspace} (A) \cap C(B))
 $$
 
 ## Rank
@@ -666,7 +670,7 @@ We know that $ A $ is a linear transformation from $ \bf F^m $
 to $ \operatorname{im} (A) $. Since $ A $ is nonsingular, 
 it follows that $ A $ is onto, meaning 
 $ \operatorname{im} (A) = \bf F^m $. Furthermore, because 
-$ \dim(\operatorname{im}(A)) = \dim(\text{domain of }A) = m $, 
+$ \dim(\operatorname{im}(A)) = \dim(\operatorname{domain}(A)) = m $, 
 $ A $ is injective as well.
 
 Now consider the linear transformation $ AB $. 
@@ -682,3 +686,267 @@ Since A is injective, $ \dim (\operatorname{im} (AB)) =
 \dim (\operatorname{im} (B)) $. 
 
 This concludes our proof.
+
+### If $ A \in M_{m,n}(\bf C) $, then $ \operatorname{rank} A^* A = \operatorname{rank} A $
+
+### Proof
+
+The proof I provide is based on [Prove $\operatorname{rank}A^TA=\operatorname{rank}A$](https://math.stackexchange.com/q/349966).
+
+Let $ x \in \operatorname{nullspace} (A) $.
+
+$$
+A x = 0
+$$
+$$
+\Rightarrow A^* A x = 0
+$$
+$$
+\Rightarrow x \in \operatorname{nullspace} (A^* A)
+$$
+
+Hence, $ \operatorname{nullspace} (A) \subseteq \operatorname{nullspace} (A^* A) $.
+
+Agian let $ x \in \operatorname{nullspace} (A^* A) $.
+
+$$
+A^* A x = 0
+$$
+$$
+\Rightarrow x^* A^* A x = 0
+$$
+$$
+\Rightarrow (A x)^* A x = 0
+$$
+$$
+\Rightarrow A x = 0
+$$
+$$
+\Rightarrow x \in \operatorname{nullspace} (A)
+$$
+
+Hence, $ \operatorname{nullspace} (A^* A) \subseteq \operatorname{nullspace} (A) $.
+
+Therefore, 
+$$
+\operatorname{nullspace} (A) = \operatorname{nullspace} (A^* A) 
+$$
+$$
+\dim (\operatorname{nullspace} (A)) = \dim (\operatorname{nullspace} (A^* A))
+$$
+$$
+\dim (\operatorname{domain} (A)) - \operatorname{rank} (A) = \dim (\operatorname{domain} (A^* A)) - \operatorname{rank} (A^* A)
+$$
+$$
+\operatorname{rank} (A) = \operatorname{rank} (A^* A)
+$$
+
+### CR Factorization
+
+Let $ A \in M_{m,n}(\bf F) $, $ \operatorname{rank} (A) = r $. 
+Suppose $ C $ contains the first $ r $ independent columns of $ A $. 
+Suppose $ R $ contains the $ r $ nonzero rows of $ \operatorname{rref} (A) $. 
+Then $ A = C R $.
+
+Now suppose the matrix $ B $ contains the first $ r $ independent rows of $ A $. 
+$ W $ is the $ r $ by $ r $ matrix where $ C $ meets $ B $. Then $ A = C W^{-1} B $.
+
+The establishment I provided is based on [LU and CR Elimination](https://math.mit.edu/~gs/everyone/lucrweb.pdf).
+
+### Establish $ A = C R $
+
+Here are the steps to establish $ A = C R $. We know that an invertible 
+elimination matrix $ E $ (a product of simple steps) gives 
+$ E A = R_0 = \operatorname{rref} (A) $. Then $ A = E^{-1} R_0 $. 
+Drop the $ m - r $ zero rows of $ R_0 $ and the last $ m - r $ columns 
+of $ E^{-1} $. This leaves $ A = C \begin{bmatrix} I & F \end{bmatrix} P $, 
+where the identity matrix in $ R $ allows us to identify $ C $ in the 
+columns of $ E^{-1} $.
+
+### Establish $ A = C W^{-1} B $
+
+Suppose the $ r $ independent columns of $ A $ in the first $ r $ columns, 
+and there are $ r $ independent rows of $ A $ in the first $ r $ rows.
+
+Let $ A = \begin{bmatrix} W & H \\\\ J & K \end{bmatrix} $, 
+$ C = \begin{bmatrix} W \\\\ J \end{bmatrix} $, 
+$ B = \begin{bmatrix} W & H \end{bmatrix} $.
+
+Combinations $ V $ of the rows of $ B $ must produce the dependent rows in 
+$ \begin{bmatrix} J & K \end{bmatrix} $. 
+Then $ \begin{bmatrix} J & K \end{bmatrix} = V B = \begin{bmatrix} V W & V H \end{bmatrix} $. 
+And $ C = \begin{bmatrix} I \\\\ V \end{bmatrix} W $.
+
+Combinations $ T $ of the columns of $ A $ must produce the dependent columns in 
+$ \begin{bmatrix} H \\\\ K \end{bmatrix} $. 
+Then $ \begin{bmatrix} H \\\\ K \end{bmatrix} = C T = \begin{bmatrix} W T \\\\ J T \end{bmatrix} $. 
+And $ B = W \begin{bmatrix} I & T \end{bmatrix} $.
+
+$$
+A = 
+\begin{bmatrix} W & H \\\\ J & K \end{bmatrix} = 
+\begin{bmatrix} W & H \\\\ VW & VH \end{bmatrix} = 
+\begin{bmatrix} W & WT \\\\ VW & VWT \end{bmatrix} = 
+\begin{bmatrix} I \\\\ V \end{bmatrix} \begin{bmatrix} W \end{bmatrix} \begin{bmatrix} I & T \end{bmatrix} = 
+C W^{-1} B
+$$
+
+### Wedderburn's rank-one reduction formula
+
+Let $ A \in M_{m,n}(\bf F) $. If $ x \in \bf F^n $ and $ y \in \bf F^m $, and if 
+
+$$
+\omega = y^{\top} A x \neq 0.
+$$
+
+Then 
+
+$$
+\operatorname{rank} (A - \omega^{-1} A x y^{\top} A ) = 
+\operatorname{rank} (A) - 1.
+$$
+
+In general, if $ X \in M_{n,k} (\bf F) $ and $ Y \in M_{m,k} (\bf F) $, 
+and if 
+
+$$ W = Y^{\top} A X $$
+
+is nonsingular, then
+
+$$
+\operatorname{rank} (A - A X W^{-1} Y^{\top} A) = 
+\operatorname{rank} A - k
+$$
+
+### Proof
+
+The proof I provide is based on [Generalized Wedderburn Rank Reduction](https://arxiv.org/pdf/2406.03992).
+
+**Proof of rank-one reduction formula**
+
+For any $ v $ in $ \operatorname{nullspace} (A) $,
+$$
+A v = 0 \Rightarrow (A - \omega^{-1} A x y^{\top} A) v = 0
+$$
+
+Hence, $ \operatorname{nullspace} (A) 
+\subseteq \operatorname{nullspace} (A - \omega^{-1} A x y^{\top} A) $.
+
+Since $ \omega = y^{\top} A x \neq 0 \Rightarrow A x \neq 0 \Rightarrow 
+x \notin \operatorname{nullspace} (A) $, but 
+
+$$ (A - \omega^{-1} A x y^{\top} A) x = (A - A) = 0 
+\Rightarrow x \in \operatorname{nullspace} (A - \omega^{-1} A x y^{\top} A) .
+$$
+
+Hence, $ \operatorname{nullity} (A - \omega^{-1} A x y^{\top} A) - 1 \geq \operatorname{nullity} (A) $.
+Also, $ \dim (\operatorname{domain} (A)) = \dim (\operatorname{domain} (A - \omega^{-1} A x y^{\top} A)) $.
+
+Therefore
+
+$$
+\operatorname{rank} (A - \omega^{-1} A x y^{\top} A) \leq 
+\operatorname{rank} (A) - 1.
+$$
+
+Assume now $ (A - \omega^{-1} A x y^{\top} A) u = 0 $. Let 
+$ \lambda = \omega^{-1} y^{\top} A u $. then
+
+$$ A (u - \lambda x) = 0 $$
+
+hence $ u \in \operatorname{nullspace} (A) + \bf F x $. Therefore
+
+$$
+\operatorname{rank} (A - \omega^{-1} A x y^{\top} A) = 
+\operatorname{rank} (A) - 1.
+$$
+
+Note that:
+
+$ A x $: A vector in the column space of $ A $.
+
+$ y^{\top} A $: A row vector in the row space of $ A $.
+
+$ (Ax)(y^{\top} A) $: A rank-1 matrix since it's the outer product of 
+a vector $ (A x) $ and a row vector $ (y^{\top} A) $.
+
+Thus, the term $ A x y^{\top} A $ represents a modification to $ A $ 
+in the direction of a rank-1 update.
+
+**Proof of general formula**
+
+The proof is similar. 
+
+Since $ \operatorname{rank} (M) = k $, the $ k $ columns of $ X $ 
+are linearly independent, and $ A X \in \bf F^{m \times k} $ is of rank 
+$ k $, so no linear combination of columns of $ X $ is contained 
+in the nullspace of $ A $. But we have
+
+$$ ( A - A X M^{-1} Y^{\top} A ) X = 0 .$$
+
+We know that $ \operatorname{nullspace} (A) \subseteq \operatorname{nullspace} 
+(A - A X M^{-1} Y^{\top} A) $, so
+
+$$
+\operatorname{rank} (A - A X M^{-1} Y^{\top} A) = 
+n - \dim(\operatorname{nullspace} (A - A X M^{-1} Y^{\top} A)) \leq
+n - ((n - \operatorname{rank} (A)) + k) =
+\operatorname{rank} (A) - k.
+$$
+
+Let $ U \in M_{n \times k} (\bf F) $ be any matrix such that
+
+$$ 
+\operatorname{rank} (A - A X M^{-1} Y^{\top} A) U = 0.
+$$
+
+Let $ \Lambda = M^{-1} Y^{\top} A U $, then
+
+$$
+A (U - X \Lambda) = 0,
+$$
+
+hence
+
+$$
+U \in \operatorname{nullspace} (A) + X \Lambda.
+$$
+
+This implies that 
+
+$$ \operatorname{nullspace} (A - A X M^{-1} Y^{\top} A) 
+\subseteq \operatorname{nullspace} (A) + \mathcal{C} (X) \cong 
+\operatorname{nullspace} (A) \oplus \mathcal{C} (X) ,$$
+
+and finally, 
+
+$$ 
+\operatorname{rank} (A - A X M^{-1} Y^{\top} A) = 
+\operatorname{rank} (A) - k.
+$$
+
+## The Euclidean inner product
+
+### coordinates form of inner product and $ cos(\theta) $
+
+The inner product $ <F, s> $ is proposed to descrip 
+the work done by force $ F $ acting along a displacement $ s $.
+
+$$ W = <F, s> = |F| \sdot |s| \sdot cos(\theta) $$
+
+From this, the cosine of the angle $ \theta $ between $ F $ and $ s $ 
+can be expressed as:
+
+$$ cos(\theta) = \frac{<F, s>}{|F| \sdot |s|} $$
+
+In coordinates, the inner product $ <F, s> $ is defined as:
+
+$$ <F, s> = s^* F = s_x F_x + s_y F_y + s_z F_z $$
+
+This decomposition shows that the work done in each direction 
+corresponds to the component-wise product:
+The work in the $ x $ direction is $ s_x F_x $, the work in the $ y $ 
+direction is $ s_y F_y $, and the work in the $ z $ direction is $ s_z F_z $.
+
+Thus, the coordinate form provides a clear and meaningful breakdown 
+of the total work into contributions from each axis.
