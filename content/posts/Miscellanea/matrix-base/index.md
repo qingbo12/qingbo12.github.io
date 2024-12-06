@@ -16,7 +16,7 @@ hero: images/image-miscellanea.jpg
 
 ## Determinant of Matrix Product
 
-### Theorem
+### Theorem: $ det(AB) = det(A)det(B) $
 
 Let $ A, B $ be a square matrices of order n.
 
@@ -28,7 +28,7 @@ Then:
 
 $ det(AB) = det(A)det(B) $
 
-### Proof
+**Proof**
 
 The proof I provide is based on [Determinant of Matrix Product](https://proofwiki.org/wiki/Determinant_of_Matrix_Product)
 
@@ -117,7 +117,7 @@ $ det(AB)=det(A)det(B) $
 
 If $ A $ is a (real) $ n \times n $ symmetric matrix, then $ A $ has n real eigenvalues (counted bytheir multiplicities). For each eigenvalue, we can find a real eigenvector associated with it.
 
-### Proof
+**Proof**
 
 The proof I provide is based on [Orthogonally Diagonalizable Matrices](https://www.math.wustl.edu/~freiwald/309orthogdiag.pdf)
 
@@ -127,7 +127,7 @@ The proof I provide is based on [Orthogonally Diagonalizable Matrices](https://w
 
 A real symmetric matrix must be orthogonally diagonalizable.
 
-### Proof 
+**Proof** 
 
 The proof I provide is based on [Orthogonally Diagonalizable Matrices](https://www.math.wustl.edu/~freiwald/309orthogdiag.pdf)
 
@@ -248,7 +248,7 @@ If $ A $ is a real symmetric matrix of order n. $ \lambda $ is an r-fold root of
 
 Then the matrix $ A - \lambda E $ has a rank of $ n - r $. This implies that there are exactly $ r $ linearly independent eigenvectors associated with the eigenvalue $ \lambda $.
 
-### Proof
+**Proof**
 
 
 The proof I provide is based on [Yiwen's Zhihu Answer](https://www.zhihu.com/question/462622563/answer/1918454726)
@@ -317,7 +317,7 @@ $ nullity A $; the dimension of $ range A $ is denoted by $ rank A $.
 > The null space of a linear transformation can be denoted as $ \operatorname{nullspace} A $, $ \operatorname{ker} A $.<br>
 > The dimension of the null space of a linear transformation can be denoted as $ \operatorname{nullity} A $.
 
-### The dimension of $ range A $ is denoted by $ rank A $
+### The dimension of $ \operatorname{range} A $ is denoted by $ \operatorname{rank} A $
 
 The proof I provide is based on [rank-of-matrix-equals-dimension-of-range](https://math.stackexchange.com/a/3540031)
 
@@ -371,7 +371,7 @@ $$
 rank(A) + nullity(A) = n
 $$
 
-#### Proof
+**Proof**
 
 The proof I provide is based on [The Rank-Nullity Theorem](https://www.math.purdue.edu/files/academic/courses/2010spring/MA26200/4-9.pdf).
 
@@ -395,7 +395,7 @@ $$
 rank(T) + nullity(T) = dim V
 $$
 
-#### Proof
+**Proof**
 
 The proof I provide is based on [Rank–nullity theorem](https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem#First_proof).
 
@@ -480,7 +480,7 @@ $$
 
 This concludes our proof.
 
-#### Application $ \dim C(AB) = \dim C(B) - \dim ( \operatorname{nullspace} (A) \cap C(B)) $
+#### Application: $ \dim C(AB) = \dim C(B) - \dim ( \operatorname{nullspace} (A) \cap C(B)) $
 
 The application I provide is based on [$ \dim C(AB) = \dim C(B) - \dim ( \operatorname{nullspace} (A) \cap C(B)) $](https://math.stackexchange.com/a/1155035)
 
@@ -515,7 +515,7 @@ $$
 (rank A  + rank B) - k \leq rank (AB)
 $$
 
-### Proof
+**Proof**
 
 The proof I provide is based on [Prove Sylvester rank inequality](https://math.stackexchange.com/a/269622).
 
@@ -579,7 +579,7 @@ $ B \in M_{k \times p}(\bf F) $ and $ C \in M_{p \times n}(\bf F) $,
 then $ \operatorname{rank}(AB) + \operatorname{rank}(BC) \leq 
 \operatorname{rank}(B) + \operatorname{rank}(ABC) $
 
-### Proof
+**Proof**
 
 The proof I provide is based on [Frobenius rank inequality](https://math.stackexchange.com/a/1191064).
 
@@ -633,7 +633,7 @@ nonsingular and $ B \in M_{m,n}(\bf F) $, then $ \operatorname{rank} AB =
 left or right multiplication by a nonsingular matrix leaves 
 rank unchanged.
 
-### Proof
+**Proof**
 
 Firstly, we show that $ \operatorname{rank} (B) = 
 \operatorname{rank} (BC) $.
@@ -689,7 +689,7 @@ This concludes our proof.
 
 ### If $ A \in M_{m,n}(\bf C) $, then $ \operatorname{rank} A^* A = \operatorname{rank} A $
 
-### Proof
+**Proof**
 
 The proof I provide is based on [Prove $\operatorname{rank}A^TA=\operatorname{rank}A$](https://math.stackexchange.com/q/349966).
 
@@ -753,7 +753,7 @@ $ W $ is the $ r $ by $ r $ matrix where $ C $ meets $ B $. Then $ A = C W^{-1} 
 
 The establishment I provided is based on [LU and CR Elimination](https://math.mit.edu/~gs/everyone/lucrweb.pdf).
 
-### Establish $ A = C R $
+**Establish $ A = C R $**
 
 Here are the steps to establish $ A = C R $. We know that an invertible 
 elimination matrix $ E $ (a product of simple steps) gives 
@@ -763,7 +763,7 @@ of $ E^{-1} $. This leaves $ A = C \begin{bmatrix} I & F \end{bmatrix} P $,
 where the identity matrix in $ R $ allows us to identify $ C $ in the 
 columns of $ E^{-1} $.
 
-### Establish $ A = C W^{-1} B $
+**Establish $ A = C W^{-1} B $**
 
 Suppose the $ r $ independent columns of $ A $ in the first $ r $ columns, 
 and there are $ r $ independent rows of $ A $ in the first $ r $ rows.
@@ -818,7 +818,7 @@ $$
 \operatorname{rank} A - k
 $$
 
-### Proof
+**Proof**
 
 The proof I provide is based on [Generalized Wedderburn Rank Reduction](https://arxiv.org/pdf/2406.03992).
 
@@ -927,7 +927,7 @@ $$
 
 ## The Euclidean inner product
 
-### coordinates form of inner product and $ cos(\theta) $
+### Coordinates form of inner product and $ cos(\theta) $
 
 The inner product $ <F, s> $ is proposed to descrip 
 the work done by force $ F $ acting along a displacement $ s $.
