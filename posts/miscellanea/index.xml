@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Miscellanea on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/miscellanea/</link><description>Recent content in Miscellanea on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 20 Nov 2024 16:02:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/miscellanea/index.xml" rel="self" type="application/rss+xml"/><item><title>Matrix Base</title><link>https://qingbo12.github.io/posts/miscellanea/matrix-base/</link><pubDate>Wed, 20 Nov 2024 16:02:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/matrix-base/</guid><description>&lt;h2 id="determinant-of-matrix-product">Determinant of Matrix Product&lt;/h2>
-&lt;h3 id="theorem">Theorem&lt;/h3>
+&lt;h3 id="theorem--detab--detadetb-">Theorem: $ det(AB) = det(A)det(B) $&lt;/h3>
 &lt;p>Let $ A, B $ be a square matrices of order n.&lt;/p>
 &lt;p>Let $ det(A) $ be the determinant of $ A $.&lt;/p>
 &lt;p>Let $ AB $ be the matrix product of $ A $ and $ B $.&lt;/p>
 &lt;p>Then:&lt;/p>
 &lt;p>$ det(AB) = det(A)det(B) $&lt;/p>
-&lt;h3 id="proof">Proof&lt;/h3>
+&lt;p>&lt;strong>Proof&lt;/strong>&lt;/p>
 &lt;p>The proof I provide is based on &lt;a href="https://proofwiki.org/wiki/Determinant_of_Matrix_Product" target="_blank" rel="noopener">Determinant of Matrix Product&lt;/a>&lt;/p>
 &lt;p>Consider two cases:&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>$ A $ is singular.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>$ A $ is nonsingular.&lt;/p></description></item><item><title>Circuit Base</title><link>https://qingbo12.github.io/posts/miscellanea/circuit/</link><pubDate>Thu, 07 Nov 2024 15:09:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/circuit/</guid><description>&lt;h2 id="basic-circuit">Basic circuit&lt;/h2>
+&lt;p>$ A $ is singular.&lt;/p></description></item><item><title>Circuit Base</title><link>https://qingbo12.github.io/posts/miscellanea/circuit/</link><pubDate>Thu, 07 Nov 2024 15:09:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/circuit/</guid><description>&lt;h2 id="basic-circuit">Basic circuit&lt;/h2>
 &lt;p>&lt;strong>Charge&lt;/strong> It is defined in terms of the ampere by counting the total charge that passes through an arbitrary cross section of a wire during an interval of one second. In the SI system, the fundamental unit of charge is the coulomb (C).&lt;/p>
 &lt;p>&lt;strong>Current&lt;/strong> We define the current at a specific point and flowing in a specified direction as the instantaneous rate at which net positive charge is moving past that point in the specified direction. Current
 is symbolized by I or i, and so&lt;/p></description></item><item><title>Multimodal-fusion research</title><link>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</link><pubDate>Wed, 16 Oct 2024 04:58:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</guid><description>&lt;h2 id="fusion-stage">Fusion stage&lt;/h2>

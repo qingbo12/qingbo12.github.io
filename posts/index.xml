@@ -6,21 +6,18 @@ data\en\sections\about.yaml socialLinks:.&lt;/p>
 &lt;p>&lt;strong>2. Only readme when deploying to github pages.&lt;/strong>&lt;/p>
 &lt;p>Need to set your deployment branch to gh-pages.&lt;/p>
 &lt;p>&lt;img alt="deployBranchSetting" src="https://qingbo12.github.io/posts/building-issues/deployBranchSetting.png">&lt;/p></description></item><item><title>Matrix Base</title><link>https://qingbo12.github.io/posts/miscellanea/matrix-base/</link><pubDate>Wed, 20 Nov 2024 16:02:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/matrix-base/</guid><description>&lt;h2 id="determinant-of-matrix-product">Determinant of Matrix Product&lt;/h2>
-&lt;h3 id="theorem">Theorem&lt;/h3>
+&lt;h3 id="theorem--detab--detadetb-">Theorem: $ det(AB) = det(A)det(B) $&lt;/h3>
 &lt;p>Let $ A, B $ be a square matrices of order n.&lt;/p>
 &lt;p>Let $ det(A) $ be the determinant of $ A $.&lt;/p>
 &lt;p>Let $ AB $ be the matrix product of $ A $ and $ B $.&lt;/p>
 &lt;p>Then:&lt;/p>
 &lt;p>$ det(AB) = det(A)det(B) $&lt;/p>
-&lt;h3 id="proof">Proof&lt;/h3>
+&lt;p>&lt;strong>Proof&lt;/strong>&lt;/p>
 &lt;p>The proof I provide is based on &lt;a href="https://proofwiki.org/wiki/Determinant_of_Matrix_Product" target="_blank" rel="noopener">Determinant of Matrix Product&lt;/a>&lt;/p>
 &lt;p>Consider two cases:&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>$ A $ is singular.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>$ A $ is nonsingular.&lt;/p></description></item><item><title>MagMIMOHotspot Read</title><link>https://qingbo12.github.io/posts/wpt/magmimohotspot/</link><pubDate>Thu, 07 Nov 2024 15:09:01 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/magmimohotspot/</guid><description>&lt;h2 id="magnetic-mimo-how-to-charge-your-phone-in-your-pocket">Magnetic MIMO: how to charge your phone in your pocket&lt;/h2>
+&lt;p>$ A $ is singular.&lt;/p></description></item><item><title>MagMIMOHotspot Read</title><link>https://qingbo12.github.io/posts/wpt/magmimohotspot/</link><pubDate>Thu, 07 Nov 2024 15:09:01 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/magmimohotspot/</guid><description>&lt;h2 id="magnetic-mimo-how-to-charge-your-phone-in-your-pocket">Magnetic MIMO: how to charge your phone in your pocket&lt;/h2>
 &lt;h3 id="motivation">Motivation&lt;/h3>
 &lt;ol>
 &lt;li>&lt;strong>Current wireless chargers&lt;/strong> need to remember to regularly charge our mobile phones which &lt;strong>is not the wireless charging we hoped for&lt;/strong>. We would like to have our cell phones charged in our pockets, and never again worry about forgetting to charge the phone.&lt;/li>
