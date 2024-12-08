@@ -950,3 +950,143 @@ direction is $ s_y F_y $, and the work in the $ z $ direction is $ s_z F_z $.
 
 Thus, the coordinate form provides a clear and meaningful breakdown 
 of the total work into contributions from each axis.
+
+## Determinants again
+
+### The Cauchy-Binet formula
+
+Let $ A \in M_{m,n} (\bf F) $, $ B \in M_{n,m} (\bf F) $, and $ C = A B $.
+
+Cauchy-Binet formula expresses determinant $ | C | $ in terms of 
+the minors of $ A $ and $ B $:
+
+$$
+\tag{1}
+\begin{vmatrix} c_{11} & \cdots & c_{1m} \\\\ \vdots & \ddots & \vdots \\\\ c_{m1} & \cdots & c_{mm} \end{vmatrix} = 
+\sum_{1 \leq k_1 < k_2 < \cdots < k_m \leq n} 
+\begin{vmatrix} a_{1 k_1} & \cdots & a_{1 k_m} \\\\ \vdots & \ddots & \vdots \\\\ a_{m k_1} & \cdots & a_{m k_m} \end{vmatrix}
+\begin{vmatrix} b_{k_1 1} & \cdots & b_{k_1 m} \\\\ \vdots & \ddots & \vdots \\\\ b_{k_m 1} & \cdots & b_{k_m m} \end{vmatrix}
+$$
+
+or in a concise notation, 
+
+$$
+\tag{1'}
+C \begin{pmatrix} 1 & 2 & \cdots & m \\\\ 1 & 2 & \cdots & m \end{pmatrix} = 
+\sum_{1 \leq k_1 < k_2 < \cdots < k_m \leq n} 
+A \begin{pmatrix} 1 & 2 & \cdots & m \\\\ k_1 & k_2 & \cdots & k_m \end{pmatrix}
+B \begin{pmatrix} k_1 & k_2 & \cdots & k_m \\\\ 1 & 2 & \cdots & m \end{pmatrix}
+$$
+
+**Derivation**
+
+The determinant of $ C $ can be represented in the form
+
+$$
+\begin{vmatrix} c_{11} & \cdots & c_{1m} \\\\ \vdots & \ddots & \vdots \\\\ c_{m1} & \cdots & c_{mm} \end{vmatrix} = 
+\begin{vmatrix}
+\sum_{\alpha_1 = 1}^n a_{1 \alpha_1} b_{\alpha_1 1} & \cdots & \sum_{\alpha_m = 1}^n a_{1 \alpha_m} b_{\alpha_m m} \\\\
+\vdots & \ddots & \vdots \\\\
+\sum_{\alpha_1 = 1}^n a_{m \alpha_1} b_{\alpha_1 1} & \cdots & \sum_{\alpha_m = 1}^n a_{m \alpha_m} b_{\alpha_m m}
+\end{vmatrix}
+$$
+
+Expanding the determinant, we consider the multilinear property of 
+determinants: the determinant is linear in each row. 
+Substituting each term into the determinant:
+
+$$
+= \sum_{\alpha_1, \alpha_2, \cdots, \alpha_m = 1}^n
+\begin{vmatrix}
+a_{1 \alpha_1} b_{\alpha_1 1} & \cdots & a_{1 \alpha_m} b_{\alpha_m m} \\\\
+\vdots & \ddots & \vdots \\\\
+a_{m \alpha_1} b_{\alpha_1 1} & \cdots & a_{m \alpha_m} b_{\alpha_m m}
+\end{vmatrix}
+$$
+
+Now, by the property of determinants that "multiplying a column by 
+a number multiplies the determinant by this number," we can factor out 
+$ b_{\alpha_i i} $ from the $ i $ -th column of the determinant:
+
+$$
+= \sum_{\alpha_1, \alpha_2, \cdots, \alpha_m = 1}^n
+\begin{vmatrix}
+a_{1 \alpha_1}  & \cdots & a_{1 \alpha_m} \\\\
+\vdots & \ddots & \vdots \\\\
+a_{m \alpha_1} & \cdots & a_{m \alpha_m}
+\end{vmatrix}
+b_{\alpha_1 1} b_{\alpha_2 2} \cdots b_{\alpha_m m}
+$$
+
+$$
+\tag{2}
+= \sum_{\alpha_1, \alpha_2, \cdots, \alpha_m = 1}^n
+A \begin{pmatrix} 1 & 2 & \cdots & m \\\\ \alpha_1 & \alpha_2 & \cdots & \alpha_m \end{pmatrix}
+b_{\alpha_1 1} b_{\alpha_2 2} \cdots b_{\alpha_m m}
+$$
+
+If m > n, the matrices $ A $ and $ B $ do not have minors of order $ m $. In that case 
+the right-hand sides of *(1)* and *(1')* are to be replaced by zero.
+
+Now let $ m \leq n $. Then in the sum on the right-hand side of *(2)* 
+all those summands will be zero in which at least two of the subscripts 
+$ \alpha_1, \alpha_2, \cdots, \alpha_m $ are equal. 
+(If two columns of $ A $ are equal, its determinant is zero.) 
+All the remaining summands of *(2)* can be split into groups of 
+$ m! $ terms each by combining into one group those summands that differ 
+from each other only in the order of the subscripts 
+$ \alpha_1, \alpha_2, \cdots, \alpha_m $. 
+Now within one such group the sum of the corresponding terms is
+
+$$
+\sum \varepsilon (\alpha_1, \alpha_2, \cdots, \alpha_m) 
+A \begin{pmatrix} 1 & 2 & \cdots & m \\\\ k_1 & k_2 & \cdots & k_m \end{pmatrix}
+b_{\alpha_1 1} b_{\alpha_2 2} \cdots b_{\alpha_m m}
+$$
+
+$$
+= A \begin{pmatrix} 1 & 2 & \cdots & m \\\\ k_1 & k_2 & \cdots & k_m \end{pmatrix} 
+\sum \varepsilon (\alpha_1, \alpha_2, \cdots, \alpha_m) 
+b_{\alpha_1 1} b_{\alpha_2 2} \cdots b_{\alpha_m m}
+$$
+
+By the Leibniz formula for determinants, the summation over all 
+permutations can be expressed compactly. Thus, the expression becomes:
+
+$$
+= A \begin{pmatrix} 1 & 2 & \cdots & m \\\\ k_1 & k_2 & \cdots & k_m \end{pmatrix} 
+B \begin{pmatrix} k_1 & k_2 & \cdots & k_m \\\\ 1 & 2 & \cdots & m \end{pmatrix}
+$$
+
+Here, $ k_1 < k_2 < \cdots < k_m $ is the normal order of the subscripts 
+$ \alpha_1, \alpha_2, \cdots, \alpha_m $ and 
+$ \varepsilon (\alpha_1, \alpha_2, \cdots, \alpha_m) = (-1)^N $ where 
+$ N $ is the number of transpositions of the indices needed to put 
+the permutation $ \alpha_1, \alpha_2, \cdots, \alpha_m $ into normal order.
+
+Hence from *(2)* we obtain *(1')*. 
+
+**Generalization**
+
+Let $ A \in M_{m,k} (\bf F) $, $ B \in M_{k,n} (\bf F) $, and $ C = A B $. 
+Furthermore, let $ 1 \leq r \leq min \\{m, k, n\\} $, and let 
+$ \alpha \subseteq \\{1, \dots, m\\} $ and 
+$ \beta \subseteq \\{1, \dots, n\\} $ be index sets, 
+each of cardinality $ r $. An expression for the $ \alpha $, $ \beta $ 
+minor of $ C $ is 
+
+$$
+\operatorname{det} C [\alpha, \beta] = \sum_\gamma
+\operatorname{det} A [\alpha, \gamma] \operatorname{det} B [\gamma, \beta]
+$$
+
+in which the sum is taken over all index sets 
+$ \gamma \subseteq \\{1, \dots, k\\} $ of cardinality $ r $.
+
+**Derivation**
+
+Given that
+
+$$ C [\alpha, \beta] = A [\alpha, [k]] B [[k], \beta] $$
+
+and applying the Cauchy-Binet formula, we arrive at the generalized form above.
