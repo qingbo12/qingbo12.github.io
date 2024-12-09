@@ -980,6 +980,10 @@ $$
 
 **Derivation**
 
+The derivation I provide is based on Volume 1 of Gantmacher's classic 
+[The Theory of Matrices](https://www.maths.ed.ac.uk/~v1ranick/papers/gantmacher1.pdf), 
+in chapter 1 $ \S $ 2.
+
 The determinant of $ C $ can be represented in the form
 
 $$
@@ -1090,3 +1094,108 @@ Given that
 $$ C [\alpha, \beta] = A [\alpha, [k]] B [[k], \beta] $$
 
 and applying the Cauchy-Binet formula, we arrive at the generalized form above.
+
+### The Sylvester-Franke Theorem
+
+If $ A \in M_n $ and $ 1 \leq k \leq n $, then 
+$ \operatorname{det} C_k(A) = (\operatorname{det} A)^e $, 
+where $ e = {\begin{pmatrix} n - 1 \\\\ k - 1\end{pmatrix}} $.
+
+**Proof**
+
+The proof I provide is based on Leonard Tornheim, 
+[The Sylvester-Franke Theorem](https://www.jstor.org/stable/2306811), The American Mathematical Monthly.
+
+There are three types $ E_1 $, $ E_2 $, $ E_3 $ of elementary 
+transformations: $ E_1 $ is the multiplication of a row or column 
+by a constant $ k $; $ E_2 $ is the interchange of two adjacent rows 
+or columns; and $ E_3 $ is the addition of k times a row or column to 
+another row or column. If $ B $ is transformed into $ C $ by $ E_i $, then 
+
+$$
+\tag{1}
+\operatorname{det} C = \mu_i \operatorname{det} B,
+$$
+
+where $ \mu_1 = k $, $ \mu_2 = -1 $, and $ \mu_3 = +1 $.
+
+The proof of the theorem will be based on the following lemma.
+
+**LEMMA.** Let $ B $ be an arbitrary $ n \times n $ square matrix such that 
+
+$$
+\tag{2}
+\operatorname{det} C_k(B) = (\operatorname{det} B)^e
+$$
+
+If $ B $ is transformed into $ C $ by an elementary transformation $ E $, 
+then $ \operatorname{det} C_k(C) = (\operatorname{det} C)^e $.
+
+**Proof of lemma**
+
+We state first that 
+
+$$
+\tag{3}
+\operatorname{det} C_k(C) = \mu_i^e \operatorname{det} C_k(B).
+$$
+
+We shall prove this in detail only for $ i = 2 $; 
+the other two cases are easier. Suppose that the $ u $-th and ($ u + 1 $)-th 
+rows of $ B $ have been interchanged to give a matrix $ C $. The minors 
+of $ C $ which do not involve the $ u $-th or ($ u + 1 $)-th rows equal 
+the corresponding minors of $ B $. If both $ u $ and $ u + 1 $ appear in 
+$ \lambda (p) $, then $ C_{\lambda (p) \lambda (q)} = -B_{\lambda (p) \lambda (q)} $. 
+The number of rows of $ C_k (C) $ having such minors is $ {\begin{pmatrix} n - 2 \\\\ k - 2 \end{pmatrix}} $. 
+Next suppose $ u $ appears in $ \lambda (p) $ but $ u + 1 $ does not. 
+Let $ \lambda (p') $ be obtained from $ \lambda (p) $ by replacing $ u $ by $ u + 1 $. 
+Then $ C_{\lambda (p) \lambda (q)} = B_{\lambda (p') \lambda (q)} $ and 
+$ B_{\lambda (p') \lambda (q)} = C_{\lambda (p) \lambda (q)} $ since 
+the same elements are used and in the same arrangement, because 
+the $ u $-th and ($ u + 1 $)-th rows are adjacent. Thus from this cause 
+$ {\begin{pmatrix} n - 2 \\\\ k - 1 \end{pmatrix}} $ pairs of rows 
+have been interchanged in going from $ C_k(B) $ to $ C_k(C) $. 
+(There are $ 2 \times {\begin{pmatrix} n - 2 \\\\ k - 1 \end{pmatrix}} $ 
+rows in $ C $ that need to be changed to match $ B $. However, these rows 
+must be interchanged within $ C $, forming 
+$ {\begin{pmatrix} n - 2 \\\\ k - 1 \end{pmatrix}} $ pairs.)
+Thus the total number of changes in sign in going from 
+$ \operatorname{det} C_k(B) $ to $ \operatorname{det} C_k(C) $ is 
+
+$$ {\begin{pmatrix} n - 2 \\\\ k - 2 \end{pmatrix}} + {\begin{pmatrix} n - 2 \\\\ k - 1 \end{pmatrix}} = {\begin{pmatrix} n - 1 \\\\ k - 1 \end{pmatrix}} = e.$$
+
+From *(3)*, *(1)*, and *(2)* it now follows that 
+
+$$
+\operatorname{det} C_k(C) = \mu_i^e \operatorname{det} C_k(B) = 
+\mu_i^e (\operatorname{det} B)^e = (\mu_i \operatorname{det} B)^e = 
+(\operatorname{det} C)^e,
+$$
+
+and the proof of the lemma is complete.
+
+**Proof of Sylvester-Franke Theorem**
+
+The proof of the Sylvester-Franke Theorem can now be given as follows. It 
+is known that there exists an $ n \times n $ matrix
+
+$$ D = \begin{pmatrix} I_r & 0 \\\\ 0 & 0  \end{pmatrix} $$
+
+with $ 0 \leq r \leq n $.
+
+$ D $ can be ransformed into the given $ n \times n $ matrix $ A $ by 
+a finite sequence of elementary transformations $ E^{(1)} $, $ E^{(2)} $, 
+$ \dots $,  $ E^{(v)} $.
+
+If $ r = n $, $ \operatorname{det} D = 1 $ and if $ r < n $, 
+$ \operatorname{det} D = 0 $. Also if $ r = n $, 
+$ C_k (D) = I_{\begin{pmatrix} n \\\\ k \end{pmatrix}} $, and 
+$ \operatorname{det} C_k (D) = 1 $; otherwise 
+$ \operatorname{det} C_k (D) = 0 $. Hence the relation 
+$ \operatorname{det} C_k (D) = (\operatorname{det} D)^e $ holds 
+in both cases. Then by the lemma, $ \operatorname{det} C_k (E^{(1)} D) = 
+\operatorname{det} C_k (D_1) = (\operatorname{det} D_1)^e $, 
+$ \operatorname{det} C_k (E^{(2)} D_1) = \operatorname{det} C_k (D_2) = 
+(\operatorname{det} D_2)^e $, and so on. If follows by induction 
+that $ \operatorname{det} C_k (E^{(v)} D_{v - 1}) = \operatorname{det} C_k (A) = (\operatorname{det} A)^e $, 
+and the proof is complete.
