@@ -120,7 +120,7 @@ params:
 
     # Enable comment feature. There, should be only one of them.
     comment:
-      enable: false
+      enable: true
       services:
         disqus:
           shortName: toha-example-site
@@ -154,17 +154,18 @@ params:
 
     # Enable Analytics
     analytics:
-      enabled: false
+      enabled: true
       services:
         # Google Analytics
-        google:
-          id: G-H4LBG7NDFZ
+        # google:
+        #   id: G-H4LBG7NDFZ
         # # CounterDev
         # counterDev:
         #   id: <your counterdev id>
-        # # GoatCounter
-        # goatCounter:
-        #   code: <your goat counter code>
+        # GoatCounter
+        goatCounter:
+          # code: <your goat counter code>
+          code: https://qingbo12.goatcounter.com
         # # Matomo / Piwik
         # matomo:
         #   instance: matomo.example.com
