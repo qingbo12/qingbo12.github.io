@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jinpeng's Blog</title><link>https://qingbo12.github.io/</link><description>Recent content on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 24 Nov 2024 17:36:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Building issues</title><link>https://qingbo12.github.io/posts/building-issues/</link><pubDate>Sun, 24 Nov 2024 17:36:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/building-issues/</guid><description>&lt;h3 id="issues">Issues&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jinpeng's Blog</title><link>https://qingbo12.github.io/</link><description>Recent content on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 12 Dec 2024 17:16:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Optimization Methods</title><link>https://qingbo12.github.io/posts/miscellanea/optimization/</link><pubDate>Thu, 12 Dec 2024 17:16:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/optimization/</guid><description>&lt;h3 id="lagrangian-relaxation">Lagrangian relaxation&lt;/h3>
+&lt;p>Lagrangian relaxation is a relaxation method which approximates a
+difficult problem of constrained optimization by a simpler problem.&lt;/p>
+&lt;p>The method penalizes violations of inequality constraints using a Lagrange
+multiplier, which imposes a cost on violations. These added costs are used
+instead of the strict inequality constraints in the optimization. In
+practice, this relaxed problem can often be solved more easily than the
+original problem.&lt;/p>
+&lt;p>&lt;strong>Mathematical description&lt;/strong>&lt;/p>
+&lt;p>Suppose we are given a linear programming problem, with $ x \in R^n $
+and $ A \in R^{m \times n} $,
+of the following form:&lt;/p></description></item><item><title>Building issues</title><link>https://qingbo12.github.io/posts/building-issues/</link><pubDate>Sun, 24 Nov 2024 17:36:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/building-issues/</guid><description>&lt;h3 id="issues">Issues&lt;/h3>
 &lt;p>&lt;strong>1. Built-in Shortcode leads to Hugo timeout.&lt;/strong>&lt;/p>
 &lt;p>Because of the networks, I can&amp;rsquo;t send requests to Twitter, YouTube, etc. So I delete the contents about Twitter and YouTube. They are in content\posts\category\sub-category\rich-content\index.md, content\posts\category\sub-category\rich-content\index.bn.md,
 hugo.yaml shareButtons:,
