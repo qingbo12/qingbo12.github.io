@@ -6,10 +6,12 @@ author:
   name: Jinpeng Ma
 menu:
   sidebar:
-    name: MagMIMOHotspot Read"
+    name: MagMIMOHotspot Read
     identifier: WPT-MagMIMOHotspot
     parent: WPT
     weight: 10
+
+hero: images/WPTscenario.gif
 ---
 
 ## Magnetic MIMO: how to charge your phone in your pocket
