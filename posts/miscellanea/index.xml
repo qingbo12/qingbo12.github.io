@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Miscellanea on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/miscellanea/</link><description>Recent content in Miscellanea on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 12 Dec 2024 17:16:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/miscellanea/index.xml" rel="self" type="application/rss+xml"/><item><title>Optimization Methods</title><link>https://qingbo12.github.io/posts/miscellanea/optimization/</link><pubDate>Thu, 12 Dec 2024 17:16:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/optimization/</guid><description>&lt;h3 id="lagrangian-relaxation">Lagrangian relaxation&lt;/h3>
+&lt;p>The explanation I provide is based on &lt;a href="https://en.wikipedia.org/wiki/Lagrangian_relaxation" target="_blank" rel="noopener">Lagrangian relaxation-Wikipedia&lt;/a> and &lt;a href="https://www.ens-lyon.fr/DI/wp-content/uploads/2012/01/LagrangianRelax.pdf" target="_blank" rel="noopener">Chapter 12 Lagrangian Relaxation-ens-lyon&lt;/a>&lt;/p>
 &lt;p>Lagrangian relaxation is a relaxation method which approximates a
 difficult problem of constrained optimization by a simpler problem.&lt;/p>
 &lt;p>The method penalizes violations of inequality constraints using a Lagrange
 multiplier, which imposes a cost on violations. These added costs are used
 instead of the strict inequality constraints in the optimization. In
 practice, this relaxed problem can often be solved more easily than the
-original problem.&lt;/p>
-&lt;p>&lt;strong>Mathematical description&lt;/strong>&lt;/p>
-&lt;p>Suppose we are given a linear programming problem, with $ x \in R^n $
-and $ A \in R^{m \times n} $,
-of the following form:&lt;/p></description></item><item><title>Matrix Base</title><link>https://qingbo12.github.io/posts/miscellanea/matrix-base/</link><pubDate>Wed, 20 Nov 2024 16:02:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/matrix-base/</guid><description>&lt;h2 id="determinant-of-matrix-product">Determinant of Matrix Product&lt;/h2>
+original problem.&lt;/p></description></item><item><title>Matrix Base</title><link>https://qingbo12.github.io/posts/miscellanea/matrix-base/</link><pubDate>Wed, 20 Nov 2024 16:02:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/matrix-base/</guid><description>&lt;h2 id="determinant-of-matrix-product">Determinant of Matrix Product&lt;/h2>
 &lt;h3 id="theorem--detab--detadetb-">Theorem: $ det(AB) = det(A)det(B) $&lt;/h3>
 &lt;p>Let $ A, B $ be a square matrices of order n.&lt;/p>
 &lt;p>Let $ det(A) $ be the determinant of $ A $.&lt;/p>
