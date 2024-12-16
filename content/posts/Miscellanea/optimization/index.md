@@ -106,9 +106,9 @@ the best feasible solution converge to a desired tolerance.
 
 0. Set $ k = 0 $ and choose $ \lambda_0 \in R^n $;
 1. Compute $ P(\lambda_k) $ and a vector $ x_k \in X $ where it is achieved;
-2. Calculate gradient $ g_k = A x_k − b $ of the function $ P $ at $ \lambda_k $;
+2. Calculate gradient $ g_k = b - A x_k $ of the function $ P $ at $ \lambda_k $;
 3. If $ g_k = 0 $, then stop, the optimal solution is $ P(\lambda_k) $
-4. Compute $ \lambda_{k+1} = \lambda_k +\theta^T_k g_k $ where $ \theta_k $ is the stepsize at this step.
+4. Compute $ \lambda_{k+1} = max(0, \lambda_k +\theta^T_k g_k) $ where $ \theta_k $ is the stepsize at this step.
 5. Increment $ k $ and go to Step 2.
 
 ### Lagrange multiplier
