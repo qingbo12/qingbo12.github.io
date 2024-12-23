@@ -14,7 +14,7 @@ menu:
 hero: images/image-miscellanea.jpg
 ---
 
-## Determinant of Matrix Product
+## Determinant
 
 ### Theorem: $ det(AB) = det(A)det(B) $
 
@@ -1199,3 +1199,226 @@ $ \operatorname{det} C_k (E^{(2)} D_1) = \operatorname{det} C_k (D_2) =
 (\operatorname{det} D_2)^e $, and so on. If follows by induction 
 that $ \operatorname{det} C_k (E^{(v)} D_{v - 1}) = \operatorname{det} C_k (A) = (\operatorname{det} A)^e $, 
 and the proof is complete.
+
+### Laplace expansion
+
+Let $ n \in \mathbf{R} $. Let $ A = (a_{i,j})_{1 \leq i \leq n, 1 \leq j \leq n} 
+$ be an $ n \times n $ matrix. 
+
+**(a)** For every $ p \in \\{1, 2, \dots, n\\} $, we have 
+
+$$
+\operatorname{det} A = \sum_{q = 1}^n (-1)^{p + q} a_{p,q} 
+\operatorname{det} (A_{\sim p, \sim q}).
+$$
+
+**(b)** For every $ q \in \\{1, 2, \dots, n\\} $, we have 
+
+$$
+\operatorname{det} A = \sum_{p = 1}^n (-1)^{p + q} a_{p,q}
+\operatorname{det} (A_{\sim p, \sim q}).
+$$
+
+**Proof**
+
+The proof I provide is based on 6.12. Laplace expansion, in [Notes on the combinatorial
+fundamentals of algebra](https://www.cip.ifi.lmu.de/~grinberg/primes2015/sols.pdf), Darij Grinberg.
+
+**Lemma 1**
+
+For every $ n \in N $, let $ [n] $ denote the set $ \\{1, 2, \dots, n\\}$.
+Let $ n \in \mathbf{R} $. For every $ p \in [n] $, we define a permutation 
+$ g_p \in S_n $ by $ g_p = cyc_{p, p + 1, \dots, n} $ 
+(where I am using the notations of Definition 5.37 in *Notes*).
+
+**(a)** We have $ g_p(1), g_p(2), \dots, g_p(n - 1) = 
+(1, 2, \dots, \hat{p}, \dots, n) $ for every $ p \in [n] $.
+
+**(b)** We have $ (-1)^{g_p} = (-1)^{n-p} $ for every $ p \in [n] $.
+
+**(c)** Let $ p \in [n] $. We define a map 
+
+$$ g_p^{\prime}: [n - 1] \to [n] \setminus {p} $$
+
+by 
+
+$$ (g_p^{\prime} (i) = g_p (i) \quad \text{for every } i \in [n - 1]). $$
+
+This map $ g_p^{\prime} $ is well-defined and bijective.
+
+**(d)** Let $ p \in [n] $ and $ q \in [n] $. We define a map
+
+$$ T: \\{\tau \in S_n | \tau(n) = n\\} \to \\{\tau \in S_n | \tau(p) = q\\} $$
+
+by 
+
+$$
+(T(\sigma) = g_q \circ \sigma \circ g_p^{-1} \quad 
+\text{for every } \sigma \in \\{\tau \in S_n | \tau(n) = n\\}). $$
+
+Then, this map $ T $ is well-defined and bijective.
+
+**Lemma 2**
+
+Let $ n \in \mathbf{R} $. Let $ A = (a_{i,j})_{1 \leq i \leq n, 1 \leq j \leq n} $ 
+be an $ n \times n $ matrix. Let $ p \in \\{1, 2, \dots, n\\} $ and 
+$ q \in \\{1, 2, \dots, n\\} $. Then, 
+
+$$
+\sum_{\substack{\sigma \in S_n; \\\\ \sigma(p) = q}} (-1)^{\sigma} 
+\prod_{\substack{i \in \\{1, 2, \dots, n\\}; \\\\ i \neq p}} 
+a_{i, \sigma(i)} = (-1)^{p + q} \operatorname{det} (A_{\sim p, \sim q}).
+$$
+
+**Proof of Lemma 2**
+
+Let us use all notations introduced in *Lemma 1*.
+
+Now, the definition of $ A_{\sim p, \sim q} $ yields
+
+$$
+\begin{aligned}
+A_{\sim p, \sim q} &= \operatorname{sub} \substack{1, 2, \dots, \hat{q}, \dots, n \\\\ 1, 2, \dots, \hat{p}, \dots, n} A = 
+\operatorname{sub} \substack{g_q(1), g_q(2), \dots, g_q(n - 1) \\\\ g_p(1), g_p(2), \dots, g_p(n - 1)} A \\\\ &= 
+(a_{g_p(i), g_q(j)})_{1 \leq i \leq n - 1, 1 \leq j \leq n - 1}
+\end{aligned}
+$$
+
+Now, let us recall the map $ T: \\{\tau \in S_n | \tau(n) = n\\} \to \\{\tau \in S_n | \tau(p) = q\\} $
+defined in *Lemma 1 (d)*. *Lemma 1 (d)* says that this map $ T $ is 
+well-defined and bijective. Every $ \sigma \in \\{\tau \in S_n | \tau(n) = n\\} $ satisfies
+
+$$
+\tag{1}
+(-1)^{T(\sigma)} = (-1)^{p + q} \cdot (-1)^{\sigma}
+$$
+
+and 
+
+$$
+\tag{2}
+\prod_{\substack{i \in \\{1, 2, \dots, n\\}; \\\\ i \neq p}} a_{i, (T(\sigma))(i)} = 
+\prod_{i = 1}^{n - 1} a_{g_p(i), g_q(\sigma(i))}.
+$$
+
+**Proof of *result (1)***
+
+Applying *Lemma 1 (b)* to $ q $ instead of $ p $, 
+we obtain $ (-1)^{g_q} = (-1)^{n-q} = (-1)^{n+q} $ 
+(since $ n - q \equiv n + q \mod 2 $). 
+
+The definition of $ T(\sigma) $ yields $ T(\sigma) = g_q \circ \sigma \circ g_p^{-1} $. Thus, 
+
+$$
+T(\sigma) \circ g_p = g_q \circ \sigma \circ g_p^{-1} \circ g_p = g_q \circ \sigma, 
+$$
+
+so that 
+
+$$
+\begin{aligned}
+(-1)^{T(\sigma) \circ g_p} &= (-1)^{g_q \circ \sigma} = (-1)^{g_q} \cdot (-1)^{\sigma} \\\\
+&= (-1)^{n + q} \cdot (-1)^{\sigma}.
+\end{aligned}
+$$
+
+Compared with
+
+$$
+\begin{aligned}
+(-1)^{T(\sigma) \circ g_p} &= (-1)^{T(\sigma)} \cdot (-1)^{g_p} \\\\
+&= (-1)^{T(\sigma)} \cdot (-1)^{n - p},
+\end{aligned}
+$$
+
+this yields
+
+$$
+(-1)^{T(\sigma)} \cdot (-1)^{n - p} = (-1)^{n + q} \cdot (-1)^{\sigma}
+$$
+
+We can divide both sides of this equality by $ (-1)^{n-p} $ 
+(since $ (-1)^{n-p} \in \\{1, -1\\} $ is clearly an invertible integer), 
+and thus we obtain
+
+$$
+(-1)^{T(\sigma)}  = (-1)^{p + q} \cdot (-1)^{\sigma}.
+$$
+
+This proves *result (1)*.
+
+**Proof of *result (2)***
+
+Let $ \sigma \in \\{\tau \in S_n | \tau(n) = n\\} $. 
+Let us recall the map $ g_p^{\prime}: [n-1] \to [n] \setminus {p} $
+introduced in *Lemma 1 (c)*. *Lemma 1 (c)* says that this map $ g_p^{\prime} $ 
+is well-defined and bijective. In other words, $ g_p^{\prime} $ is a bijection.
+Let $ i \in [n-1] $. Then, $ g_p^{\prime} (i) = g_p(i) $ 
+(by the definition of $ g_p^{\prime} $). Also, the definition of $ T $ yields
+$ T(\sigma) = g_q \circ \sigma \circ g_p^{-1} $, so That
+
+$$
+T(\sigma) (g_p^{\prime} (i)) = (g_q \circ \sigma \circ g_p^{-1}) (g_p (i)) =
+g_q (\sigma (g_p^{-1} (g_p (i)))) = g_q (\sigma(i)).
+$$
+
+From $ g_p^{\prime} (i) = g_p (i) $ and $ (T(\sigma)) (g_p^{\prime} (i)) = g_q (\sigma(i)) $, we obtain
+
+$$
+a_{g_p^{\prime} (i), (T(\sigma)) (g_p^{\prime} (i))} = 
+a_{g_p (i), g_q (\sigma(i))}.
+$$
+
+Now, let us forget that we fixed $ i $. We thus have proven the above equation for every $ i \in [n-1] $. 
+But now, we have
+
+$$
+\begin{aligned}
+\prod_{\substack{i \in \\{1, 2, \dots, n\\}; \\\\ i \neq p}} a_{i, (T(\sigma))(i)} \\\\ &= 
+\prod_{\substack{i \in [n]; \\\\ i \neq p}} a_{i, (T(\sigma))(i)} = 
+\prod_{i \in [n] \setminus \\{p\\}} a_{i, (T(\sigma))(i)} = 
+\prod_{i \in [n - 1]} a_{g_p^{\prime} (i), (T(\sigma)) (g_p^{\prime} (i))} \\\\
+&\quad (\text{here, we have substituted } g_p^{\prime} (i) \text{for } i \text{, since } g_p^{\prime}: [n - 1] \to [n] \setminus \\{p\\} \text{ is a bijection}) \\\\
+&= \prod_{i \in [n - 1]} a_{g_p(i), g_q(\sigma(i))}.
+\end{aligned}
+$$
+
+This proves *result (2)*.
+
+Now, 
+
+$$
+\begin{aligned}
+\sum_{\substack{\sigma \in S_n; \\\\ \sigma(p) = q}} (-1)^{\sigma} \prod_{\substack{i \in \\{1, 2, \dots, n\\}; \\\\ i \neq p}} a_{i, \sigma(i)} \\\\
+&= \sum_{\substack{\sigma \in \\{\tau \in S_n | \tau(p) = q\\}}} (-1)^{\sigma} \prod_{\substack{i \in \\{1, 2, \dots, n\\}; \\\\ i \neq p}} a_{i, \sigma(i)} \\\\ 
+&= \sum_{\substack{\sigma \in \\{\tau \in S_n | \tau(n) = n\\}}} (-1)^{T(\sigma)} \prod_{\substack{i \in \\{1, 2, \dots, n\\}; \\\\ i \neq p}} a_{i, (T(\sigma))(i)} \\\\ 
+&\quad (\text{here, we have substituted }T(\sigma) \text{for } \sigma \text{ in the sum, since the map } T: \\{\tau \in S_n | \tau(n) = n\\} \to \\{\tau \in S_n | \tau(p) = q\\} \text{ is a bijection}) \\\\
+&= \sum_{\substack{\sigma \in S_n; \\\\ \sigma(n) = n}} (-1)^{p + q} \cdot (-1)^{\sigma} \prod_{i = 1}^{n - 1} a_{g_p(i), g_q(\sigma(i))} \\\\
+&= (-1)^{p + q} \sum_{\substack{\sigma \in S_n; \\\\ \sigma(n) = n}} (-1)^{\sigma} \prod_{i = 1}^{n - 1} a_{g_p(i), g_q(\sigma(i))} \\\\
+&= (-1)^{p + q} \det \left(a_{g_p(i), g_q(j)}\right)^{1 \leq i \leq n - 1, 1 \leq j \leq n - 1} \\\\
+&= (-1)^{p + q} \operatorname{det}(A_{\sim p, \sim q}).
+\end{aligned}
+$$
+
+This proves *Lemma 2*.
+
+Now, we can finally prove *Laplace expansion*
+
+**Proof of Laplace expansion (a)**
+
+Let $ p \in \\{1, 2, \dots, n\\} $.
+
+$$
+\begin{aligned}
+\operatorname{det} A 
+&= \sum_{\sigma \in S_n} (-1)^{\sigma} \prod_{i = 1}^{n} a_{i, \sigma(i)} \\\\
+&= \sum_{q \in \\{1, 2, \dots, n\\}} \sum_{\substack{\sigma \in S_n; \\\\ \sigma(p) = q}} (-1)^{\sigma} \prod_{i = 1}^{n} a_{i, \sigma(i)} \\\\
+&= \sum_{q \in \\{1, 2, \dots, n\\}} \sum_{\substack{\sigma \in S_n; \\\\ \sigma(p) = q}} (-1)^{\sigma} \prod_{i \in \\{1, 2, \dots, n\\}} a_{i, \sigma(i)} \\\\
+&= \sum_{q \in \\{1, 2, \dots, n\\}} \sum_{\substack{\sigma \in S_n; \\\\ \sigma(p) = q}} (-1)^{\sigma} a_{p, \sigma(p)} \prod_{\substack{i \in \\{1, 2, \dots, n\\}; \\\\ i \neq p}} a_{i, \sigma(i)} \\\\
+&= \sum_{q = 1}^{n} \sum_{\substack{\sigma \in S_n; \\\\ \sigma(p) = q}} (-1)^{\sigma} a_{p, q} \prod_{\substack{i \in \\{1, 2, \dots, n\\}; \\\\ i \neq p}} a_{i, \sigma(i)} \\\\
+&= \sum_{q = 1}^{n} a_{p, q} \sum_{\substack{\sigma \in S_n; \\\\ \sigma(p) = q}} (-1)^{\sigma} \prod_{\substack{i \in \\{1, 2, \dots, n\\}; \\\\ i \neq p}} a_{i, \sigma(i)} \\\\
+&= \sum_{q = 1}^{n} a_{p, q} (-1)^{p + q} \operatorname{det} (A_{\sim p, \sim q}) = \sum_{q = 1}^{n} (-1)^{p + q} a_{p, q} \operatorname{det} (A_{\sim p, \sim q})
+\end{aligned}
+$$
+
+This proves *Laplace expansion (a)*.
