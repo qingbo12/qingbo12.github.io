@@ -22,7 +22,7 @@ hugo.yaml shareButtons:,
 data\en\sections\about.yaml socialLinks:.&lt;/p>
 &lt;p>&lt;strong>2. Only readme when deploying to github pages.&lt;/strong>&lt;/p>
 &lt;p>Need to set your deployment branch to gh-pages.&lt;/p>
-&lt;p>&lt;img src="https://qingbo12.github.io/posts/building-issues/deployBranchSetting.png" alt="deployBranchSetting">&lt;/p></description></item><item><title>Matrix Base</title><link>https://qingbo12.github.io/posts/miscellanea/matrix-base/</link><pubDate>Wed, 20 Nov 2024 16:02:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/matrix-base/</guid><description>&lt;h2 id="determinant">Determinant&lt;/h2>
+&lt;p>&lt;img src="https://qingbo12.github.io/posts/building-issues/deployBranchSetting.png" alt="deployBranchSetting">&lt;/p></description></item><item><title>Matrix Base</title><link>https://qingbo12.github.io/posts/miscellanea/matrix-base/</link><pubDate>Wed, 20 Nov 2024 16:02:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/matrix-base/</guid><description>&lt;h2 id="01-determinant">0.1 Determinant&lt;/h2>
 &lt;h3 id="theorem--detab--detadetb-">Theorem: $ det(AB) = det(A)det(B) $&lt;/h3>
 &lt;p>Let $ A, B $ be a square matrices of order n.&lt;/p>
 &lt;p>Let $ det(A) $ be the determinant of $ A $.&lt;/p>

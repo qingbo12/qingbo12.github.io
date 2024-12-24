@@ -8,7 +8,7 @@ Jinpeng's Blog</a>
 <i data-feather=menu></i></button><div class="collapse navbar-collapse dynamic-navbar" id=top-nav-items><ul class="nav navbar-nav ms-auto"><li class=nav-item><a class=nav-link href=/#home>Home</a></li><li class=nav-item><a class=nav-link href=/#about>About</a></li><li class=nav-item><a class=nav-link href=/#education>Education</a></li><li class=nav-item><a class=nav-link href=/#projects>Projects</a></li><li class=nav-item><a class=nav-link href=/#featured-posts>Featured Posts</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-bs-toggle=dropdown aria-haspopup=true aria-expanded=false>More</a><div class=dropdown-menu aria-labelledby=navbarDropdown><a class=dropdown-item href=/#recent-posts>Recent Posts</a></div></li><div id=top-navbar-divider></div><li class=nav-item><a class=nav-link id=blog-link href=/posts>Posts</a></li><li class=nav-item><a class=nav-link id=note-link href=/notes>Notes</a></li><li class=nav-item><a class=nav-link href=https://toha-guides.netlify.app/posts/>Docs</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=themeSelector role=button data-bs-toggle=dropdown aria-haspopup=true aria-expanded=false><img id=navbar-theme-icon-svg class=theme-icon src=/icons/moon-svgrepo-com.svg width=20 alt="Dark Theme"></a><div id=themeMenu class="dropdown-menu dropdown-menu-icons-only" aria-labelledby=themeSelector><a class="dropdown-item nav-link" href=# data-scheme=light><img class=theme-icon src=/icons/sun-svgrepo-com.svg width=20 alt="Light Theme">
 </a><a class="dropdown-item nav-link" href=# data-scheme=dark><img class=theme-icon src=/icons/moon-svgrepo-com.svg width=20 alt="Dark Theme">
 </a><a class="dropdown-item nav-link" href=# data-scheme=system><img class=theme-icon src=/icons/computer-svgrepo-com.svg width=20 alt="System Theme"></a></div></li></ul></div></div><img src=/images/site/horse-grey_hu6618064002627359663.jpg class=d-none id=main-logo alt=Logo>
-<img src=/images/site/horse-grey_hu6618064002627359663.jpg class=d-none id=inverted-logo alt="Inverted Logo"></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/posts/ data-filter=all>Posts</a></li><div class=subtree><li><a class=list-link href=/posts/building-issues/ title="Building issues">Building issues</a></li><li><a class=list-link href=/posts/introduction/ title=Introduction>Introduction</a></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/category/> Category</a><ul><li><i data-feather=plus-circle></i><a class=list-link href=/posts/category/sub-category/> Sub-Category</a><ul><li><a class=list-link href=/posts/category/sub-category/rich-content/ title="Rich Content">Rich Content</a></li></ul></li></ul></li><li><a class=list-link href=/posts/markdown-sample/ title="Markdown Sample">Markdown Sample</a></li><li><a class=list-link href=/posts/shortcodes/ title="Shortcodes Sample">Shortcodes Sample</a></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/gcd/> Generalized Category Discovery</a><ul><li><a class=list-link href=/posts/gcd/dino/ title="DINO Read">DINO Read</a></li><li><a class=list-link href=/posts/gcd/simgcd/ title="SimGCD Read">SimGCD Read</a></li><li><a class=list-link href=/posts/gcd/transformer/ title="transformer Read">transformer Read</a></li></ul></li><li><i data-feather=minus-circle></i><a class="active list-link" href=/posts/miscellanea/> Miscellanea</a><ul class=active><li><a class=list-link href=/posts/miscellanea/c-lecture/ title="C language lecture 1">C language lecture 1</a></li><li><a class=list-link href=/posts/miscellanea/circuit/ title="Circuit Base">Circuit Base</a></li><li><a class="active list-link" href=/posts/miscellanea/matrix-base/ title="Matrix Base">Matrix Base</a></li><li><a class=list-link href=/posts/miscellanea/multimodal-fusion/ title="Multimodal-fusion research">Multimodal-fusion research</a></li><li><a class=list-link href=/posts/miscellanea/optimization/ title='Optimization Methods"'>Optimization Methods"</a></li><li><a class=list-link href=/posts/miscellanea/recommendation-progress/ title="Recommendation Progress">Recommendation Progress</a></li></ul></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/wpt/> Wireless Power Transfer</a><ul><li><a class=list-link href=/posts/wpt/magmimohotspot/ title="MagMIMOHotspot Read">MagMIMOHotspot Read</a></li><li><a class=list-link href=/posts/wpt/wspmax/ title="WSPMax Read">WSPMax Read</a></li></ul></li></div></ul></div></div></div></section><section class=content-section id=content-section><div class=content><div class="container p-0 read-area"><div class="hero-area col-sm-12" id=hero-area style=background-image:url(/posts/miscellanea/matrix-base/images/image-miscellanea.jpg)></div><div class=page-content><div class="author-profile ms-auto align-self-lg-center"><img class=rounded-circle src=/images/author/pandas-part2_hu16066948026037313982.jpg alt="Author Image"><h5 class=author-name>Jinpeng Ma</h5><p class=text-muted>Wednesday, November 20, 2024 | 40 minutes</p></div><div class=title><h1>Matrix Base</h1></div><div class=tags><ul style=padding-left:0></ul></div><div class=post-content id=post-content><h2 id=determinant>Determinant</h2><h3 id=theorem--detab--detadetb->Theorem: $ det(AB) = det(A)det(B) $</h3><p>Let $ A, B $ be a square matrices of order n.</p><p>Let $ det(A) $ be the determinant of $ A $.</p><p>Let $ AB $ be the matrix product of $ A $ and $ B $.</p><p>Then:</p><p>$ det(AB) = det(A)det(B) $</p><p><strong>Proof</strong></p><p>The proof I provide is based on <a href=https://proofwiki.org/wiki/Determinant_of_Matrix_Product target=_blank rel=noopener>Determinant of Matrix Product</a></p><p>Consider two cases:</p><ol><li><p>$ A $ is singular.</p></li><li><p>$ A $ is nonsingular.</p></li></ol><p><strong>proof of case1</strong></p><p>Assume $ A $ is singular.</p><p>Then:</p><p>$$ det(A) = 0 $$</p><p><strong>Also if A is singular then so is AB.</strong></p><p>Indeed, if $ AB $ has an inverse $ C $, then:</p><p>$$ ABC = E $$</p><p>whereby $ BC $ is a right inverse of $ A $.</p><p>It follows by Left or Right Inverse of Matrix is Inverse that in that case $ BC $ is the inverse of $ A $. This contradicts the assumption.</p><p>It follows that:</p><p>$$ det(AB)=0 $$</p><p>Thus:</p><p>$$ 0 = 0 \times det(B) $$</p><p>that is:</p><p>$$ det(AB) = 0 = det(A)det(B) $$</p><p><strong>proof of case2</strong></p><p>Assume $ A $ is nonsingular.</p><p>Then $ A $ is a product of elementary row matrices, $E $.</p><p>Let $ A=E_kE_{k−1}⋯E_1 $.</p><p>So:</p><p>$$ det(AB) = det(E_kE_{k−1}⋯E_1B) $$</p><p>It remains to be shown that for any square matrix $ D $ of order n:</p><p>$$ det(ED) = det(E) det(D) $$</p><p>$ det(ED) = -|D| = det(E) det(D) $ for swap 2 rows</p><p>$ det(ED) = k|D| = det(E) det(D) $ for apply k to 1 row</p><p>$ det(ED) = |D| = det(E) det(D) $ for row(i) + k x row(j)</p><p>Then:</p><p>$ det(AB) = det(E_kE_{k−1}⋯E_1B) $</p><p>$ det(AB) = det(E_k) det(E_{k−1}⋯E_1(B)) $</p><p>$ det(AB) = αdet(B) $</p><p>and:</p><p>$ det(A) = det(E_kE_{k−1}⋯E_1I) $</p><p>$ = det(E_kE_{k−1}⋯E_1(I)) $</p><p>$ = αdet(I) $</p><p>Therefore:</p><p>$ det(AB)=det(A)det(B) $</p><h2 id=real-symmetric-matrix>Real Symmetric Matrix</h2><h3 id=theorem-all-real-eigenvalues>Theorem: all real eigenvalues</h3><p>If $ A $ is a (real) $ n \times n $ symmetric matrix, then $ A $ has n real eigenvalues (counted bytheir multiplicities). For each eigenvalue, we can find a real eigenvector associated with it.</p><p><strong>Proof</strong></p><p>The proof I provide is based on <a href=https://www.math.wustl.edu/~freiwald/309orthogdiag.pdf target=_blank rel=noopener>Orthogonally Diagonalizable Matrices</a></p><p><img src=/posts/miscellanea/matrix-base/images/realEigenvalues.png alt=proofofrealEigenvalues></p><h3 id=theorem-orthogonally-diagonalizable>Theorem: orthogonally diagonalizable</h3><p>A real symmetric matrix must be orthogonally diagonalizable.</p><p><strong>Proof</strong></p><p>The proof I provide is based on <a href=https://www.math.wustl.edu/~freiwald/309orthogdiag.pdf target=_blank rel=noopener>Orthogonally Diagonalizable Matrices</a></p><p>This is a proof by induction, and it uses some simple facts about partitioned matrices and change of coordinates.</p><p>This is obviously true for every $ 1 \times 1 $ matrix $ A $ if $ A = [a] $, then
+<img src=/images/site/horse-grey_hu6618064002627359663.jpg class=d-none id=inverted-logo alt="Inverted Logo"></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/posts/ data-filter=all>Posts</a></li><div class=subtree><li><a class=list-link href=/posts/building-issues/ title="Building issues">Building issues</a></li><li><a class=list-link href=/posts/introduction/ title=Introduction>Introduction</a></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/category/> Category</a><ul><li><i data-feather=plus-circle></i><a class=list-link href=/posts/category/sub-category/> Sub-Category</a><ul><li><a class=list-link href=/posts/category/sub-category/rich-content/ title="Rich Content">Rich Content</a></li></ul></li></ul></li><li><a class=list-link href=/posts/markdown-sample/ title="Markdown Sample">Markdown Sample</a></li><li><a class=list-link href=/posts/shortcodes/ title="Shortcodes Sample">Shortcodes Sample</a></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/gcd/> Generalized Category Discovery</a><ul><li><a class=list-link href=/posts/gcd/dino/ title="DINO Read">DINO Read</a></li><li><a class=list-link href=/posts/gcd/simgcd/ title="SimGCD Read">SimGCD Read</a></li><li><a class=list-link href=/posts/gcd/transformer/ title="transformer Read">transformer Read</a></li></ul></li><li><i data-feather=minus-circle></i><a class="active list-link" href=/posts/miscellanea/> Miscellanea</a><ul class=active><li><a class=list-link href=/posts/miscellanea/c-lecture/ title="C language lecture 1">C language lecture 1</a></li><li><a class=list-link href=/posts/miscellanea/circuit/ title="Circuit Base">Circuit Base</a></li><li><a class="active list-link" href=/posts/miscellanea/matrix-base/ title="Matrix Base">Matrix Base</a></li><li><a class=list-link href=/posts/miscellanea/multimodal-fusion/ title="Multimodal-fusion research">Multimodal-fusion research</a></li><li><a class=list-link href=/posts/miscellanea/optimization/ title='Optimization Methods"'>Optimization Methods"</a></li><li><a class=list-link href=/posts/miscellanea/recommendation-progress/ title="Recommendation Progress">Recommendation Progress</a></li></ul></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/wpt/> Wireless Power Transfer</a><ul><li><a class=list-link href=/posts/wpt/magmimohotspot/ title="MagMIMOHotspot Read">MagMIMOHotspot Read</a></li><li><a class=list-link href=/posts/wpt/wspmax/ title="WSPMax Read">WSPMax Read</a></li></ul></li></div></ul></div></div></div></section><section class=content-section id=content-section><div class=content><div class="container p-0 read-area"><div class="hero-area col-sm-12" id=hero-area style=background-image:url(/posts/miscellanea/matrix-base/images/image-miscellanea.jpg)></div><div class=page-content><div class="author-profile ms-auto align-self-lg-center"><img class=rounded-circle src=/images/author/pandas-part2_hu16066948026037313982.jpg alt="Author Image"><h5 class=author-name>Jinpeng Ma</h5><p class=text-muted>Wednesday, November 20, 2024 | 56 minutes</p></div><div class=title><h1>Matrix Base</h1></div><div class=tags><ul style=padding-left:0></ul></div><div class=post-content id=post-content><h2 id=01-determinant>0.1 Determinant</h2><h3 id=theorem--detab--detadetb->Theorem: $ det(AB) = det(A)det(B) $</h3><p>Let $ A, B $ be a square matrices of order n.</p><p>Let $ det(A) $ be the determinant of $ A $.</p><p>Let $ AB $ be the matrix product of $ A $ and $ B $.</p><p>Then:</p><p>$ det(AB) = det(A)det(B) $</p><p><strong>Proof</strong></p><p>The proof I provide is based on <a href=https://proofwiki.org/wiki/Determinant_of_Matrix_Product target=_blank rel=noopener>Determinant of Matrix Product</a></p><p>Consider two cases:</p><ol><li><p>$ A $ is singular.</p></li><li><p>$ A $ is nonsingular.</p></li></ol><p><strong>proof of case1</strong></p><p>Assume $ A $ is singular.</p><p>Then:</p><p>$$ det(A) = 0 $$</p><p><strong>Also if A is singular then so is AB.</strong></p><p>Indeed, if $ AB $ has an inverse $ C $, then:</p><p>$$ ABC = E $$</p><p>whereby $ BC $ is a right inverse of $ A $.</p><p>It follows by Left or Right Inverse of Matrix is Inverse that in that case $ BC $ is the inverse of $ A $. This contradicts the assumption.</p><p>It follows that:</p><p>$$ det(AB)=0 $$</p><p>Thus:</p><p>$$ 0 = 0 \times det(B) $$</p><p>that is:</p><p>$$ det(AB) = 0 = det(A)det(B) $$</p><p><strong>proof of case2</strong></p><p>Assume $ A $ is nonsingular.</p><p>Then $ A $ is a product of elementary row matrices, $E $.</p><p>Let $ A=E_kE_{k−1}⋯E_1 $.</p><p>So:</p><p>$$ det(AB) = det(E_kE_{k−1}⋯E_1B) $$</p><p>It remains to be shown that for any square matrix $ D $ of order n:</p><p>$$ det(ED) = det(E) det(D) $$</p><p>$ det(ED) = -|D| = det(E) det(D) $ for swap 2 rows</p><p>$ det(ED) = k|D| = det(E) det(D) $ for apply k to 1 row</p><p>$ det(ED) = |D| = det(E) det(D) $ for row(i) + k x row(j)</p><p>Then:</p><p>$ det(AB) = det(E_kE_{k−1}⋯E_1B) $</p><p>$ det(AB) = det(E_k) det(E_{k−1}⋯E_1(B)) $</p><p>$ det(AB) = \alpha det(B) $</p><p>and:</p><p>$ det(A) = det(E_kE_{k−1}⋯E_1I) $</p><p>$ = det(E_kE_{k−1}⋯E_1(I)) $</p><p>$ = \alpha det(I) $</p><p>Therefore:</p><p>$ det(AB)=det(A)det(B) $</p><h2 id=02-real-symmetric-matrix>0.2 Real Symmetric Matrix</h2><h3 id=theorem-all-real-eigenvalues>Theorem: all real eigenvalues</h3><p>If $ A $ is a (real) $ n \times n $ symmetric matrix, then $ A $ has n real eigenvalues (counted bytheir multiplicities). For each eigenvalue, we can find a real eigenvector associated with it.</p><p><strong>Proof</strong></p><p>The proof I provide is based on <a href=https://www.math.wustl.edu/~freiwald/309orthogdiag.pdf target=_blank rel=noopener>Orthogonally Diagonalizable Matrices</a></p><p><img src=/posts/miscellanea/matrix-base/images/realEigenvalues.png alt=proofofrealEigenvalues></p><h3 id=theorem-orthogonally-diagonalizable>Theorem: orthogonally diagonalizable</h3><p>A real symmetric matrix must be orthogonally diagonalizable.</p><p><strong>Proof</strong></p><p>The proof I provide is based on <a href=https://www.math.wustl.edu/~freiwald/309orthogdiag.pdf target=_blank rel=noopener>Orthogonally Diagonalizable Matrices</a></p><p>This is a proof by induction, and it uses some simple facts about partitioned matrices and change of coordinates.</p><p>This is obviously true for every $ 1 \times 1 $ matrix $ A $ if $ A = [a] $, then
 $ E_1^{-1} (a) E_1 = (a) $</p><p>Assume now that every $ (n - 1) \times (n - 1) $ real symmetric matrix is orthogonally diagonalizable.</p><p>Consider an $ n \times n $ real symmetric matrix $ A $ where $ n \gt 1 $. By the preceding theorem, we can find a real eigenvalue $ \lambda $ of $ A $, together with a real eigenvector $ v_1 $. By normalizing, we can assume
 $ v_1 $ is a unit eigenvector. Add vectors to extend
 $ (v_1) $ to a basis for
@@ -99,7 +99,7 @@ $$</p><p>$$
 \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \cdots & \vdots & \vdots & \vdots \\
 0 & 0 & 0 & 0 & 0 & 0 & 0 & \cdots & 0 & \cdots & \lambda_n - \blue{\lambda_{k}}
 \end{pmatrix}
-$$</p><p>$\because \lambda_i \neq \lambda_k \Rightarrow \lambda_i - \lambda_k \neq 0, (i \neq k) $</p><p>$ \therefore rank(A - \lambda_k E) = rank(\varLambda - \lambda_k E) = n - r $</p><h2 id=vector-spaces>Vector spaces</h2><p>$ A \in M_{m,n}(\mathbf{F}) $ as a linear transformation $ x \rightarrow Ax $ from $ F^n $ to $ F^m $.
+$$</p><p>$\because \lambda_i \neq \lambda_k \Rightarrow \lambda_i - \lambda_k \neq 0, (i \neq k) $</p><p>$ \therefore rank(A - \lambda_k E) = rank(\varLambda - \lambda_k E) = n - r $</p><h2 id=03-vector-spaces>0.3 Vector spaces</h2><p>$ A \in M_{m,n}(\mathbf{F}) $ as a linear transformation $ x \rightarrow Ax $ from $ F^n $ to $ F^m $.
 The domain of this linear transformation is $ F^n $; its range is
 $ range A = \{y \in F^m : y =Ax \} $ for some $ x \in F^n $;
 its null space is $ nullspace A = {x \in F^n : Ax = 0} $. The range of
@@ -189,7 +189,7 @@ $ y \in \operatorname{nullspace} (A) \cap C(B) $.</p><p>Now use the rank-nullity
 \dim V.
 $$</p><p>$$
 \dim C(AB) = \dim C(B) - \dim (\operatorname{nullspace} (A) \cap C(B))
-$$</p><h2 id=rank>Rank</h2><h3 id=sylvester-inequality>Sylvester inequality</h3><p>If $ A \in M_{m,k} (F) $ and $ B \in M_{k,n} (F) $, then</p><p>$$
+$$</p><h2 id=04-rank>0.4 Rank</h2><h3 id=sylvester-inequality>Sylvester inequality</h3><p>If $ A \in M_{m,k} (F) $ and $ B \in M_{k,n} (F) $, then</p><p>$$
 (rank A + rank B) - k \leq rank (AB)
 $$</p><p><strong>Proof</strong></p><p>The proof I provide is based on <a href=https://math.stackexchange.com/a/269622 target=_blank rel=noopener>Prove Sylvester rank inequality</a>.</p><p>If we prove that $ dim ker A + dim ker B \geq dim ker (AB) $.
 By using the rank-nullity theorem, we can then deduce
@@ -371,13 +371,13 @@ $$</p><p>This implies that</p><p>$$ \operatorname{nullspace} (A - A X M^{-1} Y^{
 \operatorname{nullspace} (A) \oplus \mathcal{C} (X) ,$$</p><p>and finally,</p><p>$$
 \operatorname{rank} (A - A X M^{-1} Y^{\top} A) =
 \operatorname{rank} (A) - k.
-$$</p><h2 id=the-euclidean-inner-product>The Euclidean inner product</h2><h3 id=coordinates-form-of-inner-product-and--costheta->Coordinates form of inner product and $ cos(\theta) $</h3><p>The inner product $ &lt;F, s> $ is proposed to descrip
+$$</p><h2 id=05-the-euclidean-inner-product>0.5 The Euclidean inner product</h2><h3 id=coordinates-form-of-inner-product-and--costheta->Coordinates form of inner product and $ cos(\theta) $</h3><p>The inner product $ &lt;F, s> $ is proposed to descrip
 the work done by force $ F $ acting along a displacement $ s $.</p><p>$$ W = &lt;F, s> = |F| \sdot |s| \sdot cos(\theta) $$</p><p>From this, the cosine of the angle $ \theta $ between $ F $ and $ s $
 can be expressed as:</p><p>$$ cos(\theta) = \frac{&lt;F, s>}{|F| \sdot |s|} $$</p><p>In coordinates, the inner product $ &lt;F, s> $ is defined as:</p><p>$$ &lt;F, s> = s^* F = s_x F_x + s_y F_y + s_z F_z $$</p><p>This decomposition shows that the work done in each direction
 corresponds to the component-wise product:
 The work in the $ x $ direction is $ s_x F_x $, the work in the $ y $
 direction is $ s_y F_y $, and the work in the $ z $ direction is $ s_z F_z $.</p><p>Thus, the coordinate form provides a clear and meaningful breakdown
-of the total work into contributions from each axis.</p><h2 id=determinants-again>Determinants again</h2><h3 id=the-cauchy-binet-formula>The Cauchy-Binet formula</h3><p>Let $ A \in M_{m,n} (\bf F) $, $ B \in M_{n,m} (\bf F) $, and $ C = A B $.</p><p>Cauchy-Binet formula expresses determinant $ | C | $ in terms of
+of the total work into contributions from each axis.</p><h2 id=06-determinants-again>0.6 Determinants again</h2><h3 id=the-cauchy-binet-formula>The Cauchy-Binet formula</h3><p>Let $ A \in M_{m,n} (\bf F) $, $ B \in M_{n,m} (\bf F) $, and $ C = A B $.</p><p>Cauchy-Binet formula expresses determinant $ | C | $ in terms of
 the minors of $ A $ and $ B $:</p><p>$$
 \tag{1}
 \begin{vmatrix} c_{11} & \cdots & c_{1m} \\ \vdots & \ddots & \vdots \\ c_{m1} & \cdots & c_{mm} \end{vmatrix} =
@@ -467,11 +467,11 @@ or columns; and $ E_3 $ is the addition of k times a row or column to
 another row or column. If $ B $ is transformed into $ C $ by $ E_i $, then</p><p>$$
 \tag{1}
 \operatorname{det} C = \mu_i \operatorname{det} B,
-$$</p><p>where $ \mu_1 = k $, $ \mu_2 = -1 $, and $ \mu_3 = +1 $.</p><p>The proof of the theorem will be based on the following lemma.</p><p><strong>LEMMA.</strong> Let $ B $ be an arbitrary $ n \times n $ square matrix such that</p><p>$$
+$$</p><p>where $ \mu_1 = k $, $ \mu_2 = -1 $, and $ \mu_3 = +1 $.</p><p>The proof of the theorem will be based on the following lemma.</p><p><strong>Lemma 0.6.1</strong> Let $ B $ be an arbitrary $ n \times n $ square matrix such that</p><p>$$
 \tag{2}
 \operatorname{det} C_k(B) = (\operatorname{det} B)^e
 $$</p><p>If $ B $ is transformed into $ C $ by an elementary transformation $ E $,
-then $ \operatorname{det} C_k(C) = (\operatorname{det} C)^e $.</p><p><strong>Proof of lemma</strong></p><p>We state first that</p><p>$$
+then $ \operatorname{det} C_k(C) = (\operatorname{det} C)^e $.</p><p><strong>Proof of Lemma 0.6.1</strong></p><p>We state first that</p><p>$$
 \tag{3}
 \operatorname{det} C_k(C) = \mu_i^e \operatorname{det} C_k(B).
 $$</p><p>We shall prove this in detail only for $ i = 2 $;
@@ -498,7 +498,7 @@ $ \operatorname{det} C_k(B) $ to $ \operatorname{det} C_k(C) $ is</p><p>$$ {\beg
 \operatorname{det} C_k(C) = \mu_i^e \operatorname{det} C_k(B) =
 \mu_i^e (\operatorname{det} B)^e = (\mu_i \operatorname{det} B)^e =
 (\operatorname{det} C)^e,
-$$</p><p>and the proof of the lemma is complete.</p><p><strong>Proof of Sylvester-Franke Theorem</strong></p><p>The proof of the Sylvester-Franke Theorem can now be given as follows. It
+$$</p><p>and the proof of the <em>Lemma 0.6.1</em> is complete.</p><p><strong>Proof of Sylvester-Franke Theorem</strong></p><p>The proof of the Sylvester-Franke Theorem can now be given as follows. It
 is known that there exists an $ n \times n $ matrix</p><p>$$ D = \begin{pmatrix} I_r & 0 \\ 0 & 0 \end{pmatrix} $$</p><p>with $ 0 \leq r \leq n $.</p><p>$ D $ can be ransformed into the given $ n \times n $ matrix $ A $ by
 a finite sequence of elementary transformations $ E^{(1)} $, $ E^{(2)} $,
 $ \dots $, $ E^{(v)} $.</p><p>If $ r = n $, $ \operatorname{det} D = 1 $ and if $ r &lt; n $,
@@ -512,7 +512,7 @@ in both cases. Then by the lemma, $ \operatorname{det} C_k (E^{(1)} D) =
 $ \operatorname{det} C_k (E^{(2)} D_1) = \operatorname{det} C_k (D_2) =
 (\operatorname{det} D_2)^e $, and so on. If follows by induction
 that $ \operatorname{det} C_k (E^{(v)} D_{v - 1}) = \operatorname{det} C_k (A) = (\operatorname{det} A)^e $,
-and the proof is complete.</p><h3 id=laplace-expansion>Laplace expansion</h3><p>Let $ n \in \mathbf{R} $. Let $ A = (a_{i,j})_{1 \leq i \leq n, 1 \leq j \leq n}
+and the proof is complete.</p><h3 id=laplace-expansion>Laplace expansion</h3><p>Let $ n \in \mathbf{N} $. Let $ A = (a_{i,j})^{1 \leq i \leq n, 1 \leq j \leq n}
 $ be an $ n \times n $ matrix.</p><p><strong>(a)</strong> For every $ p \in \{1, 2, \dots, n\} $, we have</p><p>$$
 \operatorname{det} A = \sum_{q = 1}^n (-1)^{p + q} a_{p,q}
 \operatorname{det} (A_{\sim p, \sim q}).
@@ -520,26 +520,26 @@ $$</p><p><strong>(b)</strong> For every $ q \in \{1, 2, \dots, n\} $, we have</p
 \operatorname{det} A = \sum_{p = 1}^n (-1)^{p + q} a_{p,q}
 \operatorname{det} (A_{\sim p, \sim q}).
 $$</p><p><strong>Proof</strong></p><p>The proof I provide is based on 6.12. Laplace expansion, in <a href=https://www.cip.ifi.lmu.de/~grinberg/primes2015/sols.pdf target=_blank rel=noopener>Notes on the combinatorial
-fundamentals of algebra</a>, Darij Grinberg.</p><p><strong>Lemma 1</strong></p><p>For every $ n \in N $, let $ [n] $ denote the set $ \{1, 2, \dots, n\}$.
-Let $ n \in \mathbf{R} $. For every $ p \in [n] $, we define a permutation
+fundamentals of algebra</a>, Darij Grinberg.</p><p><strong>Lemma 0.6.2</strong></p><p>For every $ n \in N $, let $ [n] $ denote the set $ \{1, 2, \dots, n\}$.
+Let $ n \in \mathbf{N} $. For every $ p \in [n] $, we define a permutation
 $ g_p \in S_n $ by $ g_p = cyc_{p, p + 1, \dots, n} $
 (where I am using the notations of Definition 5.37 in <em>Notes</em>).</p><p><strong>(a)</strong> We have $ g_p(1), g_p(2), \dots, g_p(n - 1) =
 (1, 2, \dots, \hat{p}, \dots, n) $ for every $ p \in [n] $.</p><p><strong>(b)</strong> We have $ (-1)^{g_p} = (-1)^{n-p} $ for every $ p \in [n] $.</p><p><strong>(c)</strong> Let $ p \in [n] $. We define a map</p><p>$$ g_p^{\prime}: [n - 1] \to [n] \setminus {p} $$</p><p>by</p><p>$$ (g_p^{\prime} (i) = g_p (i) \quad \text{for every } i \in [n - 1]). $$</p><p>This map $ g_p^{\prime} $ is well-defined and bijective.</p><p><strong>(d)</strong> Let $ p \in [n] $ and $ q \in [n] $. We define a map</p><p>$$ T: \{\tau \in S_n | \tau(n) = n\} \to \{\tau \in S_n | \tau(p) = q\} $$</p><p>by</p><p>$$
 (T(\sigma) = g_q \circ \sigma \circ g_p^{-1} \quad
-\text{for every } \sigma \in \{\tau \in S_n | \tau(n) = n\}). $$</p><p>Then, this map $ T $ is well-defined and bijective.</p><p><strong>Lemma 2</strong></p><p>Let $ n \in \mathbf{R} $. Let $ A = (a_{i,j})_{1 \leq i \leq n, 1 \leq j \leq n} $
+\text{for every } \sigma \in \{\tau \in S_n | \tau(n) = n\}). $$</p><p>Then, this map $ T $ is well-defined and bijective.</p><p><strong>Lemma 0.6.3</strong></p><p>Let $ n \in \mathbf{N} $. Let $ A = (a_{i,j})^{1 \leq i \leq n, 1 \leq j \leq n} $
 be an $ n \times n $ matrix. Let $ p \in \{1, 2, \dots, n\} $ and
 $ q \in \{1, 2, \dots, n\} $. Then,</p><p>$$
 \sum_{\substack{\sigma \in S_n; \\ \sigma(p) = q}} (-1)^{\sigma}
 \prod_{\substack{i \in \{1, 2, \dots, n\}; \\ i \neq p}}
 a_{i, \sigma(i)} = (-1)^{p + q} \operatorname{det} (A_{\sim p, \sim q}).
-$$</p><p><strong>Proof of Lemma 2</strong></p><p>Let us use all notations introduced in <em>Lemma 1</em>.</p><p>Now, the definition of $ A_{\sim p, \sim q} $ yields</p><p>$$
+$$</p><p><strong>Proof of Lemma 0.6.3</strong></p><p>Let us use all notations introduced in <em>Lemma 0.6.2</em>.</p><p>Now, the definition of $ A_{\sim p, \sim q} $ yields</p><p>$$
 \begin{aligned}
 A_{\sim p, \sim q} &= \operatorname{sub} \substack{1, 2, \dots, \hat{q}, \dots, n \\ 1, 2, \dots, \hat{p}, \dots, n} A =
 \operatorname{sub} \substack{g_q(1), g_q(2), \dots, g_q(n - 1) \\ g_p(1), g_p(2), \dots, g_p(n - 1)} A \\ &=
-(a_{g_p(i), g_q(j)})_{1 \leq i \leq n - 1, 1 \leq j \leq n - 1}
+(a_{g_p(i), g_q(j)})^{1 \leq i \leq n - 1, 1 \leq j \leq n - 1}
 \end{aligned}
 $$</p><p>Now, let us recall the map $ T: \{\tau \in S_n | \tau(n) = n\} \to \{\tau \in S_n | \tau(p) = q\} $
-defined in <em>Lemma 1 (d)</em>. <em>Lemma 1 (d)</em> says that this map $ T $ is
+defined in <em>Lemma 0.6.2 (d)</em>. <em>Lemma 0.6.2 (d)</em> says that this map $ T $ is
 well-defined and bijective. Every $ \sigma \in \{\tau \in S_n | \tau(n) = n\} $ satisfies</p><p>$$
 \tag{1}
 (-1)^{T(\sigma)} = (-1)^{p + q} \cdot (-1)^{\sigma}
@@ -547,7 +547,7 @@ $$</p><p>and</p><p>$$
 \tag{2}
 \prod_{\substack{i \in \{1, 2, \dots, n\}; \\ i \neq p}} a_{i, (T(\sigma))(i)} =
 \prod_{i = 1}^{n - 1} a_{g_p(i), g_q(\sigma(i))}.
-$$</p><p><strong>Proof of <em>result (1)</em></strong></p><p>Applying <em>Lemma 1 (b)</em> to $ q $ instead of $ p $,
+$$</p><p><strong>Proof of result (1)</strong></p><p>Applying <em>Lemma 0.6.2 (b)</em> to $ q $ instead of $ p $,
 we obtain $ (-1)^{g_q} = (-1)^{n-q} = (-1)^{n+q} $
 (since $ n - q \equiv n + q \mod 2 $).</p><p>The definition of $ T(\sigma) $ yields $ T(\sigma) = g_q \circ \sigma \circ g_p^{-1} $. Thus,</p><p>$$
 T(\sigma) \circ g_p = g_q \circ \sigma \circ g_p^{-1} \circ g_p = g_q \circ \sigma,
@@ -567,9 +567,9 @@ $$</p><p>We can divide both sides of this equality by $ (-1)^{n-p} $
 (since $ (-1)^{n-p} \in \{1, -1\} $ is clearly an invertible integer),
 and thus we obtain</p><p>$$
 (-1)^{T(\sigma)} = (-1)^{p + q} \cdot (-1)^{\sigma}.
-$$</p><p>This proves <em>result (1)</em>.</p><p><strong>Proof of <em>result (2)</em></strong></p><p>Let $ \sigma \in \{\tau \in S_n | \tau(n) = n\} $.
+$$</p><p>This proves <em>result (1)</em>.</p><p><strong>Proof of result (2)</strong></p><p>Let $ \sigma \in \{\tau \in S_n | \tau(n) = n\} $.
 Let us recall the map $ g_p^{\prime}: [n-1] \to [n] \setminus {p} $
-introduced in <em>Lemma 1 (c)</em>. <em>Lemma 1 (c)</em> says that this map $ g_p^{\prime} $
+introduced in <em>Lemma 0.6.2 (c)</em>. <em>Lemma 0.6.2 (c)</em> says that this map $ g_p^{\prime} $
 is well-defined and bijective. In other words, $ g_p^{\prime} $ is a bijection.
 Let $ i \in [n-1] $. Then, $ g_p^{\prime} (i) = g_p(i) $
 (by the definition of $ g_p^{\prime} $). Also, the definition of $ T $ yields
@@ -586,7 +586,7 @@ But now, we have</p><p>$$
 \prod_{\substack{i \in [n]; \\ i \neq p}} a_{i, (T(\sigma))(i)} =
 \prod_{i \in [n] \setminus \{p\}} a_{i, (T(\sigma))(i)} =
 \prod_{i \in [n - 1]} a_{g_p^{\prime} (i), (T(\sigma)) (g_p^{\prime} (i))} \\
-&\quad (\text{here, we have substituted } g_p^{\prime} (i) \text{for } i \text{, since } g_p^{\prime}: [n - 1] \to [n] \setminus \{p\} \text{ is a bijection}) \\
+&\quad (\text{here, we have substituted } g_p^{\prime} (i) \text{ for } i \text{, since } g_p^{\prime}: [n - 1] \to [n] \setminus \{p\} \text{ is a bijection}) \\
 &= \prod_{i \in [n - 1]} a_{g_p(i), g_q(\sigma(i))}.
 \end{aligned}
 $$</p><p>This proves <em>result (2)</em>.</p><p>Now,</p><p>$$
@@ -594,13 +594,13 @@ $$</p><p>This proves <em>result (2)</em>.</p><p>Now,</p><p>$$
 \sum_{\substack{\sigma \in S_n; \\ \sigma(p) = q}} (-1)^{\sigma} \prod_{\substack{i \in \{1, 2, \dots, n\}; \\ i \neq p}} a_{i, \sigma(i)} \\
 &= \sum_{\substack{\sigma \in \{\tau \in S_n | \tau(p) = q\}}} (-1)^{\sigma} \prod_{\substack{i \in \{1, 2, \dots, n\}; \\ i \neq p}} a_{i, \sigma(i)} \\
 &= \sum_{\substack{\sigma \in \{\tau \in S_n | \tau(n) = n\}}} (-1)^{T(\sigma)} \prod_{\substack{i \in \{1, 2, \dots, n\}; \\ i \neq p}} a_{i, (T(\sigma))(i)} \\
-&\quad (\text{here, we have substituted }T(\sigma) \text{for } \sigma \text{ in the sum, since the map } T: \{\tau \in S_n | \tau(n) = n\} \to \{\tau \in S_n | \tau(p) = q\} \text{ is a bijection}) \\
+&\quad (\text{here, we have substituted }T(\sigma) \text{ for } \sigma \text{ in the sum, since the map } T: \{\tau \in S_n | \tau(n) = n\} \to \{\tau \in S_n | \tau(p) = q\} \text{ is a bijection}) \\
 &= \sum_{\substack{\sigma \in S_n; \\ \sigma(n) = n}} (-1)^{p + q} \cdot (-1)^{\sigma} \prod_{i = 1}^{n - 1} a_{g_p(i), g_q(\sigma(i))} \\
 &= (-1)^{p + q} \sum_{\substack{\sigma \in S_n; \\ \sigma(n) = n}} (-1)^{\sigma} \prod_{i = 1}^{n - 1} a_{g_p(i), g_q(\sigma(i))} \\
 &= (-1)^{p + q} \det \left(a_{g_p(i), g_q(j)}\right)^{1 \leq i \leq n - 1, 1 \leq j \leq n - 1} \\
 &= (-1)^{p + q} \operatorname{det}(A_{\sim p, \sim q}).
 \end{aligned}
-$$</p><p>This proves <em>Lemma 2</em>.</p><p>Now, we can finally prove <em>Laplace expansion</em></p><p><strong>Proof of Laplace expansion (a)</strong></p><p>Let $ p \in \{1, 2, \dots, n\} $.</p><p>$$
+$$</p><p>This proves <em>Lemma 0.6.3</em>.</p><p>Now, we can finally prove <em>Laplace expansion</em></p><p><strong>Proof of Laplace expansion (a)</strong></p><p>Let $ p \in \{1, 2, \dots, n\} $.</p><p>$$
 \begin{aligned}
 \operatorname{det} A
 &= \sum_{\sigma \in S_n} (-1)^{\sigma} \prod_{i = 1}^{n} a_{i, \sigma(i)} \\
@@ -611,8 +611,220 @@ $$</p><p>This proves <em>Lemma 2</em>.</p><p>Now, we can finally prove <em>Lapla
 &= \sum_{q = 1}^{n} a_{p, q} \sum_{\substack{\sigma \in S_n; \\ \sigma(p) = q}} (-1)^{\sigma} \prod_{\substack{i \in \{1, 2, \dots, n\}; \\ i \neq p}} a_{i, \sigma(i)} \\
 &= \sum_{q = 1}^{n} a_{p, q} (-1)^{p + q} \operatorname{det} (A_{\sim p, \sim q}) = \sum_{q = 1}^{n} (-1)^{p + q} a_{p, q} \operatorname{det} (A_{\sim p, \sim q})
 \end{aligned}
-$$</p><p>This proves <em>Laplace expansion (a)</em>.</p></div><div class="row ps-3 pe-3"><div class="col-md-6 share-buttons"></div><div class="col-md-6 btn-improve-page"><a href=https://github.com/qingbo12/qingbo12.github.io/edit/main/content/posts/Miscellanea/matrix-base/index.md title="Improve this page" target=_blank rel=noopener><i class="fas fa-code-branch"></i>
+$$</p><p>This proves <em>Laplace expansion (a)</em>.</p><h3 id=laplace-expansion-in-multiple-rowscolumns>Laplace expansion in multiple rows/columns</h3><p>Let $ n \in \mathbf{N} $. Let $ A \in \mathbf{F}^{n \times n} $.
+For any subset $ I $ of $ \{1, 2, \dots, n\} $, we let $ I $
+denote the complement $ \{1, 2, \dots, n\} \setminus I $ of $ I $.</p><p><strong>(a)</strong> For every subset $ P $ of $ \{1, 2, \dots, n\} $, we have</p><p>$$
+\operatorname{det} A = \sum_{\substack{Q \subseteq \{1, 2, \dots, n\}; \\ |Q| = |P|}}
+(-1)^{\sum P + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\ w(P)} A)
+\operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\ w(\tilde{P})} A).
+$$</p><p><strong>(b)</strong> For every subset $ Q $ of $ \{1, 2, \dots, n\} $, we have</p><p>$$
+\operatorname{det} A = \sum_{\substack{P \subseteq \{1, 2, \dots, n\}; \\ |P| = |Q|}}
+(-1)^{\sum P + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\ w(P)} A)
+\operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\ w(\tilde{P})} A).
+$$</p><p><strong>Proof</strong></p><p>The proof I provide is based on 6.22. Laplace expansion in multiple rows/columns,
+in <a href=https://www.cip.ifi.lmu.de/~grinberg/primes2015/sols.pdf target=_blank rel=noopener>Notes on the combinatorialfundamentals of algebra</a>, Darij Grinberg.</p><p><strong>Lemma 0.6.4</strong></p><p>Let $ n \in \mathbf{N} $. For any subset $ I $ of $ \{1, 2, \dots, n\} $,
+we let $ I $ denote the complement $ \{1, 2, \dots, n\} \setminus I $ of $ I $.</p><p>Let $ A = (a_{i,j})^{1 \leq i \leq n, 1 \leq j \leq n} $ and
+$ B = (b_{i,j})^{1 \leq i \leq n, 1 \leq j \leq n} $ be two $ n \times n $
+matrices. Let $ Q $ be a subset of $ \{1, 2, \dots, n\} $.
+Let $ k = |Q| $. Then,</p><p>$$
+\sum_{\substack{\sigma \in S_n; \\ \sigma(\{1, 2, \dots, k\}) = Q}}
+(-1)^{\sigma} (\prod_{i \in \{1, 2, \dots, k\}} a_{i, \sigma(i)})
+(\prod_{i \in \{k + 1, k + 2, \dots, n\}} b_{i, \sigma(i)}) \\
+= (-1)^{(1 + 2 + \dots + k) + \sum Q} \operatorname{det}
+(\operatorname{sub} \substack{w(Q) \\ (\{1, 2, \dots, k\})} A)
+(\operatorname{sub} \substack{w(\tilde{Q}) \\ (\{k + 1, k + 2, \dots, n\})} B).
+$$</p><p><strong>Proof of Lemma 0.6.4</strong></p><p>We begin with some simple observations.
+The definition of $ Q $ yields $ \tilde{Q} = \{1, 2, \dots, n\} \setminus Q $.
+Since $ Q $ is a subset of $ \{1, 2, \dots, n\} $, this leads to
+$ |\tilde{Q}| = |\{1, 2, \dots, n\}| - |Q| = n - k $. Thus,
+$ n - k = |\tilde{Q}| \geq 0 $, so that $ n \geq k $ and thus
+$ k \in \{1, 2, \dots, n\} $.</p><p>Let $ (q_1, q_2, \dots, q_k) $ be the list of all elements of $ Q $ in
+increasing order (with no repetitions).
+Let $ (r_1, r_2, \dots, r_{n−k}) $ be the list of all elements of
+$ \tilde{Q} $ in increasing order (with no repetitions).</p><p>The lists $ w(Q) $ and $ (q_1, q_2, \dots, q_k) $ must be identical.
+In other words, we have $ w(Q) = (q_1, q_2, \dots, q_k) $. Similarly,
+$ w(\tilde{Q}) = (r_1, r_2, \dots, r_{n−k}) $.</p><p>for every $ \alpha ∈ S_k $ and $ \beta ∈ S_{n−k} $, we can define an
+element $ \sigma_{Q, \alpha, \beta} ∈ S_n $
+according to Exercise 5.14 (a) in <em>Notes</em>. Consider this
+$ \sigma_{Q, \alpha, \beta} $. Exercise 5.14 (b) in <em>Notes</em> shows that
+for every $ \alpha ∈ S_k $ and $ \beta ∈ S_{n−k} $, we have</p><p>$$ \ell (\sigma_{Q, \alpha, \beta}) = \ell (\alpha) + \ell (\beta) +
+\sum Q - (1 + 2 + \dots + k) $$</p><p>and</p><p>$$
+(-1)^{\sigma_{Q, \alpha, \beta}} = (-1)^{\alpha} \cdot (-1)^{\beta} \cdot
+(-1)^{\sum Q - (1 + 2 + \dots + k)}.
+$$</p><p>Exercise 5.14 (c) in <em>Notes</em> shows that the map</p><p>$$
+S_k \times S_{n−k} \to {\tau \in S_n | \tau(\{1, 2, \dots, k\}) = Q}, \\
+(\alpha, \beta) \mapsto \sigma_{Q, \alpha, \beta}
+$$</p><p>is well-defined and a bijection.</p><p>We have $ w(Q) = (q_1, q_2, \dots, q_k) $. Thus,</p><p>$$
+\begin{aligned}
+\operatorname{sub} \substack{w(Q) \\ (1, 2, \dots, k)} A
+&= \operatorname{sub} \substack{(q_1, q_2, \dots, q_k) \\ (1, 2, \dots, k)} A
+= \operatorname{sub} \substack{q_1, q_2, \dots, q_k \\ 1, 2, \dots, k} A
+= (a_{x, q_y})^{1 \leq x \leq k, 1 \leq y \leq k} \\
+&= (a_{i, q_j})^{1 \leq i \leq k, 1 \leq j \leq k}
+\end{aligned}
+$$</p><p>Thus,</p><p>$$
+\begin{aligned}
+\operatorname{det} (\operatorname{sub} \substack{w(Q) \\ (1, 2, \dots, k)} A)
+&= \sum_{\sigma \in S_k} (-1)^{\sigma} \prod_{i = 1}^{k} a_{i, q_{\sigma(i)}} \\
+&= \sum_{\alpha \in S_k} (-1)^{\alpha} \prod_{i = 1}^{k} a_{i, q_{\alpha(i)}} \\
+\end{aligned}
+$$</p><p>Also, $ w(\tilde{Q}) = (r_1, r_2, \dots, r_{n−k}) $. Thus,</p><p>$$
+\begin{aligned}
+\operatorname{sub} \substack{w(\tilde{Q}) \\ (k + 1, k + 2, \dots, n)} B
+&= \operatorname{sub} \substack{(r_1, r_2, \dots, r_{n−k}) \\ (k + 1, k + 2, \dots, n)} B
+= \operatorname{sub} \substack{r_1, r_2, \dots, r_{n−k} \\ k + 1, k + 2, \dots, n} B
+= (b_{k + x, r_y})^{1 \leq x \leq n - k, 1 \leq y \leq n - k} \\
+&= (b_{k + i, r_j})^{1 \leq i \leq n - k, 1 \leq j \leq n - k}
+\end{aligned}
+$$</p><p>Thus,</p><p>$$
+\begin{aligned}
+\operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\ (k + 1, k + 2, \dots, n)} B)
+&= \sum_{\sigma \in S_{n−k}} (-1)^{\sigma} \prod_{i = 1}^{n - k} b_{k + i, r_{\sigma(i)}} \\
+&= \sum_{\beta \in S_{n−k}} (-1)^{\beta} \prod_{i = 1}^{n - k} b_{k + i, r_{\beta(i)}} \\
+\end{aligned}
+$$</p><p>Now, we claim the following: For any $ \alpha \in S_k $ and $ \beta \in S_{n−k} $,
+we have</p><p>$$
+\prod_{i \in \{1, 2, \dots, k\}} a_{i, \sigma_{Q, \alpha, \beta}(i)}
+= \prod_{i = 1}^{k} a_{i, q_{\alpha(i)}}
+$$</p><p>and</p><p>$$
+\prod_{i \in \{k + 1, k + 2, \dots, n\}} b_{i, \sigma_{Q, \alpha, \beta}(i)}
+= \prod_{i = 1}^{n - k} b_{k + i, r_{\beta(i)}}.
+$$</p><p>Now,</p><p>$$
+\begin{aligned}
+& \sum_{\substack{\sigma \in S_n; \\ \sigma(\{1, 2, \dots, k\}) = Q}} (-1)^{\sigma} (\prod_{i \in \{1, 2, \dots, k\}} a_{i, \sigma(i)}) (\prod_{i \in \{k + 1, k + 2, \dots, n\}} b_{i, \sigma(i)}) \\
+&= \sum_{\sigma \in \{\tau \in S_n | \tau(\{1, 2, \dots, k\}) = Q \}} (-1)^{\sigma} (\prod_{i \in \{1, 2, \dots, k\}} a_{i, \sigma(i)}) (\prod_{i \in \{k + 1, k + 2, \dots, n\}} b_{i, \sigma(i)}) \\
+&= \sum_{(\alpha, \beta) \in S_k \times S_{n−k}} (-1)^{\sigma_{Q, \alpha, \beta}} (\prod_{i \in \{1, 2, \dots, k\}} a_{i, \sigma_{Q, \alpha, \beta}(i)}) (\prod_{i \in \{k + 1, k + 2, \dots, n\}} b_{i, \sigma_{Q, \alpha, \beta}(i)}) \\
+& (\text{here, we have substituted } \sigma_{Q, \alpha, \beta} \text{ for } \sigma \text{ in the sum, since the map } S_k \times S_{n−k} \to {\tau \in S_n | \tau(\{1, 2, \dots, k\}) = Q} \text{, } (\alpha, \beta) \mapsto \sigma_{Q, \alpha, \beta} \text{ is a bijection}) \\
+&= \sum_{\alpha \in S_k} \sum_{\beta \in S_{n−k}} (-1)^{\sigma_{Q, \alpha, \beta}} (\prod_{i = 1}^{k} a_{i, q_{\alpha(i)}}) (\prod_{i = 1}^{n - k} b_{k + i, r_{\beta(i)}}) \\
+&= \sum_{\alpha \in S_k} \sum_{\beta \in S_{n−k}} (-1)^{\alpha} \cdot (-1)^{\beta} \cdot (-1)^{\sum Q - (1 + 2 + \dots + k)} (\prod_{i = 1}^{k} a_{i, q_{\alpha(i)}}) (\prod_{i = 1}^{n - k} b_{k + i, r_{\beta(i)}}) \\
+&= (-1)^{\sum Q - (1 + 2 + \dots + k)} (\sum_{\alpha \in S_k} (-1)^{\alpha} (\prod_{i = 1}^{k} a_{i, q_{\alpha(i)}})) (\sum_{\beta \in S_{n−k}} (-1)^{\beta} (\prod_{i = 1}^{n - k} b_{k + i, r_{\beta(i)}})) \\
+&= (-1)^{(1 + 2 + \dots + k) + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\ (1, 2, \dots, k)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\ (k + 1, k + 2, \dots, n)} B) .
+\end{aligned}
+$$</p><p>This proves <em>Lemma 0.6.4</em>.</p><p><strong>Lemma 0.6.5</strong></p><p>Let $ n \in \mathbf{N} $. Let $ \gamma \in S_n $. Then, the map
+$ S_n \to S_n $, $ \sigma \to \sigma \circ \gamma $ is a bijection.</p><p><strong>Lemma 0.6.6</strong></p><p>Let $ n \in \mathbf{N} $. For any subset $ I $ of $ \{1, 2, \dots, n\} $,
+we let $ \tilde{I} $ denote the complement $ \{1, 2, \dots, n\} \setminus I $ of $ I $.
+Let $ I $ be a subset of $ \{1, 2, \dots, n\} $. Let $ k = |I| $.
+Then, there exists a $ \sigma \in S_n $ satisfying
+$ (\sigma (1), \sigma (2), \dots, \sigma (k)) = w(I) $,
+$ (\sigma (k + 1), \sigma (k + 2), \dots, \sigma(n)) = w(\tilde{I}) $,
+and $ (−1)^{\sigma} = (−1)^{\sum I − (1 + 2 + \dots + k)} $.</p><p><strong>Lemma 0.6.7</strong></p><p>Let $ n \in \mathbf{N} $. For any subset $ I $ of $ \{1, 2, \dots, n\} $,
+we let $ \tilde{I} $ denote the complement $ \{1, 2, \dots, n\} \setminus I $
+of $ I $.</p><p>Let $ A = a_{i, j}^{1 \leq i \leq n, 1 \leq j \leq n} $
+and $ B = b_{i, j}^{1 \leq i \leq n, 1 \leq j \leq n} $ be two
+$ n \times n $ matrices. Let $ P $ and $ Q $ be two subsets of
+$ \{1, 2, \dots, n\} $ such that $ |P| = |Q| $. Then,</p><p>$$
+\begin{aligned}
+& \sum_{\substack{\sigma \in S_n; \\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i \in P} a_{i, \sigma(i)}) (\prod_{i \in \tilde{P}} b_{i, \sigma(i)}) \\
+&= (-1)^{\sum P + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\ w(\tilde{P})} B).
+\end{aligned}
+$$</p><p><strong>Proof of Lemma 0.6.7</strong></p><p>Define $ k \in \mathbf{N} $ by $ k = |P| = |Q| $.</p><p>The definition of $ \tilde{P} $ yields $ \tilde{P} = \{1, 2, \dots, n\} \setminus P $.
+$ |\tilde{P}| = n - k $.</p><p>Let $ (p_1, p_2, \dots, p_k) $ be the list of all elements of $ P $ in
+increasing order (with no repetitions).</p><p>Let $ (r_1, r_2, \dots, r_{n−k}) $ be the list of all elements of $ \tilde{P} $
+in increasing order (with no repetitions).</p><p><em>Lemma 0.6.6</em> shows that there exists a $ \sigma \in S_n $ satisfying
+$ (\sigma (1), \sigma (2), \dots, \sigma (k)) = w(P) $,
+$ (\sigma (k + 1), \sigma (k + 2), \dots, \sigma(n)) = w(\tilde{P}) $,
+and $ (−1)^{\sigma} = (−1)^{\sum P − (1 + 2 + \dots + k)} $.
+Denote this $ \sigma $ by $ \gamma $.</p><p>Notice that</p><p>$$
+\begin{aligned}
+(-1)^{\sum P - (1 + 2 + \dots + k)} (-1)^{\gamma}
+&= (-1)^{\sum P - (1 + 2 + \dots + k)} (-1)^{\sum P - (1 + 2 + \dots + k)} \\
+&= 1
+\end{aligned}
+$$</p><p>Define an $ n \times n $ matrix $ A^{\prime} $ by $ A^{\prime} = a_{\gamma (i), j}^{1 \leq i \leq n, 1 \leq j \leq n} $.
+Define an $ n \times n $ matrix $ B^{\prime} $ by $ B^{\prime} = b_{\gamma(i), j}^{1 \leq i \leq n, 1 \leq j \leq n} $.
+Then,</p><p>$$
+\operatorname{sub} \substack{w(Q) \\ w(P)} A = \operatorname{sub} \substack{w(Q) \\ (1, 2, \dots, k)} (A^{\prime})
+$$</p><p>and</p><p>$$
+\operatorname{sub} \substack{w(\tilde{Q}) \\ w(\tilde{P})} B = \operatorname{sub} \substack{w(\tilde{Q}) \\ (k + 1, k + 2, \dots, n)} (B^{\prime}) .
+$$</p><p><em>Lemma 0.6.5</em> shows that the map $ S_n \to S_n $,
+$ \sigma \to \sigma \circ \gamma $ is a bijection.</p><p>But $ \gamma (\{1, 2, \dots, k\}) = P $. Hence, every $ \sigma \in S_n $
+satisfies</p><p>$$
+(\sigma \circ \gamma) (\{1, 2, \dots, k\})
+= \sigma (\gamma (\{1, 2, \dots, k\}))
+= \sigma (P) .
+$$</p><p>Furthermore, every $ \sigma \in S_n $ satisfies</p><p>$$
+\prod_{i \in \{1, 2, \dots, k\}} a_{\gamma (i), (\sigma \circ \gamma) (i)}
+= \prod_{i \in P} a_{i, \sigma(i)}
+$$</p><p>and</p><p>$$
+\prod_{i \in \{k + 1, k + 2, \dots, n\}} b_{\gamma (i), (\sigma \circ \gamma) (i)}
+= \prod_{i \in \tilde{P}} b_{i, \sigma(i)}.
+$$</p><p>Now, <em>Lemma 0.6.4</em> yields</p><p>$$
+\begin{aligned}
+& \sum_{\substack{\sigma \in S_n; \\ \sigma(\{1, 2, \dots, k\}) = Q}} (-1)^{\sigma} (\prod_{i \in \{1, 2, \dots, k\}} a_{\gamma (i), \sigma(i)}) (\prod_{i \in \{k + 1, k + 2, \dots, n\}} b_{\gamma (i), \sigma(i)}) \\
+&= \sum_{\substack{\sigma \in S_n; \\ \sigma(\{1, 2, \dots, k\}) = Q}} (-1)^{\sigma} (\prod_{i \in \{1, 2, \dots, k\}} a_{i, \sigma(i)}^{\prime})(\prod_{i \in \{k + 1, k + 2, \dots, n\}} b_{i, \sigma(i)}^{\prime}) \\
+&= (-1)^{(1 + 2 + \dots + k) + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\ \{1, 2, \dots, k\}} A^{\prime}) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\ \{k + 1, k + 2, \dots, n\}} B^{\prime}) \\
+&= (-1)^{(1 + 2 + \dots + k) + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\ w(\tilde{P})} B).
+\end{aligned}
+$$</p><p>Comparing this with</p><p>$$
+\begin{aligned}
+& \sum_{\substack{\sigma \in S_n; \\ \sigma(\{1, 2, \dots, k\}) = Q}} (-1)^{\sigma} (\prod_{i \in \{1, 2, \dots, k\}} a_{\gamma (i), \sigma(i)}) (\prod_{i \in \{k + 1, k + 2, \dots, n\}} b_{\gamma (i), \sigma(i)}) \\
+&= \sum_{\substack{\sigma \in S_n; \\ (\sigma \circ \gamma)(\{1, 2, \dots, k\}) = Q}} (-1)^{\sigma \circ \gamma} (\prod_{i \in \{1, 2, \dots, k\}} a_{\gamma (i), (\sigma \circ \gamma)(i)}) (\prod_{i \in \{k + 1, k + 2, \dots, n\}} b_{\gamma (i), (\sigma \circ \gamma)(i)}) \\
+& (\text{here, we have substituted } \sigma \circ \gamma \text{ for } \sigma \text{ in the sum, since the map } S_n \to S_n \text{, } \sigma \mapsto \sigma \circ \gamma \text{ is a bijection}) \\
+&= \sum_{\substack{\sigma \in S_n; \\ \sigma(P) = Q}} (-1)^{\sigma} \cdot (-1)^{\gamma} (\prod_{i \in P} a_{i, \sigma(i)})(\prod_{i \in \tilde{P}} b_{i, \sigma(i)}) \\
+&= (-1)^{\gamma} \cdot \sum_{\substack{\sigma \in S_n; \\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i \in P} a_{i, \sigma(i)})(\prod_{i \in \tilde{P}} b_{i, \sigma(i)}) ,
+\end{aligned}
+$$</p><p>we obtain</p><p>$$
+\begin{aligned}
+& (-1)^{(1 + 2 + \dots + k) + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\ w(\tilde{P})} B) \\
+&= (-1)^{\gamma} \cdot \sum_{\substack{\sigma \in S_n; \\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i \in P} a_{i, \sigma(i)})(\prod_{i \in \tilde{P}} b_{i, \sigma(i)}) .
+\end{aligned}
+$$</p><p>Multiplying both sides of this equality by $ (-1)^{\sum P - (1 + 2 + \dots + k)} $, we obtain</p><p>$$
+\begin{aligned}
+& (-1)^{\sum P - (1 + 2 + \dots + k)} (-1)^{(1 + 2 + \dots + k) + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\ w(\tilde{P})} B) \\
+&= (-1)^{\sum P - (1 + 2 + \dots + k)} (-1)^{\gamma} \cdot \sum_{\substack{\sigma \in S_n; \\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i \in P} a_{i, \sigma(i)})(\prod_{i \in \tilde{P}} b_{i, \sigma(i)}) \\
+& (\text{here, we have } \gamma = \sum P - (1 + 2 + \dots + k)) \\
+&= \sum_{\substack{\sigma \in S_n; \\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i \in P} a_{i, \sigma(i)})(\prod_{i \in \tilde{P}} b_{i, \sigma(i)})
+\end{aligned}
+$$</p><p>Thus,</p><p>$$
+\begin{aligned}
+& \sum_{\substack{\sigma \in S_n; \\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i \in P} a_{i, \sigma(i)})(\prod_{i \in \tilde{P}} b_{i, \sigma(i)}) \\
+&= (-1)^{\sum P - (1 + 2 + \dots + k)} (-1)^{(1 + 2 + \dots + k) + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\ w(\tilde{P})} B) \\
+&= (-1)^{\sum P + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\ w(\tilde{P})} B)
+\end{aligned}
+$$</p><p>This proves <em>Lemma 0.6.7</em>.</p><p>For the sake of convenience, let us restate a simplified particular case
+of <em>Lemma 0.6.7</em> for $ A = B $:</p><p><strong>Lemma 0.6.8</strong></p><p>Let $ n \in \mathbf{N} $. For any subset $ I $ of $ \{1, 2, \dots, n\} $,
+we let $ \tilde{I} $ denote the complement $ \{1, 2, \dots, n\} \setminus I $
+of $ I $.</p><p>Let $ A = a_{i, j}^{1 \leq i \leq n, 1 \leq j \leq n} $
+be an $ n \times n $ matrix. Let $ P $ and $ Q $ be two subsets of
+$ \{1, 2, \dots, n\} $ such that $ |P| = |Q| $. Then,</p><p>$$
+\begin{aligned}
+& \sum_{\substack{\sigma \in S_n; \\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) \\
+&= (-1)^{\sum P + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\ w(\tilde{P})} A).
+\end{aligned}
+$$</p><p><strong>Proof of Lemma 0.6.8</strong></p><p>Every $ \sigma \in S_n $ satisfies</p><p>$$
+\prod_{i = 1}^{n} = (\prod_{i \in P} a_{i, \sigma(i)}) (\prod_{i \in \tilde{P}} a_{i, \sigma(i)}) .
+$$</p><p>Now,</p><p>$$
+\begin{aligned}
+& \sum_{\substack{\sigma \in S_n; \\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) \\
+&= \sum_{\substack{\sigma \in S_n; \\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i \in P} a_{i, \sigma(i)}) (\prod_{i \in \tilde{P}} a_{i, \sigma(i)}) \\
+&= (-1)^{\sum P + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\ w(\tilde{P})} A).
+\end{aligned}
+$$</p><p>This proves <em>Lemma 0.6.8</em>.</p><p>We can now step to the proof of <em>Laplace expansion in multiple rows/columns (a)</em>:</p><p>Write the $ n \times n $ matrix $ A $ in the form $ A = a_{i,j}^{1 \leq i \leq n, 1 \leq j \leq n} $.
+If $ P $ and $ Q $ are two subsets of $ \{1, 2, \dots, n\} $ satisfying
+$ |Q| \neq |P| $, then</p><p>$$
+\sum_{\substack{\sigma \in S_n; \\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) = 0 .
+$$</p><p>Indeed, the map $ \sigma: \{1, 2, \dots, n\} \to \{1, 2, \dots, n\} $
+is injective, so the set $ \sigma (P) $ is a subset of $ \{1, 2, \dots, n\} $
+satisfying $ |\sigma (P)| = |P| $. Hence, $ |P| = \sigma (P) = |Q| \neq |P| $.
+This is absurd. Hence, we have found a contradiction.</p><p>Now, forget that we fixed $ \sigma $. We thus have found a contradiction
+for every $ \sigma \in S_n $ satisfying $ \sigma (P) = Q $. Thus,
+there exists no $ \sigma \in S_n $ satisfying $ \sigma (P) = Q $.
+Hence, the sum $ \sum_{\substack{\sigma \in S_n; \\ \sigma (P) = Q}}
+(−1)^{\sigma} \prod_{i = 1}^{n} a_{i, \sigma (i)} $ is an empty sum. Thus</p><p>$$
+\sum_{\substack{\sigma \in S_n; \\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) = (\text{empty sum}) = 0 .
+$$</p><p>Let $ P $ be a subset of $ \{1, 2, \dots, n\} $. Then,</p><p>$$
+\begin{aligned}
+\operatorname{det} A
+&= \sum_{\sigma \in S_n} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)})
+= \sum_{Q \subseteq \{1, 2, \dots, n\}} \sum_{\substack{\sigma \in S_n; \\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) \\
+&= \sum_{\substack{Q \subseteq \{1, 2, \dots, n\}; \\ |Q| = |P|}} \sum_{\substack{\sigma \in S_n; \\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) + \sum_{\substack{Q \subseteq \{1, 2, \dots, n\}; \\ |Q| \neq |P|}} \sum_{\substack{\sigma \in S_n; \\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) \\
+& (\text{since every subset } Q \text{ of } \{1, 2, \dots, n\} \text{ satisfies either } |Q| = |P| \text{ or } |Q| \neq |P|. \text{ When } |Q| \neq |P| \text{, this is empty sum.}) \\
+&= \sum_{\substack{Q \subseteq \{1, 2, \dots, n\}; \\ |Q| = |P|}} \sum_{\substack{\sigma \in S_n; \\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) + \sum_{\substack{Q \subseteq \{1, 2, \dots, n\}; \\ |Q| \neq |P|}} 0 \\
+&= \sum_{\substack{Q \subseteq \{1, 2, \dots, n\}; \\ |Q| = |P|}} \sum_{\substack{\sigma \in S_n; \\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) \\
+&= \sum_{\substack{Q \subseteq \{1, 2, \dots, n\}; \\ |Q| = |P|}} (-1)^{\sum P + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\ w(\tilde{P})} A) .
+\end{aligned}
+$$</p><p>This proves <em>Laplace expansion in multiple rows/columns (a)</em>.</p></div><div class="row ps-3 pe-3"><div class="col-md-6 share-buttons"></div><div class="col-md-6 btn-improve-page"><a href=https://github.com/qingbo12/qingbo12.github.io/edit/main/content/posts/Miscellanea/matrix-base/index.md title="Improve this page" target=_blank rel=noopener><i class="fas fa-code-branch"></i>
 Improve this page</a></div></div><hr><div class="row next-prev-navigator"><div class="col-md-6 previous-article"><a href=/posts/miscellanea/circuit/ title="Circuit Base" class="btn filled-button"><div><i class="fas fa-chevron-circle-left"></i> Prev</div><div class=next-prev-text>Circuit Base</div></a></div><div class="col-md-6 next-article"><a href=/posts/miscellanea/multimodal-fusion/ title="Multimodal-fusion research" class="btn filled-button"><div>Next <i class="fas fa-chevron-circle-right"></i></div><div class=next-prev-text>Multimodal-fusion research</div></a></div></div><hr><div id=disqus_thread></div><script type=text/javascript>(function(){if(window.location.hostname=="localhost")return;var t,e=document.createElement("script");e.type="text/javascript",e.async=!0,t="toha-example-site",e.src="//"+t+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)})()</script><noscript>Please enable JavaScript to view the
-<a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com/ class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div><a id=scroll-to-top class=btn type=button data-bs-toggle=tooltip data-bs-placement=left title="Scroll to top"><i class="fas fa-chevron-circle-up"></i></a></section><section class=toc-section id=toc-section><div class=toc-holder><h5 class="text-center ps-3">Table of Contents</h5><hr><div class=toc><nav id=TableOfContents><ul><li><a href=#determinant>Determinant</a><ul><li><a href=#theorem--detab--detadetb->Theorem: $ det(AB) = det(A)det(B) $</a></li></ul></li><li><a href=#real-symmetric-matrix>Real Symmetric Matrix</a><ul><li><a href=#theorem-all-real-eigenvalues>Theorem: all real eigenvalues</a></li><li><a href=#theorem-orthogonally-diagonalizable>Theorem: orthogonally diagonalizable</a></li><li><a href=#theorem-r-fold-root--a---lambda-e--has-a-rank-of--n---r->Theorem: r-fold root, $ A - \lambda E $ has a rank of $ n - r $</a></li></ul></li><li><a href=#vector-spaces>Vector spaces</a><ul><li><a href=#the-dimension-of--operatornamerange-a--is-denoted-by--operatornamerank-a->The dimension of $ \operatorname{range} A $ is denoted by $ \operatorname{rank} A $</a></li><li><a href=#rank-nullity-theorem>Rank-nullity theorem</a><ul><li><a href=#matrices>Matrices</a></li><li><a href=#linear-transformations>Linear transformations</a></li><li><a href=#application--dim-cab--dim-cb---dim--operatornamenullspace-a-cap-cb->Application: $ \dim C(AB) = \dim C(B) - \dim ( \operatorname{nullspace} (A) \cap C(B)) $</a></li></ul></li></ul></li><li><a href=#rank>Rank</a><ul><li><a href=#sylvester-inequality>Sylvester inequality</a></li><li><a href=#frobenius-inequality>Frobenius inequality</a></li><li><a href=#left-or-right-multiplication-by-a-nonsingular-matrix-leaves-rank-unchanged>Left or right multiplication by a nonsingular matrix leaves rank unchanged</a></li><li><a href=#if--a-in-m_mnbf-c--then--operatornamerank-a-a--operatornamerank-a->If $ A \in M_{m,n}(\bf C) $, then $ \operatorname{rank} A^* A = \operatorname{rank} A $</a></li><li><a href=#cr-factorization>CR Factorization</a></li><li><a href=#wedderburns-rank-one-reduction-formula>Wedderburn&rsquo;s rank-one reduction formula</a></li></ul></li><li><a href=#the-euclidean-inner-product>The Euclidean inner product</a><ul><li><a href=#coordinates-form-of-inner-product-and--costheta->Coordinates form of inner product and $ cos(\theta) $</a></li></ul></li><li><a href=#determinants-again>Determinants again</a><ul><li><a href=#the-cauchy-binet-formula>The Cauchy-Binet formula</a></li><li><a href=#the-sylvester-franke-theorem>The Sylvester-Franke Theorem</a></li><li><a href=#laplace-expansion>Laplace expansion</a></li></ul></li></ul></nav></div></div></section></div><footer id=footer class="container-fluid text-center align-content-center footer pb-2"><div class="container pt-5"><div class="row text-start"><div class="col-md-4 col-sm-12"><h5>Navigation</h5><ul><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#about>About</a></li><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#education>Education</a></li><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#projects>Projects</a></li><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#featured-posts>Featured Posts</a></li><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#recent-posts>Recent Posts</a></li></ul></div><div class="col-md-4 col-sm-12"><h5>Contact me:</h5><ul><li><a href=mailto:qingbo12@gmail.com target=_blank rel=noopener><span><i class="fas fa-envelope"></i></span> <span>qingbo12@gmail.com</span></a></li></ul></div></div></div><hr><div class=container><p id=disclaimer><strong>Liability Notice:</strong> This theme is under MIT license. So, you can use it for non-commercial, commercial, or private uses. You can modify or distribute the theme without requiring any permission from the theme author. However, the theme author does not provide any warranty or takes any liability for any issue with the theme.</p></div><hr><div class=container><div class="row text-start"><div class=col-md-4><a id=theme href=https://github.com/hugo-toha/toha target=_blank rel=noopener><img src=/images/theme-logo_hu16779671404603505019.png alt="Toha Theme Logo">
+<a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com/ class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div><a id=scroll-to-top class=btn type=button data-bs-toggle=tooltip data-bs-placement=left title="Scroll to top"><i class="fas fa-chevron-circle-up"></i></a></section><section class=toc-section id=toc-section><div class=toc-holder><h5 class="text-center ps-3">Table of Contents</h5><hr><div class=toc><nav id=TableOfContents><ul><li><a href=#01-determinant>0.1 Determinant</a><ul><li><a href=#theorem--detab--detadetb->Theorem: $ det(AB) = det(A)det(B) $</a></li></ul></li><li><a href=#02-real-symmetric-matrix>0.2 Real Symmetric Matrix</a><ul><li><a href=#theorem-all-real-eigenvalues>Theorem: all real eigenvalues</a></li><li><a href=#theorem-orthogonally-diagonalizable>Theorem: orthogonally diagonalizable</a></li><li><a href=#theorem-r-fold-root--a---lambda-e--has-a-rank-of--n---r->Theorem: r-fold root, $ A - \lambda E $ has a rank of $ n - r $</a></li></ul></li><li><a href=#03-vector-spaces>0.3 Vector spaces</a><ul><li><a href=#the-dimension-of--operatornamerange-a--is-denoted-by--operatornamerank-a->The dimension of $ \operatorname{range} A $ is denoted by $ \operatorname{rank} A $</a></li><li><a href=#rank-nullity-theorem>Rank-nullity theorem</a><ul><li><a href=#matrices>Matrices</a></li><li><a href=#linear-transformations>Linear transformations</a></li><li><a href=#application--dim-cab--dim-cb---dim--operatornamenullspace-a-cap-cb->Application: $ \dim C(AB) = \dim C(B) - \dim ( \operatorname{nullspace} (A) \cap C(B)) $</a></li></ul></li></ul></li><li><a href=#04-rank>0.4 Rank</a><ul><li><a href=#sylvester-inequality>Sylvester inequality</a></li><li><a href=#frobenius-inequality>Frobenius inequality</a></li><li><a href=#left-or-right-multiplication-by-a-nonsingular-matrix-leaves-rank-unchanged>Left or right multiplication by a nonsingular matrix leaves rank unchanged</a></li><li><a href=#if--a-in-m_mnbf-c--then--operatornamerank-a-a--operatornamerank-a->If $ A \in M_{m,n}(\bf C) $, then $ \operatorname{rank} A^* A = \operatorname{rank} A $</a></li><li><a href=#cr-factorization>CR Factorization</a></li><li><a href=#wedderburns-rank-one-reduction-formula>Wedderburn&rsquo;s rank-one reduction formula</a></li></ul></li><li><a href=#05-the-euclidean-inner-product>0.5 The Euclidean inner product</a><ul><li><a href=#coordinates-form-of-inner-product-and--costheta->Coordinates form of inner product and $ cos(\theta) $</a></li></ul></li><li><a href=#06-determinants-again>0.6 Determinants again</a><ul><li><a href=#the-cauchy-binet-formula>The Cauchy-Binet formula</a></li><li><a href=#the-sylvester-franke-theorem>The Sylvester-Franke Theorem</a></li><li><a href=#laplace-expansion>Laplace expansion</a></li><li><a href=#laplace-expansion-in-multiple-rowscolumns>Laplace expansion in multiple rows/columns</a></li></ul></li></ul></nav></div></div></section></div><footer id=footer class="container-fluid text-center align-content-center footer pb-2"><div class="container pt-5"><div class="row text-start"><div class="col-md-4 col-sm-12"><h5>Navigation</h5><ul><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#about>About</a></li><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#education>Education</a></li><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#projects>Projects</a></li><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#featured-posts>Featured Posts</a></li><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#recent-posts>Recent Posts</a></li></ul></div><div class="col-md-4 col-sm-12"><h5>Contact me:</h5><ul><li><a href=mailto:qingbo12@gmail.com target=_blank rel=noopener><span><i class="fas fa-envelope"></i></span> <span>qingbo12@gmail.com</span></a></li></ul></div></div></div><hr><div class=container><p id=disclaimer><strong>Liability Notice:</strong> This theme is under MIT license. So, you can use it for non-commercial, commercial, or private uses. You can modify or distribute the theme without requiring any permission from the theme author. However, the theme author does not provide any warranty or takes any liability for any issue with the theme.</p></div><hr><div class=container><div class="row text-start"><div class=col-md-4><a id=theme href=https://github.com/hugo-toha/toha target=_blank rel=noopener><img src=/images/theme-logo_hu16779671404603505019.png alt="Toha Theme Logo">
 Toha</a></div><div class="col-md-4 text-center">© 2024 Copyright.</div><div class="col-md-4 text-end"><a id=hugo href=https://gohugo.io/ target=_blank rel=noopener>Powered by
 <img src=/images/hugo-logo.svg alt="Hugo Logo" height=18></a></div></div></div></footer><script src=/application.91bab9af3ea6af3cefda36641d1fdc76d78775d2a99c5cbbfd892093035465cf.js integrity="sha256-kbq5rz6mrzzv2jZkHR/cdteHddKpnFy7/YkgkwNUZc8=" defer></script></body></html>
