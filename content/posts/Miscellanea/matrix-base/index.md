@@ -14,7 +14,7 @@ menu:
 hero: images/image-miscellanea.jpg
 ---
 
-## Determinant
+## 0.1 Determinant
 
 ### Theorem: $ det(AB) = det(A)det(B) $
 
@@ -96,7 +96,7 @@ $ det(AB) = det(E_kE_{k−1}⋯E_1B) $
 
 $ det(AB) = det(E_k) det(E_{k−1}⋯E_1(B)) $
 
-$ det(AB) = αdet(B) $
+$ det(AB) = \alpha det(B) $
 
 and:
 
@@ -104,14 +104,14 @@ $ det(A) = det(E_kE_{k−1}⋯E_1I) $
 
 $ = det(E_kE_{k−1}⋯E_1(I)) $
 
-$ = αdet(I) $
+$ = \alpha det(I) $
 
 Therefore:
 
 $ det(AB)=det(A)det(B) $
 
 
-## Real Symmetric Matrix
+## 0.2 Real Symmetric Matrix
 
 ### Theorem: all real eigenvalues
 
@@ -301,7 +301,7 @@ $\because \lambda_i \neq \lambda_k \Rightarrow \lambda_i - \lambda_k \neq 0, (i 
 
 $ \therefore rank(A - \lambda_k E) = rank(\varLambda - \lambda_k E) = n - r $
 
-## Vector spaces
+## 0.3 Vector spaces
 
 $ A \in M_{m,n}(\mathbf{F}) $ as a linear transformation $ x \rightarrow Ax $ from $ F^n $ to $ F^m $.
 The domain of this linear transformation is $ F^n $; its range is 
@@ -505,7 +505,7 @@ $$
 \dim C(AB) = \dim C(B) - \dim (\operatorname{nullspace} (A) \cap C(B))
 $$
 
-## Rank
+## 0.4 Rank
 
 ### Sylvester inequality
 
@@ -925,7 +925,7 @@ $$
 \operatorname{rank} (A) - k.
 $$
 
-## The Euclidean inner product
+## 0.5 The Euclidean inner product
 
 ### Coordinates form of inner product and $ cos(\theta) $
 
@@ -951,7 +951,7 @@ direction is $ s_y F_y $, and the work in the $ z $ direction is $ s_z F_z $.
 Thus, the coordinate form provides a clear and meaningful breakdown 
 of the total work into contributions from each axis.
 
-## Determinants again
+## 0.6 Determinants again
 
 ### The Cauchy-Binet formula
 
@@ -1121,7 +1121,7 @@ where $ \mu_1 = k $, $ \mu_2 = -1 $, and $ \mu_3 = +1 $.
 
 The proof of the theorem will be based on the following lemma.
 
-**LEMMA.** Let $ B $ be an arbitrary $ n \times n $ square matrix such that 
+**Lemma 0.6.1** Let $ B $ be an arbitrary $ n \times n $ square matrix such that 
 
 $$
 \tag{2}
@@ -1131,7 +1131,7 @@ $$
 If $ B $ is transformed into $ C $ by an elementary transformation $ E $, 
 then $ \operatorname{det} C_k(C) = (\operatorname{det} C)^e $.
 
-**Proof of lemma**
+**Proof of Lemma 0.6.1**
 
 We state first that 
 
@@ -1172,7 +1172,7 @@ $$
 (\operatorname{det} C)^e,
 $$
 
-and the proof of the lemma is complete.
+and the proof of the *Lemma 0.6.1* is complete.
 
 **Proof of Sylvester-Franke Theorem**
 
@@ -1202,7 +1202,7 @@ and the proof is complete.
 
 ### Laplace expansion
 
-Let $ n \in \mathbf{R} $. Let $ A = (a_{i,j})_{1 \leq i \leq n, 1 \leq j \leq n} 
+Let $ n \in \mathbf{N} $. Let $ A = (a_{i,j})^{1 \leq i \leq n, 1 \leq j \leq n} 
 $ be an $ n \times n $ matrix. 
 
 **(a)** For every $ p \in \\{1, 2, \dots, n\\} $, we have 
@@ -1224,10 +1224,10 @@ $$
 The proof I provide is based on 6.12. Laplace expansion, in [Notes on the combinatorial
 fundamentals of algebra](https://www.cip.ifi.lmu.de/~grinberg/primes2015/sols.pdf), Darij Grinberg.
 
-**Lemma 1**
+**Lemma 0.6.2**
 
 For every $ n \in N $, let $ [n] $ denote the set $ \\{1, 2, \dots, n\\}$.
-Let $ n \in \mathbf{R} $. For every $ p \in [n] $, we define a permutation 
+Let $ n \in \mathbf{N} $. For every $ p \in [n] $, we define a permutation 
 $ g_p \in S_n $ by $ g_p = cyc_{p, p + 1, \dots, n} $ 
 (where I am using the notations of Definition 5.37 in *Notes*).
 
@@ -1258,9 +1258,9 @@ $$
 
 Then, this map $ T $ is well-defined and bijective.
 
-**Lemma 2**
+**Lemma 0.6.3**
 
-Let $ n \in \mathbf{R} $. Let $ A = (a_{i,j})_{1 \leq i \leq n, 1 \leq j \leq n} $ 
+Let $ n \in \mathbf{N} $. Let $ A = (a_{i,j})^{1 \leq i \leq n, 1 \leq j \leq n} $ 
 be an $ n \times n $ matrix. Let $ p \in \\{1, 2, \dots, n\\} $ and 
 $ q \in \\{1, 2, \dots, n\\} $. Then, 
 
@@ -1270,9 +1270,9 @@ $$
 a_{i, \sigma(i)} = (-1)^{p + q} \operatorname{det} (A_{\sim p, \sim q}).
 $$
 
-**Proof of Lemma 2**
+**Proof of Lemma 0.6.3**
 
-Let us use all notations introduced in *Lemma 1*.
+Let us use all notations introduced in *Lemma 0.6.2*.
 
 Now, the definition of $ A_{\sim p, \sim q} $ yields
 
@@ -1280,12 +1280,12 @@ $$
 \begin{aligned}
 A_{\sim p, \sim q} &= \operatorname{sub} \substack{1, 2, \dots, \hat{q}, \dots, n \\\\ 1, 2, \dots, \hat{p}, \dots, n} A = 
 \operatorname{sub} \substack{g_q(1), g_q(2), \dots, g_q(n - 1) \\\\ g_p(1), g_p(2), \dots, g_p(n - 1)} A \\\\ &= 
-(a_{g_p(i), g_q(j)})_{1 \leq i \leq n - 1, 1 \leq j \leq n - 1}
+(a_{g_p(i), g_q(j)})^{1 \leq i \leq n - 1, 1 \leq j \leq n - 1}
 \end{aligned}
 $$
 
 Now, let us recall the map $ T: \\{\tau \in S_n | \tau(n) = n\\} \to \\{\tau \in S_n | \tau(p) = q\\} $
-defined in *Lemma 1 (d)*. *Lemma 1 (d)* says that this map $ T $ is 
+defined in *Lemma 0.6.2 (d)*. *Lemma 0.6.2 (d)* says that this map $ T $ is 
 well-defined and bijective. Every $ \sigma \in \\{\tau \in S_n | \tau(n) = n\\} $ satisfies
 
 $$
@@ -1301,9 +1301,9 @@ $$
 \prod_{i = 1}^{n - 1} a_{g_p(i), g_q(\sigma(i))}.
 $$
 
-**Proof of *result (1)***
+**Proof of result (1)**
 
-Applying *Lemma 1 (b)* to $ q $ instead of $ p $, 
+Applying *Lemma 0.6.2 (b)* to $ q $ instead of $ p $, 
 we obtain $ (-1)^{g_q} = (-1)^{n-q} = (-1)^{n+q} $ 
 (since $ n - q \equiv n + q \mod 2 $). 
 
@@ -1347,11 +1347,11 @@ $$
 
 This proves *result (1)*.
 
-**Proof of *result (2)***
+**Proof of result (2)**
 
 Let $ \sigma \in \\{\tau \in S_n | \tau(n) = n\\} $. 
 Let us recall the map $ g_p^{\prime}: [n-1] \to [n] \setminus {p} $
-introduced in *Lemma 1 (c)*. *Lemma 1 (c)* says that this map $ g_p^{\prime} $ 
+introduced in *Lemma 0.6.2 (c)*. *Lemma 0.6.2 (c)* says that this map $ g_p^{\prime} $ 
 is well-defined and bijective. In other words, $ g_p^{\prime} $ is a bijection.
 Let $ i \in [n-1] $. Then, $ g_p^{\prime} (i) = g_p(i) $ 
 (by the definition of $ g_p^{\prime} $). Also, the definition of $ T $ yields
@@ -1378,7 +1378,7 @@ $$
 \prod_{\substack{i \in [n]; \\\\ i \neq p}} a_{i, (T(\sigma))(i)} = 
 \prod_{i \in [n] \setminus \\{p\\}} a_{i, (T(\sigma))(i)} = 
 \prod_{i \in [n - 1]} a_{g_p^{\prime} (i), (T(\sigma)) (g_p^{\prime} (i))} \\\\
-&\quad (\text{here, we have substituted } g_p^{\prime} (i) \text{for } i \text{, since } g_p^{\prime}: [n - 1] \to [n] \setminus \\{p\\} \text{ is a bijection}) \\\\
+&\quad (\text{here, we have substituted } g_p^{\prime} (i) \text{ for } i \text{, since } g_p^{\prime}: [n - 1] \to [n] \setminus \\{p\\} \text{ is a bijection}) \\\\
 &= \prod_{i \in [n - 1]} a_{g_p(i), g_q(\sigma(i))}.
 \end{aligned}
 $$
@@ -1392,7 +1392,7 @@ $$
 \sum_{\substack{\sigma \in S_n; \\\\ \sigma(p) = q}} (-1)^{\sigma} \prod_{\substack{i \in \\{1, 2, \dots, n\\}; \\\\ i \neq p}} a_{i, \sigma(i)} \\\\
 &= \sum_{\substack{\sigma \in \\{\tau \in S_n | \tau(p) = q\\}}} (-1)^{\sigma} \prod_{\substack{i \in \\{1, 2, \dots, n\\}; \\\\ i \neq p}} a_{i, \sigma(i)} \\\\ 
 &= \sum_{\substack{\sigma \in \\{\tau \in S_n | \tau(n) = n\\}}} (-1)^{T(\sigma)} \prod_{\substack{i \in \\{1, 2, \dots, n\\}; \\\\ i \neq p}} a_{i, (T(\sigma))(i)} \\\\ 
-&\quad (\text{here, we have substituted }T(\sigma) \text{for } \sigma \text{ in the sum, since the map } T: \\{\tau \in S_n | \tau(n) = n\\} \to \\{\tau \in S_n | \tau(p) = q\\} \text{ is a bijection}) \\\\
+&\quad (\text{here, we have substituted }T(\sigma) \text{ for } \sigma \text{ in the sum, since the map } T: \\{\tau \in S_n | \tau(n) = n\\} \to \\{\tau \in S_n | \tau(p) = q\\} \text{ is a bijection}) \\\\
 &= \sum_{\substack{\sigma \in S_n; \\\\ \sigma(n) = n}} (-1)^{p + q} \cdot (-1)^{\sigma} \prod_{i = 1}^{n - 1} a_{g_p(i), g_q(\sigma(i))} \\\\
 &= (-1)^{p + q} \sum_{\substack{\sigma \in S_n; \\\\ \sigma(n) = n}} (-1)^{\sigma} \prod_{i = 1}^{n - 1} a_{g_p(i), g_q(\sigma(i))} \\\\
 &= (-1)^{p + q} \det \left(a_{g_p(i), g_q(j)}\right)^{1 \leq i \leq n - 1, 1 \leq j \leq n - 1} \\\\
@@ -1400,7 +1400,7 @@ $$
 \end{aligned}
 $$
 
-This proves *Lemma 2*.
+This proves *Lemma 0.6.3*.
 
 Now, we can finally prove *Laplace expansion*
 
@@ -1422,3 +1422,408 @@ $$
 $$
 
 This proves *Laplace expansion (a)*.
+
+### Laplace expansion in multiple rows/columns
+
+Let $ n \in \mathbf{N} $. Let $ A \in \mathbf{F}^{n \times n} $. 
+For any subset $ I $ of $ \\{1, 2, \dots, n\\} $, we let $ I $ 
+denote the complement $ \\{1, 2, \dots, n\\} \setminus I $ of $ I $.
+
+**(a)** For every subset $ P $ of $ \\{1, 2, \dots, n\\} $, we have 
+
+$$
+\operatorname{det} A = \sum_{\substack{Q \subseteq \\{1, 2, \dots, n\\}; \\\\ |Q| = |P|}} 
+(-1)^{\sum P + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\\\ w(P)} A) 
+\operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\\\ w(\tilde{P})} A).
+$$
+
+**(b)** For every subset $ Q $ of $ \\{1, 2, \dots, n\\} $, we have 
+
+$$
+\operatorname{det} A = \sum_{\substack{P \subseteq \\{1, 2, \dots, n\\}; \\\\ |P| = |Q|}} 
+(-1)^{\sum P + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\\\ w(P)} A) 
+\operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\\\ w(\tilde{P})} A).
+$$
+
+**Proof**
+
+The proof I provide is based on 6.22. Laplace expansion in multiple rows/columns, 
+in [Notes on the combinatorialfundamentals of algebra](https://www.cip.ifi.lmu.de/~grinberg/primes2015/sols.pdf), Darij Grinberg.
+
+**Lemma 0.6.4**
+
+Let $ n \in \mathbf{N} $. For any subset $ I $ of $ \\{1, 2, \dots, n\\} $, 
+we let $ I $ denote the complement $ \\{1, 2, \dots, n\\} \setminus I $ of $ I $.
+
+Let $ A = (a_{i,j})^{1 \leq i \leq n, 1 \leq j \leq n} $ and 
+$ B = (b_{i,j})^{1 \leq i \leq n, 1 \leq j \leq n} $ be two $ n \times n $ 
+matrices. Let $ Q $ be a subset of $ \\{1, 2, \dots, n\\} $. 
+Let $ k = |Q| $. Then, 
+
+$$
+\sum_{\substack{\sigma \in S_n; \\\\ \sigma(\\{1, 2, \dots, k\\}) = Q}} 
+(-1)^{\sigma} (\prod_{i \in \\{1, 2, \dots, k\\}} a_{i, \sigma(i)}) 
+(\prod_{i \in \\{k + 1, k + 2, \dots, n\\}} b_{i, \sigma(i)}) \\\\
+= (-1)^{(1 + 2 + \dots + k) + \sum Q} \operatorname{det} 
+(\operatorname{sub} \substack{w(Q) \\\\ (\\{1, 2, \dots, k\\})} A) 
+(\operatorname{sub} \substack{w(\tilde{Q}) \\\\ (\\{k + 1, k + 2, \dots, n\\})} B).
+$$
+
+**Proof of Lemma 0.6.4**
+
+We begin with some simple observations.
+The definition of $ Q $ yields $ \tilde{Q} = \\{1, 2, \dots, n\\} \setminus Q $. 
+Since $ Q $ is a subset of $ \\{1, 2, \dots, n\\} $, this leads to 
+$ |\tilde{Q}| = |\\{1, 2, \dots, n\\}| - |Q| = n - k $. Thus, 
+$ n - k = |\tilde{Q}| \geq 0 $, so that $ n \geq k $ and thus
+$ k \in \\{1, 2, \dots, n\\} $.
+
+Let $ (q_1, q_2, \dots, q_k) $ be the list of all elements of $ Q $ in 
+increasing order (with no repetitions).
+Let $ (r_1, r_2, \dots, r_{n−k}) $ be the list of all elements of 
+$ \tilde{Q} $ in increasing order (with no repetitions).
+
+The lists $ w(Q) $ and $ (q_1, q_2, \dots, q_k) $ must be identical. 
+In other words, we have $ w(Q) = (q_1, q_2, \dots, q_k) $. Similarly, 
+$ w(\tilde{Q}) = (r_1, r_2, \dots, r_{n−k}) $.
+
+for every $ \alpha ∈ S_k $ and $ \beta ∈ S_{n−k} $, we can define an 
+element $ \sigma_{Q, \alpha, \beta} ∈ S_n $
+according to Exercise 5.14 (a) in *Notes*. Consider this 
+$ \sigma_{Q, \alpha, \beta} $. Exercise 5.14 (b) in *Notes* shows that 
+for every $ \alpha ∈ S_k $ and $ \beta ∈ S_{n−k} $, we have 
+
+$$ \ell (\sigma_{Q, \alpha, \beta}) = \ell (\alpha) + \ell (\beta) + 
+\sum Q - (1 + 2 + \dots + k) $$
+
+and 
+
+$$
+(-1)^{\sigma_{Q, \alpha, \beta}} = (-1)^{\alpha} \cdot (-1)^{\beta} \cdot
+(-1)^{\sum Q - (1 + 2 + \dots + k)}.
+$$
+
+Exercise 5.14 (c) in *Notes* shows that the map
+
+$$
+S_k \times S_{n−k} \to {\tau \in S_n | \tau(\\{1, 2, \dots, k\\}) = Q}, \\\\
+(\alpha, \beta) \mapsto \sigma_{Q, \alpha, \beta}
+$$
+
+is well-defined and a bijection.
+
+We have $ w(Q) = (q_1, q_2, \dots, q_k) $. Thus,
+
+$$
+\begin{aligned}
+\operatorname{sub} \substack{w(Q) \\\\ (1, 2, \dots, k)} A 
+&= \operatorname{sub} \substack{(q_1, q_2, \dots, q_k) \\\\ (1, 2, \dots, k)} A 
+= \operatorname{sub} \substack{q_1, q_2, \dots, q_k \\\\ 1, 2, \dots, k} A 
+= (a_{x, q_y})^{1 \leq x \leq k, 1 \leq y \leq k} \\\\
+&= (a_{i, q_j})^{1 \leq i \leq k, 1 \leq j \leq k}
+\end{aligned}
+$$
+
+Thus, 
+
+$$
+\begin{aligned}
+\operatorname{det} (\operatorname{sub} \substack{w(Q) \\\\ (1, 2, \dots, k)} A) 
+&= \sum_{\sigma \in S_k} (-1)^{\sigma} \prod_{i = 1}^{k} a_{i, q_{\sigma(i)}} \\\\
+&= \sum_{\alpha \in S_k} (-1)^{\alpha} \prod_{i = 1}^{k} a_{i, q_{\alpha(i)}} \\\\
+\end{aligned}
+$$
+
+Also, $ w(\tilde{Q}) = (r_1, r_2, \dots, r_{n−k}) $. Thus, 
+
+$$
+\begin{aligned}
+\operatorname{sub} \substack{w(\tilde{Q}) \\\\ (k + 1, k + 2, \dots, n)} B 
+&= \operatorname{sub} \substack{(r_1, r_2, \dots, r_{n−k}) \\\\ (k + 1, k + 2, \dots, n)} B
+= \operatorname{sub} \substack{r_1, r_2, \dots, r_{n−k} \\\\ k + 1, k + 2, \dots, n} B
+= (b_{k + x, r_y})^{1 \leq x \leq n - k, 1 \leq y \leq n - k} \\\\
+&= (b_{k + i, r_j})^{1 \leq i \leq n - k, 1 \leq j \leq n - k}
+\end{aligned}
+$$
+
+Thus, 
+
+$$
+\begin{aligned}
+\operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\\\ (k + 1, k + 2, \dots, n)} B) 
+&= \sum_{\sigma \in S_{n−k}} (-1)^{\sigma} \prod_{i = 1}^{n - k} b_{k + i, r_{\sigma(i)}} \\\\
+&= \sum_{\beta \in S_{n−k}} (-1)^{\beta} \prod_{i = 1}^{n - k} b_{k + i, r_{\beta(i)}} \\\\
+\end{aligned}
+$$
+
+Now, we claim the following: For any $ \alpha \in S_k $ and $ \beta \in S_{n−k} $, 
+we have 
+
+$$
+\prod_{i \in \\{1, 2, \dots, k\\}} a_{i, \sigma_{Q, \alpha, \beta}(i)} 
+= \prod_{i = 1}^{k} a_{i, q_{\alpha(i)}}
+$$
+
+and 
+
+$$
+\prod_{i \in \\{k + 1, k + 2, \dots, n\\}} b_{i, \sigma_{Q, \alpha, \beta}(i)} 
+= \prod_{i = 1}^{n - k} b_{k + i, r_{\beta(i)}}.
+$$
+
+Now, 
+
+$$
+\begin{aligned}
+& \sum_{\substack{\sigma \in S_n; \\\\ \sigma(\\{1, 2, \dots, k\\}) = Q}} (-1)^{\sigma} (\prod_{i \in \\{1, 2, \dots, k\\}} a_{i, \sigma(i)}) (\prod_{i \in \\{k + 1, k + 2, \dots, n\\}} b_{i, \sigma(i)}) \\\\
+&= \sum_{\sigma \in \\{\tau \in S_n | \tau(\\{1, 2, \dots, k\\}) = Q \\}} (-1)^{\sigma} (\prod_{i \in \\{1, 2, \dots, k\\}} a_{i, \sigma(i)}) (\prod_{i \in \\{k + 1, k + 2, \dots, n\\}} b_{i, \sigma(i)}) \\\\
+&= \sum_{(\alpha, \beta) \in S_k \times S_{n−k}} (-1)^{\sigma_{Q, \alpha, \beta}} (\prod_{i \in \\{1, 2, \dots, k\\}} a_{i, \sigma_{Q, \alpha, \beta}(i)}) (\prod_{i \in \\{k + 1, k + 2, \dots, n\\}} b_{i, \sigma_{Q, \alpha, \beta}(i)}) \\\\
+& (\text{here, we have substituted } \sigma_{Q, \alpha, \beta} \text{ for } \sigma \text{ in the sum, since the map } S_k \times S_{n−k} \to {\tau \in S_n | \tau(\\{1, 2, \dots, k\\}) = Q} \text{, } (\alpha, \beta) \mapsto \sigma_{Q, \alpha, \beta} \text{ is a bijection}) \\\\
+&= \sum_{\alpha \in S_k} \sum_{\beta \in S_{n−k}} (-1)^{\sigma_{Q, \alpha, \beta}} (\prod_{i = 1}^{k} a_{i, q_{\alpha(i)}}) (\prod_{i = 1}^{n - k} b_{k + i, r_{\beta(i)}}) \\\\
+&= \sum_{\alpha \in S_k} \sum_{\beta \in S_{n−k}} (-1)^{\alpha} \cdot (-1)^{\beta} \cdot (-1)^{\sum Q - (1 + 2 + \dots + k)} (\prod_{i = 1}^{k} a_{i, q_{\alpha(i)}}) (\prod_{i = 1}^{n - k} b_{k + i, r_{\beta(i)}}) \\\\
+&= (-1)^{\sum Q - (1 + 2 + \dots + k)} (\sum_{\alpha \in S_k} (-1)^{\alpha} (\prod_{i = 1}^{k} a_{i, q_{\alpha(i)}})) (\sum_{\beta \in S_{n−k}} (-1)^{\beta} (\prod_{i = 1}^{n - k} b_{k + i, r_{\beta(i)}})) \\\\
+&= (-1)^{(1 + 2 + \dots + k) + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\\\ (1, 2, \dots, k)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\\\ (k + 1, k + 2, \dots, n)} B) .
+\end{aligned}
+$$
+
+This proves *Lemma 0.6.4*.
+
+**Lemma 0.6.5** 
+
+Let $ n \in \mathbf{N} $. Let $ \gamma \in S_n $. Then, the map 
+$ S_n \to S_n $, $ \sigma \to \sigma \circ \gamma $ is a bijection.
+
+**Lemma 0.6.6**
+
+Let $ n \in \mathbf{N} $. For any subset $ I $ of $ \\{1, 2, \dots, n\\} $, 
+we let $ \tilde{I} $ denote the complement $ \\{1, 2, \dots, n\\} \setminus I $ of $ I $. 
+Let $ I $ be a subset of $ \\{1, 2, \dots, n\\} $. Let $ k = |I| $. 
+Then, there exists a $ \sigma \in S_n $ satisfying 
+$ (\sigma (1), \sigma (2), \dots, \sigma (k)) = w(I) $, 
+$ (\sigma (k + 1), \sigma (k + 2), \dots, \sigma(n)) = w(\tilde{I}) $, 
+and $ (−1)^{\sigma} = (−1)^{\sum I − (1 + 2 + \dots + k)} $.
+
+**Lemma 0.6.7**
+
+Let $ n \in \mathbf{N} $. For any subset $ I $ of $ \\{1, 2, \dots, n\\} $, 
+we let $ \tilde{I} $ denote the complement $ \\{1, 2, \dots, n\\} \setminus I $ 
+of $ I $. 
+
+Let $ A = a_{i, j}^{1 \leq i \leq n, 1 \leq j \leq n} $
+and $ B = b_{i, j}^{1 \leq i \leq n, 1 \leq j \leq n} $ be two 
+$ n \times n $ matrices. Let $ P $ and $ Q $ be two subsets of 
+$ \\{1, 2, \dots, n\\} $ such that $ |P| = |Q| $. Then, 
+
+$$
+\begin{aligned}
+& \sum_{\substack{\sigma \in S_n; \\\\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i \in P} a_{i, \sigma(i)}) (\prod_{i \in \tilde{P}} b_{i, \sigma(i)}) \\\\
+&= (-1)^{\sum P + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\\\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\\\ w(\tilde{P})} B).
+\end{aligned}
+$$
+
+**Proof of Lemma 0.6.7**
+
+Define $ k \in \mathbf{N} $ by $ k = |P| = |Q| $.
+
+The definition of $ \tilde{P} $ yields $ \tilde{P} = \\{1, 2, \dots, n\\} \setminus P $. 
+$ |\tilde{P}| =  n - k $.
+
+Let $ (p_1, p_2, \dots, p_k) $ be the list of all elements of $ P $ in 
+increasing order (with no repetitions).
+
+Let $ (r_1, r_2, \dots, r_{n−k}) $ be the list of all elements of $ \tilde{P} $ 
+in increasing order (with no repetitions).
+
+*Lemma 0.6.6* shows that there exists a $ \sigma \in S_n $ satisfying 
+$ (\sigma (1), \sigma (2), \dots, \sigma (k)) = w(P) $, 
+$ (\sigma (k + 1), \sigma (k + 2), \dots, \sigma(n)) = w(\tilde{P}) $, 
+and $ (−1)^{\sigma} = (−1)^{\sum P − (1 + 2 + \dots + k)} $. 
+Denote this $ \sigma $ by $ \gamma $.
+
+Notice that 
+
+$$
+\begin{aligned}
+(-1)^{\sum P - (1 + 2 + \dots + k)} (-1)^{\gamma} 
+&= (-1)^{\sum P - (1 + 2 + \dots + k)} (-1)^{\sum P - (1 + 2 + \dots + k)} \\\\
+&= 1
+\end{aligned}
+$$
+
+Define an $ n \times n $ matrix $ A^{\prime} $ by $ A^{\prime} = a_{\gamma (i), j}^{1 \leq i \leq n, 1 \leq j \leq n} $. 
+Define an $ n \times n $ matrix $ B^{\prime} $ by $ B^{\prime} = b_{\gamma(i), j}^{1 \leq i \leq n, 1 \leq j \leq n} $. 
+Then, 
+
+$$
+\operatorname{sub} \substack{w(Q) \\\\ w(P)} A = \operatorname{sub} \substack{w(Q) \\\\ (1, 2, \dots, k)} (A^{\prime})
+$$
+
+and 
+
+$$
+\operatorname{sub} \substack{w(\tilde{Q}) \\\\ w(\tilde{P})} B = \operatorname{sub} \substack{w(\tilde{Q}) \\\\ (k + 1, k + 2, \dots, n)} (B^{\prime}) .
+$$
+
+*Lemma 0.6.5* shows that the map $ S_n \to S_n $, 
+$ \sigma \to \sigma \circ \gamma $ is a bijection.
+
+But $ \gamma (\\{1, 2, \dots, k\\}) = P $. Hence, every $ \sigma \in S_n $ 
+satisfies 
+
+$$
+(\sigma \circ \gamma) (\\{1, 2, \dots, k\\}) 
+= \sigma (\gamma (\\{1, 2, \dots, k\\}))
+= \sigma (P) .
+$$
+
+Furthermore, every $ \sigma \in S_n $ satisfies 
+
+$$
+\prod_{i \in \\{1, 2, \dots, k\\}} a_{\gamma (i), (\sigma \circ \gamma) (i)} 
+= \prod_{i \in P} a_{i, \sigma(i)}
+$$
+
+and 
+
+$$
+\prod_{i \in \\{k + 1, k + 2, \dots, n\\}} b_{\gamma (i), (\sigma \circ \gamma) (i)} 
+= \prod_{i \in \tilde{P}} b_{i, \sigma(i)}.
+$$
+
+Now, *Lemma 0.6.4* yields 
+
+$$
+\begin{aligned}
+& \sum_{\substack{\sigma \in S_n; \\\\ \sigma(\\{1, 2, \dots, k\\}) = Q}} (-1)^{\sigma} (\prod_{i \in \\{1, 2, \dots, k\\}} a_{\gamma (i), \sigma(i)}) (\prod_{i \in \\{k + 1, k + 2, \dots, n\\}} b_{\gamma (i), \sigma(i)}) \\\\
+&= \sum_{\substack{\sigma \in S_n; \\\\ \sigma(\\{1, 2, \dots, k\\}) = Q}} (-1)^{\sigma} (\prod_{i \in \\{1, 2, \dots, k\\}} a_{i, \sigma(i)}^{\prime})(\prod_{i \in \\{k + 1, k + 2, \dots, n\\}} b_{i, \sigma(i)}^{\prime}) \\\\
+&= (-1)^{(1 + 2 + \dots + k) + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\\\ \\{1, 2, \dots, k\\}} A^{\prime}) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\\\ \\{k + 1, k + 2, \dots, n\\}} B^{\prime}) \\\\
+&= (-1)^{(1 + 2 + \dots + k) + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\\\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\\\ w(\tilde{P})} B).
+\end{aligned}
+$$
+
+Comparing this with 
+
+$$
+\begin{aligned}
+& \sum_{\substack{\sigma \in S_n; \\\\ \sigma(\\{1, 2, \dots, k\\}) = Q}} (-1)^{\sigma} (\prod_{i \in \\{1, 2, \dots, k\\}} a_{\gamma (i), \sigma(i)}) (\prod_{i \in \\{k + 1, k + 2, \dots, n\\}} b_{\gamma (i), \sigma(i)}) \\\\
+&= \sum_{\substack{\sigma \in S_n; \\\\ (\sigma \circ \gamma)(\\{1, 2, \dots, k\\}) = Q}} (-1)^{\sigma \circ \gamma} (\prod_{i \in \\{1, 2, \dots, k\\}} a_{\gamma (i), (\sigma \circ \gamma)(i)}) (\prod_{i \in \\{k + 1, k + 2, \dots, n\\}} b_{\gamma (i), (\sigma \circ \gamma)(i)}) \\\\
+& (\text{here, we have substituted } \sigma \circ \gamma \text{ for } \sigma \text{ in the sum, since the map } S_n \to S_n \text{, } \sigma \mapsto \sigma \circ \gamma \text{ is a bijection}) \\\\
+&= \sum_{\substack{\sigma \in S_n; \\\\ \sigma(P) = Q}} (-1)^{\sigma} \cdot (-1)^{\gamma} (\prod_{i \in P} a_{i, \sigma(i)})(\prod_{i \in \tilde{P}} b_{i, \sigma(i)}) \\\\
+&= (-1)^{\gamma} \cdot \sum_{\substack{\sigma \in S_n; \\\\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i \in P} a_{i, \sigma(i)})(\prod_{i \in \tilde{P}} b_{i, \sigma(i)}) ,
+\end{aligned}
+$$
+
+we obtain
+
+$$
+\begin{aligned}
+& (-1)^{(1 + 2 + \dots + k) + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\\\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\\\ w(\tilde{P})} B) \\\\
+&= (-1)^{\gamma} \cdot \sum_{\substack{\sigma \in S_n; \\\\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i \in P} a_{i, \sigma(i)})(\prod_{i \in \tilde{P}} b_{i, \sigma(i)}) .
+\end{aligned}
+$$
+
+Multiplying both sides of this equality by $ (-1)^{\sum P - (1 + 2 + \dots + k)} $, we obtain
+
+$$
+\begin{aligned}
+& (-1)^{\sum P - (1 + 2 + \dots + k)} (-1)^{(1 + 2 + \dots + k) + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\\\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\\\ w(\tilde{P})} B) \\\\
+&= (-1)^{\sum P - (1 + 2 + \dots + k)} (-1)^{\gamma} \cdot \sum_{\substack{\sigma \in S_n; \\\\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i \in P} a_{i, \sigma(i)})(\prod_{i \in \tilde{P}} b_{i, \sigma(i)}) \\\\
+& (\text{here, we have } \gamma = \sum P - (1 + 2 + \dots + k)) \\\\
+&= \sum_{\substack{\sigma \in S_n; \\\\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i \in P} a_{i, \sigma(i)})(\prod_{i \in \tilde{P}} b_{i, \sigma(i)})
+\end{aligned}
+$$
+
+Thus, 
+
+$$
+\begin{aligned}
+& \sum_{\substack{\sigma \in S_n; \\\\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i \in P} a_{i, \sigma(i)})(\prod_{i \in \tilde{P}} b_{i, \sigma(i)}) \\\\
+&= (-1)^{\sum P - (1 + 2 + \dots + k)} (-1)^{(1 + 2 + \dots + k) + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\\\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\\\ w(\tilde{P})} B) \\\\
+&= (-1)^{\sum P + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\\\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\\\ w(\tilde{P})} B)
+\end{aligned}
+$$
+
+This proves *Lemma 0.6.7*.
+
+For the sake of convenience, let us restate a simplified particular case 
+of *Lemma 0.6.7* for $ A = B $:
+
+**Lemma 0.6.8**
+
+Let $ n \in \mathbf{N} $. For any subset $ I $ of $ \\{1, 2, \dots, n\\} $, 
+we let $ \tilde{I} $ denote the complement $ \\{1, 2, \dots, n\\} \setminus I $ 
+of $ I $. 
+
+Let $ A = a_{i, j}^{1 \leq i \leq n, 1 \leq j \leq n} $ 
+be an $ n \times n $ matrix. Let $ P $ and $ Q $ be two subsets of 
+$ \\{1, 2, \dots, n\\} $ such that $ |P| = |Q| $. Then, 
+
+$$
+\begin{aligned}
+& \sum_{\substack{\sigma \in S_n; \\\\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) \\\\
+&= (-1)^{\sum P + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\\\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\\\ w(\tilde{P})} A).
+\end{aligned}
+$$
+
+**Proof of Lemma 0.6.8**
+
+Every $ \sigma \in S_n $ satisfies
+
+$$
+\prod_{i = 1}^{n} = (\prod_{i \in P} a_{i, \sigma(i)}) (\prod_{i \in \tilde{P}} a_{i, \sigma(i)}) .
+$$
+
+Now, 
+
+$$
+\begin{aligned}
+& \sum_{\substack{\sigma \in S_n; \\\\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) \\\\
+&= \sum_{\substack{\sigma \in S_n; \\\\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i \in P} a_{i, \sigma(i)}) (\prod_{i \in \tilde{P}} a_{i, \sigma(i)}) \\\\
+&= (-1)^{\sum P + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\\\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\\\ w(\tilde{P})} A).
+\end{aligned}
+$$
+
+This proves *Lemma 0.6.8*.
+
+We can now step to the proof of *Laplace expansion in multiple rows/columns (a)*: 
+
+Write the $ n \times n $ matrix $ A $ in the form $ A = a_{i,j}^{1 \leq i \leq n, 1 \leq j \leq n} $. 
+If $ P $ and $ Q $ are two subsets of $ \\{1, 2, \dots, n\\} $ satisfying 
+$ |Q| \neq |P| $, then 
+
+$$
+\sum_{\substack{\sigma \in S_n; \\\\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) = 0 .
+$$
+
+Indeed, the map $ \sigma: \\{1, 2, \dots, n\\} \to \\{1, 2, \dots, n\\} $ 
+is injective, so the set $ \sigma (P) $ is a subset of $ \\{1, 2, \dots, n\\} $ 
+satisfying $ |\sigma (P)| = |P| $. Hence, $ |P| = \sigma (P) = |Q| \neq |P| $. 
+This is absurd. Hence, we have found a contradiction. 
+
+Now, forget that we fixed $ \sigma $. We thus have found a contradiction 
+for every $ \sigma \in S_n $ satisfying $ \sigma (P) = Q $. Thus, 
+there exists no $ \sigma \in S_n $ satisfying $ \sigma (P) = Q $. 
+Hence, the sum $ \sum_{\substack{\sigma \in S_n; \\\\ \sigma (P) = Q}} 
+(−1)^{\sigma} \prod_{i = 1}^{n} a_{i, \sigma (i)} $ is an empty sum. Thus 
+
+$$
+\sum_{\substack{\sigma \in S_n; \\\\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) = (\text{empty sum})  = 0 .
+$$
+
+Let $ P $ be a subset of $ \\{1, 2, \dots, n\\} $. Then, 
+
+$$
+\begin{aligned}
+\operatorname{det} A 
+&= \sum_{\sigma \in S_n} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) 
+= \sum_{Q \subseteq \\{1, 2, \dots, n\\}} \sum_{\substack{\sigma \in S_n; \\\\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) \\\\
+&= \sum_{\substack{Q \subseteq \\{1, 2, \dots, n\\}; \\\\ |Q| = |P|}} \sum_{\substack{\sigma \in S_n; \\\\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) + \sum_{\substack{Q \subseteq \\{1, 2, \dots, n\\}; \\\\ |Q| \neq |P|}} \sum_{\substack{\sigma \in S_n; \\\\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) \\\\
+& (\text{since every subset } Q \text{ of } \\{1, 2, \dots, n\\} \text{ satisfies either } |Q| = |P| \text{ or } |Q| \neq |P|. \text{ When } |Q| \neq |P| \text{, this is empty sum.}) \\\\
+&= \sum_{\substack{Q \subseteq \\{1, 2, \dots, n\\}; \\\\ |Q| = |P|}} \sum_{\substack{\sigma \in S_n; \\\\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) + \sum_{\substack{Q \subseteq \\{1, 2, \dots, n\\}; \\\\ |Q| \neq |P|}} 0 \\\\
+&= \sum_{\substack{Q \subseteq \\{1, 2, \dots, n\\}; \\\\ |Q| = |P|}} \sum_{\substack{\sigma \in S_n; \\\\ \sigma(P) = Q}} (-1)^{\sigma} (\prod_{i = 1}^{n} a_{i, \sigma(i)}) \\\\
+&= \sum_{\substack{Q \subseteq \\{1, 2, \dots, n\\}; \\\\ |Q| = |P|}} (-1)^{\sum P + \sum Q} \operatorname{det} (\operatorname{sub} \substack{w(Q) \\\\ w(P)} A) \operatorname{det} (\operatorname{sub} \substack{w(\tilde{Q}) \\\\ w(\tilde{P})} A) .
+\end{aligned}
+$$
+
+This proves *Laplace expansion in multiple rows/columns (a)*.
+
