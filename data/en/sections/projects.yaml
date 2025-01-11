@@ -72,3 +72,12 @@ projects:
   #url: ""
   summary: A five-stage pipeline processor that supports the MIPS32 instruction set.
   tags: [""]
+
+- name: E-Commerce Microservices Backend
+  logo: /images/sections/projects/microservices.png
+  role: Developer
+  timeline: "Dec 2024 - Jan 2025"
+  repo: https://github.com/qingbo12/ECommerceMicroservices
+  #url: ""
+  summary: A microservices-based e-commerce backend system supporting product, user, and order modules, with distributed transaction management using Seata and service discovery via Nacos.
+  tags: [""]
