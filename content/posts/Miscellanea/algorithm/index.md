@@ -6,7 +6,7 @@ author:
   name: Jinpeng Ma
 menu:
   sidebar:
-    name: Algorithms"
+    name: "Algorithms"
     identifier: Miscellanea-algorithms
     parent: Miscellanea
     weight: 10
