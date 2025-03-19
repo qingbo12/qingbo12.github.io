@@ -125,13 +125,13 @@ params:
         # disqus:
         #   shortName: toha-example-site
         valine:
+          el: #vcomment
           appId: ZpcKDoenlSnGzgYeJS9iJqnb-gzGzoHsz
           appKey: fT2LfG4Bycr4GveREQnxm7hd
           avatar: retro
           placeholder: Share your thought.
           lang: en
           recordIP: true
-          enableQQ: true
         # utteranc:
         #   repo: github.com/hugo-toha/hugo-toha.github.io
         #   issueTerm: title
