@@ -122,16 +122,16 @@ params:
     comment:
       enable: true
       services:
-        disqus:
-          shortName: toha-example-site
-        # valine:
-        #   appId: HTV6askWxVo3vOxlqjjaq2hd-MsYXbMMI
-        #   appKey: pVrT3C85KGIuk27t07eh6bUC
-        #   avatar: retro
-        #   placeholder: Share your thought.
-        #   lang: en
-        #   recordIP: true
-        #   enableQQ: true
+        # disqus:
+        #   shortName: toha-example-site
+        valine:
+          appId: ZpcKDoenlSnGzgYeJS9iJqnb-gzGzoHsz
+          appKey: fT2LfG4Bycr4GveREQnxm7hd
+          avatar: retro
+          placeholder: Share your thought.
+          lang: en
+          recordIP: true
+          enableQQ: true
         # utteranc:
         #   repo: github.com/hugo-toha/hugo-toha.github.io
         #   issueTerm: title
