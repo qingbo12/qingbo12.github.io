@@ -126,8 +126,8 @@ params:
         #   shortName: toha-example-site
         valine:
           el: #vcomment
-          appId: ZpcKDoenlSnGzgYeJS9iJqnb-gzGzoHsz
-          appKey: fT2LfG4Bycr4GveREQnxm7hd
+          appId: l1pX0pHRiVazY5EuIw1cCNum-MdYXbMMI
+          appKey: D9qQS8jvHKRqucTHyM43FFyo
           avatar: retro
           placeholder: Share your thought.
           lang: en
