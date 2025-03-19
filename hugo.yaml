@@ -158,14 +158,15 @@ params:
       services:
         # Google Analytics
         google:
-          id: G-H4LBG7NDFZ
+          id: G-PEB85PS5C8
         # # CounterDev
         # counterDev:
         #   id: <your counterdev id>
         # GoatCounter
-        goatCounter:
-          # code: <your goat counter code>
-          code: https://qingbo12.goatcounter.com/count
+        # goatCounter:
+        #   # code: <your goat counter code>
+        #   code: https://qingbo12.goatcounter.com/count
+
         # # Matomo / Piwik
         # matomo:
         #   instance: matomo.example.com
