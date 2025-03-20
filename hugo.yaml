@@ -125,7 +125,6 @@ params:
         # disqus:
         #   shortName: toha-example-site
         valine:
-          el: #vcomment
           appId: l1pX0pHRiVazY5EuIw1cCNum-MdYXbMMI
           appKey: D9qQS8jvHKRqucTHyM43FFyo
           avatar: retro
