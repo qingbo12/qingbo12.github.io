@@ -11,6 +11,8 @@ menu:
     parent: Life
     weight: 10
 
+hero: images/image-life.jpg
+
 ---
 
 

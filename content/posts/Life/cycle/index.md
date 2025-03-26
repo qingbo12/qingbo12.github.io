@@ -11,7 +11,7 @@ menu:
     parent: Life
     weight: 10
 
-hero: images/image-miscellanea.jpg
+hero: images/image-life.jpg
 ---
 
 ### 非机动车骑行规则
