@@ -1,39 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Miscellanea on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/miscellanea/</link><description>Recent content in Miscellanea on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 07 Mar 2025 19:08:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/miscellanea/index.xml" rel="self" type="application/rss+xml"/><item><title>Non-motorized vehicle traffic rules</title><link>https://qingbo12.github.io/posts/miscellanea/cycle/</link><pubDate>Fri, 07 Mar 2025 19:08:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/cycle/</guid><description>&lt;h3 id="非机动车骑行规则">非机动车骑行规则&lt;/h3>
-&lt;ol>
-&lt;li>走非机动车道&lt;/li>
-&lt;li>不能闯红灯&lt;/li>
-&lt;li>不能逆行&lt;/li>
-&lt;li>不要去斑马线上抢发车位&lt;/li>
-&lt;li>上斑马线要推车&lt;/li>
-&lt;li>不要停在危险区等红绿灯，防止车右拐撞上&lt;/li>
-&lt;li>过斑马线时，有车停住也不要加速通过，因为旁边的车不一定能看到&lt;/li>
-&lt;/ol>
-&lt;p>&lt;strong>路口通行&lt;/strong>&lt;/p>
-&lt;div style="display: flex; justify-content: space-between;">
-&lt;img src="images/intersection-regular.png" alt="intersection-regular" style="width: 45%"/>
-&lt;img src="images/intersection-wrong.png" alt="intersection-wrong" style="width: 45%"/>
-&lt;/div>
-&lt;div style="text-align: center;">
-&lt;strong>Figure 1:&lt;/strong> 路口往前或者往左往右.
-&lt;/div>
-&lt;p>路口往前或者往左往右时，不要停在斑马线上等，也不要从斑马线上通过。&lt;/p>
-&lt;div style="display: flex; justify-content: space-between;">
-&lt;img src="images/zebracrossing-cycle.png" alt="zebracrossing-cycle" style="width: 45%"/>
-&lt;img src="images/zebracrossing-reverse.png" alt="zebracrossing-reverse" style="width: 45%"/>
-&lt;/div>
-&lt;div style="text-align: center;">
-&lt;strong>Figure 2:&lt;/strong> 去马路对面.
-&lt;/div>
-&lt;p>去马路对面时，不要从斑马线上通过，也不要从旁边通过。应该下车推行。&lt;/p>
-&lt;h3 id="自行车骑行">自行车骑行&lt;/h3>
-&lt;ol>
-&lt;li>
-&lt;p>座高：以右脚为例：把脚蹬转到最下方，人坐上后，脚心位置踩上，腿能伸直为标准。这样当用前脚掌蹬到最下方时，腿会有一点弯度！&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>踩踏：前脚掌踩踏，脚尖朝前，大腿发力&lt;/p>
-&lt;/li>
-&lt;/ol></description></item><item><title>Algorithms</title><link>https://qingbo12.github.io/posts/miscellanea/algorithm/</link><pubDate>Thu, 06 Mar 2025 19:08:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/algorithm/</guid><description>&lt;h3 id="a-star-path-planning-algorithm">A-Star Path Planning Algorithm&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Miscellanea on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/miscellanea/</link><description>Recent content in Miscellanea on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 06 Mar 2025 19:08:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/miscellanea/index.xml" rel="self" type="application/rss+xml"/><item><title>Algorithms</title><link>https://qingbo12.github.io/posts/miscellanea/algorithm/</link><pubDate>Thu, 06 Mar 2025 19:08:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/algorithm/</guid><description>&lt;h3 id="a-star-path-planning-algorithm">A-Star Path Planning Algorithm&lt;/h3>
 &lt;p>&lt;strong>应用场景&lt;/strong>&lt;/p>
 &lt;p>很多NPC或者机器人（AI）需要&lt;strong>自动寻路&lt;/strong>的功能来达到与玩家交互的功能。例如吃鸡游戏中，机器人在城镇中跑毒就需要自动寻路，不然可能就被墙卡死了。&lt;a href="https://zhuanlan.zhihu.com/p/385733813" target="_blank" rel="noopener">A-Star（A*）寻路算法原理与实现&lt;/a>&lt;/p>
 &lt;p>&lt;strong>算法简介&lt;/strong>&lt;/p>
