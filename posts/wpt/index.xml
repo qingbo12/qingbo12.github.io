@@ -24,4 +24,14 @@
 &lt;center>&lt;strong>Figure 1:&lt;/strong> Illustration of the analogies between standard MIMO and MagMIMO.&lt;/center>
 &lt;/div>
 &lt;br>
-&lt;p>For a 2-antenna MIMO transmitter.&lt;/p></description></item></channel></rss>
+&lt;p>For a 2-antenna MIMO transmitter.&lt;/p></description></item><item><title>First glance</title><link>https://qingbo12.github.io/posts/wpt/first-glance/</link><pubDate>Thu, 31 Oct 2024 17:44:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/first-glance/</guid><description>&lt;h1 id="scheduling-layer">Scheduling Layer&lt;/h1>
+&lt;h3 id="pte-optimization">PTE Optimization&lt;/h3>
+&lt;h4 id="requirement-driven-magnetic-beamforming-for-mimo-wireless-power-transfer-optimization">Requirement-Driven Magnetic Beamforming for MIMO Wireless Power Transfer Optimization&lt;/h4>
+&lt;p>&lt;strong>Motivation:&lt;/strong> In MIMO MRC-WPT system, we need to consider the scenario when different RXs have different requirements of power.
+&lt;br/>&lt;/p>
+&lt;p>&lt;strong>Problem formulation:&lt;/strong> weighted sum-power maximization
+$WSPMax = max_{{i_n^{tx}}} \sum_q w_q |i^{rx}_q|^2 r^{rx}_q $&lt;/p>
+&lt;p>Subject to:
+&lt;br/>&lt;/p>
+&lt;p>$$ \sum_n \left|i_n^{tx}\right|^2 r_n^{tx} + \sum_q \left|i_q^{rx}\right|^2 r_q^{rx} \leq P_{\text{max}}, \ $$&lt;/p>
+&lt;p>$$ \left|i_n^{tx}\right|^2 \leq A_n^{tx}, \quad \forall 1 \leq n \leq N, \ $$&lt;/p></description></item></channel></rss>

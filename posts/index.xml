@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/</link><description>Recent content in Posts on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 26 Mar 2025 18:52:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>安徽省美术馆3月展打卡手记</title><link>https://qingbo12.github.io/posts/life/ahart-march/</link><pubDate>Wed, 26 Mar 2025 18:52:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/life/ahart-march/</guid><description>&lt;p>📍 安徽省美术馆 | 3月22日打卡&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/</link><description>Recent content in Posts on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 29 Mar 2025 10:42:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>自感值的正负判断：从理论分析到仿真验证</title><link>https://qingbo12.github.io/posts/miscellanea/induction/</link><pubDate>Sat, 29 Mar 2025 10:42:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/induction/</guid><description>&lt;h3 id="前言">前言&lt;/h3>
+&lt;p>在电路分析中，自感值的正负判断是电磁学学习的一个重要知识点。很多初学者容易混淆关联参考方向和非关联参考方向下的自感值符号问题。本文将通过理论分析和 MATLAB 仿真相结合的方式，深入浅出地讲解这个知识点。&lt;/p>
+&lt;h3 id="核心结论">核心结论&lt;/h3>
+&lt;p>✅ 关键结论：自感值的正负取决于电压和电流的参考方向关系：&lt;/p>
+&lt;ul>
+&lt;li>关联参考方向时：$ L &amp;gt; 0 $&lt;/li>
+&lt;li>非关联参考方向时：$ L &amp;lt; 0 $&lt;/li>
+&lt;/ul>
+&lt;h3 id="理论分析">理论分析&lt;/h3>
+&lt;p>我们首先来看一个简单的线圈模型：&lt;/p>
+&lt;div style="text-align: center; width: 30%; margin: 0 auto;">
+&lt;center>&lt;img src="images/coil.png" alt="coil" />&lt;/center>
+&lt;center>&lt;strong>图 1:&lt;/strong> 线圈结构示意图 &lt;/center>
+&lt;/div>
+&lt;br/>
+&lt;p>假设通过线圈的电流为 $ I = I_m sin(\omega t) $，我们重点分析前半个周期。&lt;/p>
+&lt;p>&lt;strong>1.第一个 1/4 周期分析（$ t = 0 \to \frac{\pi}{2} $）&lt;/strong>&lt;/p>
+&lt;p>在这个时间段内：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>电流为正且在增加（$ \frac{dI}{dt} &amp;gt; 0 $）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>根据右手定则，磁通量向上增加&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>由楞次定律可知，感应电动势 $ e $ 会产生阻碍电流变化的磁通量，产生的磁通量方向向下&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>对应的感应电流 $ I_e $ 和感应电动势 $ e $ 方向如图 2(a) 所示：&lt;/p></description></item><item><title>安徽省美术馆3月展打卡手记</title><link>https://qingbo12.github.io/posts/life/ahart-march/</link><pubDate>Wed, 26 Mar 2025 18:52:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/life/ahart-march/</guid><description>&lt;p>📍 安徽省美术馆 | 3月22日打卡&lt;/p>
 &lt;p>周末来打卡合肥这座超有设计感的美术馆了！2022 年才开放，建筑本身就像一件艺术品✨ 黑灰色旋转楼梯+钢索吊桥，随手一拍就是工业风大片！📸&lt;/p>
 &lt;p>🔥 重点看了这几个快撤的展（抓紧冲！）：&lt;/p>
 &lt;p>1️⃣ 「柔软与坚硬·刘春杰艺术展」&lt;/p>
@@ -147,7 +176,17 @@ data\en\sections\about.yaml socialLinks:.&lt;/p>
 &lt;p>For a 2-antenna MIMO transmitter.&lt;/p></description></item><item><title>Circuit Base</title><link>https://qingbo12.github.io/posts/miscellanea/circuit/</link><pubDate>Thu, 07 Nov 2024 15:09:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/circuit/</guid><description>&lt;h2 id="basic-circuit">Basic circuit&lt;/h2>
 &lt;p>&lt;strong>Charge&lt;/strong> It is defined in terms of the ampere by counting the total charge that passes through an arbitrary cross section of a wire during an interval of one second. In the SI system, the fundamental unit of charge is the coulomb (C).&lt;/p>
 &lt;p>&lt;strong>Current&lt;/strong> We define the current at a specific point and flowing in a specified direction as the instantaneous rate at which net positive charge is moving past that point in the specified direction. Current
-is symbolized by I or i, and so&lt;/p></description></item><item><title>Multimodal-fusion research</title><link>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</link><pubDate>Wed, 16 Oct 2024 04:58:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</guid><description>&lt;h2 id="fusion-stage">Fusion stage&lt;/h2>
+is symbolized by I or i, and so&lt;/p></description></item><item><title>First glance</title><link>https://qingbo12.github.io/posts/wpt/first-glance/</link><pubDate>Thu, 31 Oct 2024 17:44:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/first-glance/</guid><description>&lt;h1 id="scheduling-layer">Scheduling Layer&lt;/h1>
+&lt;h3 id="pte-optimization">PTE Optimization&lt;/h3>
+&lt;h4 id="requirement-driven-magnetic-beamforming-for-mimo-wireless-power-transfer-optimization">Requirement-Driven Magnetic Beamforming for MIMO Wireless Power Transfer Optimization&lt;/h4>
+&lt;p>&lt;strong>Motivation:&lt;/strong> In MIMO MRC-WPT system, we need to consider the scenario when different RXs have different requirements of power.
+&lt;br/>&lt;/p>
+&lt;p>&lt;strong>Problem formulation:&lt;/strong> weighted sum-power maximization
+$WSPMax = max_{{i_n^{tx}}} \sum_q w_q |i^{rx}_q|^2 r^{rx}_q $&lt;/p>
+&lt;p>Subject to:
+&lt;br/>&lt;/p>
+&lt;p>$$ \sum_n \left|i_n^{tx}\right|^2 r_n^{tx} + \sum_q \left|i_q^{rx}\right|^2 r_q^{rx} \leq P_{\text{max}}, \ $$&lt;/p>
+&lt;p>$$ \left|i_n^{tx}\right|^2 \leq A_n^{tx}, \quad \forall 1 \leq n \leq N, \ $$&lt;/p></description></item><item><title>Multimodal-fusion research</title><link>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</link><pubDate>Wed, 16 Oct 2024 04:58:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</guid><description>&lt;h2 id="fusion-stage">Fusion stage&lt;/h2>
 &lt;div>
 &lt;center>&lt;img src="images/mindmap-of-DeepMultimodalLearning.png"
 alt="Mind map of Deep Multimodal Learning" />&lt;/center>
