@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/</link><description>Recent content in Posts on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 29 Mar 2025 10:42:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>自感值的正负判断：从理论分析到仿真验证</title><link>https://qingbo12.github.io/posts/miscellanea/induction/</link><pubDate>Sat, 29 Mar 2025 10:42:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/induction/</guid><description>&lt;h3 id="前言">前言&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/</link><description>Recent content in Posts on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 02 Apr 2025 16:42:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>互感值的正负判断：从理论到仿真的保姆级解析</title><link>https://qingbo12.github.io/posts/wpt/mutual-indcution/</link><pubDate>Wed, 02 Apr 2025 16:42:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/mutual-indcution/</guid><description>&lt;h3 id="一结论速览">一、结论速览&lt;/h3>
+&lt;p>✅ 关键结论：Tx 端电流从同名端流入时，Rx 端电流从同名端流出，互感值的正负取决于 Rx 端电压和 Rx 端电流的参考方向关系：&lt;/p>
+&lt;ul>
+&lt;li>关联参考方向时：$ M &amp;lt; 0 $&lt;/li>
+&lt;li>非关联参考方向时：$ M &amp;gt; 0 $&lt;/li>
+&lt;/ul>
+&lt;h3 id="二理论分析">二、理论分析&lt;/h3>
+&lt;p>我们首先来看一个简单的互感线圈模型，其中电压 $ U_R $ 和电流 $ I_R $ 取非关联参考方向，且同名端对齐：&lt;/p>
+&lt;div style="text-align: center; width: 50%; margin: 0 auto;">
+&lt;center>&lt;img src="images/mutual-induction-coil.png" alt="mutual-induction-coil" />&lt;/center>
+&lt;center>&lt;strong>图 1:&lt;/strong> 互感线圈结构示意图 &lt;/center>
+&lt;/div>
+&lt;br/>
+&lt;p>假设通过线圈的电流为 $ I = I_m sin(\omega t) $，我们重点分析前半个周期。&lt;/p>
+&lt;p>&lt;strong>1.第一个 1/4 周期分析（$ t = 0 \to \frac{\pi}{2} $）&lt;/strong>&lt;/p>
+&lt;p>在这个时间段内：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>电流为正且在增加（$ \frac{dI}{dt} &amp;gt; 0 $）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>根据右手定则，磁通量方向如图 1 所示，并且在增大&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>因为感应电动势的方向总是企图由它产生的感应电流建立一个附加磁通量，以阻碍引起感应电动势的那个磁通量的变化。可以知道感应电流 $ I_{eT} $ 产生向下的磁通量，感应电流 $ I_{eR} $ 产生向上的磁通量&lt;/p></description></item><item><title>自感值的正负判断：从理论分析到仿真验证</title><link>https://qingbo12.github.io/posts/wpt/induction/</link><pubDate>Sat, 29 Mar 2025 10:42:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/induction/</guid><description>&lt;h3 id="前言">前言&lt;/h3>
 &lt;p>在电路分析中，自感值的正负判断是电磁学学习的一个重要知识点。很多初学者容易混淆关联参考方向和非关联参考方向下的自感值符号问题。本文将通过理论分析和 MATLAB 仿真相结合的方式，深入浅出地讲解这个知识点。&lt;/p>
 &lt;h3 id="核心结论">核心结论&lt;/h3>
 &lt;p>✅ 关键结论：自感值的正负取决于电压和电流的参考方向关系：&lt;/p>
@@ -7,7 +31,7 @@
 &lt;li>非关联参考方向时：$ L &amp;lt; 0 $&lt;/li>
 &lt;/ul>
 &lt;h3 id="理论分析">理论分析&lt;/h3>
-&lt;p>我们首先来看一个简单的线圈模型：&lt;/p>
+&lt;p>我们首先来看一个简单的线圈模型，此时电压和电流取关联参考方向：&lt;/p>
 &lt;div style="text-align: center; width: 30%; margin: 0 auto;">
 &lt;center>&lt;img src="images/coil.png" alt="coil" />&lt;/center>
 &lt;center>&lt;strong>图 1:&lt;/strong> 线圈结构示意图 &lt;/center>
@@ -24,7 +48,7 @@
 &lt;p>根据右手定则，磁通量向上增加&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>由楞次定律可知，感应电动势 $ e $ 会产生阻碍电流变化的磁通量，产生的磁通量方向向下&lt;/p>
+&lt;p>由楞次定律可知，感应电动势 $ e $ 会产生感应电流，感应电流产生的磁通量方向向下&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;p>对应的感应电流 $ I_e $ 和感应电动势 $ e $ 方向如图 2(a) 所示：&lt;/p></description></item><item><title>安徽省美术馆3月展打卡手记</title><link>https://qingbo12.github.io/posts/life/ahart-march/</link><pubDate>Wed, 26 Mar 2025 18:52:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/life/ahart-march/</guid><description>&lt;p>📍 安徽省美术馆 | 3月22日打卡&lt;/p>

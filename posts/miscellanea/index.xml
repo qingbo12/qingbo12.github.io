@@ -1,33 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Miscellanea on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/miscellanea/</link><description>Recent content in Miscellanea on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 29 Mar 2025 10:42:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/miscellanea/index.xml" rel="self" type="application/rss+xml"/><item><title>自感值的正负判断：从理论分析到仿真验证</title><link>https://qingbo12.github.io/posts/miscellanea/induction/</link><pubDate>Sat, 29 Mar 2025 10:42:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/induction/</guid><description>&lt;h3 id="前言">前言&lt;/h3>
-&lt;p>在电路分析中，自感值的正负判断是电磁学学习的一个重要知识点。很多初学者容易混淆关联参考方向和非关联参考方向下的自感值符号问题。本文将通过理论分析和 MATLAB 仿真相结合的方式，深入浅出地讲解这个知识点。&lt;/p>
-&lt;h3 id="核心结论">核心结论&lt;/h3>
-&lt;p>✅ 关键结论：自感值的正负取决于电压和电流的参考方向关系：&lt;/p>
-&lt;ul>
-&lt;li>关联参考方向时：$ L &amp;gt; 0 $&lt;/li>
-&lt;li>非关联参考方向时：$ L &amp;lt; 0 $&lt;/li>
-&lt;/ul>
-&lt;h3 id="理论分析">理论分析&lt;/h3>
-&lt;p>我们首先来看一个简单的线圈模型：&lt;/p>
-&lt;div style="text-align: center; width: 30%; margin: 0 auto;">
-&lt;center>&lt;img src="images/coil.png" alt="coil" />&lt;/center>
-&lt;center>&lt;strong>图 1:&lt;/strong> 线圈结构示意图 &lt;/center>
-&lt;/div>
-&lt;br/>
-&lt;p>假设通过线圈的电流为 $ I = I_m sin(\omega t) $，我们重点分析前半个周期。&lt;/p>
-&lt;p>&lt;strong>1.第一个 1/4 周期分析（$ t = 0 \to \frac{\pi}{2} $）&lt;/strong>&lt;/p>
-&lt;p>在这个时间段内：&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>电流为正且在增加（$ \frac{dI}{dt} &amp;gt; 0 $）&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>根据右手定则，磁通量向上增加&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>由楞次定律可知，感应电动势 $ e $ 会产生阻碍电流变化的磁通量，产生的磁通量方向向下&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>对应的感应电流 $ I_e $ 和感应电动势 $ e $ 方向如图 2(a) 所示：&lt;/p></description></item><item><title>Algorithms</title><link>https://qingbo12.github.io/posts/miscellanea/algorithm/</link><pubDate>Thu, 06 Mar 2025 19:08:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/algorithm/</guid><description>&lt;h3 id="a-star-path-planning-algorithm">A-Star Path Planning Algorithm&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Miscellanea on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/miscellanea/</link><description>Recent content in Miscellanea on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 06 Mar 2025 19:08:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/miscellanea/index.xml" rel="self" type="application/rss+xml"/><item><title>Algorithms</title><link>https://qingbo12.github.io/posts/miscellanea/algorithm/</link><pubDate>Thu, 06 Mar 2025 19:08:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/algorithm/</guid><description>&lt;h3 id="a-star-path-planning-algorithm">A-Star Path Planning Algorithm&lt;/h3>
 &lt;p>&lt;strong>应用场景&lt;/strong>&lt;/p>
 &lt;p>很多NPC或者机器人（AI）需要&lt;strong>自动寻路&lt;/strong>的功能来达到与玩家交互的功能。例如吃鸡游戏中，机器人在城镇中跑毒就需要自动寻路，不然可能就被墙卡死了。&lt;a href="https://zhuanlan.zhihu.com/p/385733813" target="_blank" rel="noopener">A-Star（A*）寻路算法原理与实现&lt;/a>&lt;/p>
 &lt;p>&lt;strong>算法简介&lt;/strong>&lt;/p>
