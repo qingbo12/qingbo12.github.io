@@ -7,11 +7,11 @@ author:
 menu:
   sidebar:
     name: The Induction of Positive and Negative
-    identifier: Miscellanea-Induction
-    parent: Miscellanea
+    identifier: WPT-Induction
+    parent: WPT
     weight: 10
 
-hero: "images/image-miscellanea.jpg"
+hero: "images/WPTscenario.gif"
 ---
 
 ### 前言
@@ -27,7 +27,7 @@ hero: "images/image-miscellanea.jpg"
 
 ### 理论分析
 
-我们首先来看一个简单的线圈模型：
+我们首先来看一个简单的线圈模型，此时电压和电流取关联参考方向：
 
 <div style="text-align: center; width: 30%; margin: 0 auto;">
     <center><img src="images/coil.png" alt="coil" /></center>
@@ -46,7 +46,7 @@ hero: "images/image-miscellanea.jpg"
 
 2. 根据右手定则，磁通量向上增加
 
-3. 由楞次定律可知，感应电动势 $ e $ 会产生阻碍电流变化的磁通量，产生的磁通量方向向下
+3. 由楞次定律可知，感应电动势 $ e $ 会产生感应电流，感应电流产生的磁通量方向向下
 
 对应的感应电流 $ I_e $ 和感应电动势 $ e $ 方向如图 2(a) 所示：
 
@@ -69,7 +69,7 @@ hero: "images/image-miscellanea.jpg"
 
 1. 电流正向减小（$ \frac{dI}{dt} < 0 $）
 2. 磁通量向上减小
-3. 感应电动势 $ e $ 会产生阻碍电流减小的磁通量，产生的磁通量方向向上
+3. 感应电动势 $ e $ 会产生感应电流，感应电流产生的磁通量方向向上
 
 感应电流和电动势方向如图 3(a) 所示：
 
