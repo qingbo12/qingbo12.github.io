@@ -6,7 +6,7 @@ author:
   name: Jinpeng Ma
 menu:
   sidebar:
-    name: Optimization Methods"
+    name: Optimization Methods
     identifier: Miscellanea-optimization
     parent: Miscellanea
     weight: 10
