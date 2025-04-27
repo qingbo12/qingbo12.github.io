@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Miscellanea on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/miscellanea/</link><description>Recent content in Miscellanea on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 06 Mar 2025 19:08:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/miscellanea/index.xml" rel="self" type="application/rss+xml"/><item><title>Algorithms</title><link>https://qingbo12.github.io/posts/miscellanea/algorithm/</link><pubDate>Thu, 06 Mar 2025 19:08:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/algorithm/</guid><description>&lt;h3 id="a-star-path-planning-algorithm">A-Star Path Planning Algorithm&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Miscellanea on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/miscellanea/</link><description>Recent content in Miscellanea on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 20 Apr 2025 17:34:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/miscellanea/index.xml" rel="self" type="application/rss+xml"/><item><title>磁矢势</title><link>https://qingbo12.github.io/posts/miscellanea/magnetic-vector-potential/</link><pubDate>Sun, 20 Apr 2025 17:34:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/magnetic-vector-potential/</guid><description>&lt;h3 id="磁矢势的推导">磁矢势的推导&lt;/h3>
+&lt;p>磁矢势其引入方式与电势类似，但有点硬凑出来的感觉。&lt;/p>
+&lt;p>下面我们从电磁场的基本性质出发，系统推导磁矢势的数学表达式。&lt;/p>
+&lt;p>&lt;strong>与电势的类比&lt;/strong>&lt;/p>
+&lt;p>对于稳恒电场，其基本性质由以下方程组描述：&lt;/p>
+&lt;p>$$
+\begin{cases}
+\nabla \cdot \vec{E} = \rho / \varepsilon_0 \\
+\nabla \times \vec{E} = 0
+\end{cases}
+$$&lt;/p>
+&lt;p>电势的引入基于电场无旋性 $ \nabla \times \vec{E} = 0 $。由于任意标量函数的梯度的旋度恒为零 $ \nabla \times (\nabla U) = 0 $，我们可以定义电势 $ U $ 满足：&lt;/p>
+&lt;p>$$
+\vec{E} = - \nabla U
+$$&lt;/p>
+&lt;p>顺便提一下，$ \nabla \times (\nabla U) $ 类似于两个平行向量叉乘，围不成四边形，有向面积为 0。&lt;/p>
+&lt;p>&lt;strong>磁场的特殊性&lt;/strong>&lt;/p>
+&lt;p>我们想按照电势的推导来推出类似磁势的东西，但却不能。&lt;/p>
+&lt;p>对于稳恒磁场，其基本性质为：&lt;/p>
+&lt;p>$$
+\begin{cases}
+\nabla \cdot \vec{B} = 0 \\
+\nabla \times \vec{B} = \mu_0 \vec{j}
+\end{cases}
+$$&lt;/p></description></item><item><title>Algorithms</title><link>https://qingbo12.github.io/posts/miscellanea/algorithm/</link><pubDate>Thu, 06 Mar 2025 19:08:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/algorithm/</guid><description>&lt;h3 id="a-star-path-planning-algorithm">A-Star Path Planning Algorithm&lt;/h3>
 &lt;p>&lt;strong>应用场景&lt;/strong>&lt;/p>
 &lt;p>很多NPC或者机器人（AI）需要&lt;strong>自动寻路&lt;/strong>的功能来达到与玩家交互的功能。例如吃鸡游戏中，机器人在城镇中跑毒就需要自动寻路，不然可能就被墙卡死了。&lt;a href="https://zhuanlan.zhihu.com/p/385733813" target="_blank" rel="noopener">A-Star（A*）寻路算法原理与实现&lt;/a>&lt;/p>
 &lt;p>&lt;strong>算法简介&lt;/strong>&lt;/p>
