@@ -1,4 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Miscellanea on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/miscellanea/</link><description>Recent content in Miscellanea on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 20 Apr 2025 17:34:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/miscellanea/index.xml" rel="self" type="application/rss+xml"/><item><title>磁矢势</title><link>https://qingbo12.github.io/posts/miscellanea/magnetic-vector-potential/</link><pubDate>Sun, 20 Apr 2025 17:34:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/magnetic-vector-potential/</guid><description>&lt;h3 id="磁矢势的推导">磁矢势的推导&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Miscellanea on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/miscellanea/</link><description>Recent content in Miscellanea on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 11 May 2025 18:10:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/miscellanea/index.xml" rel="self" type="application/rss+xml"/><item><title>一些 Word 编辑技巧</title><link>https://qingbo12.github.io/posts/miscellanea/word-editing-tips/</link><pubDate>Sun, 11 May 2025 18:10:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/word-editing-tips/</guid><description>&lt;h3 id="1-设置-word-多级标题模板">1. 设置 Word 多级标题模板&lt;/h3>
+&lt;p>在 Word 2021 上建立本科毕业论文的多级标题模板，最终实现效果如下：&lt;/p>
+&lt;div style="text-align: center; width: 60%; margin: 0 auto;">
+&lt;center>&lt;img src="images/多级标题多级列表-最终效果.png" alt="final-result" />&lt;/center>
+&lt;center>&lt;strong>图 1.1:&lt;/strong> 多级标题最终效果 &lt;/center>
+&lt;/div>
+&lt;br>
+&lt;p>&lt;strong>1.1 设置各级标题的样式&lt;/strong>&lt;/p>
+&lt;p>首先在 “开始 —&amp;gt; 样式” 里设置每一级标题的格式。设置好样式后，选中文档内容再选择相应样式即可。&lt;/p>
+&lt;div style="text-align: center; width: 60%; margin: 0 auto;">
+&lt;center>&lt;img src="images/多级标题-创建各类样式.png" alt="create-style" />&lt;/center>
+&lt;center>&lt;strong>图 1.2:&lt;/strong> 创建各类标题样式的入口 &lt;/center>
+&lt;/div>
+&lt;br>
+&lt;p>&lt;strong>1.1.1 正文&lt;/strong>&lt;/p>
+&lt;p>本文正文要求：中文宋体（西文 Times New Roman）五号、不加粗、首行缩进、对齐方式为两端对齐、段前段后 0 间距、行距为固定值 20 磅。设置如下：&lt;/p>
+&lt;div style="display: flex; justify-content: space-between;">
+&lt;img src="images/多级标题-正文中文.png" alt="Text in Chinese" style="width: 45%"/>
+&lt;img src="images/多级标题-正文英文.png" alt="Text in English" style="width: 45%"/>
+&lt;/div>
+&lt;div style="text-align: center;">
+&lt;strong>图 1.3:&lt;/strong> 正文的中英文和对齐方式设置
+&lt;/div>
+&lt;div style="text-align: center; width: 100%; margin: 0 auto;">
+&lt;center>&lt;img src="images/多级标题-正文段落.png" alt="Text paragraph" />&lt;/center>
+&lt;center>&lt;strong>图 1.4:&lt;/strong> 正文段落设置 &lt;/center>
+&lt;/div>
+&lt;br>
+&lt;p>其中“段落”在“修改样式”左下角的“格式”中打开。&lt;/p></description></item><item><title>磁矢势</title><link>https://qingbo12.github.io/posts/miscellanea/magnetic-vector-potential/</link><pubDate>Sun, 20 Apr 2025 17:34:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/magnetic-vector-potential/</guid><description>&lt;h3 id="磁矢势的推导">磁矢势的推导&lt;/h3>
 &lt;p>磁矢势其引入方式与电势类似，但有点硬凑出来的感觉。&lt;/p>
 &lt;p>下面我们从电磁场的基本性质出发，系统推导磁矢势的数学表达式。&lt;/p>
 &lt;p>&lt;strong>与电势的类比&lt;/strong>&lt;/p>
