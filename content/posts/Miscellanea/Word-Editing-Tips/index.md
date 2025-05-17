@@ -14,7 +14,7 @@ menu:
 hero: images/image-miscellanea.jpg
 ---
 
-### 1. 设置 Word 多级标题模板
+### 1 设置 Word 多级标题模板
 
 在 Word 2021 上建立本科毕业论文的多级标题模板，最终实现效果如下：
 
@@ -147,7 +147,7 @@ hero: images/image-miscellanea.jpg
 
 <br>
 
-### 2. 页面设置
+### 2 页面设置
 
 **2.1 页面边距和大小设置**
 
@@ -181,6 +181,113 @@ hero: images/image-miscellanea.jpg
 <div style="text-align: center; width: 60%; margin: 0 auto;">
     <center><img src="images/页面设置-分节结果.png" alt="Page section result" /></center>
     <center><strong>图 2.3:</strong> 添加分节符的效果 </center>
+</div>
+
+<br>
+
+### 3 图表
+
+**3.1 插入图片设置**
+
+**3.1.1 插入图片显示不全**
+
+由于我们设置正文格式行间距为固定值 20 磅，所以在插入图表时，会出现只显示图片一部分的情况（图 3.1 所示）。
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/图表-插入图片显示不全.png" alt="Insert image show not full" /></center>
+    <center><strong>图 3.1:</strong> 插入图片显示不全 </center>
+</div>
+
+<br>
+
+此时需要更改图片的行间距为单倍行距。设置步骤如下：
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/图表-调整图片间距.png" alt="Adjust image spacing" /></center>
+    <center><strong>图 3.2:</strong> 调整图片间距 </center>
+</div>
+
+<br>
+
+之后，可以看到图片显示完整（图 3.3 所示）。
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/图表-图片显示全部.png" alt="Image show all" /></center>
+    <center><strong>图 3.3:</strong> 图片显示完全 </center>
+</div>
+
+<br>
+
+**3.1.2 插入图片题注**
+
+我们需要在图表下方加上题注，题注的格式是：“图（空格）章节号（点）图片在本章的编号”，即“图 1.1 图片名”。
+
+首先要创建本章节图注标签，设置步骤如下：
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="images/图表-图注创建入口.png" alt="Picture annotation" style="width: 45%"/>
+    <img src="images/图表-图注创建标签入口.png" alt="Picture annotation tag" style="width: 45%"/>
+</div>
+<div style="text-align: center;">
+    <strong>图 3.4:</strong> 图注创建标签入口
+</div>
+
+<br>
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="images/图表-图注创建标签.png" alt="Create picture annotation tag" style="width: 45%"/>
+    <img src="images/图表-图注创建.png" alt="Create picture annotation" style="width: 45%"/>
+</div>
+<div style="text-align: center;">
+    <strong>图 3.5:</strong> 创建图注
+</div>
+
+<br>
+
+插入图注之后的效果（图 3.6 所示）。
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/图表-图注开始效果.png" alt="Picture annotation start" /></center>
+    <center><strong>图 3.6:</strong> 初始图注效果 </center>
+</div>
+
+<br>
+
+可以看到图注的格式满足要求，但是文字样式不符合要求。
+
+下面需要调整图注的文字样式，设置步骤如下：
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/图表-图注格式修改入口.png" alt="Picture annotation format entry" /></center>
+    <center><strong>图 3.7:</strong> 图注样式修改入口 </center>
+</div>
+
+<br>
+
+修改图注的的中英文字体和段落设置（中文宋体（西文 Times New Roman）小五号、不加粗、对齐方式为居中对齐、段前段后 0 间距、但被行距），设置步骤如下：
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="images/图表-图注格式中文.png" alt="Picture annotation Chinese" style="width: 45%"/>
+    <img src="images/图表-图注格式英文.png" alt="Picture annotation English" style="width: 45%"/>
+</div>
+<div style="text-align: center;">
+    <strong>图 3.8:</strong> 图注的中英文设置
+</div>
+
+<br>
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/图表-图注格式段落.png" alt="Picture annotation paragraph" /></center>
+    <center><strong>图 3.9:</strong> 图注段落设置 </center>
+</div>
+
+<br>
+
+最后，可以看到图注的格式满足要求（图 3.10 所示）。
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/图表-图注最后效果.png" alt="Picture annotation last" /></center>
+    <center><strong>图 3.10:</strong> 最终图注效果 </center>
 </div>
 
 <br>
