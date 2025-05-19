@@ -1,0 +1,177 @@
+<!doctype html><html lang=en><head><title>曲线曲面积分推导</title>
+<meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><link rel=stylesheet href=/application.34793ea3875bfaaa88436c36fa80f08bc736978d47b512f83f32b8acbae3a603.css integrity="sha256-NHk+o4db+qqIQ2w2+oDwi8c2l41HtRL4PzK4rLrjpgM="><link rel=icon type=image/png href=/images/site/horse-grey_hu_20439ac972290caf.jpg><meta property="og:title" content="Jinpeng's Blog"><meta property="og:type" content="website"><meta property="og:description" content="Portfolio and personal blog of Jinpeng Ma."><meta property="og:image" content="/images/author/john.png"><meta property="og:url" content="https://qingbo12.github.io"><meta name=description content="Notes of curve and surface integral"><script async src="https://www.googletagmanager.com/gtag/js?id=G-PEB85PS5C8"></script><script>var dnt,doNotTrack=!1;if(null&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-PEB85PS5C8")}</script><script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">let theme=localStorage.getItem("theme-scheme")||localStorage.getItem("darkmode:color-scheme")||"light";theme==="system"&&(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?theme="dark":theme="light"),document.documentElement.setAttribute("data-theme",theme)</script></head><body class="type-posts kind-page" data-bs-spy=scroll data-bs-target=#TableOfContents data-bs-offset=80><div class="container-fluid bg-secondary wrapper"><nav class="navbar navbar-expand-xl top-navbar shadow" id=top-navbar><div class=container><button class="navbar-toggler navbar-light" id=sidebar-toggler type=button>
+<i data-feather=sidebar></i>
+</button>
+<a class=navbar-brand href=/><img src=/images/site/horse-grey_hu_20439ac972290caf.jpg id=logo alt=Logo>
+Jinpeng's Blog</a>
+<button class="navbar-toggler navbar-light" id=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#top-nav-items aria-label=menu>
+<i data-feather=menu></i></button><div class="collapse navbar-collapse dynamic-navbar" id=top-nav-items><ul class="nav navbar-nav ms-auto"><li class=nav-item><a class=nav-link href=/#home>Home</a></li><li class=nav-item><a class=nav-link href=/#about>About</a></li><li class=nav-item><a class=nav-link href=/#education>Education</a></li><li class=nav-item><a class=nav-link href=/#projects>Projects</a></li><li class=nav-item><a class=nav-link href=/#featured-posts>Featured Posts</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-bs-toggle=dropdown aria-haspopup=true aria-expanded=false>More</a><div class=dropdown-menu aria-labelledby=navbarDropdown><a class=dropdown-item href=/#recent-posts>Recent Posts</a></div></li><div id=top-navbar-divider></div><li class=nav-item><a class=nav-link id=blog-link href=/posts>Posts</a></li><li class=nav-item><a class=nav-link id=note-link href=/notes>Notes</a></li><li class=nav-item><a class=nav-link href=https://toha-guides.netlify.app/posts/>Docs</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=themeSelector role=button data-bs-toggle=dropdown aria-haspopup=true aria-expanded=false><img id=navbar-theme-icon-svg class=theme-icon src=/icons/moon-svgrepo-com.svg width=20 alt="Dark Theme"></a><div id=themeMenu class="dropdown-menu dropdown-menu-icons-only" aria-labelledby=themeSelector><a class="dropdown-item nav-link" href=# data-scheme=light><img class=theme-icon src=/icons/sun-svgrepo-com.svg width=20 alt="Light Theme">
+</a><a class="dropdown-item nav-link" href=# data-scheme=dark><img class=theme-icon src=/icons/moon-svgrepo-com.svg width=20 alt="Dark Theme">
+</a><a class="dropdown-item nav-link" href=# data-scheme=system><img class=theme-icon src=/icons/computer-svgrepo-com.svg width=20 alt="System Theme"></a></div></li></ul></div></div><img src=/images/site/horse-grey_hu_20439ac972290caf.jpg class=d-none id=main-logo alt=Logo>
+<img src=/images/site/horse-grey_hu_20439ac972290caf.jpg class=d-none id=inverted-logo alt="Inverted Logo"></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/posts/ data-filter=all>Posts</a></li><div class=subtree><li><a class=list-link href=/posts/building-issues/ title="Building issues">Building issues</a></li><li><a class=list-link href=/posts/introduction/ title=Introduction>Introduction</a></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/category/> Category</a><ul><li><i data-feather=plus-circle></i><a class=list-link href=/posts/category/sub-category/> Sub-Category</a><ul><li><a class=list-link href=/posts/category/sub-category/rich-content/ title="Rich Content">Rich Content</a></li></ul></li></ul></li><li><a class=list-link href=/posts/markdown-sample/ title="Markdown Sample">Markdown Sample</a></li><li><a class=list-link href=/posts/shortcodes/ title="Shortcodes Sample">Shortcodes Sample</a></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/gcd/> Generalized Category Discovery</a><ul><li><a class=list-link href=/posts/gcd/dino/ title="DINO Read">DINO Read</a></li><li><a class=list-link href=/posts/gcd/simgcd/ title="SimGCD Read">SimGCD Read</a></li><li><a class=list-link href=/posts/gcd/transformer/ title="transformer Read">transformer Read</a></li></ul></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/life/> Life</a><ul><li><a class=list-link href=/posts/life/ahart-march/ title=安徽省美术馆3月展打卡手记>安徽省美术馆3月展打卡手记</a></li><li><a class=list-link href=/posts/life/cycle/ title=非机动车骑行规则>非机动车骑行规则</a></li></ul></li><li><i data-feather=minus-circle></i><a class="active list-link" href=/posts/miscellanea/> Miscellanea</a><ul class=active><li><a class=list-link href=/posts/miscellanea/algorithm/ title=Algorithms>Algorithms</a></li><li><a class=list-link href=/posts/miscellanea/c-lecture/ title="C language lecture 1">C language lecture 1</a></li><li><a class=list-link href=/posts/miscellanea/circuit/ title="Circuit Base">Circuit Base</a></li><li><a class="active list-link" href=/posts/miscellanea/integral/ title="Curve and surface integral">Curve and surface integral</a></li><li><a class=list-link href=/posts/miscellanea/magnetic-vector-potential/ title="Magnetic vector potential">Magnetic vector potential</a></li><li><a class=list-link href=/posts/miscellanea/matrix-base/ title="Matrix Base">Matrix Base</a></li><li><a class=list-link href=/posts/miscellanea/multimodal-fusion/ title="Multimodal-fusion research">Multimodal-fusion research</a></li><li><a class=list-link href=/posts/miscellanea/optimization/ title="Optimization Methods">Optimization Methods</a></li><li><a class=list-link href=/posts/miscellanea/recommendation-progress/ title="Recommendation Progress">Recommendation Progress</a></li><li><a class=list-link href=/posts/miscellanea/word-editing-tips/ title="Word editing tips">Word editing tips</a></li></ul></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/wpt/> Wireless Power Transfer</a><ul><li><a class=list-link href=/posts/wpt/magmimohotspot/ title="MagMIMOHotspot Read">MagMIMOHotspot Read</a></li><li><a class=list-link href=/posts/wpt/induction/ title="The Induction of Positive and Negative">The Induction of Positive and Negative</a></li><li><a class=list-link href=/posts/wpt/mutual-indcution/ title="The Mutual Induction of Positive and Negative">The Mutual Induction of Positive and Negative</a></li><li><a class=list-link href=/posts/wpt/wspmax/ title="WSPMax Read">WSPMax Read</a></li></ul></li><li><i data-feather=plus-circle></i><a class=list-link href> WPTS</a><ul><li><a class=list-link href=/posts/wpt/first-glance/ title="First glance">First glance</a></li></ul></li></div></ul></div></div></div></section><section class=content-section id=content-section><div class=content><div class="container p-0 read-area"><div class="hero-area col-sm-12" id=hero-area style=background-image:url(/posts/miscellanea/integral/images/image-miscellanea.jpg)></div><div class=page-content><div class="author-profile ms-auto align-self-lg-center"><img class=rounded-circle src=/images/author/pandas-part2_hu_e4bd98da8ed4dd74.jpg alt="Author Image"><h5 class=author-name>Jinpeng Ma</h5><p class=text-muted>Sunday, May 18, 2025 | 13 minutes</p></div><div class=title><h1>曲线曲面积分推导</h1></div><div class=tags><ul style=padding-left:0></ul></div><div class=post-content id=post-content><p>本文主要参考 <a href=https://easylink.cc/qse5bk target=_blank rel=noopener>数学分析讲义（第二册）【程艺、陈卿、李平】高等教育出版社</a></p><h3 id=1-数量场在曲线上的积分>1 数量场在曲线上的积分</h3><p><strong>1.1 参数曲线的弧长公式</strong></p><p>设曲线 $ L $ 的参数方程表示为</p><p>$$
+\vec{r} = \vec{r}(t) = x(t) \vec{i} + y(t) \vec{j} + z(t) \vec{k}, \quad t \in [\alpha, \beta],
+$$</p><p>其中 $ x(t), y(t), z(t) $ 在区间 $ [\alpha, \beta] $ 有连续的一阶微商 $ x&rsquo;(t), y&rsquo;(t), z&rsquo;(t) $，且 $ |\vec{r&rsquo;} (t)| \neq 0 $，$ \varphi(x, y, z) $ 在曲线 $ L $ 上连续，因此 $ \varphi(x(t), y(t), z(t)) $ 在 $ [\alpha, \beta] $ 上连续。</p><p>当分割的弧长很小的时候，以<strong>两点之间的折线长代替弧长</strong>。</p><p>现在作 $ [\alpha, \beta] $ 的分割</p><p>$$
+T: \alpha = t_0 &lt; t_1 &lt; t_2 &lt; \cdots &lt; t_{n - 1} &lt; t_n = \beta.
+$$</p><p>由此对应曲线 $ L $ 上以 $ M_i(x(t_i), y(t_i), z(t_i)), i = 0, 1, 2, \dots, n $，为分割点的分割。</p><div style="text-align:center;width:60%;margin:0 auto"><center><img src=images/参数曲线的弧长.png alt="Page section"></center><center><strong>图 1.1:</strong> 参数曲线的弧长</center></div><br><p>如图 1.1 所示，曲线的弧长可以表示为</p><p>$$
+l(T) = \sum_{i = 1}^{n} |\vec{r} (t_i) - \vec{r} (t_{i - 1})| = \sum_{i = 1}^{n} \sqrt{(x(t_i) - x(t_{i - 1}))^2 + (y(t_i) - y(t_{i - 1}))^2 + (z(t_i) - z(t_{i - 1}))^2}
+$$</p><p>由微分中值定理可得，$ \exist \xi_i, \eta_i, \zeta_i $，使得 $ x(t_i) - x(t_{i - 1}) = x&rsquo;(\xi_i) \Delta t_i, y(t_i) - y(t_{i - 1}) = y&rsquo;(\eta_i) \Delta t_i, z(t_i) - z(t_{i - 1}) = z&rsquo;(\zeta_i) \Delta t_i $，得到</p><p>$$
+l(T) = \sum_{i = 1}^{n} \sqrt{x&rsquo;(\xi_i)^2 + y&rsquo;(\eta_i)^2 + z&rsquo;(\zeta_i)^2} \Delta t_i,
+$$</p><p>其中 $ t_{i - 1} &lt; \xi_i, \eta_i, \zeta_i &lt; t_i, \Delta t_i = t_i - t_{i - 1} $。注意此时，$ x(t), y(t), z(t) $ 这三个函数不一定在同一点取导数，即不一定满足 $ \xi_i = \eta_i = \zeta_i $。因此上式并不是严格的 Riemann（黎曼）和的形式，需要做必要的修正，使其近似一个 Riemann 和的形式。</p><p>可以证明</p><p>$$
+\forall \varepsilon > 0,
+|\sqrt{x&rsquo;(\xi_i)^2 + y&rsquo;(\eta_i)^2 + z&rsquo;(\zeta_i)^2} - |\sqrt{x&rsquo;(t_i)^2 + y&rsquo;(t_i)^2 + z&rsquo;(t_i)^2}| &lt; \varepsilon
+$$</p><p>因此</p><p>$$
+|l(T) - \sum_{i = 1}^{n} |\vec{r&rsquo;} (t_i)| \Delta t_i| &lt; \varepsilon \sum_{i = 1}^{n} \Delta t_i = \varepsilon (\beta - \alpha)
+$$</p><p>而 $ |\vec{r&rsquo;} (t_i)| $ 在 $ [\alpha, \beta] $ 上的 Riemann 和的极限 $ \sum_{i = 1}^{n} |\vec{r&rsquo;} (t_i)| \Delta t_i| $正是 $ |\vec{r&rsquo;} (t_i)| $ 在 $ [\alpha, \beta] $ 上的积分 $ \int_{\alpha}^{\beta} |\vec{r&rsquo;} (t)| dt $。</p><p>因此 $ L $ 的弧长 $ l $ 定义为</p><p>$$
+l = \lim_{||T|| \to 0} l(T) = \int_{\alpha}^{\beta} |\vec{r&rsquo;} (t)| dt = \int_{\alpha}^{\beta} \sqrt{x&rsquo;(t)^2 + y&rsquo;(t)^2 + z&rsquo;(t)^2} dt
+$$</p><p><strong>1.2 基本定义</strong></p><p>设 $ L $ 时三维空间中一条光滑（或逐段光滑）曲线段，$ \varphi(x, y, z) $ 时定义在曲线 $ L $ 上的数量场（或函数）。作 $ L $ 的任意分割：$ M_0, M_1, M_2, \dots, M_n $，并记每段 $ \overgroup{M_{i - 1} M_i} $ 的弧长为 $ \Delta s_i $，最大长度为 $ \lambda = \max {|\Delta s_i|, i = 1, 2, \dots, n} $。在每段弧 $ \overgroup{M_{i - 1} M_i} $ 上任取一点 $ N_i(\xi_i, \eta_i, \zeta_i) $。如果下列和式的极限</p><p>$$
+\lim_{\lambda \to 0} \sum_{i = 1}^n \varphi(\xi_i, \eta_i, \zeta_i) \Delta s_i
+$$</p><p>是一个有限数，且与点 $ N_i(\xi_i, \eta_i, \zeta_i) $ 的选择无关，那么称函数 $ \varphi(x, y, z) $ 在曲线 $ L $ 上可积。极限值称为数量场在曲线上的积分，或称为第一型曲线积分，记为</p><p>$$
+\int_{L} \varphi(x, y, z) ds
+$$</p><p><strong>1.3 数量场在曲线上的积分的计算</strong></p><p>设曲线 $ L $ 的参数方程表示为</p><p>$$
+\vec{r} = \vec{r}(t) = x(t) \vec{i} + y(t) \vec{j} + z(t) \vec{k}, \quad t \in [\alpha, \beta],
+$$</p><p>其中 $ x(t), y(t), z(t) $ 在区间 $ [\alpha, \beta] $ 有连续的一阶微商 $ x&rsquo;(t), y&rsquo;(t), z&rsquo;(t) $，且 $ |\vec{r&rsquo;} (t)| \neq 0 $，$ \varphi(x, y, z) $ 在曲线 $ L $ 上连续，因此 $ \varphi(x(t), y(t), z(t)) $ 在 $ [\alpha, \beta] $ 上连续。</p><p>现在作 $ [\alpha, \beta] $ 的分割</p><p>$$
+T: \alpha = t_0 &lt; t_1 &lt; t_2 &lt; \cdots &lt; t_{n - 1} &lt; t_n = \beta.
+$$</p><p>由此对应曲线 $ L $ 上以 $ M_i(x(t_i), y(t_i), z(t_i)), i = 0, 1, 2, \dots, n $，为分割点的分割。由弧长的计算公式与积分中值定理，得到弧段 $ \overgroup{M_{i - 1} M_i} $ 的长为</p><p>$$
+\Delta s_i = \int_{t_{i - 1}}^{t_i} |\vec{r&rsquo;} (t)| dt = |\vec{r&rsquo;} (\theta_i)| \Delta t_i,
+$$</p><p>其中 $ t_{i - 1} \leq \theta_i \leq t_i, \Delta t_i = t_i - t_{i - 1} (i = 1, 2, \dots, n) $。</p><p>取弧段上任意一点 $ N_i(\tau_i, \tau_i, \tau_i), t_{i - 1} \leq \tau_i \leq t_i (i = 1, 2, \dots, n) $，于是</p><p>$$
+\sum_{i = 1}^n \varphi(x(\tau_i), y(\tau_i), z(\tau_i)) \Delta s_i = \sum_{i = 1}^n \varphi(x(\tau_i), y(\tau_i), z(\tau_i)) |\vec{r&rsquo;} (\theta_i)| \Delta t_i
+$$</p><p>等式的右边还不是一个函数的 Riemann 和，但我们可以作修正，$ \sum_{i = 1}^n \varphi(x(\tau_i), y(\tau_i), z(\tau_i)) |\vec{r&rsquo;} (\theta_i)| \Delta t_i $ 近似于 $ \sum_{i = 1}^n \varphi(x(\tau_i), y(\tau_i), z(\tau_i)) |\vec{r&rsquo;} (\tau_i)| \Delta t_i $</p><p>此 Riemann 和的极限正是 $ \varphi(x(t), y(t), z(t)) $ 在 $ [\alpha, \beta] $ 上的积分，因此</p><p>$$
+\int_L \varphi(x, y, z) ds = \int_{\alpha}^{\beta} \varphi(x(t), y(t), z(t)) |\vec{r&rsquo;} (t)| dt = \int_{\alpha}^{\beta} \varphi(x(t), y(t), z(t)) \sqrt{x&rsquo;(t)^2 + y&rsquo;(t)^2 + z&rsquo;(t)^2} \Delta t
+$$</p><p>$ ds = |\vec{r&rsquo;} (t)| \Delta t $。</p><h3 id=2-向量场在曲线上的积分>2 向量场在曲线上的积分</h3><p><strong>2.1 物理背景</strong></p><p>设 $ F(x,y,z) = P(x,y,z) \vec{i} + Q(x,y,z) \vec{j} + R(x,y,z) \vec{k} $ 是一个力场,考察一个质点沿一条曲线 $ L $运动时力场所做的功，应注意三个要素，即力场的方向、质点运动的方向和质点运动的距离。为此可以采取以下办法(图 2.1)：</p><div style="text-align:center;width:60%;margin:0 auto"><center><img src=images/参数曲线上做功.png alt="Page section"></center><center><strong>图 2.1:</strong> 参数曲线上做功</center></div><br><p>沿质点运动方向上作曲线 $ L $ 的一个分割，记为 $ M_i(x_i, y_i, z_i), i = 0, 1, 2, \dots, n $。</p><p>在第 $ i $ 段上，力场 $ \vec{F} $ 可近似成一个常值向量</p><p>$$
+\vec{F_i} = P_i \vec{i} + Q_i \vec{j} + R_i \vec{k}.
+$$</p><p>该段曲线可近似成有向线段</p><p>$$
+\Delta \vec{r}<em>i = \vec{M</em>{i - 1} M_i} = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
+$$</p><p>它的方向指向质点运动的方向。因此力场在每一小段上所做的功可近似为</p><p>$$
+W_i = \vec{F_i} \cdot \Delta \vec{r}_i = P_i \Delta x_i + Q_i \Delta y_i + R_i \Delta z_i.
+$$</p><p>将这样的近似值相加,并让分割的最大长度趋于零,那么结果就是力场所做的总功。</p><p><strong>2.2 数量场在曲线上的积分的定义</strong></p><p>设 $ \vec{v} = P(x, y, z) \vec{i} + Q(x, y, z) \vec{j} + R(x, y, z) \vec{k} $ 是空间区域 $ D $ 中的向量场，$ L_{AB} $ 是 $ D $ 中的定向曲线，在 $ L_{AB} $ 上从 $ A $ 到 $ B $ 依次选取任意的分割点：</p><p>$$
+A = M_0, M_1, M_2, \dots, M_n = B,
+$$</p><p>其中分割点的坐标是 $ M_i(X_i, Y_i, Z_i), i = 0, 1, 2, \dots, n $。则</p><p>$$
+\Delta \vec{r}<em>i = \vec{M</em>{i - 1} M_i} = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
+$$</p><p>在每一段弧 $ \overgroup{M_{i - 1}{M_i}} $ 上任取一点 $ N_i(\xi_i, \eta_i, \zeta_i) $，当分割的最大长度趋于零时，如果下列和式：</p><p>$$
+\sum_{i = 1}^n \vec{v}(\xi_i, \eta_i, \zeta_i) \Delta \vec{r}<em>i = \sum</em>{i = 1}^n P(\xi_i, \eta_i, \zeta_i) \Delta x_i + Q(\xi_i, \eta_i, \zeta_i) \Delta y_i + R(\xi_i, \eta_i, \zeta_i) \Delta z_i
+$$</p><p>的极限存在且有限，那么极限值称为向量场 $ \vec{v} $ 沿着曲线 $ L_{AB} $ 上的积分，记为</p><p>$$
+\int_{L_{AB}} \vec{v} \cdot d\vec{r}.
+$$</p><p><strong>2.3 数量场在曲线上的积分的计算</strong></p><p>下面利用曲线的参数方程表示，将向量场在曲线上的积分的计算具体化。</p><p>设向量场 $ \vec{v} = P(x, y, z) \vec{i} + Q(x, y, z) \vec{j} + R(x, y, z) \vec{k} $ 在区域 $ D $ 内
+连续，曲线 $L_{AB} \subset D $具有参数方程表示</p><p>$$
+L_{AB}: \vec{r}=\vec{r} (t) = x(t) \vec{i} + y(t) \vec{j} + z(t) \vec{k}, t \in [\alpha, \beta],
+$$</p><p>且有连续的导函数，参数$ t $ 是正向参数，则向量场在 $ L_{AB} $ 上可积，且可化为下列定积分</p><p>$$
+\int_{L_{AB}} \vec{v} \cdot d\vec{r} = \int_{\alpha}^{\beta} \vec{v}(\vec{r}(t)) \cdot \vec{r&rsquo;}(t) dt = \int_{\alpha}^{\beta} [P(x(t), y(t), z(t)) x&rsquo;(t) + Q(x(t), y(t), z(t)) y&rsquo;(t) + R(x(t), y(t), z(t)) z&rsquo;(t)] dt
+$$</p><p>下面进行证明</p><p>对参数所在的区间 $ [\alpha, \beta] $ 进行的任意分割 $ T: \alpha = t_0 &lt; t_1 &lt; t_2 &lt; \cdots &lt; t_n = \beta $，则对应曲线上沿方向从 $ A $ 到 $ B $ 的任意分割 $ A = M_0, M_1, M_2, \cdots, M_n = B $，根据曲线参数方程表示的连续性可知，关于$ t $ 的分割最大长度趋于零等价于曲线上
+对应的分割最大长度趋于零。此时</p><p>$$
+\Delta \vec{r}<em>i = \vec{M</em>{i - 1} M_i} = \vec{r}(t_i) - \vec{r}(t_{i - 1}) = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
+$$</p><p>根据微分中值定理有</p><p>$$
+\Delta x_i = x(t_i) - x(t_{i - 1}) = x&rsquo;(\lambda_i) \Delta t_i, \Delta y_i = y(t_i) - y(t_{i - 1}) = y&rsquo;(\mu_i) \Delta t_i, \Delta z_i = z(t_i) - z(t_{i - 1}) = z&rsquo;(\nu_i) \Delta t_i,
+$$</p><p>其中 $ t_{i - 1} \leq \lambda_i, \mu_i, \nu_i \leq t_i $。取第 $ i $ 段曲线上任意一点</p><p>$$
+(\xi_i, \eta_i, \zeta_i) = (x(\tau_i), y(\tau_i), z(\tau_i)), \tau_i \in [t_{i - 1}, t_i],
+$$</p><p>这里 $ i = 1, 2, \dots, n $，则</p><p>$$
+\begin{aligned}
+\sum_{i = 1}^{n} \vec{v}(\xi_i, \eta_i, \zeta_i) \cdot \Delta \vec{r}<em>i &= \sum</em>{i = 1}^n \vec{v}(x(\tau_i), y(\tau_i), z(\tau_i)) \cdot \Delta \vec{r}<em>i \
+&= \sum</em>{i = 1}^n (P(x(\tau_i), y(\tau_i), z(\tau_i)) x&rsquo;(\lambda_i) + Q(x(\tau_i), y(\tau_i), z(\tau_i)) y&rsquo;(\mu_i) + R(x(\tau_i), y(\tau_i), z(\tau_i)) z&rsquo;(\nu_i)) \Delta t_i
+\end{aligned}
+$$</p><p>注意到上式最后一个等式中，虽然三个求和项都不是严格的 Riemann 和，但可以采取数量场在曲线上积分时的处理办法,进行必要的修正，使得每个求和都能表示成严格的 Riemann 和（即$ \lambda_i = \mu_i = \nu_i = \tau_i $）与一个修正项之和。当$ |T| \to 0 $时，修正项的极限为零，所以有</p><p>$$
+\begin{aligned}
+\lim_{|T| \to 0} \sum_{i = 1}^n \vec{v}(x(\tau_i), y(\tau_i), z(\tau_i)) \cdot \Delta \vec{r}<em>i &= \int</em>{\alpha}^{\beta} [P x&rsquo;(t) + Q y&rsquo;(t) + R z&rsquo;(t)] dt \
+&= \int_{\alpha}^{\beta} \vec{v}(\vec{r}(t)) \cdot \vec{r&rsquo;}(t) dt
+\end{aligned}
+$$</p><p>向量场在曲线上的积分有下列两种表示，每一种表示都突出了积分的某种
+含义。</p><p>首先，设 $ s $ 为曲线 $ L_{AB} $ 的弧长参数，弧长的增长对应曲线正向，$ \vec{\tau}(s) = \frac{\vec{r&rsquo;}(s)}{|\vec{r&rsquo;}(s)|} $ 为弧长方向上的单位向量，有</p><p>$$
+d \vec{r} = \vec{r&rsquo;}(s) dt = \frac{\vec{r&rsquo;}(s)}{|\vec{r&rsquo;}(s)|} |\vec{r&rsquo;}(s)| dt = \vec{\tau}(s) ds.
+$$</p><p>因此，向量场的曲线积分可表示为</p><p>$$
+\int_{L_{AB}} \vec{v} \cdot d \vec{r} = \int_{L_{AB}} \vec{v} \cdot d \vec{r} = \int_{L_{AB}} \vec{v} \cdot \vec{\tau} ds.
+$$</p><p>等式的右边正是一个关于数量场 $ \vec{v} \cdot \vec{\tau} $ 的曲线积分。</p><p>其次，利用</p><p>$$
+d \vec{r} = dx \vec{i} + dy \vec{j} + dz \vec{k},
+$$</p><p>我们有</p><p>$$
+\int_{L_{AB}} \vec{v} \cdot d \vec{r} = \int_{L_{AB}} P dx + Q dy + R dz.
+$$</p><p>综合上述两种表示，如果将单位切向量 $ \vec{\tau} $ 表示为方向余弦</p><p>$$
+\vec{\tau} = \cos \alpha \vec{i} + \cos \beta \vec{j} + \cos \gamma \vec{k},
+$$</p><p>那么，从</p><p>$$
+d \vec{r} = \cos \alpha ds \vec{i} + \cos \beta ds \vec{j} + \cos \gamma ds \vec{k} = dx \vec{i} + dy \vec{j} + dz \vec{k}
+$$</p><p>不难看出</p><p>$$
+dx = \cos \alpha ds, dy = \cos \beta ds, dz = \cos \gamma ds,
+$$</p><p>即 $ dx, dy, dz $ 分别式 $ \vec{\tau} ds $ 在 $ \vec{i}, \vec{j}, \vec{k} $ 上的有向投影，并且</p><p>$$
+\begin{aligned}
+\int_{L_{AB}} \vec{v} \cdot d \vec{r} &= \int_{L_{AB}} (P \cos \alpha + Q \cos \beta + R \cos \gamma) ds
+&= \int_{L_{AB}} P dx + Q dy + R dz
+\end{aligned}
+$$</p><h3 id=3-数量场在曲面上的积分>3 数量场在曲面上的积分</h3><p><strong>3.1 曲面的面积</strong></p><p>设 $ S $ 是一张光滑的参数曲面：</p><p>$$
+\vec{r} = \vec{r}(u, v) = x(u, v) \vec{i} + y(u, v) \vec{j} + z(u, v) \vec{k}, u, v \in D,
+$$</p><p>即 $ x(u, v), y(u, v), z(u, v) $ 具有连续的偏导数，且</p><p>$$
+\vec{r}<em>{u}&rsquo; \times \vec{r}</em>{v}&rsquo; \neq 0,
+$$</p><p>这里 $ D $ 是参变量 $ (u, v) $ 所在平面中的一个有界区域。</p><p>应平行于 $ Ouv $ 的坐标轴的直线 $ u = u_i, v = v_j $ 取分割区域 $ D $，其中一个小区域 $ D_{ij} = {(u, v)| u_i \leq u \leq u_{i + 1}, v_j \leq v \leq v_{j + 1}} $ 对应在 $ S $ 上就得到一个子曲面 $ S_{ij} $，它由两条 $ u $ 曲线 $ v = v_j, v = v_{j + 1} $ 和两条 $ v $ 曲线 $ u = u_i, u = u_{i + 1} $ 围成。当 $ \Delta u_i = u_{i + 1} - u_i $ 和 $ \Delta v_j = v_{j + 1} - v_j $ 都很小时，$ S_{ij} $ 可以近似看成由两个向量 $ \vec{r} (u_{i + 1}, v_j) - \vec{r}(u_i, v_j) $ 和 $ \vec{r}(u_i, v_{j + 1}) - \vec{r}(u_i, v_j) $ 张成的平行四边形（图 3.1）</p><div style="text-align:center;width:60%;margin:0 auto"><center><img src=images/参数曲面的面积.png alt="Page section"></center><center><strong>图 3.1:</strong> 参数曲面的近似面积图示</center></div><br><p>因为</p><p>$$
+\vec{r} (u_{i + 1}, v_j) - \vec{r}(u_i, v_j) = \vec{r}<em>{u}&rsquo;(u_i, v_j) \Delta u_i + o(\Delta u_i), \
+\vec{r}(u_i, v</em>{j + 1}) - \vec{r}(u_i, v_j) = \vec{r}_{v}&rsquo;(u_i, v_j) \Delta v_j + o(\Delta v_j),
+$$</p><p>所以，$ S_{ij} $ 的面积</p><p>$$
+\sigma(S_{ij}) \approx |\vec{r}<em>{u}&rsquo;(u_i, v_j) \times \vec{r}</em>{v}&rsquo;(u_i, v_j)| \Delta u_i \Delta v_j.
+$$</p><p>也就是说，用“以直代曲”的思想，曲面的一小块面积可以用切平面上以 $ \vec{r}<em>{u}&rsquo;(u_i, v_j) \Delta u_i $ 和 $ \vec{r}</em>{v}&rsquo;(u_i, v_j) \Delta v_j $ 为边的平行四边形面积来近似。于是曲面 $ S $ 的面积</p><p>$$
+\sigma(S) = \iint_D |\vec{r}<em>{u}&rsquo;(u, v) \times \vec{r}</em>{v}&rsquo;(u, v)| du dv.
+$$</p><p>记</p><p>$$
+E = \vec{r}<em>{u}&rsquo;^2 = x</em>{u}&rsquo;^2 + y_{u}&rsquo;^2 + z_{u}&rsquo;^2, \
+F = \vec{r}<em>{v}&rsquo;^2 = x</em>{v}&rsquo;^2 + y_{v}&rsquo;^2 + z_{v}&rsquo;^2, \
+G = \vec{r}<em>{u}&rsquo; \cdot \vec{r}</em>{v}&rsquo; = x_{u}&rsquo; x_{v}&rsquo; + y_{u}&rsquo; y_{v}&rsquo; + z_{u}&rsquo; z_{v}&rsquo;,
+$$</p><p>那么，记</p><p>$$
+dS = |\vec{r}<em>{u}&rsquo;(u, v) \times \vec{r}</em>{v}&rsquo;(u, v)| du dv = \sqrt{E F - G^2} du dv,
+$$</p><p>并称为曲面的面积元素。因此，曲面 $ S $ 的面积的一般计算公式为</p><p>$$
+\sigma(S) = \iint_D \sqrt{E F - G^2} du dv.
+$$</p><p><strong>3.2 数量场在曲面上的积分的计算</strong></p><p>设 $ S $ 是一张有界的光滑曲面，$ \varphi(x, y, z) $ 是定义在 $ S $ 上的数量场。把 $ S $ 分成 $ n $ 快曲面 $ S_1, S_2, \cdots, S_n $，每一小块的面积记为 $ \sigma(S_i) $。在 $ S_i $ 上任取一点 $ M_i(\xi_i, \eta_i, \zeta_i) $，如果下列极限</p><p>$$
+\lim_{\lambda \to 0} \sum_{i = 1}^n \varphi(\xi_i, \eta_i, \zeta_i) \sigma(S_i)
+$$</p><p>是一个有限数，而且与 $ M_i(\xi_i, \eta_i, \zeta_i) $ 的选择无关，其中 $ \lambda \to 0 $ 表示分块越来越细，那么称 $ \varphi(x, y, z) $ 在曲面 $ S $ 上可积，极限值就是它的积分值，记成</p><p>$$
+\iint_S \varphi(x, y, z) dS = \lim_{\lambda \to 0} \sum_{i = 1}^n \varphi(\xi_i, \eta_i, \zeta_i) \sigma(S_i).
+$$</p><p>设曲面 $ S $ 具有参数方程表示</p><p>$$
+\vec{r} = \vec{r}(u, v) = x(u, v) \vec{i} + y(u, v) \vec{j} + z(u, v) \vec{k}, u, v \in D,
+$$</p><p>其中 $ D $ 是平面 $ O&rsquo;uv $ 上的有界闭区域，$ S $ 上的分块对应 $ D $ 的矩形分割。设 $ \varphi(x, y, z) $ 在包含 $ S $ 的一个区域内连续，则它在 $ S $ 上的曲面积分是一定存在的，而且有</p><p>$$
+\begin{aligned}
+\iint_S \varphi(x, y, z) dS &= \iint_D \varphi(x(u, v), y(u, v), z(u, v)) |\vec{r}<em>{u}&rsquo;(u, v) \times \vec{r}</em>{v}&rsquo;(u, v)| du dv \
+&= \iint_D \varphi(x(u, v), y(u, v), z(u, v)) \sqrt{E F - G^2} du dv.
+\end{aligned}
+$$</p><p>注意：上式的右端，正式定义在平面区域 $ D $ 上函数 $ \varphi(x(u, v), y(u, v), z(u, v)) |\vec{r}<em>{u}&rsquo;(u, v) \times \vec{r}</em>{v}&rsquo;(u, v)| $ 的二重积分。</p><h3 id=4-向量场在曲面上的积分>4 向量场在曲面上的积分</h3><p><strong>4.1 物理背景</strong></p><p>本节讨论向量场在曲面上的积分，也称为第二型曲面积分。设想在一条河流中放置一张渔网，流体通过渔网这张曲面的速率称为通量，即单位时间内通过曲面的流体体积（图 4.1）。决定通量大小的因素有：流体的流速、流向与曲面的角度、曲面的面积以及通过曲面的哪一个流动方向是正方向。</p><div style="text-align:center;width:60%;margin:0 auto"><center><img src=images/参数曲面的通量.png alt="Page section"></center><center><strong>图 4.1:</strong> 参数曲面的通量</center></div><br><p><strong>4.2 向量场在曲面上的积分的定义</strong></p><p>我们以计算流体通过空间曲面的通量为例，引进向量场在曲面上积分的具体形式。</p><p>设 $ \vec{v} $ 是一个不可压缩流体的速度场，$ S $是一张定向曲面。确定方向的单位法向量是 $ \vec{n} $ （图 4.2）。取 $ S $ 上一小块面积元 $ dS $，因此“有向面积元”（即面积元向量）为$ d \vec{S} = \vec{n} dS $。在$ dS $ 上取一点 $ M $，则流体在 $ dS $上的速度可近似为 $ \vec{v}(M) $。那么单位时间内流经 $ dS $ 的流量为</p><p>$$
+dN = \vec{v} \cdot d \vec{S} = \vec{v} \cdot \vec{n} dS,
+$$</p><div style="text-align:center;width:60%;margin:0 auto"><center><img src=images/参数曲面的正向单位法向量和速度场.png alt="Page section"></center><center><strong>图 4.2:</strong> 参数曲面的正向单位法向量和速度场</center></div><br><p>于是过 $ S $ 的通量（单位时间内流过 $ S $ 的流量）就是一种积分，即</p><p>设 $ \vec{v} (M) $ 是定义在定向曲面 $ S $ 上的一个向量场， $ S $ 的正向为单位法向量 $ \vec{n} $，则下列积分</p><p>$$
+\iint_S \vec{v} \cdot d \vec{S} = \iint_S \vec{v} \cdot \vec{n} dS.
+$$</p><p>称为向量场 $ \vec{v} $ 在有向曲面 $ S $ 上的曲面积分。或者说向量场在曲面上的积分是通过数量场 $ \vec{v} \cdot \vec{n} $ 的在 $ S $ 上的曲面积分给出的。当曲面 $ S $ 是一个封闭曲面时，称积分为向量场通过封闭曲面的通量，优势也记为</p><p>$$
+\oiint_S \vec{v} \cdot d \vec{S}.
+$$</p><p><strong>4.3 向量场在曲面上的积分的计算</strong></p><p>在直角坐标系下，设向量场为</p><p>$$
+\vec{v} = P \vec{i} + Q \vec{j} + R \vec{k};
+$$</p><p>$ S $ 是一张定向光滑曲面，并且具有正向参数表示</p><p>$$
+\vec{v} = \vec{r} (u, v) = x(u, v) \vec{i} + y(u, v) \vec{j} + z(u, v) \vec{k}, u, v \in D.
+$$</p><p>它的面积元为 $ dS = |\vec{r}<em>{u}&rsquo;(u, v) \times \vec{r}</em>{v}&rsquo;(u, v)| du dv $。此时正向单位法向量为</p><p>$$
+\vec{n} = \vec{n} (u, v) = \frac{\vec{r}<em>{u}&rsquo;(u, v) \times \vec{r}</em>{v}&rsquo;(u, v)}{|\vec{r}<em>{u}&rsquo;(u, v) \times \vec{r}</em>{v}&rsquo;(u, v)|} .
+$$</p><p>则有向面积元为</p><p>$$
+d \vec{S} = \vec{n} dS = \frac{\vec{r}<em>{u}&rsquo;(u, v) \times \vec{r}</em>{v}&rsquo;(u, v)}{|\vec{r}<em>{u}&rsquo;(u, v) \times \vec{r}</em>{v}&rsquo;(u, v)|} dS = \vec{r}<em>{u}&rsquo;(u, v) \times \vec{r}</em>{v}&rsquo;(u, v) du dv ,
+$$</p><p>因此向量场积分可以化为参数区域 $ D $ 上的二重积分</p><p>$$
+\begin{aligned}
+\iint_S \vec{v} \cdot d \vec{S} &= \iint_S \vec{v} \cdot \vec{n} dS = \iint_D \vec{v} \cdot \vec{r}<em>{u}&rsquo; \times \vec{r}</em>{v}&rsquo; du dv \
+&= \iint_D \begin{vmatrix}
+P & Q & R \
+x_{u}&rsquo; & y_{u}&rsquo; & z_{u}&rsquo; \
+x_{v}&rsquo; & y_{v}&rsquo; & z_{v}&rsquo;
+\end{vmatrix} du dv \
+&= \iint_D [P \frac{\partial(y, z)}{\partial (u, v)} + Q \frac{\partial(z, x)}{\partial (u, v)} + R \frac{\partial(x, y)}{\partial (u, v)}] du dv .
+\end{aligned}
+$$</p><p>上式中，积分的方向实际上隐含在 $ \frac{\partial(y, z)}{\partial (u, v)} $ 等三个 Jacobi 行列式中。有向面积元又可以表示为</p><p>$$
+\begin{aligned}
+d \vec{S} &= (\vec{r}<em>{u}&rsquo; \times \vec{r}</em>{v}&rsquo;) du dv \
+&= [\frac{\partial(y, z)}{\partial (u, v)} du dv] \vec{i} + [\frac{\partial(z, x)}{\partial (u, v)} du dv] \vec{j} + [\frac{\partial(x, y)}{\partial (u, v)} du dv] \vec{k} .
+\end{aligned}
+$$</p><p>记</p><p>$$
+dy \land dz = \frac{\partial(y, z)}{\partial (u, v)} du dv, dz \land dx = \frac{\partial(z, x)}{\partial (u, v)} du dv, dx \land dy = \frac{\partial(x, y)}{\partial (u, v)} du dv ,
+$$</p><p>则</p><p>$$
+d \vec{S} = (dy \land dz) \vec{i} + (dz \land dx) \vec{j} + (dx \land dy) \vec{k} .
+$$</p><p>如果用方向余弦表示曲面的正向单位法向量</p><p>$$
+\vec{n} = \cos \alpha \vec{i} + \cos \beta \vec{j} + \cos \gamma \vec{k},
+$$</p><p>这里 $ \alpha, \beta, \gamma $ 表示 $ \vec{n} $ 与三个坐标轴的正向的夹角，那么有向面积元为</p><p>$$
+d \vec{S} = \cos \alpha dS \vec{i} + \cos \beta dS \vec{j} + \cos \gamma dS \vec{k} .
+$$</p><p>所以</p><p>$$
+dy \land dz = \cos \alpha dS, dz \land dx = \cos \beta dS, dx \land dy = \cos \gamma dS ,
+$$</p><p>它们分别为有向面积 $ d \vec{S} $ 在三个坐标平面 $ Oyz, Ozx, Oxy $ 上的投影。</p><p>因此，向量场积分又可以表示为</p><p>$$
+\begin{aligned}
+\iint_S \vec{v} \cdot d \vec{S} &= \iint_S P dy \land dz + Q dz \land dx + R dx \land dy \
+&= \iint_S (P \cos \alpha + Q \cos \beta + R \cos \gamma) dS \
+\end{aligned}
+$$</p><p>为了简化起见，记</p><p>$$
+dy dz = dy \land dz, dz dx = dz \land dx, dx dy = dx \land dy,
+$$</p><p>即，可用记号</p><p>$$
+\iint_S P dy dz + Q dz dx + R dx dy
+$$</p><p>表示向量场积分，但此时的 $ dydz, dzdx, dxdy $ 已经具有了方向的含义。</p></div><div class="row ps-3 pe-3"><div class="col-md-6 share-buttons"></div><div class="col-md-6 btn-improve-page"><a href=https://github.com/qingbo12/qingbo12.github.io/edit/main/content/posts/Miscellanea/integral/index.md title="Improve this page" target=_blank rel=noopener><i class="fas fa-code-branch"></i>
+Improve this page</a></div></div><hr><div class="row next-prev-navigator"><div class="col-md-6 previous-article"><a href=/posts/miscellanea/circuit/ title="Circuit Base" class="btn filled-button"><div><i class="fas fa-chevron-circle-left"></i> Prev</div><div class=next-prev-text>Circuit Base</div></a></div><div class="col-md-6 next-article"><a href=/posts/miscellanea/magnetic-vector-potential/ title=磁矢势 class="btn filled-button"><div>Next <i class="fas fa-chevron-circle-right"></i></div><div class=next-prev-text>磁矢势</div></a></div></div><hr><div id=utteranc_thread></div><div id=comments class=comments><div id=comments-container></div></div><script type=text/javascript>(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.setAttribute("repo","qingbo12/comments"),e.setAttribute("issue-term","title"),e.setAttribute("theme","github-light"),e.crossorigin="anonymous",e.src="https://utteranc.es/client.js",document.getElementById("comments-container").appendChild(e)})()</script></div></div></div><a id=scroll-to-top class=btn type=button data-bs-toggle=tooltip data-bs-placement=left title="Scroll to top"><i class="fas fa-chevron-circle-up"></i></a></section><section class=toc-section id=toc-section><div class=toc-holder><h5 class="text-center ps-3">Table of Contents</h5><hr><div class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#1-数量场在曲线上的积分>1 数量场在曲线上的积分</a></li><li><a href=#2-向量场在曲线上的积分>2 向量场在曲线上的积分</a></li><li><a href=#3-数量场在曲面上的积分>3 数量场在曲面上的积分</a></li><li><a href=#4-向量场在曲面上的积分>4 向量场在曲面上的积分</a></li></ul></li></ul></nav></div></div></section></div><footer id=footer class="container-fluid text-center align-content-center footer pb-2"><div class="container pt-5"><div class="row text-start"><div class="col-md-4 col-sm-12"><h5>Navigation</h5><ul><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#about>About</a></li><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#education>Education</a></li><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#projects>Projects</a></li><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#featured-posts>Featured Posts</a></li><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#recent-posts>Recent Posts</a></li></ul></div><div class="col-md-4 col-sm-12"><h5>Contact me:</h5><ul><li><a href=mailto:qingbo12@gmail.com target=_blank rel=noopener><span><i class="fas fa-envelope"></i></span> <span>qingbo12@gmail.com</span></a></li></ul></div></div></div><hr><div class=container><p id=disclaimer><strong>Liability Notice:</strong> This theme is under MIT license. So, you can use it for non-commercial, commercial, or private uses. You can modify or distribute the theme without requiring any permission from the theme author. However, the theme author does not provide any warranty or takes any liability for any issue with the theme.</p></div><hr><div class=container><div class="row text-start"><div class=col-md-4><a id=theme href=https://github.com/hugo-toha/toha target=_blank rel=noopener><img src=/images/theme-logo_hu_b3360284c55cf72d.png alt="Toha Theme Logo">
+Toha</a></div><div class="col-md-4 text-center">© 2025 Copyright.</div><div class="col-md-4 text-end"><a id=hugo href=https://gohugo.io/ target=_blank rel=noopener>Powered by
+<img src=/images/hugo-logo.svg alt="Hugo Logo" height=18></a></div></div></div></footer><script src=/application.a693247e55003ad0d03a5192345157b19e3fd68c8bee490d7cea98b988413aee.js integrity="sha256-ppMkflUAOtDQOlGSNFFXsZ4/1oyL7kkNfOqYuYhBOu4=" defer></script></body></html>
