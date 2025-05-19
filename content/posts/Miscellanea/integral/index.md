@@ -16,6 +16,38 @@ hero: images/image-miscellanea.jpg
 
 本文主要参考 [数学分析讲义（第二册）【程艺、陈卿、李平】高等教育出版社](https://easylink.cc/qse5bk)
 
+### 0 参数曲线和参数曲面
+
+参数曲线的表示如下
+
+$$
+\vec{r} = \vec{r} (t) = x(t) \vec{i} + y(t) \vec{j} + z(t) \vec{k}, \quad t \in [\alpha, \beta],
+$$
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/参数曲线的映射.png" alt="Page section" /></center>
+    <center><strong>图 0.1:</strong> 参数曲线的映射 </center>
+</div>
+
+<br>
+
+用一维变量 $ t $ 上的一条线段映射到三维空间的曲线。
+
+参数曲面的表示如下
+
+$$
+\vec{r} = \vec{r} (u, v) = x(u, v) \vec{i} + y(u, v) \vec{j} + z(u, v) \vec{k}, \quad u, v \in D.
+$$
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/参数曲面的面积.png" alt="Page section" /></center>
+    <center><strong>图 0.2:</strong> 参数曲面的映射 </center>
+</div>
+
+<br>
+
+因为空间曲面可以看成由一条条空间曲线组成，因此想得到横纵很多条空间曲线，就需要二维变量 $ u, v $ 上横纵很多条线段构成的二维平面。
+
 ### 1 数量场在曲线上的积分
 
 **1.1 参数曲线的弧长公式**
