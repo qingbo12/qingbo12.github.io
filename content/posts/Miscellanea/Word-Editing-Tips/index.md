@@ -16,6 +16,8 @@ hero: images/image-miscellanea.jpg
 
 ### 1 设置 Word 多级标题模板
 
+本节主要参考 [【Word多级标题完整设置】各级标题样式&自动编号](https://blog.csdn.net/weixin_45313452/article/details/132515206)
+
 在 Word 2021 上建立本科毕业论文的多级标题模板，最终实现效果如下：
 
 <div style="text-align: center; width: 60%; margin: 0 auto;">
@@ -188,6 +190,8 @@ hero: images/image-miscellanea.jpg
 ### 3 图表
 
 **3.1 插入图片设置**
+
+本节主要参考 [硕士论文中，如何针对图表插入题注、交叉引用，且后续快速插入图表目录？](https://zhuanlan.zhihu.com/p/502562519)
 
 **3.1.1 插入图片显示不全**
 
