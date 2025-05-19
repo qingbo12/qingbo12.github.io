@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Miscellanea on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/miscellanea/</link><description>Recent content in Miscellanea on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 18 May 2025 14:51:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/miscellanea/index.xml" rel="self" type="application/rss+xml"/><item><title>曲线曲面积分推导</title><link>https://qingbo12.github.io/posts/miscellanea/integral/</link><pubDate>Sun, 18 May 2025 14:51:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/integral/</guid><description>&lt;p>本文主要参考 &lt;a href="https://easylink.cc/qse5bk" target="_blank" rel="noopener">数学分析讲义（第二册）【程艺、陈卿、李平】高等教育出版社&lt;/a>&lt;/p>
-&lt;h3 id="1-数量场在曲线上的积分">1 数量场在曲线上的积分&lt;/h3>
-&lt;p>&lt;strong>1.1 参数曲线的弧长公式&lt;/strong>&lt;/p>
-&lt;p>设曲线 $ L $ 的参数方程表示为&lt;/p>
+&lt;h3 id="0-参数曲线和参数曲面">0 参数曲线和参数曲面&lt;/h3>
+&lt;p>参数曲线的表示如下&lt;/p>
 &lt;p>$$
-\vec{r} = \vec{r}(t) = x(t) \vec{i} + y(t) \vec{j} + z(t) \vec{k}, \quad t \in [\alpha, \beta],
+\vec{r} = \vec{r} (t) = x(t) \vec{i} + y(t) \vec{j} + z(t) \vec{k}, \quad t \in [\alpha, \beta],
 $$&lt;/p>
-&lt;p>其中 $ x(t), y(t), z(t) $ 在区间 $ [\alpha, \beta] $ 有连续的一阶微商 $ x&amp;rsquo;(t), y&amp;rsquo;(t), z&amp;rsquo;(t) $，且 $ |\vec{r&amp;rsquo;} (t)| \neq 0 $，$ \varphi(x, y, z) $ 在曲线 $ L $ 上连续，因此 $ \varphi(x(t), y(t), z(t)) $ 在 $ [\alpha, \beta] $ 上连续。&lt;/p></description></item><item><title>一些 Word 编辑技巧</title><link>https://qingbo12.github.io/posts/miscellanea/word-editing-tips/</link><pubDate>Sun, 11 May 2025 18:10:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/word-editing-tips/</guid><description>&lt;h3 id="1-设置-word-多级标题模板">1 设置 Word 多级标题模板&lt;/h3>
+&lt;div style="text-align: center; width: 60%; margin: 0 auto;">
+&lt;center>&lt;img src="images/参数曲线的映射.png" alt="Page section" />&lt;/center>
+&lt;center>&lt;strong>图 0.1:&lt;/strong> 参数曲线的映射 &lt;/center>
+&lt;/div>
+&lt;br>
+&lt;p>用一维变量 $ t $ 上的一条线段映射到三维空间的曲线。&lt;/p>
+&lt;p>参数曲面的表示如下&lt;/p>
+&lt;p>$$
+\vec{r} = \vec{r} (u, v) = x(u, v) \vec{i} + y(u, v) \vec{j} + z(u, v) \vec{k}, \quad u, v \in D.
+$$&lt;/p>
+&lt;div style="text-align: center; width: 60%; margin: 0 auto;">
+&lt;center>&lt;img src="images/参数曲面的面积.png" alt="Page section" />&lt;/center>
+&lt;center>&lt;strong>图 0.2:&lt;/strong> 参数曲面的映射 &lt;/center>
+&lt;/div>
+&lt;br>
+&lt;p>因为空间曲面可以看成由一条条空间曲线组成，因此想得到横纵很多条空间曲线，就需要二维变量 $ u, v $ 上横纵很多条线段构成的二维平面。&lt;/p></description></item><item><title>一些 Word 编辑技巧</title><link>https://qingbo12.github.io/posts/miscellanea/word-editing-tips/</link><pubDate>Sun, 11 May 2025 18:10:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/word-editing-tips/</guid><description>&lt;h3 id="1-设置-word-多级标题模板">1 设置 Word 多级标题模板&lt;/h3>
 &lt;p>本节主要参考 &lt;a href="https://blog.csdn.net/weixin_45313452/article/details/132515206" target="_blank" rel="noopener">【Word多级标题完整设置】各级标题样式&amp;amp;自动编号&lt;/a>&lt;/p>
 &lt;p>在 Word 2021 上建立本科毕业论文的多级标题模板，最终实现效果如下：&lt;/p>
 &lt;div style="text-align: center; width: 60%; margin: 0 auto;">
