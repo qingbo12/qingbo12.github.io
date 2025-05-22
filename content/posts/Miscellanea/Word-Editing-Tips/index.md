@@ -295,3 +295,308 @@ hero: images/image-miscellanea.jpg
 </div>
 
 <br>
+
+**3.1.3 交叉引用图注**
+
+一般论文中图少的时候，提到某一张图，我们可以直接打字：“如图 x.x 所示”。当图很多的时候，增加/删除图时，需要修改论文中提及的相应图号。这时候修改很容易忘记和改错。为避免这个繁琐的工作，需要做到：在增加/删除图时，其他图的图号会发生顺序变化。在文中对图片编号进行交叉引用可以解决这个问题。
+
+交叉引用的设置步骤如下：
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="images/图表-交叉引用的入口.png" alt="Cross-reference entry" style="width: 45%"/>
+    <img src="images/图表-交叉引用的设置.png" alt="Cross-reference setting" style="width: 45%"/>
+</div>
+<div style="text-align: center;">
+    <strong>图 3.11:</strong> 交叉引用的入口和设置
+</div>
+
+<br>
+
+交叉引用的效果（图 3.12 所示）。图片标签和编号还是一个链接，点击可以跳转到对应的图片。
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/图表-交叉引用的效果.png" alt="Cross-reference effect" /></center>
+    <center><strong>图 3.12:</strong> 最终图注效果 </center>
+</div>
+
+<br>
+
+接下来，我们展示在这张图片前面增加图片时，怎么自动更新文中的编号。
+
+我们在前面增加一张图片，如图 3.13，可以看到插入图片的题注默认是 1.1。
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="images/图表-交叉引用给第二张图片加题注入口.png" alt="Second picture caption entry" style="width: 45%"/>
+    <img src="images/图表-交叉引用给第二张图片加题注.png" alt="Second picture caption" style="width: 45%"/>
+</div>
+<div style="text-align: center;">
+    <strong>图 3.13:</strong> 给第二张图片加题注
+</div>
+
+<br>
+
+加完题注之后，原本第一张图片的题注自动更改为“图 1.2”了（图 3.14 所示）。
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/图表-交叉引用给第二张图片加题注之后的效果.png" alt="Second picture caption effect" /></center>
+    <center><strong>图 3.14:</strong> 给第二张图片加题注之后的效果 </center>
+</div>
+
+<br>
+
+但此时，论文中的引用还没有改过来，我们不需要手动更改，只需要更新一下交叉引用就可以了。具体操作步骤如下：
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/图表-交叉引用更新交叉引用入口.png" alt="Update cross-reference entry" /></center>
+    <center><strong>图 3.15:</strong> 更新交叉引用 </center>
+</div>
+
+<br>
+
+可以看到交叉引用已经更新了（图 3.16 所示）。
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/图表-交叉引用更新交叉引用的效果.png" alt="Update cross-reference entry effect" /></center>
+    <center><strong>图 3.16:</strong> 更新交叉引用的效果 </center>
+</div>
+
+<br>
+
+当我们删除插入的第二张图片后，发现第一张图片的题注和交叉引用的都没有更新（图 3.17 所示）。这时我们同样，更新交叉引用即可（图 3.17 所示）。
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="images/图表-交叉引用删除第二张图片的效果.png" alt="Delete second picture" style="width: 45%"/>
+    <img src="images/图表-交叉引用删除第二张图片再更新交叉引用的效果.png" alt="Delete second picture and update cross-reference" style="width: 45%"/>
+</div>
+<div style="text-align: center;">
+    <strong>图 3.17:</strong> 删除第二张图片的效果和再更新交叉引用的效果
+</div>
+
+<br>
+
+这样我们就实现了自动更新题注和引用。
+
+**3.2 插入列表设置**
+
+插入列表和插入图片的步骤都是类似的，而且表注和图注使用同一个题注样式，也不需要设置题注样式了。
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="images/图表-表注创建.png" alt="Create table annotation" style="width: 45%"/>
+    <img src="images/图表-表注效果.png" alt="Table annotation" style="width: 45%"/>
+</div>
+<div style="text-align: center;">
+    <strong>图 3.18:</strong> 表注创建和效果
+</div>
+
+<br>
+
+### 4 页眉页脚设置
+
+**4.1** 页眉设置
+
+**4.1.1** 页眉边距设置
+
+本文要求：页眉边距 16mm，页脚边距 15mm。设置步骤如下：
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="images/页眉页脚-页眉页脚边距设置入口.png" alt="Header and footer margin entry" style="width: 45%"/>
+    <img src="images/页眉页脚-页眉页脚边距设置.png" alt="Header and footer margin" style="width: 45%"/>
+</div>
+<div style="text-align: center;">
+    <strong>图 4.1:</strong> 页眉页脚边距设置
+</div>
+
+<br>
+
+**4.1.2** 单面印制页眉设置
+
+本文要求：页眉左边为“重庆大学本科学生毕业论文（设计）”，右边为各章章名，打印字号为宋体小五号，页眉之下有一条下划线。设置步骤如下：
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-插入页眉入口.png" alt="Insert header entry" /></center>
+    <center><strong>图 4.2:</strong> 插入页眉入口 </center>
+</div>
+
+<br>
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-插入页眉入口.png" alt="Insert header entry" /></center>
+    <center><strong>图 4.2:</strong> 插入页眉入口 </center>
+</div>
+
+<br>
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-单面打印页眉内容输入.png" alt="Single-sided printing header content" /></center>
+    <center><strong>图 4.3:</strong> 按照单面印制格式输入内容 </center>
+</div>
+
+<br>
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-页眉下划线设置.png" alt="Header underline setting" /></center>
+    <center><strong>图 4.4:</strong> 页眉下划线设置 </center>
+</div>
+
+<br>
+
+最终单面打印页眉效果如下：
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-单面打印页眉效果.png" alt="Single-sided printing header effect" /></center>
+    <center><strong>图 4.5:</strong> 单面印制页眉效果 </center>
+</div>
+
+<br>
+
+设置好第一节的页眉之后，第二节的页眉已经出现了，但是第一节的页眉相同（图 4.6），这是因为默认选择了“链接到上一节的页眉”。我们需要重新设置第二节的页眉，设置步骤如下：
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-第一节的页眉设置之后第二节的页眉效果.png" alt="Header of the second section after the first" /></center>
+    <center><strong>图 4.6:</strong> 第一节的页眉设置之后第二节的页眉效果 </center>
+</div>
+
+<br>
+
+在修改第二节页眉之前，取消“链接到上一节的页眉”，这样才不会把刚才设置好的第一节页眉破坏，设置步骤如下：
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-第二节取消链接到前一节.png" alt="Cancel link to the previous section" /></center>
+    <center><strong>图 4.7:</strong> 第二节取消链接到前一节 </center>
+</div>
+
+<br>
+
+这时修改第二节页眉的内容
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-设置第二节的页眉.png" alt="Set the page header of the second section" /></center>
+    <center><strong>图 4.8:</strong> 设置第二节的页眉 </center>
+</div>
+
+<br>
+
+接下来设置其他节的页眉，同样需要取消“链接到上一节的页眉”。
+
+**4.1.3** 双面印制页眉设置
+
+本文要求：双面印制的，左页居中为“重庆大学本科学生毕业论文（设计）”，右页居中为各章章名。打印字号为宋体小五号，页眉之下有一条下划线。
+
+图 4.9 所示的文档是单面页眉格式，可以看到编辑页眉时，显示的是：“第四节的页眉”。
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-单面印制展示要改成双面印制页眉.png" alt="Change the single-sided printing header to double-sided printing header" /></center>
+    <center><strong>图 4.9:</strong> 需要改成双面印制页眉 </center>
+</div>
+
+<br>
+
+接下来，将文档改成双面印制页眉格式，我们需要设置奇数页和偶数页的页眉不同，设置步骤如下：
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-设置奇偶页页眉不同.png" alt="Set the odd and even page headers differently" /></center>
+    <center><strong>图 4.10:</strong> 设置奇偶页页眉不同 </center>
+</div>
+
+<br>
+
+此时，我们就可以设置双面印制页眉了，如图 4.11 所示，可以看到编辑页眉时，显示的是：“第四节奇数页的页眉”和“第四节偶数页的页眉”。
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-可以设置奇偶页页眉.png" alt="Can set odd and even page headers" /></center>
+    <center><strong>图 4.11:</strong> 奇偶页页眉设置显示 </center>
+</div>
+
+<br>
+
+奇数页页眉居中为“重庆大学本科学生毕业论文（设计）”，偶数页页眉设置之前要把默认的“链接到上一节的页眉”取消，居中为各章章名，打印字号为宋体小五号，页眉之下有一条下划线，如图 4.12 所示。
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-奇偶页页眉设置效果.png" alt="Can set odd and even page headers" /></center>
+    <center><strong>图 4.12:</strong> 奇偶页页眉设置效果 </center>
+</div>
+
+<br>
+
+其他节的页眉也是按照上述方法设置。
+
+**4.2** 页脚设置
+
+**4.2.1** 页脚边距设置
+
+页脚边距已经在设置页眉边距的时候设置过，无需重复设置。
+
+**4.2.2** 页码设置
+
+本文要求：页码位于每页页脚的中部。前置部分从论文（设计）中文摘要页起，用罗马字母单独编页，如Ⅰ、Ⅱ、Ⅲ、Ⅳ、Ⅴ……。其他部分从论文（设计）的引言（或绪论）开始，用阿拉伯数字连续编页。
+
+首先插入页码
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-插入页码入口.png" alt="Insert page number entry point" /></center>
+    <center><strong>图 4.13:</strong> 插入页码 </center>
+</div>
+
+<br>
+
+这时我们发现只有奇数页有页码（图 4.14），因此需要在偶数页插入页码
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-只插入了奇数页页码.png" alt="Only insert odd page numbers" /></center>
+    <center><strong>图 4.14:</strong> 只有奇数页有页码 </center>
+</div>
+
+<br>
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-偶数页插入页码.png" alt="Only insert odd page numbers" /></center>
+    <center><strong>图 4.15:</strong> 偶数页插入页码 </center>
+</div>
+
+<br>
+
+接下来修改一下，页码的字体为 Times New Roman，小五号。偶数页也要设置
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-修改页码字体.png" alt="Modify page number font" /></center>
+    <center><strong>图 4.16:</strong> 修改页码字体 </center>
+</div>
+
+<br>
+
+现在，我们需要把正文前的页码修改为罗马字母编号
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-正文前设置为罗马字母编页入口.png" alt="Setting the page number before the text as Roman numerals entry point" /></center>
+    <center><strong>图 4.17:</strong> 正文前设置为罗马字母编页入口 </center>
+</div>
+
+<br>
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-正文前设置为罗马字母编页.png" alt="Setting the page number before the text as Roman numerals" /></center>
+    <center><strong>图 4.18:</strong> 正文前设置为罗马字母编页 </center>
+</div>
+
+<br>
+
+正文前的其他页，也要设置为罗马字母编页
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-正文前其他页设置为罗马字母编页.png" alt="Setting other page number before the text as Roman numerals" /></center>
+    <center><strong>图 4.19:</strong> 正文前其他页设置为罗马字母编页 </center>
+</div>
+
+<br>
+
+还要把正文开始部分的页码设置为阿拉伯数字连续编页
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/页眉页脚-正文设置为阿拉伯数字编页入口.png" alt="Setting other page number before the text as Roman numerals" /></center>
+    <center><strong>图 4.20:</strong> 正文设置为阿拉伯数字编页 </center>
+</div>
+
+<br>
+
+最后，把正文的偶数页设置为阿拉伯数字编页，因为默认”链接到上一节的页眉”，所以正文部分设置两次（奇数页和偶数页），所有的页码就设置好了。
+
