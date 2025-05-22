@@ -187,7 +187,7 @@ hero: images/image-miscellanea.jpg
 
 <br>
 
-### 3 图表
+### 3 图表设置
 
 **3.1 插入图片设置**
 
@@ -268,7 +268,7 @@ hero: images/image-miscellanea.jpg
 
 <br>
 
-修改图注的的中英文字体和段落设置（中文宋体（西文 Times New Roman）小五号、不加粗、对齐方式为居中对齐、段前段后 0 间距、但被行距），设置步骤如下：
+修改图注的的中英文字体和段落设置（中文宋体（西文 Times New Roman）五号、不加粗、对齐方式为居中对齐、段前段后 0 间距、但被行距），设置步骤如下：
 
 <div style="display: flex; justify-content: space-between;">
     <img src="images/图表-图注格式中文.png" alt="Picture annotation Chinese" style="width: 45%"/>
@@ -411,13 +411,6 @@ hero: images/image-miscellanea.jpg
 **4.1.2** 单面印制页眉设置
 
 本文要求：页眉左边为“重庆大学本科学生毕业论文（设计）”，右边为各章章名，打印字号为宋体小五号，页眉之下有一条下划线。设置步骤如下：
-
-<div style="text-align: center; width: 60%; margin: 0 auto;">
-    <center><img src="images/页眉页脚-插入页眉入口.png" alt="Insert header entry" /></center>
-    <center><strong>图 4.2:</strong> 插入页眉入口 </center>
-</div>
-
-<br>
 
 <div style="text-align: center; width: 60%; margin: 0 auto;">
     <center><img src="images/页眉页脚-插入页眉入口.png" alt="Insert header entry" /></center>
@@ -600,3 +593,205 @@ hero: images/image-miscellanea.jpg
 
 最后，把正文的偶数页设置为阿拉伯数字编页，因为默认”链接到上一节的页眉”，所以正文部分设置两次（奇数页和偶数页），所有的页码就设置好了。
 
+### 5 参考文献设置
+
+本章主要参考 [Word插入参考文献时自动编号](https://blog.csdn.net/qq_42679415/article/details/124225045)
+
+**5.1 参考文献自动编号**
+
+首先设置参考文献列表，样式为：[x]，字体为 Times New Roman，五号。
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/参考文献-定义编号列表入口.png" alt="Define reference number list entry point" /></center>
+    <center><strong>图 5.1:</strong> 定义编号列表入口 </center>
+</div>
+
+<br>
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/参考文献-设置编号列表样式.png" alt="Set reference number list style" /></center>
+    <center><strong>图 5.2:</strong> 设置编号列表样式 </center>
+</div>
+
+<br>
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/参考文献-设置编号列表字体.png" alt="Set reference number list font" /></center>
+    <center><strong>图 5.3:</strong> 设置编号列表字体 </center>
+</div>
+
+<br>
+
+此时对第一条参考文献设置编号，效果如图 5.4 所示
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/参考文献-对第一条参考文献设置编号.png" alt="Set reference number list font" /></center>
+    <center><strong>图 5.4:</strong> 对第一条参考文献设置编号 </center>
+</div>
+
+<br>
+
+此时编号列表的间隔不符合我们的要求，需要修改
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/参考文献-设置参考文献编号列表的间隔入口.png" alt="Set reference number list indent entry point" /></center>
+    <center><strong>图 5.5:</strong> 设置参考文献编号列表的间隔入口 </center>
+</div>
+
+<br>
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/参考文献-设置参考文献编号列表的间隔.png" alt="Set reference number list indent" /></center>
+    <center><strong>图 5.6:</strong> 设置参考文献编号列表的间隔 </center>
+</div>
+
+<br>
+
+这时的效果就符合我们的要求了（图 5.7），我们继续添加参考文献，此时已经自动编号
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/参考文献-设置间隔后的效果.png" alt="Set reference number list indent effect" /></center>
+    <center><strong>图 5.7:</strong> 设置间隔后的效果 </center>
+</div>
+
+<br>
+
+**5.2 参考文献交叉引用**
+
+我们在想引用参考文献的地方，右键即可插入交叉引用
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/参考文献-插入交叉引用入口.png" alt="Insert cross-reference entry point" /></center>
+    <center><strong>图 5.8:</strong> 插入交叉引用入口 </center>
+</div>
+
+<br>
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/参考文献-选择引用的参考文献.png" alt="Select the reference to be cited" /></center>
+    <center><strong>图 5.9:</strong> 选择引用的参考文献 </center>
+</div>
+
+<br>
+
+此时插入的引用效果如图 5.10 所示，还需要把引用设置为上标
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/参考文献-设置交叉引用为上标.png" alt="Set cross-reference to be superscript" /></center>
+    <center><strong>图 5.10:</strong> 设置交叉引用为上标 </center>
+</div>
+
+<br>
+
+最终效果如图 5.11 所示，点击上标即可跳转到对应的参考文献
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/参考文献-交叉引用效果.png" alt="Cross-reference effect" /></center>
+    <center><strong>图 5.11:</strong> 交叉引用效果 </center>
+</div>
+
+<br>
+
+当我们把第一条参考文献移动到后面（图 5.12）时，我们需要更新把论文中的交叉引用（图 5.13）
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/参考文献-更改文献顺序.png" alt="Change the order of references" /></center>
+    <center><strong>图 5.12:</strong> 更改文献顺序 </center>
+</div>
+
+<br>
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/参考文献-更新交叉引用.png" alt="Update cross-reference" /></center>
+    <center><strong>图 5.13:</strong> 更新交叉引用 </center>
+</div>
+
+<br>
+
+最终成功更新为正确的引用编号（图 5.14）
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/参考文献-更新交叉引用的效果.png" alt="Update cross-reference effect" /></center>
+    <center><strong>图 5.13:</strong> 更新交叉引用的效果 </center>
+</div>
+
+<br>
+
+### 6 目录生成
+
+本章主要参考 [【举例说明】Word中如何自动生成目录以及设置格式](https://blog.csdn.net/weixin_50637207/article/details/130303253)
+
+全文写完之后需要生成目录，本文要求：目录中一级标题黑体四号，首行无缩进；二级标题黑体五号，首行缩进2字符；三级标题宋体五号，首行缩进4字符。
+
+我们插入自定义的目录样式，如图 6.1 所示，开始生成自定义目录
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/目录-插入目录入口.png" alt="Insert table of contents entry point" /></center>
+    <center><strong>图 6.1:</strong> 插入目录入口 </center>
+</div>
+
+<br>
+
+进入之后的页面如图 6.2 所示。
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/目录-修改显示样式入口.png" alt="Modify display style entry point" /></center>
+    <center><strong>图 6.2:</strong> 修改显示样式入口 </center>
+</div>
+
+<br>
+
+如图 6.3 所示，“选项”是用来查看标题的目录级别，也可以自定义目录级别。这里我们就按照默认的目录级别。
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/目录-标题的目录级别.png" alt="Heading's TOC level" /></center>
+    <center><strong>图 6.3:</strong> 标题的目录级别 </center>
+</div>
+
+<br>
+
+点击“修改”按钮，我们设置不同级别目录的字体和段落样式。首先修改一级目录的字体和段落样式
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/目录-修改一级标题显示样式入口.png" alt="Modify TOC1 display style entry point" /></center>
+    <center><strong>图 6.4:</strong> 修改一级标题显示样式入口 </center>
+</div>
+
+<br>
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="images/目录-一级标题中文字体设置.png" alt="TOC1 Chinese font" style="width: 45%"/>
+    <img src="images/目录-一级标题英文字体设置.png" alt="TOC1 English font" style="width: 45%"/>
+</div>
+<div style="text-align: center;">
+    <strong>图 6.5:</strong> 一级目录中英文字体设置
+</div>
+
+<br>
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/目录-一级标题段落设置.png" alt="TOC1 paragraph" /></center>
+    <center><strong>图 6.6:</strong> 一级目录段落设置 </center>
+</div>
+
+<br>
+
+然后修改第二级目录的字体和段落样式，这里只给出段落设置的步骤
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/目录-二级标题段落设置.png" alt="TOC1 paragraph" /></center>
+    <center><strong>图 6.7:</strong> 二级目录段落设置 </center>
+</div>
+
+<br>
+
+第三级目录的字体和段落样式设置，在此不再叙述。
+
+最终回到最初的“目录”页面，点击“确认”，即可生成目录，目录的效果如图 6.8 所示。
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/目录-生成的目录.png" alt="Generated TOC" /></center>
+    <center><strong>图 6.8:</strong> 生成的目录 </center>
+</div>
+
+<br>
