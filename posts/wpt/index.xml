@@ -4,6 +4,7 @@
 &lt;li>关联参考方向时：$ M &amp;lt; 0 $&lt;/li>
 &lt;li>非关联参考方向时：$ M &amp;gt; 0 $&lt;/li>
 &lt;/ul>
+&lt;p>注意：这里的参考方向是对 Rx 电感线圈而言。&lt;/p>
 &lt;h3 id="二理论分析">二、理论分析&lt;/h3>
 &lt;p>我们首先来看一个简单的互感线圈模型，其中电压 $ U_R $ 和电流 $ I_R $ 取非关联参考方向，且同名端对齐：&lt;/p>
 &lt;div style="text-align: center; width: 50%; margin: 0 auto;">
@@ -19,10 +20,7 @@
 &lt;p>电流为正且在增加（$ \frac{dI}{dt} &amp;gt; 0 $）&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>根据右手定则，磁通量方向如图 1 所示，并且在增大&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>因为感应电动势的方向总是企图由它产生的感应电流建立一个附加磁通量，以阻碍引起感应电动势的那个磁通量的变化。可以知道感应电流 $ I_{eT} $ 产生向下的磁通量，感应电流 $ I_{eR} $ 产生向上的磁通量&lt;/p></description></item><item><title>自感值的正负判断：从理论分析到仿真验证</title><link>https://qingbo12.github.io/posts/wpt/induction/</link><pubDate>Sat, 29 Mar 2025 10:42:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/induction/</guid><description>&lt;h3 id="前言">前言&lt;/h3>
+&lt;p>根据右手定则，磁通量方向如图 1 所示，并且在增大&lt;/p></description></item><item><title>自感值的正负判断：从理论分析到仿真验证</title><link>https://qingbo12.github.io/posts/wpt/induction/</link><pubDate>Sat, 29 Mar 2025 10:42:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/induction/</guid><description>&lt;h3 id="前言">前言&lt;/h3>
 &lt;p>在电路分析中，自感值的正负判断是电磁学学习的一个重要知识点。很多初学者容易混淆关联参考方向和非关联参考方向下的自感值符号问题。本文将通过理论分析和 MATLAB 仿真相结合的方式，深入浅出地讲解这个知识点。&lt;/p>
 &lt;h3 id="核心结论">核心结论&lt;/h3>
 &lt;p>✅ 关键结论：自感值的正负取决于电压和电流的参考方向关系：&lt;/p>
@@ -30,6 +28,7 @@
 &lt;li>关联参考方向时：$ L &amp;gt; 0 $&lt;/li>
 &lt;li>非关联参考方向时：$ L &amp;lt; 0 $&lt;/li>
 &lt;/ul>
+&lt;p>注意：这里的参考方向是对电感线圈而言。&lt;/p>
 &lt;h3 id="理论分析">理论分析&lt;/h3>
 &lt;p>我们首先来看一个简单的线圈模型，此时电压和电流取关联参考方向：&lt;/p>
 &lt;div style="text-align: center; width: 30%; margin: 0 auto;">
