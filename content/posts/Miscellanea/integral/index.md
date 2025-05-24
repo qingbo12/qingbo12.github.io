@@ -251,7 +251,7 @@ $$
 对应的分割最大长度趋于零。此时
 
 $$
-\Delta \vec{r}_i = \vec{M_{i - 1} M_i} = \vec{r}(t_i) - \vec{r}(t_{i - 1}) = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
+\Delta \vec{r}_{i} = \vec{M_{i - 1} M_i} = \vec{r}(t_i) - \vec{r}(t_{i - 1}) = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
 $$
 
 根据微分中值定理有
@@ -380,7 +380,7 @@ $$
 \sigma(S_{ij}) \approx |\vec{r}_{u}'(u_i, v_j) \times \vec{r}_{v}'(u_i, v_j)| \Delta u_i \Delta v_j.
 $$
 
-也就是说，用“以直代曲”的思想，曲面的一小块面积可以用切平面上以 $ \vec{r}_{u}'(u_i, v_j) \Delta u_i $ 和 $ \vec{r}_{v}'(u_i, v_j) \Delta v_j $ 为边的平行四边形面积来近似。于是曲面 $ S $ 的面积
+也就是说，用“以直代曲”的思想，曲面的一小块面积可以用切平面上以 $ \vec{r}_{u}^{\prime} (u_i, v_j) \Delta u_i $ 和 $ \vec{r}_{v}'(u_i, v_j) \Delta v_j $ 为边的平行四边形面积来近似。于是曲面 $ S $ 的面积
 
 $$
 \sigma(S) = \iint_D |\vec{r}_{u}'(u, v) \times \vec{r}_{v}'(u, v)| du dv.
@@ -584,3 +584,25 @@ $$
 $$
 
 表示向量场积分，但此时的 $ dydz, dzdx, dxdy $ 已经具有了方向的含义。
+
+### 5 Green 定理、Gauss 定理和 Stokes 定理
+
+**5.1 三者关系**
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/牛顿莱布尼兹公式推广.png" alt="Generalization of the Newton-Leibniz formula" /></center>
+    <center><strong>图 5.1:</strong> Green 定理、Gauss 定理和 Stokes 定理三者的关系 </center>
+</div>
+
+<br>
+
+**5.2 Stokes 定理推导的思路**
+
+
+
+<div style="text-align: center; width: 60%; margin: 0 auto;">
+    <center><img src="images/Stokes定理推导的思路.png" alt="The thinking process of the Stokes theorem" /></center>
+    <center><strong>图 5.2:</strong> Stokes定理推导的思路 </center>
+</div>
+
+<br>
