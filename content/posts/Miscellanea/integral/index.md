@@ -191,13 +191,13 @@ $$
 该段曲线可近似成有向线段
 
 $$
-\Delta \vec{r}_i = \vec{M_{i - 1} M_i} = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
+\Delta \vec{r}_{i} = \vec{M_{i - 1} M_i} = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
 $$
 
 它的方向指向质点运动的方向。因此力场在每一小段上所做的功可近似为
 
 $$
-W_i = \vec{F_i} \cdot \Delta \vec{r}_i = P_i \Delta x_i + Q_i \Delta y_i + R_i \Delta z_i.
+W_i = \vec{F_i} \cdot \Delta \vec{r}_{i} = P_i \Delta x_i + Q_i \Delta y_i + R_i \Delta z_i.
 $$
 
 将这样的近似值相加,并让分割的最大长度趋于零,那么结果就是力场所做的总功。
@@ -213,7 +213,7 @@ $$
 其中分割点的坐标是 $ M_i(X_i, Y_i, Z_i), i = 0, 1, 2, \dots, n $。则
 
 $$
-\Delta \vec{r}_i = \vec{M_{i - 1} M_i} = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
+\Delta \vec{r}_{i} = \vec{M_{i - 1} M_i} = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
 $$
 
 在每一段弧 $ \overgroup{M_{i - 1}{M_i}} $ 上任取一点 $ N_i(\xi_i, \eta_i, \zeta_i) $，当分割的最大长度趋于零时，如果下列和式：
@@ -380,10 +380,10 @@ $$
 \sigma(S_{ij}) \approx |\vec{r}_{u}'(u_i, v_j) \times \vec{r}_{v}'(u_i, v_j)| \Delta u_i \Delta v_j.
 $$
 
-也就是说，用“以直代曲”的思想，曲面的一小块面积可以用切平面上以 $ \vec{r}_{u}^{\prime} (u_i, v_j) \Delta u_i $ 和 $ \vec{r}_{v}'(u_i, v_j) \Delta v_j $ 为边的平行四边形面积来近似。于是曲面 $ S $ 的面积
+也就是说，用“以直代曲”的思想，曲面的一小块面积可以用切平面上以 $ \vec{r}_{u}^{\prime} (u_i, v_j) \Delta u_i $ 和 $ \vec{r}_{v}^{\prime} (u_i, v_j) \Delta v_j $ 为边的平行四边形面积来近似。于是曲面 $ S $ 的面积
 
 $$
-\sigma(S) = \iint_D |\vec{r}_{u}'(u, v) \times \vec{r}_{v}'(u, v)| du dv.
+\sigma(S) = \iint_D |\vec{r}_{u}^{\prime} (u, v) \times \vec{r}_{v}^{\prime} (u, v)| du dv.
 $$
 
 记
