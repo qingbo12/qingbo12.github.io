@@ -1,5 +1,5 @@
 ---
-title: "一些 Word 编辑技巧"
+title: "本科毕业论文 Word 编辑小技巧"
 date: 2025-05-11T18:10:00+08:00
 description: Notes of Word editing tips
 author:
