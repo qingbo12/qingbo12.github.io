@@ -202,7 +202,7 @@ hero: images/image-miscellanea.jpg
 
 <br>
 
-此时需要更改图片的行间距为单倍行距。设置步骤如下：
+此时需要更改图片的行间距为单倍行距。选中图片，进行一下设置：
 
 <div style="text-align: center; width: 60%; margin: 0 auto;">
     <center><img src="images/图表-调整图片间距.png" alt="Adjust image spacing" /></center>
@@ -266,7 +266,7 @@ hero: images/image-miscellanea.jpg
 
 <br>
 
-修改图注的的中英文字体和段落设置（中文宋体（西文 Times New Roman）五号、不加粗、对齐方式为居中对齐、段前段后 0 间距、但被行距），设置步骤如下：
+修改图注的的中英文字体和段落设置（中文宋体（西文 Times New Roman）五号、不加粗、对齐方式为居中对齐、段前段后 0 间距、单倍行距），设置步骤如下：
 
 <div style="display: flex; justify-content: space-between;">
     <img src="images/图表-图注格式中文.png" alt="Picture annotation Chinese" style="width: 45%"/>
