@@ -79,13 +79,13 @@ $$
 考虑图1所示的坐标系，定义：
 
 * $\vec{r} = (x, y, z)$ ：场点位置矢量
-* $\vec{r'} = (x', y', z')$ ：源点位置矢量
-* $ R = |\vec{r} - \vec{r'}| $
-* $ d \vec{l'} $ ：电流元方向
+* $\vec{r^{\prime}} = (x^{\prime}, y^{\prime}, z^{\prime})$ ：源点位置矢量
+* $ R = |\vec{r} - \vec{r^{\prime}}| $
+* $ d \vec{l^{\prime}} $ ：电流元方向
 
 <div style="text-align: center; width: 50%; margin: 0 auto;">
     <center><img src="images/nabla-setting.png" alt="nabla-setting" /></center>
-    <center><strong>图 1:</strong> 变量标识 </center>
+    <center><strong>图 1</strong> 变量标识 </center>
 </div>
 
 利用矢量恒等式：
@@ -94,27 +94,27 @@ $$
 \nabla \times (\varphi \vec{C}) = \nabla \varphi \times \vec{C} + \varphi (\nabla \times \vec{C})
 $$
 
-令 $ \varphi = \frac{1}{R}， \vec{C} = d \vec{l'} $，则有：
+令 $ \varphi = \frac{1}{R}， \vec{C} = d \vec{l^{\prime}} $，则有：
 
 $$
-\nabla \times (\frac{1}{R} d \vec{l'}) = \nabla \frac{1}{R} \times d \vec{l'} + \frac{1}{R} (\nabla \times d \vec{l'})
+\nabla \times (\frac{1}{R} d \vec{l^{\prime}}) = \nabla \frac{1}{R} \times d \vec{l^{\prime}} + \frac{1}{R} (\nabla \times d \vec{l^{\prime}})
 $$
 
 计算各项：
 
 $$
 \nabla = (\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z}) \\\\
-\nabla (\frac{1}{R}) = \nabla (\frac{1}{|\vec{r} - \vec{r'}|}) = - \frac{\vec{R}}{R^3} \\\\
-\nabla \times d \vec{l'} = \nabla \times (x', y', z') = 0
+\nabla (\frac{1}{R}) = \nabla (\frac{1}{|\vec{r} - \vec{r^{\prime}}|}) = - \frac{\vec{R}}{R^3} \\\\
+\nabla \times d \vec{l^{\prime}} = \nabla \times (x^{\prime}, y^{\prime}, z^{\prime}) = 0
 $$
 
 因此：
 
 $$
 \begin{aligned}
-\nabla \times (\frac{1}{R} d \vec{l'})
-&= - \frac{\vec{R}}{R^3} \times d \vec{l'} + \frac{1}{R} (0) \\\\
-&= \frac{d \vec{l'} \times \vec{R}}{R^3}
+\nabla \times (\frac{1}{R} d \vec{l^{\prime}})
+&= - \frac{\vec{R}}{R^3} \times d \vec{l^{\prime}} + \frac{1}{R} (0) \\\\
+&= \frac{d \vec{l^{\prime}} \times \vec{R}}{R^3}
 \end{aligned}
 $$
 
@@ -123,7 +123,7 @@ $$
 毕奥-萨伐尔定律给出：
 
 $$
-\vec{B} = \frac{\mu_0}{4 \pi} \oint_{L'} \frac{I d \vec{l'} \times \vec{R}}{R^3} = \frac{\mu_0 I}{4 \pi} \oint_{L'} \frac{d \vec{l'} \times \vec{R}}{R^3}
+\vec{B} = \frac{\mu_0}{4 \pi} \oint_{L^{\prime}} \frac{I d \vec{l^{\prime}} \times \vec{R}}{R^3} = \frac{\mu_0 I}{4 \pi} \oint_{L^{\prime}} \frac{d \vec{l^{\prime}} \times \vec{R}}{R^3}
 $$
 
 将前面的结果代入：
@@ -131,16 +131,16 @@ $$
 $$
 \begin{aligned}
 \vec{B}
-&= \frac{\mu_0 I}{4 \pi} \oint_{L'} \nabla \times (\frac{1}{R} d \vec{l'}) \\\\
-&= \nabla \times (\frac{\mu_0 I}{4 \pi} \oint_{L'} (\frac{1}{R} d \vec{l'})) \qquad (\nabla \times \vec{a} + \nabla \times \vec{b} = \nabla \times (\vec{a} + \vec{b}))\\\\
-&= \nabla \times (\frac{\mu_0}{4 \pi} \oint_{L'} \frac{I d \vec{l'}}{R})
+&= \frac{\mu_0 I}{4 \pi} \oint_{L^{\prime}} \nabla \times (\frac{1}{R} d \vec{l^{\prime}}) \\\\
+&= \nabla \times (\frac{\mu_0 I}{4 \pi} \oint_{L^{\prime}} (\frac{1}{R} d \vec{l^{\prime}})) \qquad (\nabla \times \vec{a} + \nabla \times \vec{b} = \nabla \times (\vec{a} + \vec{b}))\\\\
+&= \nabla \times (\frac{\mu_0}{4 \pi} \oint_{L^{\prime}} \frac{I d \vec{l^{\prime}}}{R})
 \end{aligned}
 $$
 
 比较 $ \vec{B} = \nabla \times \vec{A} $，得到磁矢势的表达式：
 
 $$
-\vec{A} = \frac{\mu_0}{4 \pi} \oint_{L'} \frac{I d \vec{l'}}{R}
+\vec{A} = \frac{\mu_0}{4 \pi} \oint_{L^{\prime}} \frac{I d \vec{l^{\prime}}}{R}
 $$
 
 ### 磁矢势的物理意义
@@ -159,14 +159,14 @@ $ \vec{A} $ 的物理意义（不像是物理意义）：在任意时刻，$ \ve
 磁矢势的旋度是磁感应强度，它的散度是：
 
 $$
-\nabla \cdot \vec{A} = \nabla \cdot (\frac{\mu_0}{4 \pi} \oint_{L'} \frac{I d \vec{l'}}{R}) = \frac{\mu_0 I}{4 \pi} \oint_{L'} \nabla \cdot (\frac{d \vec{l'}}{R}) \qquad (\nabla \cdot (\vec{a} + \vec{b}) = \nabla \cdot \vec{a} + \nabla \cdot \vec{b})
+\nabla \cdot \vec{A} = \nabla \cdot (\frac{\mu_0}{4 \pi} \oint_{L^{\prime}} \frac{I d \vec{l^{\prime}}}{R}) = \frac{\mu_0 I}{4 \pi} \oint_{L^{\prime}} \nabla \cdot (\frac{d \vec{l^{\prime}}}{R}) \qquad (\nabla \cdot (\vec{a} + \vec{b}) = \nabla \cdot \vec{a} + \nabla \cdot \vec{b})
 $$
 
 由求导公式：
 
 $$
-\because \frac{1}{R} = \frac{1}{|\vec{r} - \vec{r'}|} \\\\
-\therefore \nabla (\frac{1}{R}) = - \nabla' (\frac{1}{R})
+\because \frac{1}{R} = \frac{1}{|\vec{r} - \vec{r^{\prime}}|} \\\\
+\therefore \nabla (\frac{1}{R}) = - \nabla^{\prime} (\frac{1}{R})
 $$
 
 利用矢量恒等式：
@@ -174,9 +174,9 @@ $$
 $$
 \begin{aligned}
 \nabla \cdot (\varphi \vec{A}) &= \vec{A} \cdot \nabla \varphi + \varphi (\nabla \cdot \vec{A}) \\\\
-\implies \nabla \cdot (\frac{d \vec{l'}}{R}) &= d \vec{l'} \cdot \nabla (\frac{1}{R}) + \frac{1}{R} (\nabla \cdot d \vec{l'}) \\\\
-&= d \vec{l'} \cdot (- \nabla' (\frac{1}{R})) + \frac{1}{R} (0) \\\\
-&= - \nabla' (\frac{1}{R}) \cdot d \vec{l'}
+\implies \nabla \cdot (\frac{d \vec{l^{\prime}}}{R}) &= d \vec{l^{\prime}} \cdot \nabla (\frac{1}{R}) + \frac{1}{R} (\nabla \cdot d \vec{l^{\prime}}) \\\\
+&= d \vec{l^{\prime}} \cdot (- \nabla^{\prime} (\frac{1}{R})) + \frac{1}{R} (0) \\\\
+&= - \nabla^{\prime} (\frac{1}{R}) \cdot d \vec{l^{\prime}}
 \end{aligned}
 $$
 
@@ -184,10 +184,10 @@ $$
 
 $$
 \begin{aligned}
-\nabla \cdot \vec{A} &= \frac{\mu_0 I}{4 \pi} \oint_{L'} \nabla \cdot (\frac{d \vec{l'}}{R}) \\\\
-&= \frac{\mu_0 I}{4 \pi} \oint_{L'} - \nabla' (\frac{1}{R}) \cdot d \vec{l'} \\\\
-&= - \frac{\mu_0 I}{4 \pi} \oint_{L'} \nabla' (\frac{1}{R}) \cdot d \vec{l'} \\\\
-&= - \frac{\mu_0 I}{4 \pi} \iint [\nabla' \times \nabla' (\frac{1}{R})] \cdot d \vec{S} = 0
+\nabla \cdot \vec{A} &= \frac{\mu_0 I}{4 \pi} \oint_{L^{\prime}} \nabla \cdot (\frac{d \vec{l^{\prime}}}{R}) \\\\
+&= \frac{\mu_0 I}{4 \pi} \oint_{L^{\prime}} - \nabla^{\prime} (\frac{1}{R}) \cdot d \vec{l^{\prime}} \\\\
+&= - \frac{\mu_0 I}{4 \pi} \oint_{L^{\prime}} \nabla^{\prime} (\frac{1}{R}) \cdot d \vec{l^{\prime}} \\\\
+&= - \frac{\mu_0 I}{4 \pi} \iint [\nabla^{\prime} \times \nabla^{\prime} (\frac{1}{R})] \cdot d \vec{S} = 0
 \end{aligned}
 $$
 
