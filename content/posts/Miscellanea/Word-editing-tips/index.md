@@ -296,12 +296,14 @@ hero: images/image-miscellanea.jpg
 
 **3.1.3 交叉引用图注**
 
-一般论文中图少的时候，提到某一张图，我们可以直接打字：“如图 x.x 所示”。当图很多的时候，增加/删除图时，需要修改论文中提及的相应图号。这时候修改很容易忘记和改错。为避免这个繁琐的工作，需要做到：在增加/删除图时，其他图的图号会发生顺序变化。在文中对图片编号进行交叉引用可以解决这个问题。
+一般论文中图少的时候，提到某一张图，我们可以直接打字：“如图 x.x 所示”。当图很多的时候，增加/删除图时，需要修改论文中提及的相应图号。这时候修改很容易忘记和改错。
+
+为避免这个繁琐的工作，需要做到：在增加/删除图时，其他图的图号会发生顺序变化。在文中对图片编号进行交叉引用可以解决这个问题。
 
 交叉引用的设置步骤如下：
 
 <div style="display: flex; justify-content: space-between;">
-    <img src="images/图表-交叉引用的入口.png" alt="Cross-reference entry" style="width: 45%"/>
+    <img src="images/图表-交叉引用的入口.png" alt="Cross-reference entry" style="width: 50%"/>
     <img src="images/图表-交叉引用的设置.png" alt="Cross-reference setting" style="width: 45%"/>
 </div>
 <div style="text-align: center;">
@@ -376,7 +378,7 @@ hero: images/image-miscellanea.jpg
 
 **3.2 插入列表设置**
 
-插入列表和插入图片的步骤都是类似的，而且表注和图注使用同一个题注样式，也不需要设置题注样式了。
+插入列表和插入图片的步骤都是类似的，先创建标签，再输入表注。因为表注和图注使用同一个题注样式，也不需要设置题注样式了。
 
 <div style="display: flex; justify-content: space-between;">
     <img src="images/图表-表注创建.png" alt="Create table annotation" style="width: 45%"/>
@@ -408,7 +410,7 @@ hero: images/image-miscellanea.jpg
 
 **4.1.2 单面印制页眉设置**
 
-本文要求：页眉左边为“重庆大学本科学生毕业论文（设计）”，右边为各章章名，打印字号为宋体小五号，页眉之下有一条下划线。设置步骤如下：
+本文要求：页眉左边为“重庆大学本科学生毕业论文（设计）”，右边为各章章名，打印字号为宋体小五号（9 pt），页眉之下有一条下划线。设置步骤如下：
 
 <div style="text-align: center; width: 60%; margin: 0 auto;">
     <center><img src="images/页眉页脚-插入页眉入口.png" alt="Insert header entry" /></center>
