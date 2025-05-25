@@ -20,7 +20,7 @@ $$&lt;/p>
 &lt;/div>
 &lt;br>
 &lt;p>因为空间曲面可以看成由一条条空间曲线组成，因此想得到横纵很多条空间曲线，就需要二维变量 $ u, v $ 上横纵很多条线段构成的二维平面。&lt;/p></description></item><item><title>一些 Word 编辑技巧</title><link>https://qingbo12.github.io/posts/miscellanea/word-editing-tips/</link><pubDate>Sun, 11 May 2025 18:10:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/word-editing-tips/</guid><description>&lt;h3 id="1-设置-word-多级标题模板">1 设置 Word 多级标题模板&lt;/h3>
-&lt;p>本节主要参考 &lt;a href="https://blog.csdn.net/weixin_45313452/article/details/132515206" target="_blank" rel="noopener">【Word多级标题完整设置】各级标题样式&amp;amp;自动编号&lt;/a>&lt;/p>
+&lt;p>本章主要参考 &lt;a href="https://blog.csdn.net/weixin_45313452/article/details/132515206" target="_blank" rel="noopener">【Word多级标题完整设置】各级标题样式&amp;amp;自动编号&lt;/a>&lt;/p>
 &lt;p>在 Word 2021 上建立本科毕业论文的多级标题模板，最终实现效果如下：&lt;/p>
 &lt;div style="text-align: center; width: 60%; margin: 0 auto;">
 &lt;center>&lt;img src="images/多级标题多级列表-最终效果.png" alt="final-result" />&lt;/center>
@@ -35,7 +35,7 @@ $$&lt;/p>
 &lt;/div>
 &lt;br>
 &lt;p>&lt;strong>1.1.1 正文&lt;/strong>&lt;/p>
-&lt;p>本文正文要求：中文宋体（西文 Times New Roman）五号、不加粗、首行缩进、对齐方式为两端对齐、段前段后 0 间距、行距为固定值 20 磅。设置如下：&lt;/p>
+&lt;p>本文正文要求：中文宋体（西文 Times New Roman）小四号（12 pt）、不加粗、首行缩进、对齐方式为两端对齐、段前段后 0 间距、行距为固定值 20 磅。设置如下：&lt;/p>
 &lt;div style="display: flex; justify-content: space-between;">
 &lt;img src="images/多级标题-正文中文.png" alt="Text in Chinese" style="width: 45%"/>
 &lt;img src="images/多级标题-正文英文.png" alt="Text in English" style="width: 45%"/>
