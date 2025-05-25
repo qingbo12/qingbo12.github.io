@@ -25,52 +25,52 @@ $$</p><p>$$
 $$</p><p>与电场不同，磁场是有旋场 $ \nabla \times \vec{B} \neq 0 $，因此不能简单地定义标量磁势。</p><p>我们可以从磁场的无源性 $ \nabla \cdot \vec{B} = 0 $ 入手</p><p>$$
 \because \nabla \cdot \vec{B} = 0, \nabla \cdot (\nabla \times \vec{A}) = 0 \\
 \therefore \vec{B} = \nabla \times \vec{A}
-$$</p><p>引入矢量函数 $ \vec{A} $ 满足 $ \nabla \cdot (\nabla \times \vec{A}) = 0 $。</p><p>顺便提一下，$ \nabla \cdot (\nabla \times \vec{A}) $ 类似于三个同一平面内的向量做混合积，围不成六面体，有向体积为 0。</p><h3 id=磁矢势的具体表达式>磁矢势的具体表达式</h3><p>为了得到 $ \vec{A} $ 的具体形式，我们从毕奥-萨伐尔定律出发进行推导。</p><p><strong>数学准备</strong></p><p>考虑图1所示的坐标系，定义：</p><ul><li>$\vec{r} = (x, y, z)$ ：场点位置矢量</li><li>$\vec{r&rsquo;} = (x&rsquo;, y&rsquo;, z&rsquo;)$ ：源点位置矢量</li><li>$ R = |\vec{r} - \vec{r&rsquo;}| $</li><li>$ d \vec{l&rsquo;} $ ：电流元方向</li></ul><div style="text-align:center;width:50%;margin:0 auto"><center><img src=images/nabla-setting.png alt=nabla-setting></center><center><strong>图 1:</strong> 变量标识</center></div><p>利用矢量恒等式：</p><p>$$
+$$</p><p>引入矢量函数 $ \vec{A} $ 满足 $ \nabla \cdot (\nabla \times \vec{A}) = 0 $。</p><p>顺便提一下，$ \nabla \cdot (\nabla \times \vec{A}) $ 类似于三个同一平面内的向量做混合积，围不成六面体，有向体积为 0。</p><h3 id=磁矢势的具体表达式>磁矢势的具体表达式</h3><p>为了得到 $ \vec{A} $ 的具体形式，我们从毕奥-萨伐尔定律出发进行推导。</p><p><strong>数学准备</strong></p><p>考虑图1所示的坐标系，定义：</p><ul><li>$\vec{r} = (x, y, z)$ ：场点位置矢量</li><li>$\vec{r^{\prime}} = (x^{\prime}, y^{\prime}, z^{\prime})$ ：源点位置矢量</li><li>$ R = |\vec{r} - \vec{r^{\prime}}| $</li><li>$ d \vec{l^{\prime}} $ ：电流元方向</li></ul><div style="text-align:center;width:50%;margin:0 auto"><center><img src=images/nabla-setting.png alt=nabla-setting></center><center><strong>图 1</strong> 变量标识</center></div><p>利用矢量恒等式：</p><p>$$
 \nabla \times (\varphi \vec{C}) = \nabla \varphi \times \vec{C} + \varphi (\nabla \times \vec{C})
-$$</p><p>令 $ \varphi = \frac{1}{R}， \vec{C} = d \vec{l&rsquo;} $，则有：</p><p>$$
-\nabla \times (\frac{1}{R} d \vec{l&rsquo;}) = \nabla \frac{1}{R} \times d \vec{l&rsquo;} + \frac{1}{R} (\nabla \times d \vec{l&rsquo;})
+$$</p><p>令 $ \varphi = \frac{1}{R}， \vec{C} = d \vec{l^{\prime}} $，则有：</p><p>$$
+\nabla \times (\frac{1}{R} d \vec{l^{\prime}}) = \nabla \frac{1}{R} \times d \vec{l^{\prime}} + \frac{1}{R} (\nabla \times d \vec{l^{\prime}})
 $$</p><p>计算各项：</p><p>$$
 \nabla = (\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z}) \\
-\nabla (\frac{1}{R}) = \nabla (\frac{1}{|\vec{r} - \vec{r&rsquo;}|}) = - \frac{\vec{R}}{R^3} \\
-\nabla \times d \vec{l&rsquo;} = \nabla \times (x&rsquo;, y&rsquo;, z&rsquo;) = 0
+\nabla (\frac{1}{R}) = \nabla (\frac{1}{|\vec{r} - \vec{r^{\prime}}|}) = - \frac{\vec{R}}{R^3} \\
+\nabla \times d \vec{l^{\prime}} = \nabla \times (x^{\prime}, y^{\prime}, z^{\prime}) = 0
 $$</p><p>因此：</p><p>$$
 \begin{aligned}
-\nabla \times (\frac{1}{R} d \vec{l&rsquo;})
-&= - \frac{\vec{R}}{R^3} \times d \vec{l&rsquo;} + \frac{1}{R} (0) \\
-&= \frac{d \vec{l&rsquo;} \times \vec{R}}{R^3}
+\nabla \times (\frac{1}{R} d \vec{l^{\prime}})
+&= - \frac{\vec{R}}{R^3} \times d \vec{l^{\prime}} + \frac{1}{R} (0) \\
+&= \frac{d \vec{l^{\prime}} \times \vec{R}}{R^3}
 \end{aligned}
 $$</p><p><strong>与毕奥-萨伐尔定律的联系</strong></p><p>毕奥-萨伐尔定律给出：</p><p>$$
-\vec{B} = \frac{\mu_0}{4 \pi} \oint_{L&rsquo;} \frac{I d \vec{l&rsquo;} \times \vec{R}}{R^3} = \frac{\mu_0 I}{4 \pi} \oint_{L&rsquo;} \frac{d \vec{l&rsquo;} \times \vec{R}}{R^3}
+\vec{B} = \frac{\mu_0}{4 \pi} \oint_{L^{\prime}} \frac{I d \vec{l^{\prime}} \times \vec{R}}{R^3} = \frac{\mu_0 I}{4 \pi} \oint_{L^{\prime}} \frac{d \vec{l^{\prime}} \times \vec{R}}{R^3}
 $$</p><p>将前面的结果代入：</p><p>$$
 \begin{aligned}
 \vec{B}
-&= \frac{\mu_0 I}{4 \pi} \oint_{L&rsquo;} \nabla \times (\frac{1}{R} d \vec{l&rsquo;}) \\
-&= \nabla \times (\frac{\mu_0 I}{4 \pi} \oint_{L&rsquo;} (\frac{1}{R} d \vec{l&rsquo;})) \qquad (\nabla \times \vec{a} + \nabla \times \vec{b} = \nabla \times (\vec{a} + \vec{b}))\\
-&= \nabla \times (\frac{\mu_0}{4 \pi} \oint_{L&rsquo;} \frac{I d \vec{l&rsquo;}}{R})
+&= \frac{\mu_0 I}{4 \pi} \oint_{L^{\prime}} \nabla \times (\frac{1}{R} d \vec{l^{\prime}}) \\
+&= \nabla \times (\frac{\mu_0 I}{4 \pi} \oint_{L^{\prime}} (\frac{1}{R} d \vec{l^{\prime}})) \qquad (\nabla \times \vec{a} + \nabla \times \vec{b} = \nabla \times (\vec{a} + \vec{b}))\\
+&= \nabla \times (\frac{\mu_0}{4 \pi} \oint_{L^{\prime}} \frac{I d \vec{l^{\prime}}}{R})
 \end{aligned}
 $$</p><p>比较 $ \vec{B} = \nabla \times \vec{A} $，得到磁矢势的表达式：</p><p>$$
-\vec{A} = \frac{\mu_0}{4 \pi} \oint_{L&rsquo;} \frac{I d \vec{l&rsquo;}}{R}
+\vec{A} = \frac{\mu_0}{4 \pi} \oint_{L^{\prime}} \frac{I d \vec{l^{\prime}}}{R}
 $$</p><h3 id=磁矢势的物理意义>磁矢势的物理意义</h3><p>磁矢势虽然不像电势那样有直接的物理意义，但可以通过以下关系理解：</p><p>$$
 \vec{B} = \nabla \times \vec{A} \
 \implies \iint \vec{B} \cdot d \vec{S} = \oint \vec{A} \cdot d \vec{l} \
 $$</p><p>$ \vec{A} $ 的物理意义（不像是物理意义）：在任意时刻，$ \vec{A} $ 沿任一闭合回路的线积分等于该时刻通过回路内的磁通量。</p><h3 id=磁矢势的散度>磁矢势的散度</h3><p>磁矢势的旋度是磁感应强度，它的散度是：</p><p>$$
-\nabla \cdot \vec{A} = \nabla \cdot (\frac{\mu_0}{4 \pi} \oint_{L&rsquo;} \frac{I d \vec{l&rsquo;}}{R}) = \frac{\mu_0 I}{4 \pi} \oint_{L&rsquo;} \nabla \cdot (\frac{d \vec{l&rsquo;}}{R}) \qquad (\nabla \cdot (\vec{a} + \vec{b}) = \nabla \cdot \vec{a} + \nabla \cdot \vec{b})
+\nabla \cdot \vec{A} = \nabla \cdot (\frac{\mu_0}{4 \pi} \oint_{L^{\prime}} \frac{I d \vec{l^{\prime}}}{R}) = \frac{\mu_0 I}{4 \pi} \oint_{L^{\prime}} \nabla \cdot (\frac{d \vec{l^{\prime}}}{R}) \qquad (\nabla \cdot (\vec{a} + \vec{b}) = \nabla \cdot \vec{a} + \nabla \cdot \vec{b})
 $$</p><p>由求导公式：</p><p>$$
-\because \frac{1}{R} = \frac{1}{|\vec{r} - \vec{r&rsquo;}|} \\
-\therefore \nabla (\frac{1}{R}) = - \nabla&rsquo; (\frac{1}{R})
+\because \frac{1}{R} = \frac{1}{|\vec{r} - \vec{r^{\prime}}|} \\
+\therefore \nabla (\frac{1}{R}) = - \nabla^{\prime} (\frac{1}{R})
 $$</p><p>利用矢量恒等式：</p><p>$$
 \begin{aligned}
 \nabla \cdot (\varphi \vec{A}) &= \vec{A} \cdot \nabla \varphi + \varphi (\nabla \cdot \vec{A}) \\
-\implies \nabla \cdot (\frac{d \vec{l&rsquo;}}{R}) &= d \vec{l&rsquo;} \cdot \nabla (\frac{1}{R}) + \frac{1}{R} (\nabla \cdot d \vec{l&rsquo;}) \\
-&= d \vec{l&rsquo;} \cdot (- \nabla&rsquo; (\frac{1}{R})) + \frac{1}{R} (0) \\
-&= - \nabla&rsquo; (\frac{1}{R}) \cdot d \vec{l&rsquo;}
+\implies \nabla \cdot (\frac{d \vec{l^{\prime}}}{R}) &= d \vec{l^{\prime}} \cdot \nabla (\frac{1}{R}) + \frac{1}{R} (\nabla \cdot d \vec{l^{\prime}}) \\
+&= d \vec{l^{\prime}} \cdot (- \nabla^{\prime} (\frac{1}{R})) + \frac{1}{R} (0) \\
+&= - \nabla^{\prime} (\frac{1}{R}) \cdot d \vec{l^{\prime}}
 \end{aligned}
 $$</p><p>由斯托克斯定理：</p><p>$$
 \begin{aligned}
-\nabla \cdot \vec{A} &= \frac{\mu_0 I}{4 \pi} \oint_{L&rsquo;} \nabla \cdot (\frac{d \vec{l&rsquo;}}{R}) \\
-&= \frac{\mu_0 I}{4 \pi} \oint_{L&rsquo;} - \nabla&rsquo; (\frac{1}{R}) \cdot d \vec{l&rsquo;} \\
-&= - \frac{\mu_0 I}{4 \pi} \oint_{L&rsquo;} \nabla&rsquo; (\frac{1}{R}) \cdot d \vec{l&rsquo;} \\
-&= - \frac{\mu_0 I}{4 \pi} \iint [\nabla&rsquo; \times \nabla&rsquo; (\frac{1}{R})] \cdot d \vec{S} = 0
+\nabla \cdot \vec{A} &= \frac{\mu_0 I}{4 \pi} \oint_{L^{\prime}} \nabla \cdot (\frac{d \vec{l^{\prime}}}{R}) \\
+&= \frac{\mu_0 I}{4 \pi} \oint_{L^{\prime}} - \nabla^{\prime} (\frac{1}{R}) \cdot d \vec{l^{\prime}} \\
+&= - \frac{\mu_0 I}{4 \pi} \oint_{L^{\prime}} \nabla^{\prime} (\frac{1}{R}) \cdot d \vec{l^{\prime}} \\
+&= - \frac{\mu_0 I}{4 \pi} \iint [\nabla^{\prime} \times \nabla^{\prime} (\frac{1}{R})] \cdot d \vec{S} = 0
 \end{aligned}
 $$</p><p>对面电流和体电流，该式均成立。</p><p>$$
 \nabla \cdot \vec{A} \equiv 0
