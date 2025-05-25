@@ -43,13 +43,13 @@ $$</p><p>等式的右边还不是一个函数的 Riemann 和，但我们可以�
 $$</p><p>$ ds = |\vec{r&rsquo;} (t)| \Delta t $。</p><h3 id=2-向量场在曲线上的积分>2 向量场在曲线上的积分</h3><p><strong>2.1 物理背景</strong></p><p>设 $ F(x,y,z) = P(x,y,z) \vec{i} + Q(x,y,z) \vec{j} + R(x,y,z) \vec{k} $ 是一个力场,考察一个质点沿一条曲线 $ L $运动时力场所做的功，应注意三个要素，即力场的方向、质点运动的方向和质点运动的距离。为此可以采取以下办法(图 2.1)：</p><div style="text-align:center;width:60%;margin:0 auto"><center><img src=images/参数曲线上做功.png alt="Page section"></center><center><strong>图 2.1:</strong> 参数曲线上做功</center></div><br><p>沿质点运动方向上作曲线 $ L $ 的一个分割，记为 $ M_i(x_i, y_i, z_i), i = 0, 1, 2, \dots, n $。</p><p>在第 $ i $ 段上，力场 $ \vec{F} $ 可近似成一个常值向量</p><p>$$
 \vec{F_i} = P_i \vec{i} + Q_i \vec{j} + R_i \vec{k}.
 $$</p><p>该段曲线可近似成有向线段</p><p>$$
-\Delta \vec{r}<em>i = \vec{M</em>{i - 1} M_i} = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
+\Delta \vec{r}<em>{i} = \vec{M</em>{i - 1} M_i} = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
 $$</p><p>它的方向指向质点运动的方向。因此力场在每一小段上所做的功可近似为</p><p>$$
-W_i = \vec{F_i} \cdot \Delta \vec{r}_i = P_i \Delta x_i + Q_i \Delta y_i + R_i \Delta z_i.
+W_i = \vec{F_i} \cdot \Delta \vec{r}_{i} = P_i \Delta x_i + Q_i \Delta y_i + R_i \Delta z_i.
 $$</p><p>将这样的近似值相加,并让分割的最大长度趋于零,那么结果就是力场所做的总功。</p><p><strong>2.2 数量场在曲线上的积分的定义</strong></p><p>设 $ \vec{v} = P(x, y, z) \vec{i} + Q(x, y, z) \vec{j} + R(x, y, z) \vec{k} $ 是空间区域 $ D $ 中的向量场，$ L_{AB} $ 是 $ D $ 中的定向曲线，在 $ L_{AB} $ 上从 $ A $ 到 $ B $ 依次选取任意的分割点：</p><p>$$
 A = M_0, M_1, M_2, \dots, M_n = B,
 $$</p><p>其中分割点的坐标是 $ M_i(X_i, Y_i, Z_i), i = 0, 1, 2, \dots, n $。则</p><p>$$
-\Delta \vec{r}<em>i = \vec{M</em>{i - 1} M_i} = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
+\Delta \vec{r}<em>{i} = \vec{M</em>{i - 1} M_i} = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
 $$</p><p>在每一段弧 $ \overgroup{M_{i - 1}{M_i}} $ 上任取一点 $ N_i(\xi_i, \eta_i, \zeta_i) $，当分割的最大长度趋于零时，如果下列和式：</p><p>$$
 \sum_{i = 1}^n \vec{v}(\xi_i, \eta_i, \zeta_i) \Delta \vec{r}<em>i = \sum</em>{i = 1}^n P(\xi_i, \eta_i, \zeta_i) \Delta x_i + Q(\xi_i, \eta_i, \zeta_i) \Delta y_i + R(\xi_i, \eta_i, \zeta_i) \Delta z_i
 $$</p><p>的极限存在且有限，那么极限值称为向量场 $ \vec{v} $ 沿着曲线 $ L_{AB} $ 上的积分，记为</p><p>$$
@@ -105,8 +105,8 @@ $$</p><p>这里 $ D $ 是参变量 $ (u, v) $ 所在平面中的一个有界区�
 \vec{r}(u_i, v</em>{j + 1}) - \vec{r}(u_i, v_j) = \vec{r}_{v}&rsquo;(u_i, v_j) \Delta v_j + o(\Delta v_j),
 $$</p><p>所以，$ S_{ij} $ 的面积</p><p>$$
 \sigma(S_{ij}) \approx |\vec{r}<em>{u}&rsquo;(u_i, v_j) \times \vec{r}</em>{v}&rsquo;(u_i, v_j)| \Delta u_i \Delta v_j.
-$$</p><p>也就是说，用“以直代曲”的思想，曲面的一小块面积可以用切平面上以 $ \vec{r}<em>{u}^{\prime} (u_i, v_j) \Delta u_i $ 和 $ \vec{r}</em>{v}&rsquo;(u_i, v_j) \Delta v_j $ 为边的平行四边形面积来近似。于是曲面 $ S $ 的面积</p><p>$$
-\sigma(S) = \iint_D |\vec{r}<em>{u}&rsquo;(u, v) \times \vec{r}</em>{v}&rsquo;(u, v)| du dv.
+$$</p><p>也就是说，用“以直代曲”的思想，曲面的一小块面积可以用切平面上以 $ \vec{r}<em>{u}^{\prime} (u_i, v_j) \Delta u_i $ 和 $ \vec{r}</em>{v}^{\prime} (u_i, v_j) \Delta v_j $ 为边的平行四边形面积来近似。于是曲面 $ S $ 的面积</p><p>$$
+\sigma(S) = \iint_D |\vec{r}<em>{u}^{\prime} (u, v) \times \vec{r}</em>{v}^{\prime} (u, v)| du dv.
 $$</p><p>记</p><p>$$
 E = \vec{r}<em>{u}&rsquo;^2 = x</em>{u}&rsquo;^2 + y_{u}&rsquo;^2 + z_{u}&rsquo;^2, \
 F = \vec{r}<em>{v}&rsquo;^2 = x</em>{v}&rsquo;^2 + y_{v}&rsquo;^2 + z_{v}&rsquo;^2, \
