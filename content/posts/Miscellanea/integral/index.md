@@ -58,7 +58,7 @@ $$
 \vec{r} = \vec{r}(t) = x(t) \vec{i} + y(t) \vec{j} + z(t) \vec{k}, \quad t \in [\alpha, \beta],
 $$
 
-其中 $ x(t), y(t), z(t) $ 在区间 $ [\alpha, \beta] $ 有连续的一阶微商 $ x^{\prime} (t), y^{\prime} (t), z^{\prime} (t) $，且 $ |\vec{r'} (t)| \neq 0 $，$ \varphi(x, y, z) $ 在曲线 $ L $ 上连续，因此 $ \varphi(x(t), y(t), z(t)) $ 在 $ [\alpha, \beta] $ 上连续。
+其中 $ x(t), y(t), z(t) $ 在区间 $ [\alpha, \beta] $ 有连续的一阶微商 $ x^{\prime} (t), y^{\prime} (t), z^{\prime} (t) $，且 $ |\vec{r^{\prime}} (t)| \neq 0 $，$ \varphi(x, y, z) $ 在曲线 $ L $ 上连续，因此 $ \varphi(x(t), y(t), z(t)) $ 在 $ [\alpha, \beta] $ 上连续。
 
 当分割的弧长很小的时候，以**两点之间的折线长代替弧长**。
 
