@@ -16,7 +16,7 @@ hero: images/image-miscellanea.jpg
 
 ### 1 设置 Word 多级标题模板
 
-本节主要参考 [【Word多级标题完整设置】各级标题样式&自动编号](https://blog.csdn.net/weixin_45313452/article/details/132515206)
+本章主要参考 [【Word多级标题完整设置】各级标题样式&自动编号](https://blog.csdn.net/weixin_45313452/article/details/132515206)
 
 在 Word 2021 上建立本科毕业论文的多级标题模板，最终实现效果如下：
 
@@ -40,7 +40,7 @@ hero: images/image-miscellanea.jpg
 
 **1.1.1 正文**
 
-本文正文要求：中文宋体（西文 Times New Roman）五号、不加粗、首行缩进、对齐方式为两端对齐、段前段后 0 间距、行距为固定值 20 磅。设置如下：
+本文正文要求：中文宋体（西文 Times New Roman）小四号（12 pt）、不加粗、首行缩进、对齐方式为两端对齐、段前段后 0 间距、行距为固定值 20 磅。设置如下：
 
 <div style="display: flex; justify-content: space-between;">
     <img src="images/多级标题-正文中文.png" alt="Text in Chinese" style="width: 45%"/>
