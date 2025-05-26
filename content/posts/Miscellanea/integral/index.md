@@ -84,10 +84,10 @@ $$
 l(T) = \sum_{i = 1}^{n} |\vec{r} (t_i) - \vec{r} (t_{i - 1})| = \sum_{i = 1}^{n} \sqrt{(x(t_i) - x(t_{i - 1}))^2 + (y(t_i) - y(t_{i - 1}))^2 + (z(t_i) - z(t_{i - 1}))^2}
 $$
 
-由微分中值定理可得，$ \exist \xi_i, \eta_i, \zeta_i $，使得 $ x(t_i) - x(t_{i - 1}) = x'(\xi_i) \Delta t_i, y(t_i) - y(t_{i - 1}) = y'(\eta_i) \Delta t_i, z(t_i) - z(t_{i - 1}) = z'(\zeta_i) \Delta t_i $，得到
+由微分中值定理可得，$ \exist \xi_i, \eta_i, \zeta_i $，使得 $ x(t_i) - x(t_{i - 1}) = x^{\prime} (\xi_i) \Delta t_i, y(t_i) - y(t_{i - 1}) = y^{\prime} (\eta_i) \Delta t_i, z(t_i) - z(t_{i - 1}) = z^{\prime} (\zeta_i) \Delta t_i $，得到
 
 $$
-l(T) = \sum_{i = 1}^{n} \sqrt{x'(\xi_i)^2 + y'(\eta_i)^2 + z'(\zeta_i)^2} \Delta t_i,
+l(T) = \sum_{i = 1}^{n} \sqrt{x^{\prime} (\xi_i)^2 + y^{\prime} (\eta_i)^2 + z^{\prime} (\zeta_i)^2} \Delta t_i,
 $$
 
 其中 $ t_{i - 1} < \xi_i, \eta_i, \zeta_i < t_i, \Delta t_i = t_i - t_{i - 1} $。注意此时，$ x(t), y(t), z(t) $ 这三个函数不一定在同一点取导数，即不一定满足 $ \xi_i = \eta_i = \zeta_i $。因此上式并不是严格的 Riemann（黎曼）和的形式，需要做必要的修正，使其近似一个 Riemann 和的形式。
@@ -96,21 +96,21 @@ $$
 
 $$
 \forall \varepsilon > 0, 
-|\sqrt{x'(\xi_i)^2 + y'(\eta_i)^2 + z'(\zeta_i)^2} - |\sqrt{x'(t_i)^2 + y'(t_i)^2 + z'(t_i)^2}| < \varepsilon
+|\sqrt{x^{\prime} (\xi_i)^2 + y^{\prime} (\eta_i)^2 + z^{\prime} (\zeta_i)^2} - |\sqrt{x^{\prime} (t_i)^2 + y^{\prime} (t_i)^2 + z^{\prime} (t_i)^2}| < \varepsilon
 $$
 
 因此
 
 $$
-|l(T) - \sum_{i = 1}^{n} |\vec{r'} (t_i)| \Delta t_i| < \varepsilon \sum_{i = 1}^{n} \Delta t_i = \varepsilon (\beta - \alpha)
+|l(T) - \sum_{i = 1}^{n} |\vec{r}^{\prime} (t_i)| \Delta t_i| < \varepsilon \sum_{i = 1}^{n} \Delta t_i = \varepsilon (\beta - \alpha)
 $$
 
-而 $ |\vec{r'} (t_i)| $ 在 $ [\alpha, \beta] $ 上的 Riemann 和的极限 $ \sum_{i = 1}^{n} |\vec{r'} (t_i)| \Delta t_i| $正是 $ |\vec{r'} (t_i)| $ 在 $ [\alpha, \beta] $ 上的积分 $ \int_{\alpha}^{\beta} |\vec{r'} (t)| dt $。
+而 $ |\vec{r}^{\prime} (t_i)| $ 在 $ [\alpha, \beta] $ 上的 Riemann 和的极限 $ \sum_{i = 1}^{n} |\vec{r}^{\prime} (t_i)| \Delta t_i| $ 正是 $ |\vec{r}^{\prime} (t_i)| $ 在 $ [\alpha, \beta] $ 上的积分 $ \int_{\alpha}^{\beta} |\vec{r}^{\prime} (t)| dt $。
 
 因此 $ L $ 的弧长 $ l $ 定义为
 
 $$
-l = \lim_{||T|| \to 0} l(T) = \int_{\alpha}^{\beta} |\vec{r'} (t)| dt = \int_{\alpha}^{\beta} \sqrt{x'(t)^2 + y'(t)^2 + z'(t)^2} dt
+l = \lim_{||T|| \to 0} l(T) = \int_{\alpha}^{\beta} |\vec{r}^{\prime} (t)| dt = \int_{\alpha}^{\beta} \sqrt{x^{\prime} (t)^2 + y^{\prime} (t)^2 + z^{\prime} (t)^2} dt
 $$
 
 **1.2 基本定义**
