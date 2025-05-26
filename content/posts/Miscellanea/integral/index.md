@@ -26,7 +26,7 @@ $$
 
 <div style="text-align: center; width: 60%; margin: 0 auto;">
     <center><img src="images/参数曲线的映射.png" alt="Page section" /></center>
-    <center><strong>图 0.1:</strong> 参数曲线的映射 </center>
+    <center><strong>图 0.1</strong> 参数曲线的映射 </center>
 </div>
 
 <br>
@@ -41,7 +41,7 @@ $$
 
 <div style="text-align: center; width: 60%; margin: 0 auto;">
     <center><img src="images/参数曲面的面积.png" alt="Page section" /></center>
-    <center><strong>图 0.2:</strong> 参数曲面的映射 </center>
+    <center><strong>图 0.2</strong> 参数曲面的映射 </center>
 </div>
 
 <br>
@@ -73,7 +73,7 @@ $$
 
 <div style="text-align: center; width: 60%; margin: 0 auto;">
     <center><img src="images/参数曲线的弧长.png" alt="Page section" /></center>
-    <center><strong>图 1.1:</strong> 参数曲线的弧长 </center>
+    <center><strong>图 1.1</strong> 参数曲线的弧长 </center>
 </div>
 
 <br>
@@ -135,7 +135,7 @@ $$
 \vec{r} = \vec{r}(t) = x(t) \vec{i} + y(t) \vec{j} + z(t) \vec{k}, \quad t \in [\alpha, \beta],
 $$
 
-其中 $ x(t), y(t), z(t) $ 在区间 $ [\alpha, \beta] $ 有连续的一阶微商 $ x'(t), y'(t), z'(t) $，且 $ |\vec{r'} (t)| \neq 0 $，$ \varphi(x, y, z) $ 在曲线 $ L $ 上连续，因此 $ \varphi(x(t), y(t), z(t)) $ 在 $ [\alpha, \beta] $ 上连续。
+其中 $ x(t), y(t), z(t) $ 在区间 $ [\alpha, \beta] $ 有连续的一阶微商 $ x^{\prime} (t), y^{\prime} (t), z^{\prime} (t) $，且 $ |\vec{r}^{\prime} (t)| \neq 0 $，$ \varphi(x, y, z) $ 在曲线 $ L $ 上连续，因此 $ \varphi(x(t), y(t), z(t)) $ 在 $ [\alpha, \beta] $ 上连续。
 
 现在作 $ [\alpha, \beta] $ 的分割
 
@@ -146,7 +146,7 @@ $$
 由此对应曲线 $ L $ 上以 $ M_i(x(t_i), y(t_i), z(t_i)), i = 0, 1, 2, \dots, n $，为分割点的分割。由弧长的计算公式与积分中值定理，得到弧段 $ \overgroup{M_{i - 1} M_i} $ 的长为
 
 $$
-\Delta s_i = \int_{t_{i - 1}}^{t_i} |\vec{r'} (t)| dt = |\vec{r'} (\theta_i)| \Delta t_i,
+\Delta s_i = \int_{t_{i - 1}}^{t_i} |\vec{r}^{\prime} (t)| dt = |\vec{r}^{\prime} (\theta_i)| \Delta t_i,
 $$
 
 其中 $ t_{i - 1} \leq \theta_i \leq t_i, \Delta t_i = t_i - t_{i - 1} (i = 1, 2, \dots, n) $。
@@ -154,18 +154,18 @@ $$
 取弧段上任意一点 $ N_i(\tau_i, \tau_i, \tau_i), t_{i - 1} \leq \tau_i \leq t_i (i = 1, 2, \dots, n) $，于是
 
 $$
-\sum_{i = 1}^n \varphi(x(\tau_i), y(\tau_i), z(\tau_i)) \Delta s_i = \sum_{i = 1}^n \varphi(x(\tau_i), y(\tau_i), z(\tau_i)) |\vec{r'} (\theta_i)| \Delta t_i
+\sum_{i = 1}^n \varphi(x(\tau_i), y(\tau_i), z(\tau_i)) \Delta s_i = \sum_{i = 1}^n \varphi(x(\tau_i), y(\tau_i), z(\tau_i)) |\vec{r}^{\prime} (\theta_i)| \Delta t_i
 $$
 
-等式的右边还不是一个函数的 Riemann 和，但我们可以作修正，$ \sum_{i = 1}^n \varphi(x(\tau_i), y(\tau_i), z(\tau_i)) |\vec{r'} (\theta_i)| \Delta t_i $ 近似于 $ \sum_{i = 1}^n \varphi(x(\tau_i), y(\tau_i), z(\tau_i)) |\vec{r'} (\tau_i)| \Delta t_i $
+等式的右边还不是一个函数的 Riemann 和，但我们可以作修正，$ \sum_{i = 1}^n \varphi(x(\tau_i), y(\tau_i), z(\tau_i)) |\vec{r}^{\prime} (\theta_i)| \Delta t_i $ 近似于 $ \sum_{i = 1}^n \varphi(x(\tau_i), y(\tau_i), z(\tau_i)) |\vec{r}^{\prime} (\tau_i)| \Delta t_i $
 
 此 Riemann 和的极限正是 $ \varphi(x(t), y(t), z(t)) $ 在 $ [\alpha, \beta] $ 上的积分，因此
 
 $$
-\int_L \varphi(x, y, z) ds = \int_{\alpha}^{\beta} \varphi(x(t), y(t), z(t)) |\vec{r'} (t)| dt = \int_{\alpha}^{\beta} \varphi(x(t), y(t), z(t)) \sqrt{x'(t)^2 + y'(t)^2 + z'(t)^2} \Delta t
+\int_L \varphi(x, y, z) ds = \int_{\alpha}^{\beta} \varphi(x(t), y(t), z(t)) |\vec{r}^{\prime} (t)| dt = \int_{\alpha}^{\beta} \varphi(x(t), y(t), z(t)) \sqrt{x^{\prime} (t)^2 + y^{\prime} (t)^2 + z^{\prime} (t)^2} \Delta t
 $$
 
-$ ds = |\vec{r'} (t)| \Delta t $。
+$ ds = |\vec{r}^{\prime} (t)| \Delta t $。
 
 ### 2 向量场在曲线上的积分
 
@@ -175,7 +175,7 @@ $ ds = |\vec{r'} (t)| \Delta t $。
 
 <div style="text-align: center; width: 60%; margin: 0 auto;">
     <center><img src="images/参数曲线上做功.png" alt="Page section" /></center>
-    <center><strong>图 2.1:</strong> 参数曲线上做功 </center>
+    <center><strong>图 2.1</strong> 参数曲线上做功 </center>
 </div>
 
 <br>
@@ -191,13 +191,13 @@ $$
 该段曲线可近似成有向线段
 
 $$
-\Delta \vec{r}_{i} = \vec{M_{i - 1} M_i} = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
+\Delta \vec{r_i} = \vec{M_{i - 1} M_i} = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
 $$
 
 它的方向指向质点运动的方向。因此力场在每一小段上所做的功可近似为
 
 $$
-W_i = \vec{F_i} \cdot \Delta \vec{r}_{i} = P_i \Delta x_i + Q_i \Delta y_i + R_i \Delta z_i.
+W_i = \vec{F_i} \cdot \Delta \vec{r_i} = P_i \Delta x_i + Q_i \Delta y_i + R_i \Delta z_i.
 $$
 
 将这样的近似值相加,并让分割的最大长度趋于零,那么结果就是力场所做的总功。
@@ -213,13 +213,13 @@ $$
 其中分割点的坐标是 $ M_i(X_i, Y_i, Z_i), i = 0, 1, 2, \dots, n $。则
 
 $$
-\Delta \vec{r}_{i} = \vec{M_{i - 1} M_i} = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
+\Delta \vec{r_i} = \vec{M_{i - 1} M_i} = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
 $$
 
 在每一段弧 $ \overgroup{M_{i - 1}{M_i}} $ 上任取一点 $ N_i(\xi_i, \eta_i, \zeta_i) $，当分割的最大长度趋于零时，如果下列和式：
 
 $$
-\sum_{i = 1}^n \vec{v}(\xi_i, \eta_i, \zeta_i) \Delta \vec{r}_i = \sum_{i = 1}^n P(\xi_i, \eta_i, \zeta_i) \Delta x_i + Q(\xi_i, \eta_i, \zeta_i) \Delta y_i + R(\xi_i, \eta_i, \zeta_i)  \Delta z_i
+\sum_{i = 1}^n \vec{v}(\xi_i, \eta_i, \zeta_i) \Delta \vec{r_i} = \sum_{i = 1}^n P(\xi_i, \eta_i, \zeta_i) \Delta x_i + Q(\xi_i, \eta_i, \zeta_i) \Delta y_i + R(\xi_i, \eta_i, \zeta_i)  \Delta z_i
 $$
 
 的极限存在且有限，那么极限值称为向量场 $ \vec{v} $ 沿着曲线 $ L_{AB} $ 上的积分，记为
@@ -242,7 +242,7 @@ $$
 且有连续的导函数，参数$ t $ 是正向参数，则向量场在 $ L_{AB} $ 上可积，且可化为下列定积分
 
 $$
-\int_{L_{AB}} \vec{v} \cdot d\vec{r} = \int_{\alpha}^{\beta} \vec{v}(\vec{r}(t)) \cdot \vec{r'}(t) dt = \int_{\alpha}^{\beta} [P(x(t), y(t), z(t)) x'(t) + Q(x(t), y(t), z(t)) y'(t) + R(x(t), y(t), z(t)) z'(t)] dt
+\int_{L_{AB}} \vec{v} \cdot d\vec{r} = \int_{\alpha}^{\beta} \vec{v}(\vec{r}(t)) \cdot \vec{r}^{\prime} (t) dt = \int_{\alpha}^{\beta} [P(x(t), y(t), z(t)) x^{\prime} (t) + Q(x(t), y(t), z(t)) y^{\prime} (t) + R(x(t), y(t), z(t)) z^{\prime} (t)] dt
 $$
 
 下面进行证明
@@ -251,13 +251,13 @@ $$
 对应的分割最大长度趋于零。此时
 
 $$
-\Delta \vec{r}_{i} = \vec{M_{i - 1} M_i} = \vec{r}(t_i) - \vec{r}(t_{i - 1}) = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
+\Delta \vec{r_i} = \vec{M_{i - 1} M_i} = \vec{r}(t_i) - \vec{r}(t_{i - 1}) = \Delta x_i \vec{i} + \Delta y_i \vec{j} + \Delta z_i \vec{k}.
 $$
 
 根据微分中值定理有
 
 $$
-\Delta x_i = x(t_i) - x(t_{i - 1}) = x'(\lambda_i) \Delta t_i, \Delta y_i = y(t_i) - y(t_{i - 1}) = y'(\mu_i) \Delta t_i, \Delta z_i = z(t_i) - z(t_{i - 1}) = z'(\nu_i) \Delta t_i,
+\Delta x_i = x(t_i) - x(t_{i - 1}) = x^{\prime} (\lambda_i) \Delta t_i, \Delta y_i = y(t_i) - y(t_{i - 1}) = y^{\prime} (\mu_i) \Delta t_i, \Delta z_i = z(t_i) - z(t_{i - 1}) = z^{\prime} (\nu_i) \Delta t_i,
 $$
 
 其中 $ t_{i - 1} \leq \lambda_i, \mu_i, \nu_i \leq t_i $。取第 $ i $ 段曲线上任意一点
@@ -270,8 +270,8 @@ $$
 
 $$
 \begin{aligned}
-\sum_{i = 1}^{n} \vec{v}(\xi_i, \eta_i, \zeta_i) \cdot \Delta \vec{r}_i &= \sum_{i = 1}^n \vec{v}(x(\tau_i), y(\tau_i), z(\tau_i)) \cdot \Delta \vec{r}_i \\
-&= \sum_{i = 1}^n (P(x(\tau_i), y(\tau_i), z(\tau_i)) x'(\lambda_i) + Q(x(\tau_i), y(\tau_i), z(\tau_i)) y'(\mu_i) + R(x(\tau_i), y(\tau_i), z(\tau_i)) z'(\nu_i)) \Delta t_i
+\sum_{i = 1}^{n} \vec{v}(\xi_i, \eta_i, \zeta_i) \cdot \Delta \vec{r_i} &= \sum_{i = 1}^n \vec{v}(x(\tau_i), y(\tau_i), z(\tau_i)) \cdot \Delta \vec{r_i} \\\\
+&= \sum_{i = 1}^n (P(x(\tau_i), y(\tau_i), z(\tau_i)) x^{\prime} (\lambda_i) + Q(x(\tau_i), y(\tau_i), z(\tau_i)) y^{\prime} (\mu_i) + R(x(\tau_i), y(\tau_i), z(\tau_i)) z^{\prime} (\nu_i)) \Delta t_i
 \end{aligned}
 $$
 
@@ -279,18 +279,18 @@ $$
 
 $$
 \begin{aligned}
-\lim_{|T| \to 0} \sum_{i = 1}^n \vec{v}(x(\tau_i), y(\tau_i), z(\tau_i)) \cdot \Delta \vec{r}_i &= \int_{\alpha}^{\beta} [P x'(t) + Q y'(t) + R z'(t)] dt \\
-&= \int_{\alpha}^{\beta} \vec{v}(\vec{r}(t)) \cdot \vec{r'}(t) dt
+\lim_{|T| \to 0} \sum_{i = 1}^n \vec{v}(x(\tau_i), y(\tau_i), z(\tau_i)) \cdot \Delta \vec{r_i} &= \int_{\alpha}^{\beta} [P x^{\prime} (t) + Q y^{\prime} (t) + R z^{\prime} (t)] dt \\\\
+&= \int_{\alpha}^{\beta} \vec{v}(\vec{r}(t)) \cdot \vec{r}^{\prime} (t) dt
 \end{aligned}
 $$
 
 向量场在曲线上的积分有下列两种表示，每一种表示都突出了积分的某种
 含义。
 
-首先，设 $ s $ 为曲线 $ L_{AB} $ 的弧长参数，弧长的增长对应曲线正向，$ \vec{\tau}(s) = \frac{\vec{r'}(s)}{|\vec{r'}(s)|} $ 为弧长方向上的单位向量，有
+首先，设 $ s $ 为曲线 $ L_{AB} $ 的弧长参数，弧长的增长对应曲线正向，$ \vec{\tau}(s) = \frac{\vec{r}^{\prime} (s)}{|\vec{r}^{\prime} (s)|} $ 为弧长方向上的单位向量，有
 
 $$
-d \vec{r} = \vec{r'}(s) dt = \frac{\vec{r'}(s)}{|\vec{r'}(s)|} |\vec{r'}(s)| dt = \vec{\tau}(s) ds.
+d \vec{r} = \vec{r}^{\prime} (s) dt = \frac{\vec{r}^{\prime} (s)}{|\vec{r}^{\prime} (s)|} |\vec{r}^{\prime} (s)| dt = \vec{\tau}(s) ds.
 $$
 
 因此，向量场的曲线积分可表示为
@@ -353,7 +353,7 @@ $$
 即 $ x(u, v), y(u, v), z(u, v) $ 具有连续的偏导数，且
 
 $$
-\vec{r}_{u}' \times \vec{r}_{v}' \neq 0,
+\vec{r_{u}}^{\prime} \times \vec{r_{v}}^{\prime} \neq 0,
 $$
 
 这里 $ D $ 是参变量 $ (u, v) $ 所在平面中的一个有界区域。
@@ -362,7 +362,7 @@ $$
 
 <div style="text-align: center; width: 60%; margin: 0 auto;">
     <center><img src="images/参数曲面的面积.png" alt="Page section" /></center>
-    <center><strong>图 3.1:</strong> 参数曲面的近似面积图示 </center>
+    <center><strong>图 3.1</strong> 参数曲面的近似面积图示 </center>
 </div>
 
 <br>
@@ -370,34 +370,34 @@ $$
 因为
 
 $$
-\vec{r} (u_{i + 1}, v_j) - \vec{r}(u_i, v_j) = \vec{r}_{u}'(u_i, v_j) \Delta u_i + o(\Delta u_i), \\
-\vec{r}(u_i, v_{j + 1}) - \vec{r}(u_i, v_j) = \vec{r}_{v}'(u_i, v_j) \Delta v_j + o(\Delta v_j),
+\vec{r} (u_{i + 1}, v_j) - \vec{r}(u_i, v_j) = \vec{r_{u}}^{\prime} (u_i, v_j) \Delta u_i + o(\Delta u_i), \\\\
+\vec{r}(u_i, v_{j + 1}) - \vec{r}(u_i, v_j) = \vec{r_{v}}^{\prime} (u_i, v_j) \Delta v_j + o(\Delta v_j),
 $$
 
 所以，$ S_{ij} $ 的面积
 
 $$
-\sigma(S_{ij}) \approx |\vec{r}_{u}'(u_i, v_j) \times \vec{r}_{v}'(u_i, v_j)| \Delta u_i \Delta v_j.
+\sigma(S_{ij}) \approx |\vec{r_{u}}^{\prime} (u_i, v_j) \times \vec{r_{v}}^{\prime} (u_i, v_j)| \Delta u_i \Delta v_j.
 $$
 
-也就是说，用“以直代曲”的思想，曲面的一小块面积可以用切平面上以 $ \vec{r}_{u}^{\prime} (u_i, v_j) \Delta u_i $ 和 $ \vec{r}_{v}^{\prime} (u_i, v_j) \Delta v_j $ 为边的平行四边形面积来近似。于是曲面 $ S $ 的面积
+也就是说，用“以直代曲”的思想，曲面的一小块面积可以用切平面上以 $ \vec{r_{u}}^{\prime} (u_i, v_j) \Delta u_i $ 和 $ \vec{r}_{v}^{\prime} (u_i, v_j) \Delta v_j $ 为边的平行四边形面积来近似。于是曲面 $ S $ 的面积
 
 $$
-\sigma(S) = \iint_D |\vec{r}_{u}^{\prime} (u, v) \times \vec{r}_{v}^{\prime} (u, v)| du dv.
+\sigma(S) = \iint_D |\vec{r_{u}}^{\prime} (u, v) \times \vec{r}_{v}^{\prime} (u, v)| du dv.
 $$
 
 记
 
 $$
-E = \vec{r}_{u}'^2 = x_{u}'^2 + y_{u}'^2 + z_{u}'^2, \\
-F = \vec{r}_{v}'^2 = x_{v}'^2 + y_{v}'^2 + z_{v}'^2, \\ 
-G = \vec{r}_{u}' \cdot \vec{r}_{v}' = x_{u}' x_{v}' + y_{u}' y_{v}' + z_{u}' z_{v}',
+E = {\vec{r_{u}}^{\prime}}^2 = {x_{u}^{\prime}}^2 + {y_{u}^{\prime}}^2 + {z_{u}^{\prime}}^2, \\\\
+F = {\vec{r_{v}}^{\prime}}^2 = {x_{v}^{\prime}}^2 + {y_{v}^{\prime}}^2 + {z_{v}^{\prime}}^2, \\\\
+G = \vec{r_{u}}^{\prime} \cdot \vec{r_{v}}^{\prime}  = x_{u}^{\prime} x_{v}^{\prime} + y_{u}^{\prime} y_{v}^{\prime} + z_{u}^{\prime} z_{v}^{\prime},
 $$
 
 那么，记
 
 $$
-dS = |\vec{r}_{u}'(u, v) \times \vec{r}_{v}'(u, v)| du dv = \sqrt{E F - G^2} du dv,
+dS = |\vec{r_{u}}^{\prime} (u, v) \times \vec{r_{v}}^{\prime} (u, v)| du dv = \sqrt{E F - G^2} du dv,
 $$
 
 并称为曲面的面积元素。因此，曲面 $ S $ 的面积的一般计算公式为
@@ -426,16 +426,16 @@ $$
 \vec{r} = \vec{r}(u, v) = x(u, v) \vec{i} + y(u, v) \vec{j} + z(u, v) \vec{k}, u, v \in D,
 $$
 
-其中 $ D $ 是平面 $ O'uv $ 上的有界闭区域，$ S $ 上的分块对应 $ D $ 的矩形分割。设 $ \varphi(x, y, z) $ 在包含 $ S $ 的一个区域内连续，则它在 $ S $ 上的曲面积分是一定存在的，而且有
+其中 $ D $ 是平面 $ O^{\prime} uv $ 上的有界闭区域，$ S $ 上的分块对应 $ D $ 的矩形分割。设 $ \varphi(x, y, z) $ 在包含 $ S $ 的一个区域内连续，则它在 $ S $ 上的曲面积分是一定存在的，而且有
 
 $$
 \begin{aligned}
-\iint_S \varphi(x, y, z) dS &= \iint_D \varphi(x(u, v), y(u, v), z(u, v)) |\vec{r}_{u}'(u, v) \times \vec{r}_{v}'(u, v)| du dv \\
+\iint_S \varphi(x, y, z) dS &= \iint_D \varphi(x(u, v), y(u, v), z(u, v)) |\vec{r_{u}}^{\prime} (u, v) \times \vec{r_{v}}^{\prime} (u, v)| du dv \\\\
 &= \iint_D \varphi(x(u, v), y(u, v), z(u, v)) \sqrt{E F - G^2} du dv.
 \end{aligned}
 $$
 
-注意：上式的右端，正式定义在平面区域 $ D $ 上函数 $ \varphi(x(u, v), y(u, v), z(u, v)) |\vec{r}_{u}'(u, v) \times \vec{r}_{v}'(u, v)| $ 的二重积分。
+注意：上式的右端，正式定义在平面区域 $ D $ 上函数 $ \varphi(x(u, v), y(u, v), z(u, v)) |\vec{r_{u}}^{\prime} (u, v) \times \vec{r_{v}}^{\prime} (u, v)| $ 的二重积分。
 
 ### 4 向量场在曲面上的积分
 
@@ -445,7 +445,7 @@ $$
 
 <div style="text-align: center; width: 60%; margin: 0 auto;">
     <center><img src="images/参数曲面的通量.png" alt="Page section" /></center>
-    <center><strong>图 4.1:</strong> 参数曲面的通量 </center>
+    <center><strong>图 4.1</strong> 参数曲面的通量 </center>
 </div>
 
 <br>
@@ -462,7 +462,7 @@ $$
 
 <div style="text-align: center; width: 60%; margin: 0 auto;">
     <center><img src="images/参数曲面的正向单位法向量和速度场.png" alt="Page section" /></center>
-    <center><strong>图 4.2:</strong> 参数曲面的正向单位法向量和速度场 </center>
+    <center><strong>图 4.2</strong> 参数曲面的正向单位法向量和速度场 </center>
 </div>
 
 <br>
@@ -495,28 +495,28 @@ $$
 \vec{v} = \vec{r} (u, v) = x(u, v) \vec{i} + y(u, v) \vec{j} + z(u, v) \vec{k}, u, v \in D.
 $$
 
-它的面积元为 $ dS = |\vec{r}_{u}'(u, v) \times \vec{r}_{v}'(u, v)| du dv $。此时正向单位法向量为
+它的面积元为 $ dS = |\vec{r_{u}}^{\prime} (u, v) \times \vec{r_{v}}^{\prime} (u, v)| du dv $。此时正向单位法向量为
 
 $$
-\vec{n} = \vec{n} (u, v) = \frac{\vec{r}_{u}'(u, v) \times \vec{r}_{v}'(u, v)}{|\vec{r}_{u}'(u, v) \times \vec{r}_{v}'(u, v)|} .
+\vec{n} = \vec{n} (u, v) = \frac{\vec{r_{u}}^{\prime} (u, v) \times \vec{r_{v}}^{\prime} (u, v)}{|\vec{r_{u}}^{\prime} (u, v) \times \vec{r_{v}}^{\prime} (u, v)|} .
 $$
 
 则有向面积元为
 
 $$
-d \vec{S} = \vec{n} dS = \frac{\vec{r}_{u}'(u, v) \times \vec{r}_{v}'(u, v)}{|\vec{r}_{u}'(u, v) \times \vec{r}_{v}'(u, v)|} dS = \vec{r}_{u}'(u, v) \times \vec{r}_{v}'(u, v) du dv ,
+d \vec{S} = \vec{n} dS = \frac{\vec{r_{u}}^{\prime} (u, v) \times \vec{r_{v}}^{\prime} (u, v)}{|\vec{r_{u}}^{\prime} (u, v) \times \vec{r_{v}}^{\prime} (u, v)|} dS = \vec{r_{u}}^{\prime} (u, v) \times \vec{r_{v}}^{\prime} (u, v) du dv ,
 $$
 
 因此向量场积分可以化为参数区域 $ D $ 上的二重积分
 
 $$
 \begin{aligned}
-\iint_S \vec{v} \cdot d \vec{S} &= \iint_S \vec{v} \cdot \vec{n} dS = \iint_D \vec{v} \cdot \vec{r}_{u}' \times \vec{r}_{v}' du dv \\
+\iint_S \vec{v} \cdot d \vec{S} &= \iint_S \vec{v} \cdot \vec{n} dS = \iint_D \vec{v} \cdot \vec{r_{u}}^{\prime}  \times \vec{r_{v}}^{\prime}  du dv \\\\
 &= \iint_D \begin{vmatrix}
-   P & Q & R \\
-   x_{u}' & y_{u}' & z_{u}' \\
-   x_{v}' & y_{v}' & z_{v}' 
-\end{vmatrix} du dv \\
+   P & Q & R \\\\
+   x_{u}^{\prime} & y_{u}^{\prime} & z_{u}^{\prime} \\\\
+   x_{v}^{\prime} & y_{v}^{\prime} & z_{v}^{\prime} 
+\end{vmatrix} du dv \\\\
 &= \iint_D [P \frac{\partial(y, z)}{\partial (u, v)} + Q \frac{\partial(z, x)}{\partial (u, v)} + R \frac{\partial(x, y)}{\partial (u, v)}] du dv .
 \end{aligned} 
 $$
@@ -525,7 +525,7 @@ $$
 
 $$
 \begin{aligned}
-d \vec{S} &= (\vec{r}_{u}' \times \vec{r}_{v}') du dv \\
+d \vec{S} &= (\vec{r_{u}}^{\prime}  \times \vec{r_{v}}^{\prime} ) du dv \\\\
 &= [\frac{\partial(y, z)}{\partial (u, v)} du dv] \vec{i} + [\frac{\partial(z, x)}{\partial (u, v)} du dv] \vec{j} + [\frac{\partial(x, y)}{\partial (u, v)} du dv] \vec{k} .
 \end{aligned}
 $$
@@ -566,8 +566,8 @@ $$
 
 $$
 \begin{aligned}
-\iint_S \vec{v} \cdot d \vec{S} &= \iint_S P dy \land dz + Q dz \land dx + R dx \land dy \\
-&= \iint_S (P \cos \alpha + Q \cos \beta + R \cos \gamma) dS \\
+\iint_S \vec{v} \cdot d \vec{S} &= \iint_S P dy \land dz + Q dz \land dx + R dx \land dy \\\\
+&= \iint_S (P \cos \alpha + Q \cos \beta + R \cos \gamma) dS \\\\
 \end{aligned}
 $$
 
@@ -591,7 +591,7 @@ $$
 
 <div style="text-align: center; width: 60%; margin: 0 auto;">
     <center><img src="images/牛顿莱布尼兹公式推广.png" alt="Generalization of the Newton-Leibniz formula" /></center>
-    <center><strong>图 5.1:</strong> Green 定理、Gauss 定理和 Stokes 定理三者的关系 </center>
+    <center><strong>图 5.1</strong> Green 定理、Gauss 定理和 Stokes 定理三者的关系 </center>
 </div>
 
 <br>
@@ -602,7 +602,7 @@ $$
 
 <div style="text-align: center; width: 60%; margin: 0 auto;">
     <center><img src="images/Stokes定理推导的思路.png" alt="The thinking process of the Stokes theorem" /></center>
-    <center><strong>图 5.2:</strong> Stokes定理推导的思路 </center>
+    <center><strong>图 5.2</strong> Stokes定理推导的思路 </center>
 </div>
 
 <br>
