@@ -41,7 +41,7 @@ degrees:
     # darkLogo: /images/sections/education/university.jpg
   grade: #(optional)
     scale: CGPA
-    achieved: 3.8
+    achieved: 3.9
     outOf: 4
   takenCourses: #(optional)
     # if true, the courses will be rendered as a table otherwise it will render as a list and the grades will be hidden.
