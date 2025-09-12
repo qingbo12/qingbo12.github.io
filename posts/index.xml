@@ -1,570 +1,570 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/</link><description>Recent content in Posts on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 18 May 2025 14:51:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>曲线曲面积分推导</title><link>https://qingbo12.github.io/posts/miscellanea/integral/</link><pubDate>Sun, 18 May 2025 14:51:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/integral/</guid><description>&lt;p>本文主要参考 &lt;a href="https://easylink.cc/qse5bk" target="_blank" rel="noopener">数学分析讲义（第二册）【程艺、陈卿、李平】高等教育出版社&lt;/a>&lt;/p>
-&lt;h3 id="0-参数曲线和参数曲面">0 参数曲线和参数曲面&lt;/h3>
-&lt;p>参数曲线的表示如下&lt;/p>
-&lt;p>$$
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/</link><description>Recent content in Posts on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 18 May 2025 14:51:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>曲线曲面积分推导</title><link>https://qingbo12.github.io/posts/miscellanea/integral/</link><pubDate>Sun, 18 May 2025 14:51:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/integral/</guid><description>&lt;p&gt;本文主要参考 &lt;a href="https://easylink.cc/qse5bk" target="_blank" rel="noopener"&gt;数学分析讲义（第二册）【程艺、陈卿、李平】高等教育出版社&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="0-参数曲线和参数曲面"&gt;0 参数曲线和参数曲面&lt;/h3&gt;
+&lt;p&gt;参数曲线的表示如下&lt;/p&gt;
+&lt;p&gt;$$
 \vec{r} = \vec{r} (t) = x(t) \vec{i} + y(t) \vec{j} + z(t) \vec{k}, \quad t \in [\alpha, \beta],
-$$&lt;/p>
-&lt;div style="text-align: center; width: 60%; margin: 0 auto;">
-&lt;center>&lt;img src="images/参数曲线的映射.png" alt="Page section" />&lt;/center>
-&lt;center>&lt;strong>图 0.1&lt;/strong> 参数曲线的映射 &lt;/center>
-&lt;/div>
-&lt;br>
-&lt;p>用一维变量 $ t $ 上的一条线段映射到三维空间的曲线。&lt;/p>
-&lt;p>参数曲面的表示如下&lt;/p>
-&lt;p>$$
+$$&lt;/p&gt;
+&lt;div style="text-align: center; width: 60%; margin: 0 auto;"&gt;
+&lt;center&gt;&lt;img src="images/参数曲线的映射.png" alt="Page section" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;图 0.1&lt;/strong&gt; 参数曲线的映射 &lt;/center&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;p&gt;用一维变量 $ t $ 上的一条线段映射到三维空间的曲线。&lt;/p&gt;
+&lt;p&gt;参数曲面的表示如下&lt;/p&gt;
+&lt;p&gt;$$
 \vec{r} = \vec{r} (u, v) = x(u, v) \vec{i} + y(u, v) \vec{j} + z(u, v) \vec{k}, \quad u, v \in D.
-$$&lt;/p>
-&lt;div style="text-align: center; width: 60%; margin: 0 auto;">
-&lt;center>&lt;img src="images/参数曲面的面积.png" alt="Page section" />&lt;/center>
-&lt;center>&lt;strong>图 0.2&lt;/strong> 参数曲面的映射 &lt;/center>
-&lt;/div>
-&lt;br>
-&lt;p>因为空间曲面可以看成由一条条空间曲线组成，因此想得到横纵很多条空间曲线，就需要二维变量 $ u, v $ 上横纵很多条线段构成的二维平面。&lt;/p></description></item><item><title>本科毕业论文 Word 编辑小技巧</title><link>https://qingbo12.github.io/posts/miscellanea/word-editing-tips/</link><pubDate>Sun, 11 May 2025 18:10:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/word-editing-tips/</guid><description>&lt;h3 id="1-设置-word-多级标题模板">1 设置 Word 多级标题模板&lt;/h3>
-&lt;p>本章主要参考 &lt;a href="https://blog.csdn.net/weixin_45313452/article/details/132515206" target="_blank" rel="noopener">【Word多级标题完整设置】各级标题样式&amp;amp;自动编号&lt;/a>&lt;/p>
-&lt;p>在 Word 2021 上建立本科毕业论文的多级标题模板，最终实现效果如下：&lt;/p>
-&lt;div style="text-align: center; width: 60%; margin: 0 auto;">
-&lt;center>&lt;img src="images/多级标题多级列表-最终效果.png" alt="final-result" />&lt;/center>
-&lt;center>&lt;strong>图 1.1:&lt;/strong> 多级标题最终效果 &lt;/center>
-&lt;/div>
-&lt;br>
-&lt;p>&lt;strong>1.1 设置各级标题的样式&lt;/strong>&lt;/p>
-&lt;p>首先在 “开始 —&amp;gt; 样式” 里设置每一级标题的格式。设置好样式后，选中文档内容再选择相应样式即可。&lt;/p>
-&lt;div style="text-align: center; width: 60%; margin: 0 auto;">
-&lt;center>&lt;img src="images/多级标题-创建各类样式.png" alt="create-style" />&lt;/center>
-&lt;center>&lt;strong>图 1.2:&lt;/strong> 创建各类标题样式的入口 &lt;/center>
-&lt;/div>
-&lt;br>
-&lt;p>&lt;strong>1.1.1 正文&lt;/strong>&lt;/p>
-&lt;p>本文正文要求：中文宋体（西文 Times New Roman）小四号（12 pt）、不加粗、首行缩进、对齐方式为两端对齐、段前段后 0 间距、行距为固定值 20 磅。设置如下：&lt;/p>
-&lt;div style="display: flex; justify-content: space-between;">
-&lt;img src="images/多级标题-正文中文.png" alt="Text in Chinese" style="width: 45%"/>
-&lt;img src="images/多级标题-正文英文.png" alt="Text in English" style="width: 45%"/>
-&lt;/div>
-&lt;div style="text-align: center;">
-&lt;strong>图 1.3:&lt;/strong> 正文的中英文和对齐方式设置
-&lt;/div>
-&lt;div style="text-align: center; width: 100%; margin: 0 auto;">
-&lt;center>&lt;img src="images/多级标题-正文段落.png" alt="Text paragraph" />&lt;/center>
-&lt;center>&lt;strong>图 1.4:&lt;/strong> 正文段落设置 &lt;/center>
-&lt;/div>
-&lt;br>
-&lt;p>其中“段落”在“修改样式”左下角的“格式”中打开。&lt;/p></description></item><item><title>磁矢势</title><link>https://qingbo12.github.io/posts/miscellanea/magnetic-vector-potential/</link><pubDate>Sun, 20 Apr 2025 17:34:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/magnetic-vector-potential/</guid><description>&lt;h3 id="磁矢势的推导">磁矢势的推导&lt;/h3>
-&lt;p>磁矢势其引入方式与电势类似，但有点硬凑出来的感觉。&lt;/p>
-&lt;p>下面我们从电磁场的基本性质出发，系统推导磁矢势的数学表达式。&lt;/p>
-&lt;p>&lt;strong>与电势的类比&lt;/strong>&lt;/p>
-&lt;p>对于稳恒电场，其基本性质由以下方程组描述：&lt;/p>
-&lt;p>$$
+$$&lt;/p&gt;
+&lt;div style="text-align: center; width: 60%; margin: 0 auto;"&gt;
+&lt;center&gt;&lt;img src="images/参数曲面的面积.png" alt="Page section" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;图 0.2&lt;/strong&gt; 参数曲面的映射 &lt;/center&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;p&gt;因为空间曲面可以看成由一条条空间曲线组成，因此想得到横纵很多条空间曲线，就需要二维变量 $ u, v $ 上横纵很多条线段构成的二维平面。&lt;/p&gt;</description></item><item><title>本科毕业论文 Word 编辑小技巧</title><link>https://qingbo12.github.io/posts/miscellanea/word-editing-tips/</link><pubDate>Sun, 11 May 2025 18:10:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/word-editing-tips/</guid><description>&lt;h3 id="1-设置-word-多级标题模板"&gt;1 设置 Word 多级标题模板&lt;/h3&gt;
+&lt;p&gt;本章主要参考 &lt;a href="https://blog.csdn.net/weixin_45313452/article/details/132515206" target="_blank" rel="noopener"&gt;【Word多级标题完整设置】各级标题样式&amp;amp;自动编号&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在 Word 2021 上建立本科毕业论文的多级标题模板，最终实现效果如下：&lt;/p&gt;
+&lt;div style="text-align: center; width: 60%; margin: 0 auto;"&gt;
+&lt;center&gt;&lt;img src="images/多级标题多级列表-最终效果.png" alt="final-result" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;图 1.1:&lt;/strong&gt; 多级标题最终效果 &lt;/center&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;1.1 设置各级标题的样式&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;首先在 “开始 —&amp;gt; 样式” 里设置每一级标题的格式。设置好样式后，选中文档内容再选择相应样式即可。&lt;/p&gt;
+&lt;div style="text-align: center; width: 60%; margin: 0 auto;"&gt;
+&lt;center&gt;&lt;img src="images/多级标题-创建各类样式.png" alt="create-style" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;图 1.2:&lt;/strong&gt; 创建各类标题样式的入口 &lt;/center&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;1.1.1 正文&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;本文正文要求：中文宋体（西文 Times New Roman）小四号（12 pt）、不加粗、首行缩进、对齐方式为两端对齐、段前段后 0 间距、行距为固定值 20 磅。设置如下：&lt;/p&gt;
+&lt;div style="display: flex; justify-content: space-between;"&gt;
+&lt;img src="images/多级标题-正文中文.png" alt="Text in Chinese" style="width: 45%"/&gt;
+&lt;img src="images/多级标题-正文英文.png" alt="Text in English" style="width: 45%"/&gt;
+&lt;/div&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;strong&gt;图 1.3:&lt;/strong&gt; 正文的中英文和对齐方式设置
+&lt;/div&gt;
+&lt;div style="text-align: center; width: 100%; margin: 0 auto;"&gt;
+&lt;center&gt;&lt;img src="images/多级标题-正文段落.png" alt="Text paragraph" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;图 1.4:&lt;/strong&gt; 正文段落设置 &lt;/center&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;p&gt;其中“段落”在“修改样式”左下角的“格式”中打开。&lt;/p&gt;</description></item><item><title>磁矢势</title><link>https://qingbo12.github.io/posts/miscellanea/magnetic-vector-potential/</link><pubDate>Sun, 20 Apr 2025 17:34:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/magnetic-vector-potential/</guid><description>&lt;h3 id="磁矢势的推导"&gt;磁矢势的推导&lt;/h3&gt;
+&lt;p&gt;磁矢势其引入方式与电势类似，但有点硬凑出来的感觉。&lt;/p&gt;
+&lt;p&gt;下面我们从电磁场的基本性质出发，系统推导磁矢势的数学表达式。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;与电势的类比&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;对于稳恒电场，其基本性质由以下方程组描述：&lt;/p&gt;
+&lt;p&gt;$$
 \begin{cases}
 \nabla \cdot \vec{E} = \rho / \varepsilon_0 \\
 \nabla \times \vec{E} = 0
 \end{cases}
-$$&lt;/p>
-&lt;p>电势的引入基于电场无旋性 $ \nabla \times \vec{E} = 0 $。由于任意标量函数的梯度的旋度恒为零 $ \nabla \times (\nabla U) = 0 $，我们可以定义电势 $ U $ 满足：&lt;/p>
-&lt;p>$$
+$$&lt;/p&gt;
+&lt;p&gt;电势的引入基于电场无旋性 $ \nabla \times \vec{E} = 0 $。由于任意标量函数的梯度的旋度恒为零 $ \nabla \times (\nabla U) = 0 $，我们可以定义电势 $ U $ 满足：&lt;/p&gt;
+&lt;p&gt;$$
 \vec{E} = - \nabla U
-$$&lt;/p>
-&lt;p>顺便提一下，$ \nabla \times (\nabla U) $ 类似于两个平行向量叉乘，围不成四边形，有向面积为 0。&lt;/p>
-&lt;p>&lt;strong>磁场的特殊性&lt;/strong>&lt;/p>
-&lt;p>我们想按照电势的推导来推出类似磁势的东西，但却不能。&lt;/p>
-&lt;p>对于稳恒磁场，其基本性质为：&lt;/p>
-&lt;p>$$
+$$&lt;/p&gt;
+&lt;p&gt;顺便提一下，$ \nabla \times (\nabla U) $ 类似于两个平行向量叉乘，围不成四边形，有向面积为 0。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;磁场的特殊性&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我们想按照电势的推导来推出类似磁势的东西，但却不能。&lt;/p&gt;
+&lt;p&gt;对于稳恒磁场，其基本性质为：&lt;/p&gt;
+&lt;p&gt;$$
 \begin{cases}
 \nabla \cdot \vec{B} = 0 \\
 \nabla \times \vec{B} = \mu_0 \vec{j}
 \end{cases}
-$$&lt;/p></description></item><item><title>互感值的正负判断：从理论到仿真的保姆级解析</title><link>https://qingbo12.github.io/posts/wpt/mutual-indcution/</link><pubDate>Wed, 02 Apr 2025 16:42:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/mutual-indcution/</guid><description>&lt;h3 id="一结论速览">一、结论速览&lt;/h3>
-&lt;p>✅ 关键结论：Tx 端电流从同名端流入时，Rx 端电流从同名端流出，互感值的正负取决于 Rx 端电压和 Rx 端电流的参考方向关系：&lt;/p>
-&lt;ul>
-&lt;li>关联参考方向时：$ M &amp;lt; 0 $&lt;/li>
-&lt;li>非关联参考方向时：$ M &amp;gt; 0 $&lt;/li>
-&lt;/ul>
-&lt;p>注意：这里的参考方向是对 Rx 电感线圈而言。&lt;/p>
-&lt;h3 id="二理论分析">二、理论分析&lt;/h3>
-&lt;p>我们首先来看一个简单的互感线圈模型，其中电压 $ U_R $ 和电流 $ I_R $ 取非关联参考方向，且同名端对齐：&lt;/p>
-&lt;div style="text-align: center; width: 50%; margin: 0 auto;">
-&lt;center>&lt;img src="images/mutual-induction-coil.png" alt="mutual-induction-coil" />&lt;/center>
-&lt;center>&lt;strong>图 1:&lt;/strong> 互感线圈结构示意图 &lt;/center>
-&lt;/div>
-&lt;br/>
-&lt;p>假设通过线圈的电流为 $ I = I_m sin(\omega t) $，我们重点分析前半个周期。&lt;/p>
-&lt;p>&lt;strong>1.第一个 1/4 周期分析（$ t = 0 \to \frac{\pi}{2} $）&lt;/strong>&lt;/p>
-&lt;p>在这个时间段内：&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>电流为正且在增加（$ \frac{dI}{dt} &amp;gt; 0 $）&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>根据右手定则，磁通量方向如图 1 所示，并且在增大&lt;/p></description></item><item><title>自感值的正负判断：从理论分析到仿真验证</title><link>https://qingbo12.github.io/posts/wpt/induction/</link><pubDate>Sat, 29 Mar 2025 10:42:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/induction/</guid><description>&lt;h3 id="前言">前言&lt;/h3>
-&lt;p>在电路分析中，自感值的正负判断是电磁学学习的一个重要知识点。很多初学者容易混淆关联参考方向和非关联参考方向下的自感值符号问题。本文将通过理论分析和 MATLAB 仿真相结合的方式，深入浅出地讲解这个知识点。&lt;/p>
-&lt;h3 id="核心结论">核心结论&lt;/h3>
-&lt;p>✅ 关键结论：自感值的正负取决于电压和电流的参考方向关系：&lt;/p>
-&lt;ul>
-&lt;li>关联参考方向时：$ L &amp;gt; 0 $&lt;/li>
-&lt;li>非关联参考方向时：$ L &amp;lt; 0 $&lt;/li>
-&lt;/ul>
-&lt;p>注意：这里的参考方向是对电感线圈而言。&lt;/p>
-&lt;h3 id="理论分析">理论分析&lt;/h3>
-&lt;p>我们首先来看一个简单的线圈模型，此时电压和电流取关联参考方向：&lt;/p>
-&lt;div style="text-align: center; width: 30%; margin: 0 auto;">
-&lt;center>&lt;img src="images/coil.png" alt="coil" />&lt;/center>
-&lt;center>&lt;strong>图 1:&lt;/strong> 线圈结构示意图 &lt;/center>
-&lt;/div>
-&lt;br/>
-&lt;p>假设通过线圈的电流为 $ I = I_m sin(\omega t) $，我们重点分析前半个周期。&lt;/p>
-&lt;p>&lt;strong>1.第一个 1/4 周期分析（$ t = 0 \to \frac{\pi}{2} $）&lt;/strong>&lt;/p>
-&lt;p>在这个时间段内：&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>电流为正且在增加（$ \frac{dI}{dt} &amp;gt; 0 $）&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>根据右手定则，磁通量向上增加&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>由楞次定律可知，感应电动势 $ e $ 会产生感应电流，感应电流产生的磁通量方向向下&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>对应的感应电流 $ I_e $ 和感应电动势 $ e $ 方向如图 2(a) 所示：&lt;/p></description></item><item><title>安徽省美术馆3月展打卡手记</title><link>https://qingbo12.github.io/posts/life/ahart-march/</link><pubDate>Wed, 26 Mar 2025 18:52:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/life/ahart-march/</guid><description>&lt;p>📍 安徽省美术馆 | 3月22日打卡&lt;/p>
-&lt;p>周末来打卡合肥这座超有设计感的美术馆了！2022 年才开放，建筑本身就像一件艺术品✨ 黑灰色旋转楼梯+钢索吊桥，随手一拍就是工业风大片！📸&lt;/p>
-&lt;p>🔥 重点看了这几个快撤的展（抓紧冲！）：&lt;/p>
-&lt;p>1️⃣ 「柔软与坚硬·刘春杰艺术展」&lt;/p>
-&lt;p>一整面鲁迅画像超震撼！还有“废纸三千”装置艺术，废纸堆也能成为艺术，绝了！&lt;/p>
-&lt;p>2️⃣ 「敬惜字纸——当代观念性纸艺术巡展」&lt;/p>
-&lt;p>纸还能这样玩？！火车票拼成的“游子身上衣”太戳泪点了😭 细节满分！&lt;/p>
-&lt;p>3️⃣ 「烟云飞动——童乃寿黄山画展」&lt;/p>
-&lt;p>全是黄山主题！云海磅礴，看完直接种草黄山行⛰️ 想立刻买票去爬山！&lt;/p>
-&lt;p>📌 地址： 合肥滨湖新区巢湖北路（近渡江战役纪念馆）&lt;/p>
-&lt;div>
-&lt;center>&lt;img src="images/美术馆外观.jpg" alt="美术馆外观" />&lt;/center>
-&lt;center>&lt;strong>&lt;/strong> 美术馆外观 &lt;/center>
-&lt;/div>
-&lt;div>
-&lt;center>&lt;img src="images/从来如此便对吗.jpg" alt="从来如此便对吗" />&lt;/center>
-&lt;center>&lt;strong>&lt;/strong> 狂人日记：从来如此便对吗 &lt;/center>
-&lt;/div>
-&lt;div>
-&lt;center>&lt;img src="images/游子身上衣.jpg" alt="游子身上衣" />&lt;/center>
-&lt;center>&lt;strong>&lt;/strong> 游子身上衣 &lt;/center>
-&lt;/div>
-&lt;div>
-&lt;center>&lt;img src="images/黄山烟云.jpg" alt="黄山烟云" />&lt;/center>
-&lt;center>&lt;strong>&lt;/strong> 黄山烟云 &lt;/center>
-&lt;/div></description></item><item><title>非机动车骑行规则</title><link>https://qingbo12.github.io/posts/life/cycle/</link><pubDate>Fri, 07 Mar 2025 19:08:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/life/cycle/</guid><description>&lt;h3 id="非机动车骑行规则">非机动车骑行规则&lt;/h3>
-&lt;ol>
-&lt;li>走非机动车道&lt;/li>
-&lt;li>不能闯红灯&lt;/li>
-&lt;li>不能逆行&lt;/li>
-&lt;li>不要去斑马线上抢发车位&lt;/li>
-&lt;li>上斑马线要推车&lt;/li>
-&lt;li>不要停在危险区等红绿灯，防止车右拐撞上&lt;/li>
-&lt;li>过斑马线时，有车停住也不要加速通过，因为旁边的车不一定能看到&lt;/li>
-&lt;/ol>
-&lt;p>&lt;strong>路口通行&lt;/strong>&lt;/p>
-&lt;div style="display: flex; justify-content: space-between;">
-&lt;img src="images/intersection-regular.png" alt="intersection-regular" style="width: 45%"/>
-&lt;img src="images/intersection-wrong.png" alt="intersection-wrong" style="width: 45%"/>
-&lt;/div>
-&lt;div style="text-align: center;">
-&lt;strong>Figure 1:&lt;/strong> 路口往前或者往左往右.
-&lt;/div>
-&lt;p>路口往前或者往左往右时，不要停在斑马线上等，也不要从斑马线上通过。&lt;/p>
-&lt;div style="display: flex; justify-content: space-between;">
-&lt;img src="images/zebracrossing-cycle.png" alt="zebracrossing-cycle" style="width: 45%"/>
-&lt;img src="images/zebracrossing-reverse.png" alt="zebracrossing-reverse" style="width: 45%"/>
-&lt;/div>
-&lt;div style="text-align: center;">
-&lt;strong>Figure 2:&lt;/strong> 去马路对面.
-&lt;/div>
-&lt;p>去马路对面时，不要从斑马线上通过，也不要从旁边通过。应该下车推行。&lt;/p>
-&lt;h3 id="自行车骑行">自行车骑行&lt;/h3>
-&lt;ol>
-&lt;li>
-&lt;p>座高：以右脚为例：把脚蹬转到最下方，人坐上后，脚心位置踩上，腿能伸直为标准。这样当用前脚掌蹬到最下方时，腿会有一点弯度！&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>踩踏：前脚掌踩踏，脚尖朝前，大腿发力&lt;/p>
-&lt;/li>
-&lt;/ol></description></item><item><title>Algorithms</title><link>https://qingbo12.github.io/posts/miscellanea/algorithm/</link><pubDate>Thu, 06 Mar 2025 19:08:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/algorithm/</guid><description>&lt;h3 id="a-star-path-planning-algorithm">A-Star Path Planning Algorithm&lt;/h3>
-&lt;p>&lt;strong>应用场景&lt;/strong>&lt;/p>
-&lt;p>很多NPC或者机器人（AI）需要&lt;strong>自动寻路&lt;/strong>的功能来达到与玩家交互的功能。例如吃鸡游戏中，机器人在城镇中跑毒就需要自动寻路，不然可能就被墙卡死了。&lt;a href="https://zhuanlan.zhihu.com/p/385733813" target="_blank" rel="noopener">A-Star（A*）寻路算法原理与实现&lt;/a>&lt;/p>
-&lt;p>&lt;strong>算法简介&lt;/strong>&lt;/p>
-&lt;p>A* 算法是一种很常用的路径查找和图形遍历算法，最初发表于 1968 年，由 Stanford 研究院的 Peter Hart, Nils Nilsson 以及 Bertram Raphael 发表。它可以被认为是 Dijkstra 算法的扩展。&lt;/p>
-&lt;p>由于借助启发函数的引导，A* 算法通常拥有更好的性能。&lt;a href="https://paul.pub/a-star-algorithm/" target="_blank" rel="noopener">路径规划之 A* 算法&lt;/a>&lt;/p>
-&lt;p>&lt;strong>发展历程&lt;/strong>&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>广度优先搜索：从起点开始，首先遍历起点周围邻近的点，然后再遍历已经遍历过的点邻近的点，逐步的向外扩散，直到找到终点。&lt;/p>
-&lt;p>这种算法就像洪水（Flood fill）一样向外扩张。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Dijkstra算法：在Dijkstra算法中，需要计算每一个节点距离起点的总移动代价。同时，还需要一个优先队列结构。对于所有待遍历的节点，放入优先队列中会按照代价进行排序。&lt;/p>
-&lt;p>在算法运行的过程中，每次都从优先队列中选出代价最小的作为下一个遍历的节点。直到到达终点为止。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>最佳优先搜索：在一些情况下，如果我们可以预先计算出每个节点到终点的距离，则我们可以利用这个信息更快的到达终点。&lt;/p>
-&lt;p>其原理也很简单。与Dijkstra算法类似，我们也使用一个优先队列，但此时以每个节点到达终点的距离作为优先级，每次始终选取到终点移动代价最小（离终点最近）的节点作为下一个遍历的节点。&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>&lt;strong>A*算法&lt;/strong>&lt;/p>
-&lt;p>A*算法实际上是综合上面这些算法的特点于一身的。&lt;/p>
-&lt;p>A*算法通过下面这个函数来计算每个节点的优先级。&lt;/p>
-&lt;p>$$
+$$&lt;/p&gt;</description></item><item><title>互感值的正负判断：从理论到仿真的保姆级解析</title><link>https://qingbo12.github.io/posts/wpt/mutual-indcution/</link><pubDate>Wed, 02 Apr 2025 16:42:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/mutual-indcution/</guid><description>&lt;h3 id="一结论速览"&gt;一、结论速览&lt;/h3&gt;
+&lt;p&gt;✅ 关键结论：Tx 端电流从同名端流入时，Rx 端电流从同名端流出，互感值的正负取决于 Rx 端电压和 Rx 端电流的参考方向关系：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;关联参考方向时：$ M &amp;lt; 0 $&lt;/li&gt;
+&lt;li&gt;非关联参考方向时：$ M &amp;gt; 0 $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;注意：这里的参考方向是对 Rx 电感线圈而言。&lt;/p&gt;
+&lt;h3 id="二理论分析"&gt;二、理论分析&lt;/h3&gt;
+&lt;p&gt;我们首先来看一个简单的互感线圈模型，其中电压 $ U_R $ 和电流 $ I_R $ 取非关联参考方向，且同名端对齐：&lt;/p&gt;
+&lt;div style="text-align: center; width: 50%; margin: 0 auto;"&gt;
+&lt;center&gt;&lt;img src="images/mutual-induction-coil.png" alt="mutual-induction-coil" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;图 1:&lt;/strong&gt; 互感线圈结构示意图 &lt;/center&gt;
+&lt;/div&gt;
+&lt;br/&gt;
+&lt;p&gt;假设通过线圈的电流为 $ I = I_m sin(\omega t) $，我们重点分析前半个周期。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.第一个 1/4 周期分析（$ t = 0 \to \frac{\pi}{2} $）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在这个时间段内：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;电流为正且在增加（$ \frac{dI}{dt} &amp;gt; 0 $）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;根据右手定则，磁通量方向如图 1 所示，并且在增大&lt;/p&gt;</description></item><item><title>自感值的正负判断：从理论分析到仿真验证</title><link>https://qingbo12.github.io/posts/wpt/induction/</link><pubDate>Sat, 29 Mar 2025 10:42:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/induction/</guid><description>&lt;h3 id="前言"&gt;前言&lt;/h3&gt;
+&lt;p&gt;在电路分析中，自感值的正负判断是电磁学学习的一个重要知识点。很多初学者容易混淆关联参考方向和非关联参考方向下的自感值符号问题。本文将通过理论分析和 MATLAB 仿真相结合的方式，深入浅出地讲解这个知识点。&lt;/p&gt;
+&lt;h3 id="核心结论"&gt;核心结论&lt;/h3&gt;
+&lt;p&gt;✅ 关键结论：自感值的正负取决于电压和电流的参考方向关系：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;关联参考方向时：$ L &amp;gt; 0 $&lt;/li&gt;
+&lt;li&gt;非关联参考方向时：$ L &amp;lt; 0 $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;注意：这里的参考方向是对电感线圈而言。&lt;/p&gt;
+&lt;h3 id="理论分析"&gt;理论分析&lt;/h3&gt;
+&lt;p&gt;我们首先来看一个简单的线圈模型，此时电压和电流取关联参考方向：&lt;/p&gt;
+&lt;div style="text-align: center; width: 30%; margin: 0 auto;"&gt;
+&lt;center&gt;&lt;img src="images/coil.png" alt="coil" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;图 1:&lt;/strong&gt; 线圈结构示意图 &lt;/center&gt;
+&lt;/div&gt;
+&lt;br/&gt;
+&lt;p&gt;假设通过线圈的电流为 $ I = I_m sin(\omega t) $，我们重点分析前半个周期。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.第一个 1/4 周期分析（$ t = 0 \to \frac{\pi}{2} $）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在这个时间段内：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;电流为正且在增加（$ \frac{dI}{dt} &amp;gt; 0 $）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;根据右手定则，磁通量向上增加&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;由楞次定律可知，感应电动势 $ e $ 会产生感应电流，感应电流产生的磁通量方向向下&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;对应的感应电流 $ I_e $ 和感应电动势 $ e $ 方向如图 2(a) 所示：&lt;/p&gt;</description></item><item><title>安徽省美术馆3月展打卡手记</title><link>https://qingbo12.github.io/posts/life/ahart-march/</link><pubDate>Wed, 26 Mar 2025 18:52:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/life/ahart-march/</guid><description>&lt;p&gt;📍 安徽省美术馆 | 3月22日打卡&lt;/p&gt;
+&lt;p&gt;周末来打卡合肥这座超有设计感的美术馆了！2022 年才开放，建筑本身就像一件艺术品✨ 黑灰色旋转楼梯+钢索吊桥，随手一拍就是工业风大片！📸&lt;/p&gt;
+&lt;p&gt;🔥 重点看了这几个快撤的展（抓紧冲！）：&lt;/p&gt;
+&lt;p&gt;1️⃣ 「柔软与坚硬·刘春杰艺术展」&lt;/p&gt;
+&lt;p&gt;一整面鲁迅画像超震撼！还有“废纸三千”装置艺术，废纸堆也能成为艺术，绝了！&lt;/p&gt;
+&lt;p&gt;2️⃣ 「敬惜字纸——当代观念性纸艺术巡展」&lt;/p&gt;
+&lt;p&gt;纸还能这样玩？！火车票拼成的“游子身上衣”太戳泪点了😭 细节满分！&lt;/p&gt;
+&lt;p&gt;3️⃣ 「烟云飞动——童乃寿黄山画展」&lt;/p&gt;
+&lt;p&gt;全是黄山主题！云海磅礴，看完直接种草黄山行⛰️ 想立刻买票去爬山！&lt;/p&gt;
+&lt;p&gt;📌 地址： 合肥滨湖新区巢湖北路（近渡江战役纪念馆）&lt;/p&gt;
+&lt;div&gt;
+&lt;center&gt;&lt;img src="images/美术馆外观.jpg" alt="美术馆外观" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;&lt;/strong&gt; 美术馆外观 &lt;/center&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;center&gt;&lt;img src="images/从来如此便对吗.jpg" alt="从来如此便对吗" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;&lt;/strong&gt; 狂人日记：从来如此便对吗 &lt;/center&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;center&gt;&lt;img src="images/游子身上衣.jpg" alt="游子身上衣" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;&lt;/strong&gt; 游子身上衣 &lt;/center&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;center&gt;&lt;img src="images/黄山烟云.jpg" alt="黄山烟云" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;&lt;/strong&gt; 黄山烟云 &lt;/center&gt;
+&lt;/div&gt;</description></item><item><title>非机动车骑行规则</title><link>https://qingbo12.github.io/posts/life/cycle/</link><pubDate>Fri, 07 Mar 2025 19:08:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/life/cycle/</guid><description>&lt;h3 id="非机动车骑行规则"&gt;非机动车骑行规则&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;走非机动车道&lt;/li&gt;
+&lt;li&gt;不能闯红灯&lt;/li&gt;
+&lt;li&gt;不能逆行&lt;/li&gt;
+&lt;li&gt;不要去斑马线上抢发车位&lt;/li&gt;
+&lt;li&gt;上斑马线要推车&lt;/li&gt;
+&lt;li&gt;不要停在危险区等红绿灯，防止车右拐撞上&lt;/li&gt;
+&lt;li&gt;过斑马线时，有车停住也不要加速通过，因为旁边的车不一定能看到&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;路口通行&lt;/strong&gt;&lt;/p&gt;
+&lt;div style="display: flex; justify-content: space-between;"&gt;
+&lt;img src="images/intersection-regular.png" alt="intersection-regular" style="width: 45%"/&gt;
+&lt;img src="images/intersection-wrong.png" alt="intersection-wrong" style="width: 45%"/&gt;
+&lt;/div&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;strong&gt;Figure 1:&lt;/strong&gt; 路口往前或者往左往右.
+&lt;/div&gt;
+&lt;p&gt;路口往前或者往左往右时，不要停在斑马线上等，也不要从斑马线上通过。&lt;/p&gt;
+&lt;div style="display: flex; justify-content: space-between;"&gt;
+&lt;img src="images/zebracrossing-cycle.png" alt="zebracrossing-cycle" style="width: 45%"/&gt;
+&lt;img src="images/zebracrossing-reverse.png" alt="zebracrossing-reverse" style="width: 45%"/&gt;
+&lt;/div&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;strong&gt;Figure 2:&lt;/strong&gt; 去马路对面.
+&lt;/div&gt;
+&lt;p&gt;去马路对面时，不要从斑马线上通过，也不要从旁边通过。应该下车推行。&lt;/p&gt;
+&lt;h3 id="自行车骑行"&gt;自行车骑行&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;座高：以右脚为例：把脚蹬转到最下方，人坐上后，脚心位置踩上，腿能伸直为标准。这样当用前脚掌蹬到最下方时，腿会有一点弯度！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;踩踏：前脚掌踩踏，脚尖朝前，大腿发力&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Algorithms</title><link>https://qingbo12.github.io/posts/miscellanea/algorithm/</link><pubDate>Thu, 06 Mar 2025 19:08:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/algorithm/</guid><description>&lt;h3 id="a-star-path-planning-algorithm"&gt;A-Star Path Planning Algorithm&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;应用场景&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;很多NPC或者机器人（AI）需要&lt;strong&gt;自动寻路&lt;/strong&gt;的功能来达到与玩家交互的功能。例如吃鸡游戏中，机器人在城镇中跑毒就需要自动寻路，不然可能就被墙卡死了。&lt;a href="https://zhuanlan.zhihu.com/p/385733813" target="_blank" rel="noopener"&gt;A-Star（A*）寻路算法原理与实现&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法简介&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A* 算法是一种很常用的路径查找和图形遍历算法，最初发表于 1968 年，由 Stanford 研究院的 Peter Hart, Nils Nilsson 以及 Bertram Raphael 发表。它可以被认为是 Dijkstra 算法的扩展。&lt;/p&gt;
+&lt;p&gt;由于借助启发函数的引导，A* 算法通常拥有更好的性能。&lt;a href="https://paul.pub/a-star-algorithm/" target="_blank" rel="noopener"&gt;路径规划之 A* 算法&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;发展历程&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;广度优先搜索：从起点开始，首先遍历起点周围邻近的点，然后再遍历已经遍历过的点邻近的点，逐步的向外扩散，直到找到终点。&lt;/p&gt;
+&lt;p&gt;这种算法就像洪水（Flood fill）一样向外扩张。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dijkstra算法：在Dijkstra算法中，需要计算每一个节点距离起点的总移动代价。同时，还需要一个优先队列结构。对于所有待遍历的节点，放入优先队列中会按照代价进行排序。&lt;/p&gt;
+&lt;p&gt;在算法运行的过程中，每次都从优先队列中选出代价最小的作为下一个遍历的节点。直到到达终点为止。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最佳优先搜索：在一些情况下，如果我们可以预先计算出每个节点到终点的距离，则我们可以利用这个信息更快的到达终点。&lt;/p&gt;
+&lt;p&gt;其原理也很简单。与Dijkstra算法类似，我们也使用一个优先队列，但此时以每个节点到达终点的距离作为优先级，每次始终选取到终点移动代价最小（离终点最近）的节点作为下一个遍历的节点。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;A*算法&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A*算法实际上是综合上面这些算法的特点于一身的。&lt;/p&gt;
+&lt;p&gt;A*算法通过下面这个函数来计算每个节点的优先级。&lt;/p&gt;
+&lt;p&gt;$$
 f(n) = g(n) + h(n)
-$$&lt;/p>
-&lt;p>其中：&lt;/p>
-&lt;ul>
-&lt;li>$ f(n) $ 是节点 $ n $ 的综合优先级。当我们选择下一个要遍历的节点时，我们总会选取综合优先级最高（值最小）的节点。&lt;/li>
-&lt;li>$ g(n) $ 是节点 $ n $ 距离起点的代价。&lt;/li>
-&lt;li>$ h(n) $ 是节点 $ n $ 距离终点的预计代价，这也就是 A* 算法的启发函数。&lt;/li>
-&lt;/ul>
-&lt;p>A* 算法在运算过程中，每次从优先队列中选取 $ f(n) $ 值最小（优先级最高）的节点作为下一个待遍历的节点。&lt;/p></description></item><item><title>WSPMax Read</title><link>https://qingbo12.github.io/posts/wpt/wspmax/</link><pubDate>Fri, 13 Dec 2024 17:21:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/wspmax/</guid><description>&lt;h2 id="requirement-driven-magnetic-beamforming-for-mimo-wireless-power-transfer-optimization">Requirement-Driven Magnetic Beamforming for MIMO Wireless Power Transfer Optimization&lt;/h2>
-&lt;h3 id="motivation">Motivation&lt;/h3>
-&lt;ol>
-&lt;li>For the general MIMO setup, MultiSpot &lt;strong>doesn&amp;rsquo;t consider peak current/voltage constraints&lt;/strong>. Yang et al. studied the magnetic beamforming problem in an MIMO MRC-WPT system to find all the boundary points of the multi-user power region with the peak current and voltage constraints for each TX. They simplified the problem by &lt;strong>ignoring the mutual inductance among RXs&lt;/strong>.&lt;/li>
-&lt;li>These researches &lt;strong>lack the ability to control the power distribution among receivers&lt;/strong>, and could not be applied to the scenario when different RXs have different requirements of power which can be denoted as weight factors.&lt;/li>
-&lt;/ol>
-&lt;h3 id="contribution">Contribution&lt;/h3>
-&lt;ol>
-&lt;li>
-&lt;p>We &lt;strong>formulate the requirement-driven magnetic beamforming design in the MIMO MRC-WPT system as a weighted sum-power maximization problem&lt;/strong>. We &lt;strong>consider the peak current/voltage constraints&lt;/strong>, and provides a high efficient, provable optimal solution.&lt;/p></description></item><item><title>Optimization Methods</title><link>https://qingbo12.github.io/posts/miscellanea/optimization/</link><pubDate>Thu, 12 Dec 2024 17:16:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/optimization/</guid><description>&lt;h3 id="lagrangian-relaxation">Lagrangian relaxation&lt;/h3>
-&lt;p>The explanation I provide is based on &lt;a href="https://en.wikipedia.org/wiki/Lagrangian_relaxation" target="_blank" rel="noopener">Lagrangian relaxation-Wikipedia&lt;/a> and &lt;a href="https://www.ens-lyon.fr/DI/wp-content/uploads/2012/01/LagrangianRelax.pdf" target="_blank" rel="noopener">Chapter 12 Lagrangian Relaxation-ens-lyon&lt;/a>&lt;/p>
-&lt;p>Lagrangian relaxation is a relaxation method which approximates a
-difficult problem of constrained optimization by a simpler problem.&lt;/p>
-&lt;p>The method penalizes violations of inequality constraints using a Lagrange
+$$&lt;/p&gt;
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$ f(n) $ 是节点 $ n $ 的综合优先级。当我们选择下一个要遍历的节点时，我们总会选取综合优先级最高（值最小）的节点。&lt;/li&gt;
+&lt;li&gt;$ g(n) $ 是节点 $ n $ 距离起点的代价。&lt;/li&gt;
+&lt;li&gt;$ h(n) $ 是节点 $ n $ 距离终点的预计代价，这也就是 A* 算法的启发函数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A* 算法在运算过程中，每次从优先队列中选取 $ f(n) $ 值最小（优先级最高）的节点作为下一个待遍历的节点。&lt;/p&gt;</description></item><item><title>WSPMax Read</title><link>https://qingbo12.github.io/posts/wpt/wspmax/</link><pubDate>Fri, 13 Dec 2024 17:21:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/wspmax/</guid><description>&lt;h2 id="requirement-driven-magnetic-beamforming-for-mimo-wireless-power-transfer-optimization"&gt;Requirement-Driven Magnetic Beamforming for MIMO Wireless Power Transfer Optimization&lt;/h2&gt;
+&lt;h3 id="motivation"&gt;Motivation&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;For the general MIMO setup, MultiSpot &lt;strong&gt;doesn&amp;rsquo;t consider peak current/voltage constraints&lt;/strong&gt;. Yang et al. studied the magnetic beamforming problem in an MIMO MRC-WPT system to find all the boundary points of the multi-user power region with the peak current and voltage constraints for each TX. They simplified the problem by &lt;strong&gt;ignoring the mutual inductance among RXs&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;These researches &lt;strong&gt;lack the ability to control the power distribution among receivers&lt;/strong&gt;, and could not be applied to the scenario when different RXs have different requirements of power which can be denoted as weight factors.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="contribution"&gt;Contribution&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;We &lt;strong&gt;formulate the requirement-driven magnetic beamforming design in the MIMO MRC-WPT system as a weighted sum-power maximization problem&lt;/strong&gt;. We &lt;strong&gt;consider the peak current/voltage constraints&lt;/strong&gt;, and provides a high efficient, provable optimal solution.&lt;/p&gt;</description></item><item><title>Optimization Methods</title><link>https://qingbo12.github.io/posts/miscellanea/optimization/</link><pubDate>Thu, 12 Dec 2024 17:16:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/optimization/</guid><description>&lt;h3 id="lagrangian-relaxation"&gt;Lagrangian relaxation&lt;/h3&gt;
+&lt;p&gt;The explanation I provide is based on &lt;a href="https://en.wikipedia.org/wiki/Lagrangian_relaxation" target="_blank" rel="noopener"&gt;Lagrangian relaxation-Wikipedia&lt;/a&gt; and &lt;a href="https://www.ens-lyon.fr/DI/wp-content/uploads/2012/01/LagrangianRelax.pdf" target="_blank" rel="noopener"&gt;Chapter 12 Lagrangian Relaxation-ens-lyon&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Lagrangian relaxation is a relaxation method which approximates a
+difficult problem of constrained optimization by a simpler problem.&lt;/p&gt;
+&lt;p&gt;The method penalizes violations of inequality constraints using a Lagrange
 multiplier, which imposes a cost on violations. These added costs are used
 instead of the strict inequality constraints in the optimization. In
 practice, this relaxed problem can often be solved more easily than the
-original problem.&lt;/p></description></item><item><title>Building issues</title><link>https://qingbo12.github.io/posts/building-issues/</link><pubDate>Sun, 24 Nov 2024 17:36:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/building-issues/</guid><description>&lt;h3 id="issues">Issues&lt;/h3>
-&lt;p>&lt;strong>1. Built-in Shortcode leads to Hugo timeout.&lt;/strong>&lt;/p>
-&lt;p>Because of the networks, I can&amp;rsquo;t send requests to Twitter, YouTube, etc. So I delete the contents about Twitter and YouTube. They are in content\posts\category\sub-category\rich-content\index.md, content\posts\category\sub-category\rich-content\index.bn.md,
+original problem.&lt;/p&gt;</description></item><item><title>Building issues</title><link>https://qingbo12.github.io/posts/building-issues/</link><pubDate>Sun, 24 Nov 2024 17:36:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/building-issues/</guid><description>&lt;h3 id="issues"&gt;Issues&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;1. Built-in Shortcode leads to Hugo timeout.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Because of the networks, I can&amp;rsquo;t send requests to Twitter, YouTube, etc. So I delete the contents about Twitter and YouTube. They are in content\posts\category\sub-category\rich-content\index.md, content\posts\category\sub-category\rich-content\index.bn.md,
 hugo.yaml shareButtons:,
-data\en\sections\about.yaml socialLinks:.&lt;/p>
-&lt;p>&lt;strong>2. Only readme when deploying to github pages.&lt;/strong>&lt;/p>
-&lt;p>Need to set your deployment branch to gh-pages.&lt;/p>
-&lt;p>&lt;img src="https://qingbo12.github.io/posts/building-issues/deployBranchSetting.png" alt="deployBranchSetting">&lt;/p></description></item><item><title>Matrix Base</title><link>https://qingbo12.github.io/posts/miscellanea/matrix-base/</link><pubDate>Wed, 20 Nov 2024 16:02:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/matrix-base/</guid><description>&lt;h2 id="01-determinant">0.1 Determinant&lt;/h2>
-&lt;h3 id="theorem--detab--detadetb-">Theorem: $ det(AB) = det(A)det(B) $&lt;/h3>
-&lt;p>Let $ A, B $ be a square matrices of order n.&lt;/p>
-&lt;p>Let $ det(A) $ be the determinant of $ A $.&lt;/p>
-&lt;p>Let $ AB $ be the matrix product of $ A $ and $ B $.&lt;/p>
-&lt;p>Then:&lt;/p>
-&lt;p>$ det(AB) = det(A)det(B) $&lt;/p>
-&lt;p>&lt;strong>Proof&lt;/strong>&lt;/p>
-&lt;p>The proof I provide is based on &lt;a href="https://proofwiki.org/wiki/Determinant_of_Matrix_Product" target="_blank" rel="noopener">Determinant of Matrix Product&lt;/a>&lt;/p>
-&lt;p>Consider two cases:&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>$ A $ is singular.&lt;/p></description></item><item><title>MagMIMOHotspot Read</title><link>https://qingbo12.github.io/posts/wpt/magmimohotspot/</link><pubDate>Thu, 07 Nov 2024 15:09:01 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/magmimohotspot/</guid><description>&lt;h2 id="magnetic-mimo-how-to-charge-your-phone-in-your-pocket">Magnetic MIMO: how to charge your phone in your pocket&lt;/h2>
-&lt;h3 id="motivation">Motivation&lt;/h3>
-&lt;ol>
-&lt;li>&lt;strong>Current wireless chargers&lt;/strong> need to remember to regularly charge our mobile phones which &lt;strong>is not the wireless charging we hoped for&lt;/strong>. We would like to have our cell phones charged in our pockets, and never again worry about forgetting to charge the phone.&lt;/li>
-&lt;li>MIMO RF techniques power phones remotely, however, delivering a large amount of power via radiation can cause local heating inside the human body.&lt;/li>
-&lt;/ol>
-&lt;h3 id="contribution">Contribution&lt;/h3>
-&lt;ol>
-&lt;li>They propose a novel design that focuses the magnetic flux from multiple coils in a steerable beam and points it at the phone, in a manner analogous to multi-antenna beamforming in wireless communications.&lt;/li>
-&lt;li>The design can charge unmodified smart phones &lt;strong>at distances up to 40 cm, and works regardless of the phone orientation&lt;/strong> with respect to the charging pad.&lt;/li>
-&lt;/ol>
-&lt;h3 id="magnetic-beamforming">Magnetic-Beamforming&lt;/h3>
-&lt;div>
-&lt;center>&lt;img src="images/AnalogiesBetweenStandardMIMOandMagMIMO.png" alt="Analogies Between Standard MIMO and Magnetic MIMO" />&lt;/center>
-&lt;center>&lt;strong>Figure 1:&lt;/strong> Illustration of the analogies between standard MIMO and MagMIMO.&lt;/center>
-&lt;/div>
-&lt;br>
-&lt;p>For a 2-antenna MIMO transmitter.&lt;/p></description></item><item><title>Circuit Base</title><link>https://qingbo12.github.io/posts/miscellanea/circuit/</link><pubDate>Thu, 07 Nov 2024 15:09:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/circuit/</guid><description>&lt;h2 id="basic-circuit">Basic circuit&lt;/h2>
-&lt;p>&lt;strong>Charge&lt;/strong> It is defined in terms of the ampere by counting the total charge that passes through an arbitrary cross section of a wire during an interval of one second. In the SI system, the fundamental unit of charge is the coulomb (C).&lt;/p>
-&lt;p>&lt;strong>Current&lt;/strong> We define the current at a specific point and flowing in a specified direction as the instantaneous rate at which net positive charge is moving past that point in the specified direction. Current
-is symbolized by I or i, and so&lt;/p></description></item><item><title>First glance</title><link>https://qingbo12.github.io/posts/wpt/first-glance/</link><pubDate>Thu, 31 Oct 2024 17:44:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/first-glance/</guid><description>&lt;h1 id="scheduling-layer">Scheduling Layer&lt;/h1>
-&lt;h3 id="pte-optimization">PTE Optimization&lt;/h3>
-&lt;h4 id="requirement-driven-magnetic-beamforming-for-mimo-wireless-power-transfer-optimization">Requirement-Driven Magnetic Beamforming for MIMO Wireless Power Transfer Optimization&lt;/h4>
-&lt;p>&lt;strong>Motivation:&lt;/strong> In MIMO MRC-WPT system, we need to consider the scenario when different RXs have different requirements of power.
-&lt;br/>&lt;/p>
-&lt;p>&lt;strong>Problem formulation:&lt;/strong> weighted sum-power maximization
-$WSPMax = max_{{i_n^{tx}}} \sum_q w_q |i^{rx}_q|^2 r^{rx}_q $&lt;/p>
-&lt;p>Subject to:
-&lt;br/>&lt;/p>
-&lt;p>$$ \sum_n \left|i_n^{tx}\right|^2 r_n^{tx} + \sum_q \left|i_q^{rx}\right|^2 r_q^{rx} \leq P_{\text{max}}, \ $$&lt;/p>
-&lt;p>$$ \left|i_n^{tx}\right|^2 \leq A_n^{tx}, \quad \forall 1 \leq n \leq N, \ $$&lt;/p></description></item><item><title>Multimodal-fusion research</title><link>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</link><pubDate>Wed, 16 Oct 2024 04:58:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</guid><description>&lt;h2 id="fusion-stage">Fusion stage&lt;/h2>
-&lt;div>
-&lt;center>&lt;img src="images/mindmap-of-DeepMultimodalLearning.png"
-alt="Mind map of Deep Multimodal Learning" />&lt;/center>
-&lt;center>&lt;strong>Figure 1:&lt;/strong> Mind map of Deep Multimodal Learning&lt;/center>
-&lt;/div>
-&lt;h2 id="inference-mechanism-for-multi-sensors-fusion">Inference mechanism for multi-sensors fusion&lt;/h2>
-&lt;div>
-&lt;center>&lt;img src="images/mindmap-of-InferenceForFusion.png" alt="Mind map of Inference For Fusion" />&lt;/center>
-&lt;center>&lt;strong>Figure 2:&lt;/strong> Mind map of A comparative review on multi-modal sensors fusion based on deep learning&lt;/center>
-&lt;/div></description></item><item><title>Recommendation Progress</title><link>https://qingbo12.github.io/posts/miscellanea/recommendation-progress/</link><pubDate>Thu, 10 Oct 2024 07:58:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/recommendation-progress/</guid><description>&lt;h2 id="个人情况">个人情况&lt;/h2>
-&lt;p>&lt;strong>本科：&lt;/strong> 重庆大学&lt;/p>
-&lt;p>&lt;strong>专业：&lt;/strong> 计算机科学与技术&lt;/p>
-&lt;p>&lt;strong>排名：&lt;/strong> 1.3% (rank 3)&lt;/p>
-&lt;p>&lt;strong>英语：&lt;/strong> 六级 547&lt;/p>
-&lt;p>&lt;strong>荣誉：&lt;/strong> 国家奖学金、重庆市三好学生&lt;/p>
-&lt;p>&lt;strong>竞赛：&lt;/strong> 无竞赛&lt;/p>
-&lt;p>&lt;strong>科研：&lt;/strong> 有 CV 领域相关经历，面试时有 NIPS 二作在投&lt;/p>
-&lt;p>&lt;strong>最终去向：&lt;/strong> 中国科学技术大学-计算机科学与技术学院&lt;/p>
-&lt;h2 id="夏令营情况">夏令营情况&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align: left">院校&lt;/th>
-&lt;th style="text-align: center">类型&lt;/th>
-&lt;th style="text-align: center">入营&lt;/th>
-&lt;th style="text-align: center">offer&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align: left">南京大学-计算机科学与技术学院&lt;/td>
-&lt;td style="text-align: center">硕士&lt;/td>
-&lt;td style="text-align: center">√&lt;/td>
-&lt;td style="text-align: center">候补&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: left">清华大学-深圳国际研究生院(数据与信息研究院人工智能项目)&lt;/td>
-&lt;td style="text-align: center">硕士&lt;/td>
-&lt;td style="text-align: center">×&lt;/td>
-&lt;td style="text-align: center">&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: left">清华大学-网络研究院&lt;/td>
-&lt;td style="text-align: center">硕士&lt;/td>
-&lt;td style="text-align: center">×&lt;/td>
-&lt;td style="text-align: center">&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: left">南京大学-人工智能学院&lt;/td>
-&lt;td style="text-align: center">硕士&lt;/td>
-&lt;td style="text-align: center">×&lt;/td>
-&lt;td style="text-align: center">&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: left">中国人民大学-高瓴人工智能学院&lt;/td>
-&lt;td style="text-align: center">直博&lt;/td>
-&lt;td style="text-align: center">√&lt;/td>
-&lt;td style="text-align: center">时间冲突，放弃参营&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: left">上海交通大学-人工智能学院&lt;/td>
-&lt;td style="text-align: center">直博&lt;/td>
-&lt;td style="text-align: center">√&lt;/td>
-&lt;td style="text-align: center">不合格（斩杀）&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: left">中国科学技术大学-计算机科学与技术学院&lt;/td>
-&lt;td style="text-align: center">硕士&lt;/td>
-&lt;td style="text-align: center">√&lt;/td>
-&lt;td style="text-align: center">学硕&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;br/>
-&lt;p>&lt;strong>南京大学-计算机科学与技术学院&lt;/strong>
-线上测试过了，线下机试 0 分。。。&lt;/p>
-&lt;p>&lt;strong>南京大学-人工智能学院&lt;/strong>
-入了计院，不让入人工智能学院？&lt;/p>
-&lt;p>&lt;strong>上海交通大学-人工智能学院&lt;/strong>
-没有提前联系好老师，科研积累太少。&lt;/p>
-&lt;h2 id="预推免情况">预推免情况&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align: left">院校&lt;/th>
-&lt;th style="text-align: center">类型&lt;/th>
-&lt;th style="text-align: center">入营&lt;/th>
-&lt;th style="text-align: center">offer&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align: left">清华大学-软件学院&lt;/td>
-&lt;td style="text-align: center">专硕&lt;/td>
-&lt;td style="text-align: center">√&lt;/td>
-&lt;td style="text-align: center">×&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align: left">浙江大学-计算机科学与技术学院&lt;/td>
-&lt;td style="text-align: center">硕士&lt;/td>
-&lt;td style="text-align: center">√&lt;/td>
-&lt;td style="text-align: center">专硕&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;br>
-&lt;p>总结：入营基本都能入，但自身实力差。南大机试报零，面试差导致上交直博不合格。&lt;/p></description></item><item><title>C language lecture 1</title><link>https://qingbo12.github.io/posts/miscellanea/c-lecture/</link><pubDate>Fri, 13 Sep 2024 20:30:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/c-lecture/</guid><description>&lt;h3 id="怎么和计算机打交道">怎么和计算机打交道&lt;/h3>
-&lt;div style="display: flex; justify-content: space-between;">
-&lt;img src="images/PunchingMachine.jpg" alt="Punching Machine" style="width: 45%"/>
-&lt;img src="images/Papertape.jpg" alt="Papertape" style="width: 45%"/>
-&lt;/div>
-&lt;div style="text-align: center;">
-&lt;strong>Figure 1:&lt;/strong> 早期将穿孔纸带输入计算机
-&lt;/div>
-&lt;br>
-&lt;div style="display: flex; justify-content: space-between;">
-&lt;img src="images/asm-01.png" alt="asm" style="width: 45%"/>
-&lt;img src="images/riscv.png" alt="riscv" style="width: 45%"/>
-&lt;/div>
-&lt;div style="text-align: center;">
-&lt;strong>Figure 2:&lt;/strong> 使用汇编语言编程
-&lt;/div>
-&lt;br>
-&lt;div>
-&lt;center>&lt;img src="images/c-asm-01.png" alt="c-asm-01" />&lt;/center>
-&lt;center>&lt;strong>Figure 3:&lt;/strong> 使用高级语言C语言编程&lt;/center>
-&lt;/div>
-&lt;h3 id="为什么要学-c-语言">为什么要学 C 语言&lt;/h3>
-&lt;ol>
-&lt;li>基础性强：C 语言是一门底层语言，靠近计算机硬件。学习 C 语言能够帮助你理解计算机是如何工作的，如内存管理、指针操作和硬件交互等。很多高级语言（如 C++、Python）都基于 C 语言。&lt;/li>
-&lt;li>高效性能：C 语言生成的代码通常比很多高级语言效率更高，特别适合对性能要求高的场景，比如实时系统、游戏引擎等。&lt;/li>
-&lt;li>。。。&lt;/li>
-&lt;/ol>
-&lt;h3 id="怎么开始学习-cc-语言">怎么开始学习 C/C++ 语言&lt;/h3>
-&lt;p>首先需要一个写代码的好地方，推荐 VS Code&lt;/p>
-&lt;ol>
-&lt;li>安装 VS Code&lt;/li>
-&lt;li>安装 C/C++ 扩展&lt;/li>
-&lt;li>安装 &lt;a href="https://www.msys2.org/" target="_blank" rel="noopener">MinGW-w64&lt;/a> 编译工具，并检查&lt;/li>
-&lt;li>向编程世界打声招呼&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c++" data-lang="c++">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span style="color:#75715e">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">using&lt;/span> &lt;span style="color:#66d9ef">namespace&lt;/span> std;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cout &lt;span style="color:#f92672">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Hello, World!&amp;#34;&lt;/span> &lt;span style="color:#f92672">&amp;lt;&amp;lt;&lt;/span> endl;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>transformer Read</title><link>https://qingbo12.github.io/posts/gcd/transformer/</link><pubDate>Thu, 12 Sep 2024 11:23:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/gcd/transformer/</guid><description>&lt;h2 id="questions">Questions&lt;/h2>
-&lt;ol>
-&lt;li>What&amp;rsquo;s the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions ?&lt;/li>
-&lt;/ol>
-&lt;h2 id="extended-learning">Extended Learning&lt;/h2>
-&lt;ol>
-&lt;li>
-&lt;p>Attention mechanisms with a recurrent network.&lt;/p>
-&lt;p>Bahdanau, Dzmitry. &amp;ldquo;Neural machine translation by jointly learning to align and translate.&amp;rdquo; arXiv preprint arXiv:1409.0473 (2014).&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Use convolutional neural networks to compute hidden representations in parallel.&lt;/p>
-&lt;p>Gehring, Jonas, et al. &amp;ldquo;Convolutional sequence to sequence learning.&amp;rdquo; International conference on machine learning. PMLR, 2017.&lt;/p></description></item><item><title>DINO Read</title><link>https://qingbo12.github.io/posts/gcd/dino/</link><pubDate>Fri, 06 Sep 2024 09:57:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/gcd/dino/</guid><description>&lt;h2 id="questions">Questions&lt;/h2>
-&lt;ol>
-&lt;li>What&amp;rsquo;s the function of centering $ C $ and sharpening parameter $ \tau_t $ ?&lt;/li>
-&lt;/ol>
-&lt;h2 id="extended-learning">Extended Learning&lt;/h2>
-&lt;ol>
-&lt;li>
-&lt;p>Multi-crop training.&lt;/p>
-&lt;p>Caron, Mathilde, et al. &amp;ldquo;Unsupervised learning of visual features by contrasting cluster assignments.&amp;rdquo; Advances in neural information processing systems 33 (2020): 9912-9924.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Use a noise contrastive estimator (NCE) to compare instances instead of classifying them.&lt;/p>
-&lt;p>Wu, Zhirong, et al. &amp;ldquo;Unsupervised feature learning via non-parametric instance discrimination.&amp;rdquo; Proceedings of the IEEE conference on computer vision and pattern recognition. 2018.&lt;/p></description></item><item><title>SimGCD Read</title><link>https://qingbo12.github.io/posts/gcd/simgcd/</link><pubDate>Mon, 02 Sep 2024 09:57:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/gcd/simgcd/</guid><description>&lt;h2 id="research-task">Research Task&lt;/h2>
-&lt;p>&lt;strong>Generalized Category Discovery (GCD)&lt;/strong> relaxes the assumption of traditional semi-supervised learning by assuming the unlabelled data can also contain different but related categories from the labelled data. The goal of GCD is to learn a model that is able to classify the already-seen categories in the labelled data, and more importantly, jointly discover the new categories in the unlabelled data and make correct classifications.&lt;/p>
-&lt;h2 id="limitations-of-previous-methods">Limitations of Previous Methods&lt;/h2>
-&lt;p>Previous methods can be categorized into two distinct approaches:&lt;/p></description></item><item><title>Introduction</title><link>https://qingbo12.github.io/posts/introduction/</link><pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate><guid>https://qingbo12.github.io/posts/introduction/</guid><description>&lt;p>Greeting! This is an introduction post. This post tests the followings:&lt;/p>
-&lt;ul>
-&lt;li>Hero image is in the same directory as the post.&lt;/li>
-&lt;li>This post should be at top of the sidebar.&lt;/li>
-&lt;li>Post author should be the same as specified in &lt;code>author.yaml&lt;/code> file.&lt;/li>
-&lt;/ul></description></item><item><title>Markdown Samples</title><link>https://qingbo12.github.io/posts/markdown-sample/</link><pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate><guid>https://qingbo12.github.io/posts/markdown-sample/</guid><description>&lt;p>This is a sample post intended to test the followings:&lt;/p>
-&lt;ul>
-&lt;li>A different post author.&lt;/li>
-&lt;li>Table of contents.&lt;/li>
-&lt;li>Markdown content rendering.&lt;/li>
-&lt;li>Math rendering.&lt;/li>
-&lt;li>Emoji rendering.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h1 id="markdown-syntax-rendering">Markdown Syntax Rendering&lt;/h1>
-&lt;h2 id="headings">Headings&lt;/h2>
-&lt;p>The following HTML &lt;code>&amp;lt;h1&amp;gt;&lt;/code>—&lt;code>&amp;lt;h6&amp;gt;&lt;/code> elements represent six levels of section headings. &lt;code>&amp;lt;h1&amp;gt;&lt;/code> is the highest section level while &lt;code>&amp;lt;h6&amp;gt;&lt;/code> is the lowest.&lt;/p>
-&lt;h1 id="h1">H1&lt;/h1>
-&lt;h2 id="h2">H2&lt;/h2>
-&lt;h3 id="h3">H3&lt;/h3>
-&lt;h4 id="h4">H4&lt;/h4>
-&lt;h5 id="h5">H5&lt;/h5>
-&lt;h6 id="h6">H6&lt;/h6>
-&lt;h2 id="paragraph">Paragraph&lt;/h2>
-&lt;p>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.&lt;/p></description></item><item><title>Rich Content</title><link>https://qingbo12.github.io/posts/category/sub-category/rich-content/</link><pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate><guid>https://qingbo12.github.io/posts/category/sub-category/rich-content/</guid><description>&lt;p>This sample post tests the followings:&lt;/p>
-&lt;ul>
-&lt;li>Category, sub-category nesting in the sidebar.&lt;/li>
-&lt;li>Hero image and other images are in &lt;code>images&lt;/code> folder inside this post directory.&lt;/li>
-&lt;li>Different media rendering like image, tweet, YouTube video, Vimeo video etc.&lt;/li>
-&lt;/ul>
-&lt;h3 id="image-sample">Image Sample&lt;/h3>
+data\en\sections\about.yaml socialLinks:.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. Only readme when deploying to github pages.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Need to set your deployment branch to gh-pages.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://qingbo12.github.io/posts/building-issues/deployBranchSetting.png" alt="deployBranchSetting"&gt;&lt;/p&gt;</description></item><item><title>Matrix Base</title><link>https://qingbo12.github.io/posts/miscellanea/matrix-base/</link><pubDate>Wed, 20 Nov 2024 16:02:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/matrix-base/</guid><description>&lt;h2 id="01-determinant"&gt;0.1 Determinant&lt;/h2&gt;
+&lt;h3 id="theorem--detab--detadetb-"&gt;Theorem: $ det(AB) = det(A)det(B) $&lt;/h3&gt;
+&lt;p&gt;Let $ A, B $ be a square matrices of order n.&lt;/p&gt;
+&lt;p&gt;Let $ det(A) $ be the determinant of $ A $.&lt;/p&gt;
+&lt;p&gt;Let $ AB $ be the matrix product of $ A $ and $ B $.&lt;/p&gt;
+&lt;p&gt;Then:&lt;/p&gt;
+&lt;p&gt;$ det(AB) = det(A)det(B) $&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proof&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The proof I provide is based on &lt;a href="https://proofwiki.org/wiki/Determinant_of_Matrix_Product" target="_blank" rel="noopener"&gt;Determinant of Matrix Product&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Consider two cases:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;$ A $ is singular.&lt;/p&gt;</description></item><item><title>MagMIMOHotspot Read</title><link>https://qingbo12.github.io/posts/wpt/magmimohotspot/</link><pubDate>Thu, 07 Nov 2024 15:09:01 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/magmimohotspot/</guid><description>&lt;h2 id="magnetic-mimo-how-to-charge-your-phone-in-your-pocket"&gt;Magnetic MIMO: how to charge your phone in your pocket&lt;/h2&gt;
+&lt;h3 id="motivation"&gt;Motivation&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Current wireless chargers&lt;/strong&gt; need to remember to regularly charge our mobile phones which &lt;strong&gt;is not the wireless charging we hoped for&lt;/strong&gt;. We would like to have our cell phones charged in our pockets, and never again worry about forgetting to charge the phone.&lt;/li&gt;
+&lt;li&gt;MIMO RF techniques power phones remotely, however, delivering a large amount of power via radiation can cause local heating inside the human body.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="contribution"&gt;Contribution&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;They propose a novel design that focuses the magnetic flux from multiple coils in a steerable beam and points it at the phone, in a manner analogous to multi-antenna beamforming in wireless communications.&lt;/li&gt;
+&lt;li&gt;The design can charge unmodified smart phones &lt;strong&gt;at distances up to 40 cm, and works regardless of the phone orientation&lt;/strong&gt; with respect to the charging pad.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="magnetic-beamforming"&gt;Magnetic-Beamforming&lt;/h3&gt;
+&lt;div&gt;
+&lt;center&gt;&lt;img src="images/AnalogiesBetweenStandardMIMOandMagMIMO.png" alt="Analogies Between Standard MIMO and Magnetic MIMO" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;Figure 1:&lt;/strong&gt; Illustration of the analogies between standard MIMO and MagMIMO.&lt;/center&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;p&gt;For a 2-antenna MIMO transmitter.&lt;/p&gt;</description></item><item><title>Circuit Base</title><link>https://qingbo12.github.io/posts/miscellanea/circuit/</link><pubDate>Thu, 07 Nov 2024 15:09:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/circuit/</guid><description>&lt;h2 id="basic-circuit"&gt;Basic circuit&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Charge&lt;/strong&gt; It is defined in terms of the ampere by counting the total charge that passes through an arbitrary cross section of a wire during an interval of one second. In the SI system, the fundamental unit of charge is the coulomb (C).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Current&lt;/strong&gt; We define the current at a specific point and flowing in a specified direction as the instantaneous rate at which net positive charge is moving past that point in the specified direction. Current
+is symbolized by I or i, and so&lt;/p&gt;</description></item><item><title>First glance</title><link>https://qingbo12.github.io/posts/wpt/first-glance/</link><pubDate>Thu, 31 Oct 2024 17:44:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/first-glance/</guid><description>&lt;h1 id="scheduling-layer"&gt;Scheduling Layer&lt;/h1&gt;
+&lt;h3 id="pte-optimization"&gt;PTE Optimization&lt;/h3&gt;
+&lt;h4 id="requirement-driven-magnetic-beamforming-for-mimo-wireless-power-transfer-optimization"&gt;Requirement-Driven Magnetic Beamforming for MIMO Wireless Power Transfer Optimization&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Motivation:&lt;/strong&gt; In MIMO MRC-WPT system, we need to consider the scenario when different RXs have different requirements of power.
+&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Problem formulation:&lt;/strong&gt; weighted sum-power maximization
+$WSPMax = max_{{i_n^{tx}}} \sum_q w_q |i^{rx}_q|^2 r^{rx}_q $&lt;/p&gt;
+&lt;p&gt;Subject to:
+&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;$$ \sum_n \left|i_n^{tx}\right|^2 r_n^{tx} + \sum_q \left|i_q^{rx}\right|^2 r_q^{rx} \leq P_{\text{max}}, \ $$&lt;/p&gt;
+&lt;p&gt;$$ \left|i_n^{tx}\right|^2 \leq A_n^{tx}, \quad \forall 1 \leq n \leq N, \ $$&lt;/p&gt;</description></item><item><title>Multimodal-fusion research</title><link>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</link><pubDate>Wed, 16 Oct 2024 04:58:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</guid><description>&lt;h2 id="fusion-stage"&gt;Fusion stage&lt;/h2&gt;
+&lt;div&gt;
+&lt;center&gt;&lt;img src="images/mindmap-of-DeepMultimodalLearning.png"
+alt="Mind map of Deep Multimodal Learning" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;Figure 1:&lt;/strong&gt; Mind map of Deep Multimodal Learning&lt;/center&gt;
+&lt;/div&gt;
+&lt;h2 id="inference-mechanism-for-multi-sensors-fusion"&gt;Inference mechanism for multi-sensors fusion&lt;/h2&gt;
+&lt;div&gt;
+&lt;center&gt;&lt;img src="images/mindmap-of-InferenceForFusion.png" alt="Mind map of Inference For Fusion" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;Figure 2:&lt;/strong&gt; Mind map of A comparative review on multi-modal sensors fusion based on deep learning&lt;/center&gt;
+&lt;/div&gt;</description></item><item><title>Recommendation Progress</title><link>https://qingbo12.github.io/posts/miscellanea/recommendation-progress/</link><pubDate>Thu, 10 Oct 2024 07:58:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/recommendation-progress/</guid><description>&lt;h2 id="个人情况"&gt;个人情况&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;本科：&lt;/strong&gt; 重庆大学&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;专业：&lt;/strong&gt; 计算机科学与技术&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;排名：&lt;/strong&gt; 1.3% (rank 3)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;英语：&lt;/strong&gt; 六级 547&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;荣誉：&lt;/strong&gt; 国家奖学金、重庆市三好学生&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;竞赛：&lt;/strong&gt; 无竞赛&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;科研：&lt;/strong&gt; 有 CV 领域相关经历，面试时有 NIPS 二作在投&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;最终去向：&lt;/strong&gt; 中国科学技术大学-计算机科学与技术学院&lt;/p&gt;
+&lt;h2 id="夏令营情况"&gt;夏令营情况&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left"&gt;院校&lt;/th&gt;
+&lt;th style="text-align: center"&gt;类型&lt;/th&gt;
+&lt;th style="text-align: center"&gt;入营&lt;/th&gt;
+&lt;th style="text-align: center"&gt;offer&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;南京大学-计算机科学与技术学院&lt;/td&gt;
+&lt;td style="text-align: center"&gt;硕士&lt;/td&gt;
+&lt;td style="text-align: center"&gt;√&lt;/td&gt;
+&lt;td style="text-align: center"&gt;候补&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;清华大学-深圳国际研究生院(数据与信息研究院人工智能项目)&lt;/td&gt;
+&lt;td style="text-align: center"&gt;硕士&lt;/td&gt;
+&lt;td style="text-align: center"&gt;×&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;清华大学-网络研究院&lt;/td&gt;
+&lt;td style="text-align: center"&gt;硕士&lt;/td&gt;
+&lt;td style="text-align: center"&gt;×&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;南京大学-人工智能学院&lt;/td&gt;
+&lt;td style="text-align: center"&gt;硕士&lt;/td&gt;
+&lt;td style="text-align: center"&gt;×&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;中国人民大学-高瓴人工智能学院&lt;/td&gt;
+&lt;td style="text-align: center"&gt;直博&lt;/td&gt;
+&lt;td style="text-align: center"&gt;√&lt;/td&gt;
+&lt;td style="text-align: center"&gt;时间冲突，放弃参营&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;上海交通大学-人工智能学院&lt;/td&gt;
+&lt;td style="text-align: center"&gt;直博&lt;/td&gt;
+&lt;td style="text-align: center"&gt;√&lt;/td&gt;
+&lt;td style="text-align: center"&gt;不合格（斩杀）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;中国科学技术大学-计算机科学与技术学院&lt;/td&gt;
+&lt;td style="text-align: center"&gt;硕士&lt;/td&gt;
+&lt;td style="text-align: center"&gt;√&lt;/td&gt;
+&lt;td style="text-align: center"&gt;学硕&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;strong&gt;南京大学-计算机科学与技术学院&lt;/strong&gt;
+线上测试过了，线下机试 0 分。。。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;南京大学-人工智能学院&lt;/strong&gt;
+入了计院，不让入人工智能学院？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;上海交通大学-人工智能学院&lt;/strong&gt;
+没有提前联系好老师，科研积累太少。&lt;/p&gt;
+&lt;h2 id="预推免情况"&gt;预推免情况&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left"&gt;院校&lt;/th&gt;
+&lt;th style="text-align: center"&gt;类型&lt;/th&gt;
+&lt;th style="text-align: center"&gt;入营&lt;/th&gt;
+&lt;th style="text-align: center"&gt;offer&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;清华大学-软件学院&lt;/td&gt;
+&lt;td style="text-align: center"&gt;专硕&lt;/td&gt;
+&lt;td style="text-align: center"&gt;√&lt;/td&gt;
+&lt;td style="text-align: center"&gt;×&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;浙江大学-计算机科学与技术学院&lt;/td&gt;
+&lt;td style="text-align: center"&gt;硕士&lt;/td&gt;
+&lt;td style="text-align: center"&gt;√&lt;/td&gt;
+&lt;td style="text-align: center"&gt;专硕&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;p&gt;总结：入营基本都能入，但自身实力差。南大机试报零，面试差导致上交直博不合格。&lt;/p&gt;</description></item><item><title>C language lecture 1</title><link>https://qingbo12.github.io/posts/miscellanea/c-lecture/</link><pubDate>Fri, 13 Sep 2024 20:30:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/c-lecture/</guid><description>&lt;h3 id="怎么和计算机打交道"&gt;怎么和计算机打交道&lt;/h3&gt;
+&lt;div style="display: flex; justify-content: space-between;"&gt;
+&lt;img src="images/PunchingMachine.jpg" alt="Punching Machine" style="width: 45%"/&gt;
+&lt;img src="images/Papertape.jpg" alt="Papertape" style="width: 45%"/&gt;
+&lt;/div&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;strong&gt;Figure 1:&lt;/strong&gt; 早期将穿孔纸带输入计算机
+&lt;/div&gt;
+&lt;br&gt;
+&lt;div style="display: flex; justify-content: space-between;"&gt;
+&lt;img src="images/asm-01.png" alt="asm" style="width: 45%"/&gt;
+&lt;img src="images/riscv.png" alt="riscv" style="width: 45%"/&gt;
+&lt;/div&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;strong&gt;Figure 2:&lt;/strong&gt; 使用汇编语言编程
+&lt;/div&gt;
+&lt;br&gt;
+&lt;div&gt;
+&lt;center&gt;&lt;img src="images/c-asm-01.png" alt="c-asm-01" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;Figure 3:&lt;/strong&gt; 使用高级语言C语言编程&lt;/center&gt;
+&lt;/div&gt;
+&lt;h3 id="为什么要学-c-语言"&gt;为什么要学 C 语言&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;基础性强：C 语言是一门底层语言，靠近计算机硬件。学习 C 语言能够帮助你理解计算机是如何工作的，如内存管理、指针操作和硬件交互等。很多高级语言（如 C++、Python）都基于 C 语言。&lt;/li&gt;
+&lt;li&gt;高效性能：C 语言生成的代码通常比很多高级语言效率更高，特别适合对性能要求高的场景，比如实时系统、游戏引擎等。&lt;/li&gt;
+&lt;li&gt;。。。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="怎么开始学习-cc-语言"&gt;怎么开始学习 C/C++ 语言&lt;/h3&gt;
+&lt;p&gt;首先需要一个写代码的好地方，推荐 VS Code&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;安装 VS Code&lt;/li&gt;
+&lt;li&gt;安装 C/C++ 扩展&lt;/li&gt;
+&lt;li&gt;安装 &lt;a href="https://www.msys2.org/" target="_blank" rel="noopener"&gt;MinGW-w64&lt;/a&gt; 编译工具，并检查&lt;/li&gt;
+&lt;li&gt;向编程世界打声招呼&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-c++" data-lang="c++"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#include&lt;/span&gt; &lt;span style="color:#75715e"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span style="color:#75715e"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;using&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;namespace&lt;/span&gt; std;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; cout &lt;span style="color:#f92672"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;&amp;lt;&lt;/span&gt; endl;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>transformer Read</title><link>https://qingbo12.github.io/posts/gcd/transformer/</link><pubDate>Thu, 12 Sep 2024 11:23:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/gcd/transformer/</guid><description>&lt;h2 id="questions"&gt;Questions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;What&amp;rsquo;s the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions ?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="extended-learning"&gt;Extended Learning&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Attention mechanisms with a recurrent network.&lt;/p&gt;
+&lt;p&gt;Bahdanau, Dzmitry. &amp;ldquo;Neural machine translation by jointly learning to align and translate.&amp;rdquo; arXiv preprint arXiv:1409.0473 (2014).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use convolutional neural networks to compute hidden representations in parallel.&lt;/p&gt;
+&lt;p&gt;Gehring, Jonas, et al. &amp;ldquo;Convolutional sequence to sequence learning.&amp;rdquo; International conference on machine learning. PMLR, 2017.&lt;/p&gt;</description></item><item><title>DINO Read</title><link>https://qingbo12.github.io/posts/gcd/dino/</link><pubDate>Fri, 06 Sep 2024 09:57:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/gcd/dino/</guid><description>&lt;h2 id="questions"&gt;Questions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;What&amp;rsquo;s the function of centering $ C $ and sharpening parameter $ \tau_t $ ?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="extended-learning"&gt;Extended Learning&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Multi-crop training.&lt;/p&gt;
+&lt;p&gt;Caron, Mathilde, et al. &amp;ldquo;Unsupervised learning of visual features by contrasting cluster assignments.&amp;rdquo; Advances in neural information processing systems 33 (2020): 9912-9924.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use a noise contrastive estimator (NCE) to compare instances instead of classifying them.&lt;/p&gt;
+&lt;p&gt;Wu, Zhirong, et al. &amp;ldquo;Unsupervised feature learning via non-parametric instance discrimination.&amp;rdquo; Proceedings of the IEEE conference on computer vision and pattern recognition. 2018.&lt;/p&gt;</description></item><item><title>SimGCD Read</title><link>https://qingbo12.github.io/posts/gcd/simgcd/</link><pubDate>Mon, 02 Sep 2024 09:57:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/gcd/simgcd/</guid><description>&lt;h2 id="research-task"&gt;Research Task&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Generalized Category Discovery (GCD)&lt;/strong&gt; relaxes the assumption of traditional semi-supervised learning by assuming the unlabelled data can also contain different but related categories from the labelled data. The goal of GCD is to learn a model that is able to classify the already-seen categories in the labelled data, and more importantly, jointly discover the new categories in the unlabelled data and make correct classifications.&lt;/p&gt;
+&lt;h2 id="limitations-of-previous-methods"&gt;Limitations of Previous Methods&lt;/h2&gt;
+&lt;p&gt;Previous methods can be categorized into two distinct approaches:&lt;/p&gt;</description></item><item><title>Introduction</title><link>https://qingbo12.github.io/posts/introduction/</link><pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate><guid>https://qingbo12.github.io/posts/introduction/</guid><description>&lt;p&gt;Greeting! This is an introduction post. This post tests the followings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hero image is in the same directory as the post.&lt;/li&gt;
+&lt;li&gt;This post should be at top of the sidebar.&lt;/li&gt;
+&lt;li&gt;Post author should be the same as specified in &lt;code&gt;author.yaml&lt;/code&gt; file.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Markdown Samples</title><link>https://qingbo12.github.io/posts/markdown-sample/</link><pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate><guid>https://qingbo12.github.io/posts/markdown-sample/</guid><description>&lt;p&gt;This is a sample post intended to test the followings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A different post author.&lt;/li&gt;
+&lt;li&gt;Table of contents.&lt;/li&gt;
+&lt;li&gt;Markdown content rendering.&lt;/li&gt;
+&lt;li&gt;Math rendering.&lt;/li&gt;
+&lt;li&gt;Emoji rendering.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id="markdown-syntax-rendering"&gt;Markdown Syntax Rendering&lt;/h1&gt;
+&lt;h2 id="headings"&gt;Headings&lt;/h2&gt;
+&lt;p&gt;The following HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; elements represent six levels of section headings. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is the highest section level while &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; is the lowest.&lt;/p&gt;
+&lt;h1 id="h1"&gt;H1&lt;/h1&gt;
+&lt;h2 id="h2"&gt;H2&lt;/h2&gt;
+&lt;h3 id="h3"&gt;H3&lt;/h3&gt;
+&lt;h4 id="h4"&gt;H4&lt;/h4&gt;
+&lt;h5 id="h5"&gt;H5&lt;/h5&gt;
+&lt;h6 id="h6"&gt;H6&lt;/h6&gt;
+&lt;h2 id="paragraph"&gt;Paragraph&lt;/h2&gt;
+&lt;p&gt;Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.&lt;/p&gt;</description></item><item><title>Rich Content</title><link>https://qingbo12.github.io/posts/category/sub-category/rich-content/</link><pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate><guid>https://qingbo12.github.io/posts/category/sub-category/rich-content/</guid><description>&lt;p&gt;This sample post tests the followings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Category, sub-category nesting in the sidebar.&lt;/li&gt;
+&lt;li&gt;Hero image and other images are in &lt;code&gt;images&lt;/code&gt; folder inside this post directory.&lt;/li&gt;
+&lt;li&gt;Different media rendering like image, tweet, YouTube video, Vimeo video etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="image-sample"&gt;Image Sample&lt;/h3&gt;
 &lt;img src="https://qingbo12.github.io/posts/category/sub-category/rich-content/images/forest.jpg"
 alt="Forest"
 class="center"
->
-&lt;div style="margin-top: rem;">&lt;/div>
-&lt;h3 id="vimeo-video-sample">Vimeo Video Sample&lt;/h3>
+&gt;
+&lt;div style="margin-top: rem;"&gt;&lt;/div&gt;
+&lt;h3 id="vimeo-video-sample"&gt;Vimeo Video Sample&lt;/h3&gt;
 &lt;div
-style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"&gt;
 &lt;iframe
 src="https://player.vimeo.com/video/48912912?dnt=0"
-style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allow="fullscreen">
-&lt;/iframe>
-&lt;/div></description></item><item><title>Shortcodes Samples</title><link>https://qingbo12.github.io/posts/shortcodes/</link><pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate><guid>https://qingbo12.github.io/posts/shortcodes/</guid><description>&lt;p>This is a sample post intended to test the followings:&lt;/p>
-&lt;ul>
-&lt;li>Default hero image.&lt;/li>
-&lt;li>Different shortcodes.&lt;/li>
-&lt;/ul>
-&lt;h2 id="alert">Alert&lt;/h2>
-&lt;p>The following alerts are available in this theme.&lt;/p>
-&lt;div class="alert success">
-&lt;span>&lt;i data-feather="check-circle">&lt;/i>&lt;/span>
-&lt;span>&lt;strong>This is sample alert with &lt;code>type=&amp;quot;success&amp;quot;&lt;/code>.&lt;/strong>&lt;/span>
-&lt;/div>
-&lt;div class="alert danger">
-&lt;span>&lt;i data-feather="alert-octagon">&lt;/i>&lt;/span>
-&lt;span>&lt;strong>This is sample alert with &lt;code>type=&amp;quot;danger&amp;quot;&lt;/code>.&lt;/strong>&lt;/span>
-&lt;/div>
-&lt;div class="alert warning">
-&lt;span>&lt;i data-feather="alert-triangle">&lt;/i>&lt;/span>
-&lt;span>&lt;strong>This is sample alert with &lt;code>type=&amp;quot;warning&amp;quot;&lt;/code>.&lt;/strong>&lt;/span>
-&lt;/div>
-&lt;div class="alert info">
-&lt;span>&lt;i data-feather="info">&lt;/i>&lt;/span>
-&lt;span>&lt;strong>This is sample alert with &lt;code>type=&amp;quot;info&amp;quot;&lt;/code>.&lt;/strong>&lt;/span>
-&lt;/div>
-&lt;div class="alert dark">
-&lt;span>&lt;i data-feather="alert-circle">&lt;/i>&lt;/span>
-&lt;span>&lt;strong>This is sample alert with &lt;code>type=&amp;quot;dark&amp;quot;&lt;/code>.&lt;/strong>&lt;/span>
-&lt;/div>
-&lt;div class="alert primary">
-&lt;span>&lt;i data-feather="alert-circle">&lt;/i>&lt;/span>
-&lt;span>&lt;strong>This is sample alert with &lt;code>type=&amp;quot;primary&amp;quot;&lt;/code>.&lt;/strong>&lt;/span>
-&lt;/div>
-&lt;div class="alert secondary">
-&lt;span>&lt;i data-feather="alert-circle">&lt;/i>&lt;/span>
-&lt;span>&lt;strong>This is sample alert with &lt;code>type=&amp;quot;secondary&amp;quot;&lt;/code>.&lt;/strong>&lt;/span>
-&lt;/div>
-&lt;h2 id="image">Image&lt;/h2>
-&lt;h4 id="a-sample-image-without-any-attribute">A sample image without any attribute.&lt;/h4>
+style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allow="fullscreen"&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;</description></item><item><title>Shortcodes Samples</title><link>https://qingbo12.github.io/posts/shortcodes/</link><pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate><guid>https://qingbo12.github.io/posts/shortcodes/</guid><description>&lt;p&gt;This is a sample post intended to test the followings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Default hero image.&lt;/li&gt;
+&lt;li&gt;Different shortcodes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="alert"&gt;Alert&lt;/h2&gt;
+&lt;p&gt;The following alerts are available in this theme.&lt;/p&gt;
+&lt;div class="alert success"&gt;
+&lt;span&gt;&lt;i data-feather="check-circle"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;success&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert danger"&gt;
+&lt;span&gt;&lt;i data-feather="alert-octagon"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;danger&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert warning"&gt;
+&lt;span&gt;&lt;i data-feather="alert-triangle"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;warning&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert info"&gt;
+&lt;span&gt;&lt;i data-feather="info"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;info&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert dark"&gt;
+&lt;span&gt;&lt;i data-feather="alert-circle"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;dark&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert primary"&gt;
+&lt;span&gt;&lt;i data-feather="alert-circle"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;primary&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert secondary"&gt;
+&lt;span&gt;&lt;i data-feather="alert-circle"&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;secondary&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;h2 id="image"&gt;Image&lt;/h2&gt;
+&lt;h4 id="a-sample-image-without-any-attribute"&gt;A sample image without any attribute.&lt;/h4&gt;
 &lt;img src="https://qingbo12.github.io/posts/shortcodes/boat.jpg"
 alt="A boat at the sea"
->
-&lt;div style="margin-top: 3rem;">&lt;/div>
-&lt;h4 id="a-sample-image-with-height-and-width-attributes">A sample image with &lt;code>height&lt;/code> and &lt;code>width&lt;/code> attributes.&lt;/h4>
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;h4 id="a-sample-image-with-height-and-width-attributes"&gt;A sample image with &lt;code&gt;height&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt; attributes.&lt;/h4&gt;
 &lt;img src="https://qingbo12.github.io/posts/shortcodes/boat.jpg"
 alt="A boat at the sea"
 width="600"
 height="400"
->
-&lt;div style="margin-top: 3rem;">&lt;/div>
-&lt;h4 id="a-center-aligned-image-with-height-and-width-attributes">A center aligned image with &lt;code>height&lt;/code> and &lt;code>width&lt;/code> attributes.&lt;/h4>
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;h4 id="a-center-aligned-image-with-height-and-width-attributes"&gt;A center aligned image with &lt;code&gt;height&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt; attributes.&lt;/h4&gt;
 &lt;img src="https://qingbo12.github.io/posts/shortcodes/boat.jpg"
 alt="A boat at the sea"
 width="600"
 height="400"
 class="center"
->
-&lt;div style="margin-top: 3rem;">&lt;/div>
-&lt;h4 id="a-image-with-float-attribute">A image with &lt;code>float&lt;/code> attribute.&lt;/h4>
+&gt;
+&lt;div style="margin-top: 3rem;"&gt;&lt;/div&gt;
+&lt;h4 id="a-image-with-float-attribute"&gt;A image with &lt;code&gt;float&lt;/code&gt; attribute.&lt;/h4&gt;
 &lt;img src="https://qingbo12.github.io/posts/shortcodes/boat.jpg"
 alt="A boat at the sea"
 width="500"
 height="200"
 style="float: right;"
->
-&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas lectus sed leo ultricies ultricies. Praesent tellus risus, eleifend vel efficitur ac, venenatis sit amet sem. Ut ut egestas erat. Fusce ut leo turpis. Morbi consectetur sed lacus vitae vehicula. Cras gravida turpis id eleifend volutpat. Suspendisse nec ipsum eu erat finibus dictum. Morbi volutpat nulla purus, vel maximus ex molestie id. Nullam posuere est urna, at fringilla eros venenatis quis.&lt;/p></description></item><item><title>Sub-Category</title><link>https://qingbo12.github.io/posts/category/sub-category/_index.bn/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://qingbo12.github.io/posts/category/sub-category/_index.bn/</guid><description/></item><item><title>Top Category Sample</title><link>https://qingbo12.github.io/posts/category/_index.bn/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://qingbo12.github.io/posts/category/_index.bn/</guid><description/></item><item><title>পোস্ট সমূহ</title><link>https://qingbo12.github.io/posts/_index.bn/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://qingbo12.github.io/posts/_index.bn/</guid><description/></item></channel></rss>
+&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas lectus sed leo ultricies ultricies. Praesent tellus risus, eleifend vel efficitur ac, venenatis sit amet sem. Ut ut egestas erat. Fusce ut leo turpis. Morbi consectetur sed lacus vitae vehicula. Cras gravida turpis id eleifend volutpat. Suspendisse nec ipsum eu erat finibus dictum. Morbi volutpat nulla purus, vel maximus ex molestie id. Nullam posuere est urna, at fringilla eros venenatis quis.&lt;/p&gt;</description></item><item><title>Sub-Category</title><link>https://qingbo12.github.io/posts/category/sub-category/_index.bn/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://qingbo12.github.io/posts/category/sub-category/_index.bn/</guid><description/></item><item><title>Top Category Sample</title><link>https://qingbo12.github.io/posts/category/_index.bn/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://qingbo12.github.io/posts/category/_index.bn/</guid><description/></item><item><title>পোস্ট সমূহ</title><link>https://qingbo12.github.io/posts/_index.bn/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://qingbo12.github.io/posts/_index.bn/</guid><description/></item></channel></rss>

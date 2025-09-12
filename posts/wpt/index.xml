@@ -1,89 +1,89 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Wireless Power Transfer on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/wpt/</link><description>Recent content in Wireless Power Transfer on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 02 Apr 2025 16:42:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/wpt/index.xml" rel="self" type="application/rss+xml"/><item><title>互感值的正负判断：从理论到仿真的保姆级解析</title><link>https://qingbo12.github.io/posts/wpt/mutual-indcution/</link><pubDate>Wed, 02 Apr 2025 16:42:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/mutual-indcution/</guid><description>&lt;h3 id="一结论速览">一、结论速览&lt;/h3>
-&lt;p>✅ 关键结论：Tx 端电流从同名端流入时，Rx 端电流从同名端流出，互感值的正负取决于 Rx 端电压和 Rx 端电流的参考方向关系：&lt;/p>
-&lt;ul>
-&lt;li>关联参考方向时：$ M &amp;lt; 0 $&lt;/li>
-&lt;li>非关联参考方向时：$ M &amp;gt; 0 $&lt;/li>
-&lt;/ul>
-&lt;p>注意：这里的参考方向是对 Rx 电感线圈而言。&lt;/p>
-&lt;h3 id="二理论分析">二、理论分析&lt;/h3>
-&lt;p>我们首先来看一个简单的互感线圈模型，其中电压 $ U_R $ 和电流 $ I_R $ 取非关联参考方向，且同名端对齐：&lt;/p>
-&lt;div style="text-align: center; width: 50%; margin: 0 auto;">
-&lt;center>&lt;img src="images/mutual-induction-coil.png" alt="mutual-induction-coil" />&lt;/center>
-&lt;center>&lt;strong>图 1:&lt;/strong> 互感线圈结构示意图 &lt;/center>
-&lt;/div>
-&lt;br/>
-&lt;p>假设通过线圈的电流为 $ I = I_m sin(\omega t) $，我们重点分析前半个周期。&lt;/p>
-&lt;p>&lt;strong>1.第一个 1/4 周期分析（$ t = 0 \to \frac{\pi}{2} $）&lt;/strong>&lt;/p>
-&lt;p>在这个时间段内：&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>电流为正且在增加（$ \frac{dI}{dt} &amp;gt; 0 $）&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>根据右手定则，磁通量方向如图 1 所示，并且在增大&lt;/p></description></item><item><title>自感值的正负判断：从理论分析到仿真验证</title><link>https://qingbo12.github.io/posts/wpt/induction/</link><pubDate>Sat, 29 Mar 2025 10:42:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/induction/</guid><description>&lt;h3 id="前言">前言&lt;/h3>
-&lt;p>在电路分析中，自感值的正负判断是电磁学学习的一个重要知识点。很多初学者容易混淆关联参考方向和非关联参考方向下的自感值符号问题。本文将通过理论分析和 MATLAB 仿真相结合的方式，深入浅出地讲解这个知识点。&lt;/p>
-&lt;h3 id="核心结论">核心结论&lt;/h3>
-&lt;p>✅ 关键结论：自感值的正负取决于电压和电流的参考方向关系：&lt;/p>
-&lt;ul>
-&lt;li>关联参考方向时：$ L &amp;gt; 0 $&lt;/li>
-&lt;li>非关联参考方向时：$ L &amp;lt; 0 $&lt;/li>
-&lt;/ul>
-&lt;p>注意：这里的参考方向是对电感线圈而言。&lt;/p>
-&lt;h3 id="理论分析">理论分析&lt;/h3>
-&lt;p>我们首先来看一个简单的线圈模型，此时电压和电流取关联参考方向：&lt;/p>
-&lt;div style="text-align: center; width: 30%; margin: 0 auto;">
-&lt;center>&lt;img src="images/coil.png" alt="coil" />&lt;/center>
-&lt;center>&lt;strong>图 1:&lt;/strong> 线圈结构示意图 &lt;/center>
-&lt;/div>
-&lt;br/>
-&lt;p>假设通过线圈的电流为 $ I = I_m sin(\omega t) $，我们重点分析前半个周期。&lt;/p>
-&lt;p>&lt;strong>1.第一个 1/4 周期分析（$ t = 0 \to \frac{\pi}{2} $）&lt;/strong>&lt;/p>
-&lt;p>在这个时间段内：&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>电流为正且在增加（$ \frac{dI}{dt} &amp;gt; 0 $）&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>根据右手定则，磁通量向上增加&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>由楞次定律可知，感应电动势 $ e $ 会产生感应电流，感应电流产生的磁通量方向向下&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>对应的感应电流 $ I_e $ 和感应电动势 $ e $ 方向如图 2(a) 所示：&lt;/p></description></item><item><title>WSPMax Read</title><link>https://qingbo12.github.io/posts/wpt/wspmax/</link><pubDate>Fri, 13 Dec 2024 17:21:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/wspmax/</guid><description>&lt;h2 id="requirement-driven-magnetic-beamforming-for-mimo-wireless-power-transfer-optimization">Requirement-Driven Magnetic Beamforming for MIMO Wireless Power Transfer Optimization&lt;/h2>
-&lt;h3 id="motivation">Motivation&lt;/h3>
-&lt;ol>
-&lt;li>For the general MIMO setup, MultiSpot &lt;strong>doesn&amp;rsquo;t consider peak current/voltage constraints&lt;/strong>. Yang et al. studied the magnetic beamforming problem in an MIMO MRC-WPT system to find all the boundary points of the multi-user power region with the peak current and voltage constraints for each TX. They simplified the problem by &lt;strong>ignoring the mutual inductance among RXs&lt;/strong>.&lt;/li>
-&lt;li>These researches &lt;strong>lack the ability to control the power distribution among receivers&lt;/strong>, and could not be applied to the scenario when different RXs have different requirements of power which can be denoted as weight factors.&lt;/li>
-&lt;/ol>
-&lt;h3 id="contribution">Contribution&lt;/h3>
-&lt;ol>
-&lt;li>
-&lt;p>We &lt;strong>formulate the requirement-driven magnetic beamforming design in the MIMO MRC-WPT system as a weighted sum-power maximization problem&lt;/strong>. We &lt;strong>consider the peak current/voltage constraints&lt;/strong>, and provides a high efficient, provable optimal solution.&lt;/p></description></item><item><title>MagMIMOHotspot Read</title><link>https://qingbo12.github.io/posts/wpt/magmimohotspot/</link><pubDate>Thu, 07 Nov 2024 15:09:01 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/magmimohotspot/</guid><description>&lt;h2 id="magnetic-mimo-how-to-charge-your-phone-in-your-pocket">Magnetic MIMO: how to charge your phone in your pocket&lt;/h2>
-&lt;h3 id="motivation">Motivation&lt;/h3>
-&lt;ol>
-&lt;li>&lt;strong>Current wireless chargers&lt;/strong> need to remember to regularly charge our mobile phones which &lt;strong>is not the wireless charging we hoped for&lt;/strong>. We would like to have our cell phones charged in our pockets, and never again worry about forgetting to charge the phone.&lt;/li>
-&lt;li>MIMO RF techniques power phones remotely, however, delivering a large amount of power via radiation can cause local heating inside the human body.&lt;/li>
-&lt;/ol>
-&lt;h3 id="contribution">Contribution&lt;/h3>
-&lt;ol>
-&lt;li>They propose a novel design that focuses the magnetic flux from multiple coils in a steerable beam and points it at the phone, in a manner analogous to multi-antenna beamforming in wireless communications.&lt;/li>
-&lt;li>The design can charge unmodified smart phones &lt;strong>at distances up to 40 cm, and works regardless of the phone orientation&lt;/strong> with respect to the charging pad.&lt;/li>
-&lt;/ol>
-&lt;h3 id="magnetic-beamforming">Magnetic-Beamforming&lt;/h3>
-&lt;div>
-&lt;center>&lt;img src="images/AnalogiesBetweenStandardMIMOandMagMIMO.png" alt="Analogies Between Standard MIMO and Magnetic MIMO" />&lt;/center>
-&lt;center>&lt;strong>Figure 1:&lt;/strong> Illustration of the analogies between standard MIMO and MagMIMO.&lt;/center>
-&lt;/div>
-&lt;br>
-&lt;p>For a 2-antenna MIMO transmitter.&lt;/p></description></item><item><title>First glance</title><link>https://qingbo12.github.io/posts/wpt/first-glance/</link><pubDate>Thu, 31 Oct 2024 17:44:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/first-glance/</guid><description>&lt;h1 id="scheduling-layer">Scheduling Layer&lt;/h1>
-&lt;h3 id="pte-optimization">PTE Optimization&lt;/h3>
-&lt;h4 id="requirement-driven-magnetic-beamforming-for-mimo-wireless-power-transfer-optimization">Requirement-Driven Magnetic Beamforming for MIMO Wireless Power Transfer Optimization&lt;/h4>
-&lt;p>&lt;strong>Motivation:&lt;/strong> In MIMO MRC-WPT system, we need to consider the scenario when different RXs have different requirements of power.
-&lt;br/>&lt;/p>
-&lt;p>&lt;strong>Problem formulation:&lt;/strong> weighted sum-power maximization
-$WSPMax = max_{{i_n^{tx}}} \sum_q w_q |i^{rx}_q|^2 r^{rx}_q $&lt;/p>
-&lt;p>Subject to:
-&lt;br/>&lt;/p>
-&lt;p>$$ \sum_n \left|i_n^{tx}\right|^2 r_n^{tx} + \sum_q \left|i_q^{rx}\right|^2 r_q^{rx} \leq P_{\text{max}}, \ $$&lt;/p>
-&lt;p>$$ \left|i_n^{tx}\right|^2 \leq A_n^{tx}, \quad \forall 1 \leq n \leq N, \ $$&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Wireless Power Transfer on Jinpeng's Blog</title><link>https://qingbo12.github.io/posts/wpt/</link><description>Recent content in Wireless Power Transfer on Jinpeng's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 02 Apr 2025 16:42:00 +0800</lastBuildDate><atom:link href="https://qingbo12.github.io/posts/wpt/index.xml" rel="self" type="application/rss+xml"/><item><title>互感值的正负判断：从理论到仿真的保姆级解析</title><link>https://qingbo12.github.io/posts/wpt/mutual-indcution/</link><pubDate>Wed, 02 Apr 2025 16:42:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/mutual-indcution/</guid><description>&lt;h3 id="一结论速览"&gt;一、结论速览&lt;/h3&gt;
+&lt;p&gt;✅ 关键结论：Tx 端电流从同名端流入时，Rx 端电流从同名端流出，互感值的正负取决于 Rx 端电压和 Rx 端电流的参考方向关系：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;关联参考方向时：$ M &amp;lt; 0 $&lt;/li&gt;
+&lt;li&gt;非关联参考方向时：$ M &amp;gt; 0 $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;注意：这里的参考方向是对 Rx 电感线圈而言。&lt;/p&gt;
+&lt;h3 id="二理论分析"&gt;二、理论分析&lt;/h3&gt;
+&lt;p&gt;我们首先来看一个简单的互感线圈模型，其中电压 $ U_R $ 和电流 $ I_R $ 取非关联参考方向，且同名端对齐：&lt;/p&gt;
+&lt;div style="text-align: center; width: 50%; margin: 0 auto;"&gt;
+&lt;center&gt;&lt;img src="images/mutual-induction-coil.png" alt="mutual-induction-coil" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;图 1:&lt;/strong&gt; 互感线圈结构示意图 &lt;/center&gt;
+&lt;/div&gt;
+&lt;br/&gt;
+&lt;p&gt;假设通过线圈的电流为 $ I = I_m sin(\omega t) $，我们重点分析前半个周期。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.第一个 1/4 周期分析（$ t = 0 \to \frac{\pi}{2} $）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在这个时间段内：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;电流为正且在增加（$ \frac{dI}{dt} &amp;gt; 0 $）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;根据右手定则，磁通量方向如图 1 所示，并且在增大&lt;/p&gt;</description></item><item><title>自感值的正负判断：从理论分析到仿真验证</title><link>https://qingbo12.github.io/posts/wpt/induction/</link><pubDate>Sat, 29 Mar 2025 10:42:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/induction/</guid><description>&lt;h3 id="前言"&gt;前言&lt;/h3&gt;
+&lt;p&gt;在电路分析中，自感值的正负判断是电磁学学习的一个重要知识点。很多初学者容易混淆关联参考方向和非关联参考方向下的自感值符号问题。本文将通过理论分析和 MATLAB 仿真相结合的方式，深入浅出地讲解这个知识点。&lt;/p&gt;
+&lt;h3 id="核心结论"&gt;核心结论&lt;/h3&gt;
+&lt;p&gt;✅ 关键结论：自感值的正负取决于电压和电流的参考方向关系：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;关联参考方向时：$ L &amp;gt; 0 $&lt;/li&gt;
+&lt;li&gt;非关联参考方向时：$ L &amp;lt; 0 $&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;注意：这里的参考方向是对电感线圈而言。&lt;/p&gt;
+&lt;h3 id="理论分析"&gt;理论分析&lt;/h3&gt;
+&lt;p&gt;我们首先来看一个简单的线圈模型，此时电压和电流取关联参考方向：&lt;/p&gt;
+&lt;div style="text-align: center; width: 30%; margin: 0 auto;"&gt;
+&lt;center&gt;&lt;img src="images/coil.png" alt="coil" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;图 1:&lt;/strong&gt; 线圈结构示意图 &lt;/center&gt;
+&lt;/div&gt;
+&lt;br/&gt;
+&lt;p&gt;假设通过线圈的电流为 $ I = I_m sin(\omega t) $，我们重点分析前半个周期。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.第一个 1/4 周期分析（$ t = 0 \to \frac{\pi}{2} $）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在这个时间段内：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;电流为正且在增加（$ \frac{dI}{dt} &amp;gt; 0 $）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;根据右手定则，磁通量向上增加&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;由楞次定律可知，感应电动势 $ e $ 会产生感应电流，感应电流产生的磁通量方向向下&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;对应的感应电流 $ I_e $ 和感应电动势 $ e $ 方向如图 2(a) 所示：&lt;/p&gt;</description></item><item><title>WSPMax Read</title><link>https://qingbo12.github.io/posts/wpt/wspmax/</link><pubDate>Fri, 13 Dec 2024 17:21:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/wspmax/</guid><description>&lt;h2 id="requirement-driven-magnetic-beamforming-for-mimo-wireless-power-transfer-optimization"&gt;Requirement-Driven Magnetic Beamforming for MIMO Wireless Power Transfer Optimization&lt;/h2&gt;
+&lt;h3 id="motivation"&gt;Motivation&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;For the general MIMO setup, MultiSpot &lt;strong&gt;doesn&amp;rsquo;t consider peak current/voltage constraints&lt;/strong&gt;. Yang et al. studied the magnetic beamforming problem in an MIMO MRC-WPT system to find all the boundary points of the multi-user power region with the peak current and voltage constraints for each TX. They simplified the problem by &lt;strong&gt;ignoring the mutual inductance among RXs&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;These researches &lt;strong&gt;lack the ability to control the power distribution among receivers&lt;/strong&gt;, and could not be applied to the scenario when different RXs have different requirements of power which can be denoted as weight factors.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="contribution"&gt;Contribution&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;We &lt;strong&gt;formulate the requirement-driven magnetic beamforming design in the MIMO MRC-WPT system as a weighted sum-power maximization problem&lt;/strong&gt;. We &lt;strong&gt;consider the peak current/voltage constraints&lt;/strong&gt;, and provides a high efficient, provable optimal solution.&lt;/p&gt;</description></item><item><title>MagMIMOHotspot Read</title><link>https://qingbo12.github.io/posts/wpt/magmimohotspot/</link><pubDate>Thu, 07 Nov 2024 15:09:01 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/magmimohotspot/</guid><description>&lt;h2 id="magnetic-mimo-how-to-charge-your-phone-in-your-pocket"&gt;Magnetic MIMO: how to charge your phone in your pocket&lt;/h2&gt;
+&lt;h3 id="motivation"&gt;Motivation&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Current wireless chargers&lt;/strong&gt; need to remember to regularly charge our mobile phones which &lt;strong&gt;is not the wireless charging we hoped for&lt;/strong&gt;. We would like to have our cell phones charged in our pockets, and never again worry about forgetting to charge the phone.&lt;/li&gt;
+&lt;li&gt;MIMO RF techniques power phones remotely, however, delivering a large amount of power via radiation can cause local heating inside the human body.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="contribution"&gt;Contribution&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;They propose a novel design that focuses the magnetic flux from multiple coils in a steerable beam and points it at the phone, in a manner analogous to multi-antenna beamforming in wireless communications.&lt;/li&gt;
+&lt;li&gt;The design can charge unmodified smart phones &lt;strong&gt;at distances up to 40 cm, and works regardless of the phone orientation&lt;/strong&gt; with respect to the charging pad.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="magnetic-beamforming"&gt;Magnetic-Beamforming&lt;/h3&gt;
+&lt;div&gt;
+&lt;center&gt;&lt;img src="images/AnalogiesBetweenStandardMIMOandMagMIMO.png" alt="Analogies Between Standard MIMO and Magnetic MIMO" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;strong&gt;Figure 1:&lt;/strong&gt; Illustration of the analogies between standard MIMO and MagMIMO.&lt;/center&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;p&gt;For a 2-antenna MIMO transmitter.&lt;/p&gt;</description></item><item><title>First glance</title><link>https://qingbo12.github.io/posts/wpt/first-glance/</link><pubDate>Thu, 31 Oct 2024 17:44:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/first-glance/</guid><description>&lt;h1 id="scheduling-layer"&gt;Scheduling Layer&lt;/h1&gt;
+&lt;h3 id="pte-optimization"&gt;PTE Optimization&lt;/h3&gt;
+&lt;h4 id="requirement-driven-magnetic-beamforming-for-mimo-wireless-power-transfer-optimization"&gt;Requirement-Driven Magnetic Beamforming for MIMO Wireless Power Transfer Optimization&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Motivation:&lt;/strong&gt; In MIMO MRC-WPT system, we need to consider the scenario when different RXs have different requirements of power.
+&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Problem formulation:&lt;/strong&gt; weighted sum-power maximization
+$WSPMax = max_{{i_n^{tx}}} \sum_q w_q |i^{rx}_q|^2 r^{rx}_q $&lt;/p&gt;
+&lt;p&gt;Subject to:
+&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;$$ \sum_n \left|i_n^{tx}\right|^2 r_n^{tx} + \sum_q \left|i_q^{rx}\right|^2 r_q^{rx} \leq P_{\text{max}}, \ $$&lt;/p&gt;
+&lt;p&gt;$$ \left|i_n^{tx}\right|^2 \leq A_n^{tx}, \quad \forall 1 \leq n \leq N, \ $$&lt;/p&gt;</description></item></channel></rss>
