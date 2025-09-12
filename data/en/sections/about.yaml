@@ -8,18 +8,18 @@ section:
   template: sections/about.html
 
 # your designation
-designation: Undergraduate Student
+designation: Master's Student
 # your company information
 company:
-  name: Chongqing University
-  url: "https://www.cqu.edu.cn/"
+  name: University of Science and Technology of China
+  url: "https://www.ustc.edu.cn/"
 
 # your resume. this file path should be relative to you "static" directory
 # Dreprecated. Use resourceLinks instead.
 # resume: "files/resume.pdf"
 
 # a summary about you
-summary: 'My name is Ma Jinpeng (马锦鹏), and I am a senior student at College of Computer Science, Chongqing University. My research interests are mainly in the areas of wireless power transfer.'
+summary: 'My name is Ma Jinpeng (马锦鹏), and I am a Master''s Student in Computer Science and Technology at the University of Science and Technology of China. My research interests focus primarily on wireless power transfer.'
 
 # your social links
 # give as many as you want. use font-awesome for the icons.

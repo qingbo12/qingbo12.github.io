@@ -30,9 +30,20 @@ degrees:
 #     url: "#"
 #   - title: Nullam vitae orci tincidunt purus viverra pulvinar.
 #     url: "#"
+
+- name: M.S. in Computer Science & Technology
+  icon: fa-graduation-cap
+  timeframe: 2025-present
+  institution:
+    name: University of Science and Technology of China
+    url: "#"
+    logo: /images/sections/education/ustc.svg
+    # Can optionally show a different logo for dark theme
+    # darkLogo: /images/sections/education/university.jpg
+
 - name: B.Sc. in Computer Science & Technology
   icon: fa-graduation-cap
-  timeframe: 2021-present
+  timeframe: 2021-2025
   institution:
     name: Chongqing University
     url: "#"
