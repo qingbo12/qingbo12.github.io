@@ -1,0 +1,487 @@
+<style>
+  .pomodoro-wrapper * {
+    box-sizing: border-box;
+    font-family: 'Inter', 'Roboto', sans-serif;
+  }
+  .pomodoro-container {
+    max-width: 480px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05); /* Works nicely for dark mode mostly, adding backdrop */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    color: var(--text-color, inherit);
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  html[data-theme="dark"] .pomodoro-container {
+     background: rgba(30,30,30, 0.5);
+  }
+  html[data-theme="light"] .pomodoro-container {
+     background: rgba(255,255,255, 0.7);
+  }
+
+  .timer-display {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 20px 0;
+    font-variant-numeric: tabular-nums;
+    color: #ff4757;
+    text-shadow: 0 4px 10px rgba(255, 71, 87, 0.3);
+    transition: color 0.3s;
+  }
+  .timer-display.running {
+    color: #2ed573;
+    text-shadow: 0 4px 10px rgba(46, 213, 115, 0.3);
+  }
+  .timer-display.break {
+    color: #3498db;
+    text-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+    text-align: left;
+  }
+  .input-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.8;
+  }
+  .input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    background: transparent;
+    color: inherit;
+    font-size: 1rem;
+    transition: border 0.2s, box-shadow 0.2s;
+  }
+  .input-group input:focus {
+    outline: none;
+    border-color: #ff4757;
+    box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.2);
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.2s, background-color 0.2s;
+    user-select: none;
+  }
+  .btn:active {
+    transform: scale(0.95);
+  }
+  .btn-primary {
+    background-color: #ff4757;
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+  }
+  .btn-primary:hover {
+    background-color: #ff6b81;
+  }
+  .btn-secondary {
+    background-color: rgba(128, 128, 128, 0.2);
+    color: inherit;
+  }
+  .btn-secondary:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+  }
+
+  .logs-container {
+    margin-top: 40px;
+    text-align: left;
+  }
+  .logs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(128,128,128,0.2);
+  }
+  .logs-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  .logs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  .log-item {
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    background: rgba(128, 128, 128, 0.1);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s;
+  }
+  .log-item:hover {
+    transform: translateX(4px);
+    background: rgba(128, 128, 128, 0.15);
+  }
+  .log-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .log-time {
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+  .clear-btn {
+    background: none;
+    border: none;
+    color: #ff4757;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+  .clear-btn:hover {
+    color: #ff6b81;
+  }
+
+  /* Custom scrollbar for logs */
+  .logs-list::-webkit-scrollbar { width: 6px; }
+  .logs-list::-webkit-scrollbar-track { background: transparent; }
+  .logs-list::-webkit-scrollbar-thumb { background: rgba(128,128,128,0.3); border-radius: 3px; }
+</style>
+
+<div class="pomodoro-wrapper">
+  <div class="pomodoro-container">
+    <div class="input-group">
+      <div>
+        <label for="taskName">What are you focusing on?</label>
+        <input type="text" id="taskName" placeholder="E.g. Code Review, Reading, Writing" />
+      </div>
+      <div>
+        <label for="timerMinutes">Duration (Minutes, 1-60)</label>
+        <input type="number" id="timerMinutes" min="1" max="60" value="25" />
+      </div>
+    </div>
+    
+    <div class="timer-display" id="timeDisplay">25:00</div>
+    
+    <div class="controls">
+      <button class="btn btn-primary" id="startBtn">Start Focus</button>
+      <button class="btn btn-secondary" id="pauseBtn" style="display:none;">Pause</button>
+      <button class="btn btn-secondary" id="resetBtn">Reset</button>
+    </div>
+  </div>
+
+  <div class="logs-container">
+    <div class="logs-header">
+      <h3>Focus Log</h3>
+      <button class="clear-btn" id="clearLogsBtn">Clear logs</button>
+    </div>
+    <ul class="logs-list" id="logsList">
+      <!-- Logs injected via JS -->
+    </ul>
+  </div>
+</div>
+
+<script>
+  (function() {
+    // --- Elements ---
+    const startBtn = document.getElementById('startBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const timeDisplay = document.getElementById('timeDisplay');
+    const timerMinutesInput = document.getElementById('timerMinutes');
+    const taskNameInput = document.getElementById('taskName');
+    const logsList = document.getElementById('logsList');
+    const clearLogsBtn = document.getElementById('clearLogsBtn');
+
+    // --- State ---
+    let timerInterval = null;
+    let secondsRemaining = parseInt(timerMinutesInput.value) * 60;
+    let isRunning = false;
+    let currentTaskName = "";
+    let startTime = null;
+    let initialDurationMins = 0;
+    let endTimeTarget = null;
+    let currentMode = 'focus'; // 'focus' or 'break'
+
+    // Load logs on mount
+    loadLogs();
+
+    // --- Formatters ---
+    function formatTime(totalSeconds) {
+      const m = Math.floor(totalSeconds / 60);
+      const s = totalSeconds % 60;
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function formatDateTime(dateString) {
+      const d = new Date(dateString);
+      return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    }
+
+    // --- Core UI Updates ---
+    function updateDisplay() {
+      timeDisplay.textContent = formatTime(secondsRemaining);
+      const prefix = currentMode === 'break' ? 'Break ' : '';
+      document.title = `${prefix}${formatTime(secondsRemaining)} - Pomodoro`;
+    }
+
+    // --- Handlers ---
+    function handleStart() {
+      if (isRunning) return;
+
+      if ("Notification" in window && Notification.permission === "default") {
+        Notification.requestPermission();
+      }
+
+      // Start fresh if paused or not started
+      if (secondsRemaining <= 0 || (!timerInterval && secondsRemaining == parseInt(timerMinutesInput.value)*60)) {
+        if (currentMode === 'focus') {
+          let mins = parseInt(timerMinutesInput.value) || 25;
+          if (mins < 1) mins = 1;
+          if (mins > 60) mins = 60;
+          timerMinutesInput.value = mins;
+          secondsRemaining = mins * 60;
+          initialDurationMins = mins;
+          currentTaskName = taskNameInput.value.trim() || "Untitled Task";
+          startTime = new Date().toISOString();
+        } else {
+          secondsRemaining = 5 * 60; // 5 min break
+        }
+      }
+
+      isRunning = true;
+      startBtn.style.display = 'none';
+      pauseBtn.style.display = 'inline-block';
+      
+      if (currentMode === 'break') {
+        timeDisplay.classList.add('break');
+        timeDisplay.classList.remove('running');
+      } else {
+        timeDisplay.classList.add('running');
+        timeDisplay.classList.remove('break');
+      }
+
+      // Use absolute time to fix background throttling bugs
+      endTimeTarget = Date.now() + (secondsRemaining * 1000);
+
+      timerInterval = setInterval(() => {
+        secondsRemaining = Math.max(0, Math.round((endTimeTarget - Date.now()) / 1000));
+        updateDisplay();
+
+        if (secondsRemaining <= 0) {
+          handleFinish();
+        }
+      }, 200);
+      
+      taskNameInput.disabled = true;
+      timerMinutesInput.disabled = true;
+    }
+
+    function handlePause() {
+      if (!isRunning) return;
+      clearInterval(timerInterval);
+      isRunning = false;
+      startBtn.style.display = 'inline-block';
+      startBtn.textContent = 'Resume';
+      pauseBtn.style.display = 'none';
+      timeDisplay.classList.remove('running');
+      timeDisplay.classList.remove('break');
+    }
+
+    function handleReset() {
+      clearInterval(timerInterval);
+      isRunning = false;
+      currentMode = 'focus';
+      
+      let mins = parseInt(timerMinutesInput.value) || 25;
+      secondsRemaining = mins * 60;
+      updateDisplay();
+
+      startBtn.style.display = 'inline-block';
+      startBtn.className = 'btn btn-primary';
+      startBtn.textContent = 'Start Focus';
+      pauseBtn.style.display = 'none';
+      timeDisplay.classList.remove('running');
+      timeDisplay.classList.remove('break');
+      document.title = "Pomodoro Timer";
+
+      taskNameInput.disabled = false;
+      timerMinutesInput.disabled = false;
+    }
+
+    function handleFinish() {
+      clearInterval(timerInterval);
+      isRunning = false;
+      timeDisplay.textContent = "00:00";
+      timeDisplay.classList.remove('running');
+      timeDisplay.classList.remove('break');
+      pauseBtn.style.display = 'none';
+      
+      playBeep();
+
+      if (currentMode === 'focus') {
+        const endTime = new Date().toISOString();
+        saveLog(currentTaskName, initialDurationMins, startTime, endTime);
+
+        if ("Notification" in window && Notification.permission === "granted") {
+          new Notification("Focus Complete!", {
+            body: `Well done on "${currentTaskName}". Time for a short break.`,
+            icon: "/images/site/horse-grey.jpg"
+          });
+        }
+        
+        currentMode = 'break';
+        secondsRemaining = 5 * 60;
+        updateDisplay();
+        
+        startBtn.style.display = 'inline-block';
+        startBtn.className = 'btn btn-secondary'; // distinctive color
+        startBtn.textContent = 'Start 5-min Break';
+        taskNameInput.disabled = true;
+        timerMinutesInput.disabled = true;
+        
+      } else {
+        if ("Notification" in window && Notification.permission === "granted") {
+          new Notification("Break Over", {
+            body: `Ready to get back to focus?`,
+            icon: "/images/site/horse-grey.jpg"
+          });
+        }
+        
+        currentMode = 'focus';
+        let mins = parseInt(timerMinutesInput.value) || 25;
+        secondsRemaining = mins * 60;
+        updateDisplay();
+        
+        startBtn.style.display = 'inline-block';
+        startBtn.className = 'btn btn-primary';
+        startBtn.textContent = 'Start Focus';
+        taskNameInput.disabled = false;
+        timerMinutesInput.disabled = false;
+      }
+    }
+
+    function playBeep() {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const ctx = new AudioContext();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.frequency.value = 800; // Hz
+        osc.type = "sine";
+        gain.gain.setValueAtTime(0, ctx.currentTime);
+        gain.gain.linearRampToValueAtTime(1, ctx.currentTime + 0.1);
+        gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.5);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.5);
+      } catch(e) {
+        console.warn("AudioContext not supported, ignoring beep");
+      }
+    }
+
+    // --- Logging (LocalStorage) ---
+    function saveLog(task, duration, start, end) {
+      if (!window.localStorage) return;
+      
+      const newLog = {
+        id: Date.now(),
+        task: task,
+        duration: duration,
+        start: start,
+        end: end
+      };
+      
+      const existingLogs = JSON.parse(localStorage.getItem('pomodoro_logs') || '[]');
+      existingLogs.unshift(newLog); // Add to top
+      localStorage.setItem('pomodoro_logs', JSON.stringify(existingLogs));
+      
+      renderLogs(existingLogs);
+    }
+
+    function loadLogs() {
+      if (!window.localStorage) return;
+      const existingLogs = JSON.parse(localStorage.getItem('pomodoro_logs') || '[]');
+      renderLogs(existingLogs);
+    }
+
+    function clearLogs() {
+      if (confirm("Are you sure you want to clear all focus logs?")) {
+        localStorage.removeItem('pomodoro_logs');
+        renderLogs([]);
+      }
+    }
+
+    function renderLogs(logs) {
+      logsList.innerHTML = '';
+      if (logs.length === 0) {
+        logsList.innerHTML = '<li style="text-align: center; color: #888; padding: 20px;">No focuses yet. Start a timer!</li>';
+        return;
+      }
+      
+      logs.forEach(log => {
+        const li = document.createElement('li');
+        li.className = 'log-item';
+        
+        const detailsDiv = document.createElement('div');
+        const titleSpan = document.createElement('div');
+        titleSpan.className = 'log-title';
+        titleSpan.textContent = log.task;
+        
+        const timeSpan = document.createElement('div');
+        timeSpan.className = 'log-time';
+        timeSpan.textContent = `${formatDateTime(log.start)} - ${formatDateTime(log.end)}`;
+        
+        detailsDiv.appendChild(titleSpan);
+        detailsDiv.appendChild(timeSpan);
+        
+        const durDiv = document.createElement('div');
+        durDiv.style.fontWeight = 'bold';
+        durDiv.style.color = '#ff4757';
+        durDiv.textContent = `${log.duration} min`;
+        
+        li.appendChild(detailsDiv);
+        li.appendChild(durDiv);
+        
+        logsList.appendChild(li);
+      });
+    }
+
+    // --- Listeners ---
+    startBtn.addEventListener('click', handleStart);
+    pauseBtn.addEventListener('click', handlePause);
+    resetBtn.addEventListener('click', handleReset);
+    clearLogsBtn.addEventListener('click', clearLogs);
+    
+    timerMinutesInput.addEventListener('change', () => {
+      if (!isRunning) handleReset();
+    });
+    
+    updateDisplay(); // Initialize 
+  })();
+</script>
