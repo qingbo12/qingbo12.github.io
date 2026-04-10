@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Focus - Todo</title>
+    <!-- Use Inter font for clean look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="date-header-wrapper">
+                <button id="prev-day-btn" class="icon-btn nav-btn" aria-label="Previous Day">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                
+                <div class="date-header" id="date-trigger">
+                    <h1 id="current-date-title">Today</h1>
+                    <span id="current-date-subtitle">Loading...</span>
+                </div>
+                
+                <button id="next-day-btn" class="icon-btn nav-btn" aria-label="Next Day">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+
+                <input type="date" id="date-picker" class="native-date-picker" title="Jump to date..." />
+            </div>
+            
+            <button id="settings-btn" class="icon-btn" aria-label="Settings">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                    </path>
+                </svg>
+            </button>
+        </header>
+
+        <main class="main-content">
+            <div class="sync-status" id="sync-status">
+                <span class="status-dot"></span>
+                <span class="status-text">All changes saved</span>
+            </div>
+
+            <form id="add-todo-form" class="todo-input-group">
+                <input type="text" id="todo-input" placeholder="What needs to be done today?" autocomplete="off"
+                    required />
+                <button type="submit" class="primary-btn">Add</button>
+            </form>
+
+            <div class="todo-lists">
+                <div class="list-section">
+                    <ul id="active-todos" class="todo-list">
+                        <!-- Active Todos -->
+                    </ul>
+                </div>
+
+                <div class="list-section completed-section" id="completed-section" style="display: none;">
+                    <h3 class="section-title">Completed</h3>
+                    <ul id="completed-todos" class="todo-list">
+                        <!-- Completed Todos -->
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Settings</h2>
+                <button id="close-modal" class="icon-btn close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="settings-helper">Data is synced directly to a JSON file in your specified GitHub repository.
+                </p>
+
+                <div class="form-group">
+                    <label for="gh-token">Personal Access Token (PAT) <a
+                            href="https://github.com/settings/tokens/new?scopes=repo" target="_blank"
+                            class="help-link">Get Token</a></label>
+                    <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxx">
+                </div>
+                <div class="form-group">
+                    <label for="gh-owner">Repository Owner</label>
+                    <input type="text" id="gh-owner" placeholder="e.g., qingbo12">
+                </div>
+                <div class="form-group">
+                    <label for="gh-repo">Repository Name</label>
+                    <input type="text" id="gh-repo" placeholder="e.g., daily-todos">
+                </div>
+                <div class="form-group">
+                    <label for="gh-branch">Branch</label>
+                    <input type="text" id="gh-branch" value="main" placeholder="main">
+                </div>
+
+                <button id="save-settings-btn" class="primary-btn full-width">Save Settings</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
