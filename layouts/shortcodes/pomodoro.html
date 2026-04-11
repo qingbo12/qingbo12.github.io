@@ -444,6 +444,7 @@
     function handlePause() {
       if (!isRunning) return;
       clearInterval(timerInterval);
+      timerInterval = null;
       isRunning = false;
       startBtn.style.display = 'inline-block';
       startBtn.textContent = 'Resume';
@@ -454,6 +455,7 @@
 
     function handleReset() {
       clearInterval(timerInterval);
+      timerInterval = null;
       isRunning = false;
       currentMode = 'focus';
 
@@ -475,6 +477,7 @@
 
     function handleFinish() {
       clearInterval(timerInterval);
+      timerInterval = null;
       isRunning = false;
       timeDisplay.textContent = "00:00";
       timeDisplay.classList.remove('running');
