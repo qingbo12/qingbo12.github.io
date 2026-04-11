@@ -10,14 +10,31 @@ let config = {
 let currentTodos = [];
 let todaysFileSha = null;
 let lastSyncTimeout = null;
+let draggedItem = null;
 
-function getLocalYYYYMMDD(d = new Date()) {
-    const yyyy = d.getFullYear();
-    const mm = String(d.getMonth() + 1).padStart(2, '0');
-    const dd = String(d.getDate()).padStart(2, '0');
-    return `${yyyy}-${mm}-${dd}`;
+let recurringRules = [];
+let recurringRulesSha = null;
+const RECURRING_FILE_PATH = 'recurring_rules.json';
+
+function getBeijingYYYYMMDD(d = new Date()) {
+    return new Intl.DateTimeFormat('sv-SE', {
+        timeZone: 'Asia/Shanghai',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+    }).format(d);
 }
-let selectedDate = getLocalYYYYMMDD();
+
+function getBeijingISOString(d = new Date()) {
+    const formatter = new Intl.DateTimeFormat('sv-SE', {
+        timeZone: 'Asia/Shanghai',
+        year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+    });
+    return formatter.format(d).replace(' ', 'T') + '+08:00';
+}
+
+let selectedDate = getBeijingYYYYMMDD();
 
 // DOM Elements
 const elements = {
@@ -54,13 +71,13 @@ function getNextDay(dateString, offset) {
     const [y, m, d] = dateString.split('-');
     const dateObj = new Date(y, m - 1, d);
     dateObj.setDate(dateObj.getDate() + offset);
-    return getLocalYYYYMMDD(dateObj);
+    return getBeijingYYYYMMDD(dateObj);
 }
 
 function updateDateHeaders() {
     elements.datePicker.value = selectedDate;
 
-    if (selectedDate === getLocalYYYYMMDD()) {
+    if (selectedDate === getBeijingYYYYMMDD()) {
         elements.dateTitle.textContent = 'Today';
     } else {
         elements.dateTitle.textContent = selectedDate;
@@ -119,6 +136,8 @@ async function fetchTodos() {
                 'Accept': 'application/vnd.github.v3+json'
             }
         });
+
+        if (dateStr !== selectedDate) return;
 
         if (response.status === 404) {
             // File doesn't exist yet, which is fine
@@ -179,6 +198,8 @@ async function syncToGitHub() {
             body: JSON.stringify(body)
         });
 
+        if (dateStr !== selectedDate) return;
+
         if (!response.ok) {
             const errData = await response.json();
             throw new Error(errData.message || response.statusText);
@@ -190,6 +211,94 @@ async function syncToGitHub() {
     } catch (error) {
         console.error('Push error:', error);
         updateStatus('Save failed: ' + error.message, true);
+    }
+}
+
+async function fetchRecurringRules() {
+    if (!config.token || !config.owner || !config.repo) return;
+    const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${RECURRING_FILE_PATH}?ref=${config.branch}`;
+    try {
+        const response = await fetch(url, { headers: { 'Authorization': `Bearer ${config.token}`, 'Accept': 'application/vnd.github.v3+json' } });
+        if (response.status === 404) {
+            recurringRules = [];
+            recurringRulesSha = null;
+            return;
+        }
+        if (!response.ok) throw new Error('API Error: ' + response.statusText);
+        const data = await response.json();
+        recurringRulesSha = data.sha;
+        recurringRules = JSON.parse(atou(data.content));
+    } catch (e) {
+        console.error('Fetch recurring error:', e);
+    }
+}
+
+async function syncRecurringRulesToGitHub() {
+    if (!config.token || !config.owner || !config.repo) return;
+    const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${RECURRING_FILE_PATH}`;
+    const contentBase64 = utoa(JSON.stringify(recurringRules, null, 2));
+    const body = {
+        message: 'Update recurring rules',
+        content: contentBase64,
+        branch: config.branch
+    };
+    if (recurringRulesSha) body.sha = recurringRulesSha;
+
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: { 'Authorization': `Bearer ${config.token}`, 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+        });
+        if (!response.ok) throw new Error(response.statusText);
+        const data = await response.json();
+        recurringRulesSha = data.content.sha;
+    } catch (e) {
+        console.error('Push recurring error:', e);
+    }
+}
+
+function injectRecurringTodos() {
+    if (!recurringRules || recurringRules.length === 0) return;
+
+    const [sy, sm, sd] = selectedDate.split('-');
+    const current = new Date(sy, sm - 1, sd);
+    let injectedAny = false;
+
+    recurringRules.forEach(rule => {
+        const [ry, rm, rd] = rule.startDate.split('-');
+        const start = new Date(ry, rm - 1, rd);
+
+        if (current < start) return;
+
+        let applies = false;
+        if (rule.type === 'daily') applies = true;
+        if (rule.type === 'weekly' && current.getDay() === start.getDay()) applies = true;
+        if (rule.type === 'monthly' && current.getDate() === start.getDate()) applies = true;
+        if (rule.type === 'custom') {
+            const diffMs = current.getTime() - start.getTime();
+            const diffDays = Math.round(diffMs / 86400000);
+            if (diffDays >= 0 && diffDays < rule.interval) applies = true;
+        }
+
+        if (applies) {
+            const exists = currentTodos.find(t => t.recurringRuleId === rule.id);
+            if (!exists) {
+                currentTodos.push({
+                    id: generateId(),
+                    recurringRuleId: rule.id,
+                    text: rule.text,
+                    completed: false,
+                    createdAt: getBeijingISOString()
+                });
+                injectedAny = true;
+            }
+        }
+    });
+
+    if (injectedAny) {
+        renderTodos();
+        debouncedSync();
     }
 }
 
@@ -207,8 +316,12 @@ function createTodoElement(todo) {
     const li = document.createElement('li');
     li.className = `todo-item ${todo.completed ? 'completed' : ''}`;
     li.dataset.id = todo.id;
+    if (!todo.completed) li.draggable = true;
+
+    const recurrenceIcon = todo.recurringRuleId ? `<span title="Recurring Task" style="color:var(--primary);margin-left:auto;margin-right:0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg></span>` : '';
 
     li.innerHTML = `
+        ${!todo.completed ? '<div class="drag-handle" title="Drag to reorder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg></div>' : ''}
         <label class="checkbox-wrapper">
             <input type="checkbox" ${todo.completed ? 'checked' : ''}>
             <div class="checkmark">
@@ -216,10 +329,23 @@ function createTodoElement(todo) {
             </div>
         </label>
         <div class="todo-text">${escapeHtml(todo.text)}</div>
+        ${recurrenceIcon}
         <button class="icon-btn delete-btn" aria-label="Delete todo">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
         </button>
     `;
+
+    if (!todo.completed) {
+        li.addEventListener('dragstart', function () {
+            draggedItem = this;
+            setTimeout(() => this.classList.add('dragging'), 0);
+        });
+
+        li.addEventListener('dragend', function () {
+            this.classList.remove('dragging');
+            draggedItem = null;
+        });
+    }
 
     // Event listeners
     const checkbox = li.querySelector('input[type="checkbox"]');
@@ -267,14 +393,75 @@ function renderTodos() {
     }
 }
 
+// Reordering Logic
+function reorderCurrentTodos() {
+    const activeIds = [...elements.activeList.querySelectorAll('.todo-item')].map(li => li.dataset.id);
+    const completedTodos = currentTodos.filter(t => t.completed);
+    const newActiveTodos = activeIds.map(id => currentTodos.find(t => t.id === id)).filter(Boolean);
+
+    currentTodos = [...newActiveTodos, ...completedTodos];
+    debouncedSync();
+}
+
+function getDragAfterElement(container, y) {
+    const draggableElements = [...container.querySelectorAll('.todo-item:not(.dragging)')];
+    return draggableElements.reduce((closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top - box.height / 2;
+        if (offset < 0 && offset > closest.offset) {
+            return { offset: offset, element: child };
+        } else {
+            return closest;
+        }
+    }, { offset: Number.NEGATIVE_INFINITY }).element;
+}
+
 // Actions
 function addTodo(text) {
+    const panel = document.getElementById('recurrence-panel');
+    const isPanelActive = panel && panel.classList.contains('active');
+    const recurrenceNode = document.getElementById('todo-recurrence');
+
+    // Default to none if panel is closed
+    const recurrenceType = (isPanelActive && recurrenceNode) ? recurrenceNode.value : 'none';
+    const isRecurring = recurrenceType !== 'none';
+
     const todo = {
         id: generateId(),
         text: text.trim(),
         completed: false,
-        createdAt: new Date().toISOString()
+        createdAt: getBeijingISOString()
     };
+
+    if (isRecurring) {
+        todo.recurringRuleId = generateId();
+        const rule = {
+            id: todo.recurringRuleId,
+            text: todo.text,
+            type: recurrenceType,
+            startDate: getBeijingYYYYMMDD()
+        };
+        if (recurrenceType === 'custom') {
+            const customIntervalNode = document.getElementById('custom-interval');
+            rule.interval = parseInt(customIntervalNode.value, 10) || 2;
+        }
+        recurringRules.push(rule);
+        syncRecurringRulesToGitHub();
+    }
+
+    // Always reset UI state after adding ANY task
+    if (recurrenceNode) recurrenceNode.value = 'none';
+    const wrapper = document.getElementById('custom-interval-wrapper');
+    if (wrapper) wrapper.style.display = 'none';
+    if (panel) panel.classList.remove('active');
+
+    const btn = document.getElementById('toggle-recurrence-btn');
+    if (btn) {
+        btn.style.backgroundColor = '';
+        btn.style.color = '';
+        btn.style.borderColor = 'var(--border)';
+    }
+
     currentTodos.unshift(todo);
     renderTodos();
     debouncedSync();
@@ -290,6 +477,17 @@ function toggleTodo(id, completed) {
 }
 
 function deleteTodo(id) {
+    const todo = currentTodos.find(t => t.id === id);
+    if (!todo) return;
+
+    if (todo.recurringRuleId) {
+        const delFuture = confirm("这是一个重复任务。\n\n[确定] 删除此规则，未来不再循环。\n[取消] 仅作废本日的任务。");
+        if (delFuture) {
+            recurringRules = recurringRules.filter(r => r.id !== todo.recurringRuleId);
+            syncRecurringRulesToGitHub();
+        }
+    }
+
     currentTodos = currentTodos.filter(t => t.id !== id);
     renderTodos();
     debouncedSync();
@@ -332,7 +530,7 @@ function closeModal() {
     elements.modal.classList.remove('active');
 }
 
-function handleDateChange(newDate) {
+async function handleDateChange(newDate) {
     if (newDate === selectedDate) return;
     selectedDate = newDate;
     updateDateHeaders();
@@ -342,7 +540,16 @@ function handleDateChange(newDate) {
     todaysFileSha = null;
     renderTodos();
     elements.statusText.textContent = 'Loading...';
-    fetchTodos();
+    await fetchTodos();
+    injectRecurringTodos();
+}
+
+async function loadAppData() {
+    updateStatus('syncing');
+    elements.statusText.textContent = 'Loading Rules...';
+    await fetchRecurringRules();
+    await fetchTodos();
+    injectRecurringTodos();
 }
 
 function init() {
@@ -367,9 +574,56 @@ function init() {
         handleDateChange(e.target.value);
     });
 
+    // Setup Drag and Drop Containers
+    elements.activeList.addEventListener('dragover', e => {
+        e.preventDefault();
+        if (!draggedItem) return;
+        const afterElement = getDragAfterElement(elements.activeList, e.clientY);
+        if (afterElement == null) {
+            elements.activeList.appendChild(draggedItem);
+        } else {
+            elements.activeList.insertBefore(draggedItem, afterElement);
+        }
+    });
+
+    elements.activeList.addEventListener('drop', e => {
+        e.preventDefault();
+        if (draggedItem) reorderCurrentTodos();
+    });
+
     initSettings();
 
-    // Setup forms
+    // Setup forms and UI toggles
+    const toggleRecurrenceBtn = document.getElementById('toggle-recurrence-btn');
+    const recurrencePanel = document.getElementById('recurrence-panel');
+    const recurrenceSelect = document.getElementById('todo-recurrence');
+    const customIntervalWrapper = document.getElementById('custom-interval-wrapper');
+
+    if (toggleRecurrenceBtn) {
+        toggleRecurrenceBtn.addEventListener('click', () => {
+            recurrencePanel.classList.toggle('active');
+            if (recurrencePanel.classList.contains('active')) {
+                toggleRecurrenceBtn.style.backgroundColor = 'var(--bg-page)';
+                toggleRecurrenceBtn.style.color = 'var(--primary)';
+                toggleRecurrenceBtn.style.borderColor = 'var(--primary)';
+            } else {
+                toggleRecurrenceBtn.style.backgroundColor = '';
+                toggleRecurrenceBtn.style.color = '';
+                toggleRecurrenceBtn.style.borderColor = 'var(--border)';
+            }
+        });
+    }
+
+    if (recurrenceSelect) {
+        recurrenceSelect.addEventListener('change', (e) => {
+            if (e.target.value === 'custom') {
+                customIntervalWrapper.style.display = 'flex';
+            } else {
+                customIntervalWrapper.style.display = 'none';
+            }
+        });
+    }
+
     elements.addForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const text = elements.todoInput.value;
@@ -393,7 +647,7 @@ function init() {
     if (!config.token || !config.repo) {
         openModal();
     } else {
-        fetchTodos();
+        loadAppData();
     }
 }
 

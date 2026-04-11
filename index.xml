@@ -607,10 +607,10 @@ text-align: center;
 transition: all 0.3s ease;
 }
 html[data-theme="dark"] .pomodoro-container {
-background: rgba(30,30,30, 0.5);
+background: rgba(30, 30, 30, 0.5);
 }
 html[data-theme="light"] .pomodoro-container {
-background: rgba(255,255,255, 0.7);
+background: rgba(255, 255, 255, 0.7);
 }
 .timer-display {
 font-size: 6rem;
@@ -700,7 +700,7 @@ justify-content: space-between;
 align-items: center;
 margin-bottom: 15px;
 padding-bottom: 10px;
-border-bottom: 1px solid rgba(128,128,128,0.2);
+border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 }
 .logs-header h3 {
 margin: 0;
@@ -748,9 +748,72 @@ text-decoration: underline;
 .clear-btn:hover {
 color: #ff6b81;
 }
-.logs-list::-webkit-scrollbar { width: 6px; }
-.logs-list::-webkit-scrollbar-track { background: transparent; }
-.logs-list::-webkit-scrollbar-thumb { background: rgba(128,128,128,0.3); border-radius: 3px; }
+.logs-list::-webkit-scrollbar {
+width: 6px;
+}
+.logs-list::-webkit-scrollbar-track {
+background: transparent;
+}
+.logs-list::-webkit-scrollbar-thumb {
+background: rgba(128, 128, 128, 0.3);
+border-radius: 3px;
+}
+.modal-overlay {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: rgba(0, 0, 0, 0.5);
+display: none;
+justify-content: center;
+align-items: center;
+z-index: 1000;
+}
+.modal-content {
+background: var(--card-background, #fff);
+color: var(--text-color, #333);
+padding: 25px;
+border-radius: 16px;
+width: 90%;
+max-width: 400px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+html[data-theme="dark"] .modal-content {
+background: #1e1e1e;
+color: #eee;
+}
+.form-group {
+margin-bottom: 15px;
+text-align: left;
+}
+.form-group label {
+display: block;
+font-size: 0.85rem;
+margin-bottom: 5px;
+opacity: 0.8;
+}
+.form-group input {
+width: 100%;
+padding: 10px;
+border-radius: 8px;
+border: 1px solid rgba(128, 128, 128, 0.3);
+background: transparent;
+color: inherit;
+}
+.modal-actions {
+display: flex;
+justify-content: flex-end;
+gap: 10px;
+margin-top: 20px;
+}
+.sync-status {
+font-size: 0.8rem;
+margin-left: 10px;
+opacity: 0.7;
+font-style: italic;
+font-weight: normal;
+}
 &lt;/style&gt;
 &lt;div class="pomodoro-wrapper"&gt;
 &lt;div class="pomodoro-container"&gt;
@@ -773,237 +836,20 @@ color: #ff6b81;
 &lt;/div&gt;
 &lt;div class="logs-container"&gt;
 &lt;div class="logs-header"&gt;
-&lt;h3&gt;Focus Log&lt;/h3&gt;
+&lt;h3&gt;Focus Log&lt;span id="syncStatus" class="sync-status"&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;div&gt;
+&lt;button class="clear-btn" id="settingsBtn" style="margin-right:15px; text-decoration:none;"&gt;⚙️ Settings&lt;/button&gt;
 &lt;button class="clear-btn" id="clearLogsBtn"&gt;Clear logs&lt;/button&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;ul class="logs-list" id="logsList"&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;script&gt;
-(function() {
-const startBtn = document.getElementById('startBtn');
-const pauseBtn = document.getElementById('pauseBtn');
-const resetBtn = document.getElementById('resetBtn');
-const timeDisplay = document.getElementById('timeDisplay');
-const timerMinutesInput = document.getElementById('timerMinutes');
-const taskNameInput = document.getElementById('taskName');
-const logsList = document.getElementById('logsList');
-const clearLogsBtn = document.getElementById('clearLogsBtn');
-let timerInterval = null;
-let secondsRemaining = parseInt(timerMinutesInput.value) * 60;
-let isRunning = false;
-let currentTaskName = "";
-let startTime = null;
-let initialDurationMins = 0;
-let endTimeTarget = null;
-let currentMode = 'focus';
-loadLogs();
-function formatTime(totalSeconds) {
-const m = Math.floor(totalSeconds / 60);
-const s = totalSeconds % 60;
-return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-}
-function formatDateTime(dateString) {
-const d = new Date(dateString);
-return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-}
-function updateDisplay() {
-timeDisplay.textContent = formatTime(secondsRemaining);
-const prefix = currentMode === 'break' ? 'Break ' : '';
-document.title = `${prefix}${formatTime(secondsRemaining)} - Pomodoro`;
-}
-function handleStart() {
-if (isRunning) return;
-if ("Notification" in window &amp;&amp; Notification.permission === "default") {
-Notification.requestPermission();
-}
-if (secondsRemaining &lt;= 0 || (!timerInterval &amp;&amp; secondsRemaining == parseInt(timerMinutesInput.value)*60)) {
-if (currentMode === 'focus') {
-let mins = parseInt(timerMinutesInput.value) || 25;
-if (mins &lt; 1) mins = 1;
-if (mins &gt; 60) mins = 60;
-timerMinutesInput.value = mins;
-secondsRemaining = mins * 60;
-initialDurationMins = mins;
-currentTaskName = taskNameInput.value.trim() || "Untitled Task";
-startTime = new Date().toISOString();
-} else {
-secondsRemaining = 5 * 60;
-}
-}
-isRunning = true;
-startBtn.style.display = 'none';
-pauseBtn.style.display = 'inline-block';
-if (currentMode === 'break') {
-timeDisplay.classList.add('break');
-timeDisplay.classList.remove('running');
-} else {
-timeDisplay.classList.add('running');
-timeDisplay.classList.remove('break');
-}
-endTimeTarget = Date.now() + (secondsRemaining * 1000);
-timerInterval = setInterval(() =&gt; {
-secondsRemaining = Math.max(0, Math.round((endTimeTarget - Date.now()) / 1000));
-updateDisplay();
-if (secondsRemaining &lt;= 0) {
-handleFinish();
-}
-}, 200);
-taskNameInput.disabled = true;
-timerMinutesInput.disabled = true;
-}
-function handlePause() {
-if (!isRunning) return;
-clearInterval(timerInterval);
-isRunning = false;
-startBtn.style.display = 'inline-block';
-startBtn.textContent = 'Resume';
-pauseBtn.style.display = 'none';
-timeDisplay.classList.remove('running');
-timeDisplay.classList.remove('break');
-}
-function handleReset() {
-clearInterval(timerInterval);
-isRunning = false;
-currentMode = 'focus';
-let mins = parseInt(timerMinutesInput.value) || 25;
-secondsRemaining = mins * 60;
-updateDisplay();
-startBtn.style.display = 'inline-block';
-startBtn.className = 'btn btn-primary';
-startBtn.textContent = 'Start Focus';
-pauseBtn.style.display = 'none';
-timeDisplay.classList.remove('running');
-timeDisplay.classList.remove('break');
-document.title = "Pomodoro Timer";
-taskNameInput.disabled = false;
-timerMinutesInput.disabled = false;
-}
-function handleFinish() {
-clearInterval(timerInterval);
-isRunning = false;
-timeDisplay.textContent = "00:00";
-timeDisplay.classList.remove('running');
-timeDisplay.classList.remove('break');
-pauseBtn.style.display = 'none';
-playBeep();
-if (currentMode === 'focus') {
-const endTime = new Date().toISOString();
-saveLog(currentTaskName, initialDurationMins, startTime, endTime);
-if ("Notification" in window &amp;&amp; Notification.permission === "granted") {
-new Notification("Focus Complete!", {
-body: `Well done on "${currentTaskName}". Time for a short break.`,
-icon: "/images/site/horse-grey.jpg"
-});
-}
-currentMode = 'break';
-secondsRemaining = 5 * 60;
-updateDisplay();
-startBtn.style.display = 'inline-block';
-startBtn.className = 'btn btn-secondary';
-startBtn.textContent = 'Start 5-min Break';
-taskNameInput.disabled = true;
-timerMinutesInput.disabled = true;
-} else {
-if ("Notification" in window &amp;&amp; Notification.permission === "granted") {
-new Notification("Break Over", {
-body: `Ready to get back to focus?`,
-icon: "/images/site/horse-grey.jpg"
-});
-}
-currentMode = 'focus';
-let mins = parseInt(timerMinutesInput.value) || 25;
-secondsRemaining = mins * 60;
-updateDisplay();
-startBtn.style.display = 'inline-block';
-startBtn.className = 'btn btn-primary';
-startBtn.textContent = 'Start Focus';
-taskNameInput.disabled = false;
-timerMinutesInput.disabled = false;
-}
-}
-function playBeep() {
-try {
-const AudioContext = window.AudioContext || window.webkitAudioContext;
-const ctx = new AudioContext();
-const osc = ctx.createOscillator();
-const gain = ctx.createGain();
-osc.connect(gain);
-gain.connect(ctx.destination);
-osc.frequency.value = 800;
-osc.type = "sine";
-gain.gain.setValueAtTime(0, ctx.currentTime);
-gain.gain.linearRampToValueAtTime(1, ctx.currentTime + 0.1);
-gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.5);
-osc.start(ctx.currentTime);
-osc.stop(ctx.currentTime + 0.5);
-} catch(e) {
-console.warn("AudioContext not supported, ignoring beep");
-}
-}
-function saveLog(task, duration, start, end) {
-if (!window.localStorage) return;
-const newLog = {
-id: Date.now(),
-task: task,
-duration: duration,
-start: start,
-end: end
-};
-const existingLogs = JSON.parse(localStorage.getItem('pomodoro_logs') || '[]');
-existingLogs.unshift(newLog);
-localStorage.setItem('pomodoro_logs', JSON.stringify(existingLogs));
-renderLogs(existingLogs);
-}
-function loadLogs() {
-if (!window.localStorage) return;
-const existingLogs = JSON.parse(localStorage.getItem('pomodoro_logs') || '[]');
-renderLogs(existingLogs);
-}
-function clearLogs() {
-if (confirm("Are you sure you want to clear all focus logs?")) {
-localStorage.removeItem('pomodoro_logs');
-renderLogs([]);
-}
-}
-function renderLogs(logs) {
-logsList.innerHTML = '';
-if (logs.length === 0) {
-logsList.innerHTML = '&lt;li style="text-align: center; color: #888; padding: 20px;"&gt;No focuses yet. Start a timer!&lt;/li&gt;';
-return;
-}
-logs.forEach(log =&gt; {
-const li = document.createElement('li');
-li.className = 'log-item';
-const detailsDiv = document.createElement('div');
-const titleSpan = document.createElement('div');
-titleSpan.className = 'log-title';
-titleSpan.textContent = log.task;
-const timeSpan = document.createElement('div');
-timeSpan.className = 'log-time';
-timeSpan.textContent = `${formatDateTime(log.start)} - ${formatDateTime(log.end)}`;
-detailsDiv.appendChild(titleSpan);
-detailsDiv.appendChild(timeSpan);
-const durDiv = document.createElement('div');
-durDiv.style.fontWeight = 'bold';
-durDiv.style.color = '#ff4757';
-durDiv.textContent = `${log.duration} min`;
-li.appendChild(detailsDiv);
-li.appendChild(durDiv);
-logsList.appendChild(li);
-});
-}
-startBtn.addEventListener('click', handleStart);
-pauseBtn.addEventListener('click', handlePause);
-resetBtn.addEventListener('click', handleReset);
-clearLogsBtn.addEventListener('click', clearLogs);
-timerMinutesInput.addEventListener('change', () =&gt; {
-if (!isRunning) handleReset();
-});
-updateDisplay();
-})();
-&lt;/script&gt;</description></item><item><title>Go বেসিক</title><link>https://qingbo12.github.io/notes/go/basic/_index.bn/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://qingbo12.github.io/notes/go/basic/_index.bn/</guid><description/></item><item><title>Introduction</title><link>https://qingbo12.github.io/notes/go/basic/introduction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://qingbo12.github.io/notes/go/basic/introduction/</guid><description>&lt;!-- A Sample Program --&gt;
+&lt;div class="modal-overlay" id="settingsModal"&gt;
+&lt;div class="modal-content"&gt;
+&lt;h3 style="margin-top:0;"&gt;GitHub Sync Settings&lt;/h3&gt;
+&lt;p style="font-size:0.85rem; opacity:0.8;"&gt;Sync your focus logs securely to a private repository.&lt;/p&gt;</description></item><item><title>Go বেসিক</title><link>https://qingbo12.github.io/notes/go/basic/_index.bn/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://qingbo12.github.io/notes/go/basic/_index.bn/</guid><description/></item><item><title>Introduction</title><link>https://qingbo12.github.io/notes/go/basic/introduction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://qingbo12.github.io/notes/go/basic/introduction/</guid><description>&lt;!-- A Sample Program --&gt;
 &lt;div class="note-card "&gt;
 &lt;div class="item"&gt;
 &lt;h5 class="note-title"&gt;&lt;span&gt;Hello World&lt;/span&gt;&lt;/h5&gt;

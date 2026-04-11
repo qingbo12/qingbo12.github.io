@@ -210,13 +210,27 @@ body {
     font-family: inherit;
 }
 
-#todo-input:focus {
+#todo-input:focus, .recurrence-select:focus {
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 #todo-input::placeholder {
     color: #94a3b8;
+}
+
+.recurrence-select {
+    padding: 0 1rem;
+    font-size: 0.95rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-surface);
+    color: var(--text-main);
+    box-shadow: var(--shadow-sm);
+    outline: none;
+    font-family: inherit;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
 /* Todo List */
@@ -255,6 +269,35 @@ body {
 .todo-item:hover {
     border-color: var(--border-hover);
     box-shadow: var(--shadow-md);
+}
+
+.todo-item.dragging {
+    opacity: 0.5;
+    background-color: var(--bg-page);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    transform: scale(0.98);
+}
+
+.drag-handle {
+    cursor: grab;
+    color: #94a3b8;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    padding-right: 0.25rem;
+}
+
+.drag-handle:hover {
+    color: var(--primary);
+}
+
+.drag-handle svg {
+    width: 20px;
+    height: 20px;
+}
+
+.drag-handle:active {
+    cursor: grabbing;
 }
 
 /* Custom Checkbox */
