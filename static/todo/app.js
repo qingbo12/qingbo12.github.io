@@ -214,6 +214,55 @@ async function syncToGitHub() {
     }
 }
 
+async function appendTodoToDate(todo, targetDateStr) {
+    if (!config.token || !config.owner || !config.repo) return;
+    updateStatus(`Moving task...`);
+    
+    const path = `${targetDateStr}.json`;
+    const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${path}`;
+    
+    try {
+        let targetTodos = [];
+        let targetSha = null;
+        const getRes = await fetch(url + `?ref=${config.branch}`, {
+            headers: { 'Authorization': `Bearer ${config.token}`, 'Accept': 'application/vnd.github.v3+json' }
+        });
+        
+        if (getRes.ok) {
+            const data = await getRes.json();
+            targetSha = data.sha;
+            targetTodos = JSON.parse(atou(data.content));
+        } else if (getRes.status !== 404) {
+            throw new Error(`Fetch failed: ${getRes.status}`);
+        }
+        
+        targetTodos.unshift(todo);
+        
+        const contentBase64 = utoa(JSON.stringify(targetTodos, null, 2));
+        const body = {
+            message: `Move task to ${targetDateStr}`,
+            content: contentBase64,
+            branch: config.branch
+        };
+        if (targetSha) body.sha = targetSha;
+        
+        const putRes = await fetch(url, {
+            method: 'PUT',
+            headers: { 'Authorization': `Bearer ${config.token}`, 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+        });
+        
+        if (!putRes.ok) throw new Error(`Push failed: ${putRes.status}`);
+        updateStatus('Up to date');
+    } catch (e) {
+        console.error('Move error:', e);
+        updateStatus('Move failed: ' + e.message, true);
+        currentTodos.unshift(todo);
+        renderTodos();
+        debouncedSync();
+    }
+}
+
 async function fetchRecurringRules() {
     if (!config.token || !config.owner || !config.repo) return;
     const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${RECURRING_FILE_PATH}?ref=${config.branch}`;
@@ -330,6 +379,11 @@ function createTodoElement(todo) {
         </label>
         <div class="todo-text" title="Double click to edit">${escapeHtml(todo.text)}</div>
         ${recurrenceIcon}
+        ${!todo.completed ? `
+        <button class="icon-btn move-btn" aria-label="Move to tomorrow" title="Move to tomorrow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+        </button>
+        ` : ''}
         <button class="icon-btn delete-btn" aria-label="Delete todo">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
         </button>
@@ -352,6 +406,13 @@ function createTodoElement(todo) {
     checkbox.addEventListener('change', (e) => {
         toggleTodo(todo.id, e.target.checked);
     });
+
+    const moveBtn = li.querySelector('.move-btn');
+    if (moveBtn) {
+        moveBtn.addEventListener('click', () => {
+            moveTodoToTomorrow(todo.id);
+        });
+    }
 
     const deleteBtn = li.querySelector('.delete-btn');
     deleteBtn.addEventListener('click', () => {
@@ -531,6 +592,20 @@ function deleteTodo(id) {
     currentTodos = currentTodos.filter(t => t.id !== id);
     renderTodos();
     debouncedSync();
+}
+
+function moveTodoToTomorrow(id) {
+    const todoIndex = currentTodos.findIndex(t => t.id === id);
+    if (todoIndex === -1) return;
+    
+    const todo = currentTodos[todoIndex];
+    currentTodos.splice(todoIndex, 1);
+    
+    renderTodos();
+    debouncedSync(); // Saves today
+    
+    const tomorrowStr = getNextDay(selectedDate, 1);
+    appendTodoToDate(todo, tomorrowStr);
 }
 
 
