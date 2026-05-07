@@ -12,9 +12,14 @@ let todaysFileSha = null;
 let lastSyncTimeout = null;
 let draggedItem = null;
 
+let isSyncingTodos = false;
+let pendingTodoSync = false;
+
 let recurringRules = [];
 let recurringRulesSha = null;
 const RECURRING_FILE_PATH = 'recurring_rules.json';
+let isSyncingRules = false;
+let pendingRuleSync = false;
 
 function getBeijingYYYYMMDD(d = new Date()) {
     return new Intl.DateTimeFormat('sv-SE', {
@@ -164,102 +169,137 @@ async function fetchTodos() {
     }
 }
 
-async function syncToGitHub() {
+async function syncToGitHub(retries = 3) {
     if (!config.token || !config.owner || !config.repo) {
         updateStatus('GitHub settings needed', true);
         return;
     }
+
+    if (isSyncingTodos) {
+        pendingTodoSync = true;
+        return;
+    }
+    isSyncingTodos = true;
+    pendingTodoSync = false;
 
     updateStatus('syncing');
     const dateStr = getFormattedDate();
     const path = `${dateStr}.json`;
     const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${path}`;
 
-    // Encode payload properly for utf-8 base64
-    const contentStr = JSON.stringify(currentTodos, null, 2);
-    const contentBase64 = utoa(contentStr);
-
-    const body = {
-        message: `Sync todos for ${dateStr}`,
-        content: contentBase64,
-        branch: config.branch
-    };
-
-    if (todaysFileSha) body.sha = todaysFileSha;
-
     try {
-        const response = await fetch(url, {
-            method: 'PUT',
-            headers: {
-                'Authorization': `Bearer ${config.token}`,
-                'Accept': 'application/vnd.github.v3+json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(body)
-        });
+        for (let i = 0; i < retries; i++) {
+            const body = {
+                message: `Sync todos for ${dateStr}`,
+                content: utoa(JSON.stringify(currentTodos, null, 2)),
+                branch: config.branch
+            };
+            if (todaysFileSha) body.sha = todaysFileSha;
 
-        if (dateStr !== selectedDate) return;
+            const response = await fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `Bearer ${config.token}`,
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
+            });
 
-        if (!response.ok) {
-            const errData = await response.json();
-            throw new Error(errData.message || response.statusText);
+            if (dateStr !== selectedDate) break;
+
+            if (response.ok) {
+                const data = await response.json();
+                if (dateStr === selectedDate) {
+                    todaysFileSha = data.content.sha;
+                    updateStatus('Up to date');
+                }
+                break;
+            } else if (response.status === 409) {
+                console.warn('409 Conflict detected for today. Recovering SHA...');
+                const recovery = await fetch(url + `?ref=${config.branch}`, {
+                    headers: { 'Authorization': `Bearer ${config.token}`, 'Accept': 'application/vnd.github.v3+json' }
+                });
+                if (recovery.ok) {
+                    const recData = await recovery.json();
+                    todaysFileSha = recData.sha;
+                    continue; // Retry push with new SHA
+                } else {
+                    throw new Error(`Recovery failed: ${recovery.status}`);
+                }
+            } else {
+                const errData = await response.json();
+                throw new Error(errData.message || response.statusText);
+            }
         }
-
-        const data = await response.json();
-        todaysFileSha = data.content.sha;
-        updateStatus('Up to date');
     } catch (error) {
         console.error('Push error:', error);
         updateStatus('Save failed: ' + error.message, true);
+    } finally {
+        isSyncingTodos = false;
+        if (pendingTodoSync) {
+            debouncedSync(); 
+        }
     }
 }
 
-async function appendTodoToDate(todo, targetDateStr) {
+async function appendTodoToDate(todo, targetDateStr, retries = 3) {
     if (!config.token || !config.owner || !config.repo) return;
     updateStatus(`Moving task...`);
     
     const path = `${targetDateStr}.json`;
     const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${path}`;
     
-    try {
-        let targetTodos = [];
-        let targetSha = null;
-        const getRes = await fetch(url + `?ref=${config.branch}`, {
-            headers: { 'Authorization': `Bearer ${config.token}`, 'Accept': 'application/vnd.github.v3+json' }
-        });
-        
-        if (getRes.ok) {
-            const data = await getRes.json();
-            targetSha = data.sha;
-            targetTodos = JSON.parse(atou(data.content));
-        } else if (getRes.status !== 404) {
-            throw new Error(`Fetch failed: ${getRes.status}`);
+    for (let i = 0; i < retries; i++) {
+        try {
+            let targetTodos = [];
+            let targetSha = null;
+            const getRes = await fetch(url + `?ref=${config.branch}`, {
+                headers: { 'Authorization': `Bearer ${config.token}`, 'Accept': 'application/vnd.github.v3+json' }
+            });
+            
+            if (getRes.ok) {
+                const data = await getRes.json();
+                targetSha = data.sha;
+                targetTodos = JSON.parse(atou(data.content));
+            } else if (getRes.status !== 404) {
+                throw new Error(`Fetch failed: ${getRes.status}`);
+            }
+            
+            targetTodos.unshift(todo);
+            
+            const body = {
+                message: `Move task to ${targetDateStr}`,
+                content: utoa(JSON.stringify(targetTodos, null, 2)),
+                branch: config.branch
+            };
+            if (targetSha) body.sha = targetSha;
+            
+            const putRes = await fetch(url, {
+                method: 'PUT',
+                headers: { 'Authorization': `Bearer ${config.token}`, 'Content-Type': 'application/json' },
+                body: JSON.stringify(body)
+            });
+            
+            if (putRes.ok) {
+                updateStatus('Moved successfully');
+                return;
+            } else if (putRes.status === 409) {
+                console.warn('409 Conflict when moving. Retrying...');
+                continue;
+            } else {
+                throw new Error(`Push failed: ${putRes.status}`);
+            }
+        } catch (e) {
+            console.error('Move error:', e);
+            if (i === retries - 1) {
+                updateStatus('Move failed: ' + e.message, true);
+                currentTodos.unshift(todo);
+                renderTodos();
+                debouncedSync();
+                return;
+            }
         }
-        
-        targetTodos.unshift(todo);
-        
-        const contentBase64 = utoa(JSON.stringify(targetTodos, null, 2));
-        const body = {
-            message: `Move task to ${targetDateStr}`,
-            content: contentBase64,
-            branch: config.branch
-        };
-        if (targetSha) body.sha = targetSha;
-        
-        const putRes = await fetch(url, {
-            method: 'PUT',
-            headers: { 'Authorization': `Bearer ${config.token}`, 'Content-Type': 'application/json' },
-            body: JSON.stringify(body)
-        });
-        
-        if (!putRes.ok) throw new Error(`Push failed: ${putRes.status}`);
-        updateStatus('Up to date');
-    } catch (e) {
-        console.error('Move error:', e);
-        updateStatus('Move failed: ' + e.message, true);
-        currentTodos.unshift(todo);
-        renderTodos();
-        debouncedSync();
     }
 }
 
@@ -282,28 +322,60 @@ async function fetchRecurringRules() {
     }
 }
 
-async function syncRecurringRulesToGitHub() {
+async function syncRecurringRulesToGitHub(retries = 3) {
     if (!config.token || !config.owner || !config.repo) return;
-    const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${RECURRING_FILE_PATH}`;
-    const contentBase64 = utoa(JSON.stringify(recurringRules, null, 2));
-    const body = {
-        message: 'Update recurring rules',
-        content: contentBase64,
-        branch: config.branch
-    };
-    if (recurringRulesSha) body.sha = recurringRulesSha;
 
+    if (isSyncingRules) {
+        pendingRuleSync = true;
+        return;
+    }
+    isSyncingRules = true;
+    pendingRuleSync = false;
+
+    const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${RECURRING_FILE_PATH}`;
+    
     try {
-        const response = await fetch(url, {
-            method: 'PUT',
-            headers: { 'Authorization': `Bearer ${config.token}`, 'Content-Type': 'application/json' },
-            body: JSON.stringify(body)
-        });
-        if (!response.ok) throw new Error(response.statusText);
-        const data = await response.json();
-        recurringRulesSha = data.content.sha;
-    } catch (e) {
+        for (let i = 0; i < retries; i++) {
+            const body = {
+                message: 'Update recurring rules',
+                content: utoa(JSON.stringify(recurringRules, null, 2)),
+                branch: config.branch
+            };
+            if (recurringRulesSha) body.sha = recurringRulesSha;
+
+            const response = await fetch(url, {
+                method: 'PUT',
+                headers: { 'Authorization': `Bearer ${config.token}`, 'Content-Type': 'application/json' },
+                body: JSON.stringify(body)
+            });
+            
+            if (response.ok) {
+                const data = await response.json();
+                recurringRulesSha = data.content.sha;
+                break;
+            } else if (response.status === 409) {
+                console.warn('409 Conflict in rules. Recovering SHA...');
+                const recovery = await fetch(url + `?ref=${config.branch}`, {
+                    headers: { 'Authorization': `Bearer ${config.token}`, 'Accept': 'application/vnd.github.v3+json' }
+                });
+                if (recovery.ok) {
+                    const recData = await recovery.json();
+                    recurringRulesSha = recData.sha;
+                    continue; // Retry
+                } else {
+                    throw new Error(`Recovery failed`);
+                }
+            } else {
+                throw new Error(response.statusText);
+            }
+        }
+    } catch(e) {
         console.error('Push recurring error:', e);
+    } finally {
+        isSyncingRules = false;
+        if (pendingRuleSync) {
+            syncRecurringRulesToGitHub();
+        }
     }
 }
 
