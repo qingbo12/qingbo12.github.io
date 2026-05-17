@@ -1,5 +1,6 @@
 // GitHub API configuration and state
 const STORAGE_KEY = 'todo_github_settings';
+const LOCAL_TODO_PREFIX = 'todo_local_';
 let config = {
     token: '',
     owner: '',
@@ -106,12 +107,53 @@ function updateStatus(status, isError = false) {
     if (status === 'syncing') elements.syncStatus.classList.add('syncing');
     if (isError) elements.syncStatus.classList.add('error');
 
-    let text = 'Up to date';
+    let text = 'Saved locally';
     if (status === 'syncing') text = 'Syncing to GitHub...';
-    if (status === 'offline') text = 'Offline settings empty';
+    if (status === 'offline') text = 'Offline — settings not set';
+    if (status === 'synced') text = 'Synced to GitHub ✓';
+    if (status === 'loading') text = 'Loading...';
     if (isError) text = status;
 
     elements.statusText.textContent = text;
+}
+
+// ── Local Storage helpers ──────────────────────────────────────
+function localKey(dateStr) {
+    return LOCAL_TODO_PREFIX + dateStr;
+}
+
+function saveToLocal(dateStr, todos) {
+    localStorage.setItem(localKey(dateStr), JSON.stringify(todos));
+    updateStatus('saved');
+    updateSyncBtnState();
+}
+
+function loadFromLocal(dateStr) {
+    const raw = localStorage.getItem(localKey(dateStr));
+    if (!raw) return null;
+    try { return JSON.parse(raw); } catch { return null; }
+}
+
+function markLocalSynced(dateStr) {
+    // store last-synced snapshot so we can detect unsaved changes
+    const key = LOCAL_TODO_PREFIX + dateStr + '_synced';
+    localStorage.setItem(key, localStorage.getItem(localKey(dateStr)) || '[]');
+}
+
+function hasUnsyncedChanges(dateStr) {
+    const current = localStorage.getItem(localKey(dateStr)) || '[]';
+    const synced = localStorage.getItem(LOCAL_TODO_PREFIX + dateStr + '_synced') || null;
+    // if never synced to GitHub, treat as unsynced
+    if (synced === null) return true;
+    return current !== synced;
+}
+
+function updateSyncBtnState() {
+    const btn = document.getElementById('github-sync-btn');
+    if (!btn) return;
+    const unsynced = hasUnsyncedChanges(selectedDate);
+    btn.classList.toggle('has-changes', unsynced);
+    btn.title = unsynced ? 'Sync today\'s todos to GitHub (unsaved changes)' : 'Sync today\'s todos to GitHub';
 }
 
 // UTF-8 supportive Base64 encode/decode
@@ -123,17 +165,11 @@ function atou(b64) {
 }
 
 // GitHub Sync Logic
-async function fetchTodos() {
-    if (!config.token || !config.owner || !config.repo) {
-        updateStatus('offline', true);
-        return;
-    }
-
-    updateStatus('syncing');
-    const dateStr = getFormattedDate();
+async function fetchTodosFromGitHub(dateStr) {
+    // Returns { todos, sha } or null on error/404
+    if (!config.token || !config.owner || !config.repo) return null;
     const path = `${dateStr}.json`;
     const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${path}?ref=${config.branch}`;
-
     try {
         const response = await fetch(url, {
             headers: {
@@ -141,53 +177,89 @@ async function fetchTodos() {
                 'Accept': 'application/vnd.github.v3+json'
             }
         });
-
-        if (dateStr !== selectedDate) return;
-
-        if (response.status === 404) {
-            // File doesn't exist yet, which is fine
-            currentTodos = [];
-            todaysFileSha = null;
-            updateStatus('Up to date');
-            renderTodos();
-            return;
-        }
-
+        if (response.status === 404) return { todos: [], sha: null };
         if (!response.ok) throw new Error('API Error: ' + response.statusText);
-
         const data = await response.json();
-        todaysFileSha = data.sha;
-
-        // Decode base64 content
-        const contentStr = atou(data.content);
-        currentTodos = JSON.parse(contentStr);
-        updateStatus('Up to date');
-        renderTodos();
+        return { todos: JSON.parse(atou(data.content)), sha: data.sha };
     } catch (error) {
         console.error('Fetch error:', error);
-        updateStatus('Sync failed: ' + error.message, true);
+        return null;
     }
 }
 
-async function syncToGitHub(retries = 3) {
+async function fetchTodos() {
+    const dateStr = getFormattedDate();
+
+    // 1. Show local data immediately
+    const local = loadFromLocal(dateStr);
+    if (local !== null) {
+        currentTodos = local;
+        renderTodos();
+        updateSyncBtnState();
+    }
+
+    if (!config.token || !config.owner || !config.repo) {
+        updateStatus('offline', true);
+        return;
+    }
+
+    // 2. Fetch from GitHub in background
+    updateStatus('loading');
+    const result = await fetchTodosFromGitHub(dateStr);
+    if (dateStr !== selectedDate) return; // user navigated away
+
+    if (result === null) {
+        // network/API error — keep local
+        updateStatus('GitHub fetch failed, showing local', true);
+        return;
+    }
+
+    todaysFileSha = result.sha;
+
+    if (local === null) {
+        // No local data — use GitHub as source of truth
+        currentTodos = result.todos;
+        saveToLocal(dateStr, currentTodos);
+        markLocalSynced(dateStr);
+    } else {
+        // Merge: add any GitHub items not present locally (by id)
+        const localIds = new Set(currentTodos.map(t => t.id));
+        const newFromGH = result.todos.filter(t => !localIds.has(t.id));
+        if (newFromGH.length > 0) {
+            currentTodos = [...currentTodos, ...newFromGH];
+            saveToLocal(dateStr, currentTodos);
+        }
+    }
+
+    renderTodos();
+    updateStatus('saved');
+    updateSyncBtnState();
+}
+
+async function syncTodayToGitHub() {
     if (!config.token || !config.owner || !config.repo) {
         updateStatus('GitHub settings needed', true);
         return;
     }
-
-    if (isSyncingTodos) {
-        pendingTodoSync = true;
-        return;
-    }
+    if (isSyncingTodos) return;
     isSyncingTodos = true;
-    pendingTodoSync = false;
 
+    const btn = document.getElementById('github-sync-btn');
+    if (btn) btn.disabled = true;
     updateStatus('syncing');
+
     const dateStr = getFormattedDate();
     const path = `${dateStr}.json`;
     const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${path}`;
+    const retries = 3;
 
     try {
+        // Refresh SHA before pushing to avoid 409
+        if (!todaysFileSha) {
+            const r = await fetchTodosFromGitHub(dateStr);
+            if (r) todaysFileSha = r.sha;
+        }
+
         for (let i = 0; i < retries; i++) {
             const body = {
                 message: `Sync todos for ${dateStr}`,
@@ -206,40 +278,35 @@ async function syncToGitHub(retries = 3) {
                 body: JSON.stringify(body)
             });
 
-            if (dateStr !== selectedDate) break;
-
             if (response.ok) {
                 const data = await response.json();
-                if (dateStr === selectedDate) {
-                    todaysFileSha = data.content.sha;
-                    updateStatus('Up to date');
-                }
+                todaysFileSha = data.content.sha;
+                markLocalSynced(dateStr);
+                updateStatus('synced');
+                updateSyncBtnState();
                 break;
             } else if (response.status === 409) {
-                console.warn('409 Conflict detected for today. Recovering SHA...');
                 const recovery = await fetch(url + `?ref=${config.branch}`, {
                     headers: { 'Authorization': `Bearer ${config.token}`, 'Accept': 'application/vnd.github.v3+json' }
                 });
                 if (recovery.ok) {
                     const recData = await recovery.json();
                     todaysFileSha = recData.sha;
-                    continue; // Retry push with new SHA
+                    continue;
                 } else {
                     throw new Error(`Recovery failed: ${recovery.status}`);
                 }
             } else {
-                const errData = await response.json();
+                const errData = await response.json().catch(() => ({}));
                 throw new Error(errData.message || response.statusText);
             }
         }
     } catch (error) {
         console.error('Push error:', error);
-        updateStatus('Save failed: ' + error.message, true);
+        updateStatus('Sync failed: ' + error.message, true);
     } finally {
         isSyncingTodos = false;
-        if (pendingTodoSync) {
-            debouncedSync(); 
-        }
+        if (btn) btn.disabled = false;
     }
 }
 
@@ -419,16 +486,16 @@ function injectRecurringTodos() {
 
     if (injectedAny) {
         renderTodos();
-        debouncedSync();
+        saveToLocal(selectedDate, currentTodos);
     }
 }
 
-function debouncedSync() {
+// debouncedSync is now only used for recurring rules (not todo CRUD)
+function debouncedRuleSync() {
     if (lastSyncTimeout) clearTimeout(lastSyncTimeout);
-    updateStatus('syncing');
     lastSyncTimeout = setTimeout(() => {
-        syncToGitHub();
-    }, 2000); // 2 second debounce
+        syncRecurringRulesToGitHub();
+    }, 2000);
 }
 
 
@@ -514,7 +581,7 @@ function createTodoElement(todo) {
         if (newText !== todo.text) {
             if (newText) {
                 todo.text = newText;
-                debouncedSync();
+                saveToLocal(selectedDate, currentTodos);
             } else {
                 textElement.textContent = todo.text; // Revert if empty
             }
@@ -573,7 +640,7 @@ function reorderCurrentTodos() {
     const newActiveTodos = activeIds.map(id => currentTodos.find(t => t.id === id)).filter(Boolean);
 
     currentTodos = [...newActiveTodos, ...completedTodos];
-    debouncedSync();
+    saveToLocal(selectedDate, currentTodos);
 }
 
 function getDragAfterElement(container, y) {
@@ -619,7 +686,7 @@ function addTodo(text) {
             rule.interval = parseInt(customIntervalNode.value, 10) || 2;
         }
         recurringRules.push(rule);
-        syncRecurringRulesToGitHub();
+        debouncedRuleSync();
     }
 
     // Always reset UI state after adding ANY task
@@ -637,7 +704,7 @@ function addTodo(text) {
 
     currentTodos.unshift(todo);
     renderTodos();
-    debouncedSync();
+    saveToLocal(selectedDate, currentTodos);
 }
 
 function toggleTodo(id, completed) {
@@ -645,7 +712,7 @@ function toggleTodo(id, completed) {
     if (todo) {
         todo.completed = completed;
         renderTodos();
-        debouncedSync();
+        saveToLocal(selectedDate, currentTodos);
     }
 }
 
@@ -657,13 +724,13 @@ function deleteTodo(id) {
         const delFuture = confirm("这是一个重复任务。\n\n[确定] 删除此规则，未来不再循环。\n[取消] 仅作废本日的任务。");
         if (delFuture) {
             recurringRules = recurringRules.filter(r => r.id !== todo.recurringRuleId);
-            syncRecurringRulesToGitHub();
+            debouncedRuleSync();
         }
     }
 
     currentTodos = currentTodos.filter(t => t.id !== id);
     renderTodos();
-    debouncedSync();
+    saveToLocal(selectedDate, currentTodos);
 }
 
 function moveTodoToTomorrow(id) {
@@ -674,10 +741,14 @@ function moveTodoToTomorrow(id) {
     currentTodos.splice(todoIndex, 1);
     
     renderTodos();
-    debouncedSync(); // Saves today
+    saveToLocal(selectedDate, currentTodos); // Save today locally
     
+    // Append to tomorrow in local storage
     const tomorrowStr = getNextDay(selectedDate, 1);
-    appendTodoToDate(todo, tomorrowStr);
+    const tomorrowTodos = loadFromLocal(tomorrowStr) || [];
+    tomorrowTodos.unshift(todo);
+    saveToLocal(tomorrowStr, tomorrowTodos);
+    updateStatus('Moved to tomorrow (local)');
 }
 
 
@@ -830,8 +901,21 @@ function init() {
         if (e.target === elements.modal) closeModal();
     });
 
+    // Setup manual GitHub sync button
+    const syncBtn = document.getElementById('github-sync-btn');
+    if (syncBtn) {
+        syncBtn.addEventListener('click', () => syncTodayToGitHub());
+    }
+
     // Start
     if (!config.token || !config.repo) {
+        // Still load local data even without GitHub settings
+        const local = loadFromLocal(selectedDate);
+        if (local !== null) {
+            currentTodos = local;
+            renderTodos();
+        }
+        updateStatus('offline', true);
         openModal();
     } else {
         loadAppData();
