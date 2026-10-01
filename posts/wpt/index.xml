@@ -20,7 +20,12 @@
 &lt;p&gt;电流为正且在增加（$ \frac{dI}{dt} &amp;gt; 0 $）&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;根据右手定则，磁通量方向如图 1 所示，并且在增大&lt;/p&gt;</description></item><item><title>自感值的正负判断：从理论分析到仿真验证</title><link>https://qingbo12.github.io/posts/wpt/induction/</link><pubDate>Sat, 29 Mar 2025 10:42:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/induction/</guid><description>&lt;h3 id="前言"&gt;前言&lt;/h3&gt;
+&lt;p&gt;根据右手定则，磁通量方向如图 1 所示，并且在增大&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;因为感应电动势的方向总是企图由它产生的感应电流建立一个附加磁通量，以阻碍引起感应电动势的那个磁通量的变化。可以知道感应电流 $ I_{eT} $ 产生向下的磁通量，感应电流 $ I_{eR} $ 产生向上的磁通量&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>自感值的正负判断：从理论分析到仿真验证</title><link>https://qingbo12.github.io/posts/wpt/induction/</link><pubDate>Sat, 29 Mar 2025 10:42:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/induction/</guid><description>&lt;h3 id="前言"&gt;前言&lt;/h3&gt;
 &lt;p&gt;在电路分析中，自感值的正负判断是电磁学学习的一个重要知识点。很多初学者容易混淆关联参考方向和非关联参考方向下的自感值符号问题。本文将通过理论分析和 MATLAB 仿真相结合的方式，深入浅出地讲解这个知识点。&lt;/p&gt;
 &lt;h3 id="核心结论"&gt;核心结论&lt;/h3&gt;
 &lt;p&gt;✅ 关键结论：自感值的正负取决于电压和电流的参考方向关系：&lt;/p&gt;
@@ -59,7 +64,12 @@
 &lt;h3 id="contribution"&gt;Contribution&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;We &lt;strong&gt;formulate the requirement-driven magnetic beamforming design in the MIMO MRC-WPT system as a weighted sum-power maximization problem&lt;/strong&gt;. We &lt;strong&gt;consider the peak current/voltage constraints&lt;/strong&gt;, and provides a high efficient, provable optimal solution.&lt;/p&gt;</description></item><item><title>MagMIMOHotspot Read</title><link>https://qingbo12.github.io/posts/wpt/magmimohotspot/</link><pubDate>Thu, 07 Nov 2024 15:09:01 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/magmimohotspot/</guid><description>&lt;h2 id="magnetic-mimo-how-to-charge-your-phone-in-your-pocket"&gt;Magnetic MIMO: how to charge your phone in your pocket&lt;/h2&gt;
+&lt;p&gt;We &lt;strong&gt;formulate the requirement-driven magnetic beamforming design in the MIMO MRC-WPT system as a weighted sum-power maximization problem&lt;/strong&gt;. We &lt;strong&gt;consider the peak current/voltage constraints&lt;/strong&gt;, and provides a high efficient, provable optimal solution.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We discuss the WSPMax problem with limited power budget where the peak current/voltage constraints are ignorable. We introduce a close-form theoretical bound of the WSPMax problem, and demonstrate that the power transfer efficiency maximization problem can be solved through TX-only solution without any feedback from the RXs, despite the fact that the beamforming is impacted by the interactions between TXs and RXs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>MagMIMOHotspot Read</title><link>https://qingbo12.github.io/posts/wpt/magmimohotspot/</link><pubDate>Thu, 07 Nov 2024 15:09:01 +0800</pubDate><guid>https://qingbo12.github.io/posts/wpt/magmimohotspot/</guid><description>&lt;h2 id="magnetic-mimo-how-to-charge-your-phone-in-your-pocket"&gt;Magnetic MIMO: how to charge your phone in your pocket&lt;/h2&gt;
 &lt;h3 id="motivation"&gt;Motivation&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Current wireless chargers&lt;/strong&gt; need to remember to regularly charge our mobile phones which &lt;strong&gt;is not the wireless charging we hoped for&lt;/strong&gt;. We would like to have our cell phones charged in our pockets, and never again worry about forgetting to charge the phone.&lt;/li&gt;

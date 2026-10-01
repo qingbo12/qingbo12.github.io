@@ -187,7 +187,12 @@ original problem.&lt;/p&gt;</description></item><item><title>Matrix Base</title>
 &lt;p&gt;Consider two cases:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;$ A $ is singular.&lt;/p&gt;</description></item><item><title>Circuit Base</title><link>https://qingbo12.github.io/posts/miscellanea/circuit/</link><pubDate>Thu, 07 Nov 2024 15:09:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/circuit/</guid><description>&lt;h2 id="basic-circuit"&gt;Basic circuit&lt;/h2&gt;
+&lt;p&gt;$ A $ is singular.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$ A $ is nonsingular.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Circuit Base</title><link>https://qingbo12.github.io/posts/miscellanea/circuit/</link><pubDate>Thu, 07 Nov 2024 15:09:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/circuit/</guid><description>&lt;h2 id="basic-circuit"&gt;Basic circuit&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Charge&lt;/strong&gt; It is defined in terms of the ampere by counting the total charge that passes through an arbitrary cross section of a wire during an interval of one second. In the SI system, the fundamental unit of charge is the coulomb (C).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Current&lt;/strong&gt; We define the current at a specific point and flowing in a specified direction as the instantaneous rate at which net positive charge is moving past that point in the specified direction. Current
 is symbolized by I or i, and so&lt;/p&gt;</description></item><item><title>Multimodal-fusion research</title><link>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</link><pubDate>Wed, 16 Oct 2024 04:58:00 +0800</pubDate><guid>https://qingbo12.github.io/posts/miscellanea/multimodal-fusion/</guid><description>&lt;h2 id="fusion-stage"&gt;Fusion stage&lt;/h2&gt;
