@@ -74,10 +74,20 @@ function getFormattedDate() {
 }
 
 function getNextDay(dateString, offset) {
-    const [y, m, d] = dateString.split('-');
-    const dateObj = new Date(y, m - 1, d);
-    dateObj.setDate(dateObj.getDate() + offset);
-    return getBeijingYYYYMMDD(dateObj);
+    const [y, m, d] = dateString.split('-').map(Number);
+    const dateObj = new Date(Date.UTC(y, m - 1, d + offset));
+    return dateObj.toISOString().slice(0, 10);
+}
+
+function getRuleStartDate(rule) {
+    if (!rule) return getBeijingYYYYMMDD();
+    if (typeof rule.startDate === 'string' && rule.startDate.trim()) {
+        return rule.startDate.trim().slice(0, 10);
+    }
+    if (typeof rule.createdAt === 'string' && rule.createdAt.trim()) {
+        return rule.createdAt.trim().slice(0, 10);
+    }
+    return getBeijingYYYYMMDD();
 }
 
 function updateDateHeaders() {
@@ -449,15 +459,33 @@ async function syncRecurringRulesToGitHub(retries = 3) {
 function injectRecurringTodos() {
     if (!recurringRules || recurringRules.length === 0) return;
 
-    const [sy, sm, sd] = selectedDate.split('-');
-    const current = new Date(sy, sm - 1, sd);
     let injectedAny = false;
+    let removedAny = false;
+
+    // Clean up any uncompleted recurring tasks mistakenly added before the rule's startDate
+    currentTodos = currentTodos.filter(t => {
+        if (!t.recurringRuleId || t.completed) return true;
+        const rule = recurringRules.find(r => r.id === t.recurringRuleId);
+        if (!rule) return true;
+        const ruleStart = getRuleStartDate(rule);
+        if (selectedDate < ruleStart) {
+            removedAny = true;
+            return false;
+        }
+        return true;
+    });
+
+    const [sy, sm, sd] = selectedDate.split('-').map(Number);
+    const current = new Date(sy, sm - 1, sd);
 
     recurringRules.forEach(rule => {
-        const [ry, rm, rd] = rule.startDate.split('-');
-        const start = new Date(ry, rm - 1, rd);
+        const ruleStart = getRuleStartDate(rule);
 
-        if (current < start) return;
+        // Never inject before the rule's start date
+        if (selectedDate < ruleStart) return;
+
+        const [ry, rm, rd] = ruleStart.split('-').map(Number);
+        const start = new Date(ry, rm - 1, rd);
 
         let applies = false;
         if (rule.type === 'daily') applies = true;
@@ -484,7 +512,7 @@ function injectRecurringTodos() {
         }
     });
 
-    if (injectedAny) {
+    if (injectedAny || removedAny) {
         renderTodos();
         saveToLocal(selectedDate, currentTodos);
     }
@@ -679,7 +707,7 @@ function addTodo(text) {
             id: todo.recurringRuleId,
             text: todo.text,
             type: recurrenceType,
-            startDate: getBeijingYYYYMMDD()
+            startDate: selectedDate
         };
         if (recurrenceType === 'custom') {
             const customIntervalNode = document.getElementById('custom-interval');
@@ -777,7 +805,7 @@ function saveSettings() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(config));
     closeModal();
     // Re-fetch on settings change
-    fetchTodos();
+    loadAppData();
 }
 
 function openModal() {
