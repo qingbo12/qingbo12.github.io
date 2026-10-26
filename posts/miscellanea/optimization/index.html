@@ -1,0 +1,175 @@
+<!doctype html><html lang=en><head><title>Optimization Methods</title><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><link rel=stylesheet href=/application.34793ea3875bfaaa88436c36fa80f08bc736978d47b512f83f32b8acbae3a603.css integrity="sha256-NHk+o4db+qqIQ2w2+oDwi8c2l41HtRL4PzK4rLrjpgM="><link rel=icon type=image/png href=/images/site/horse-grey_hu_2baee952bef8efad.jpg><meta property="og:title" content="Jinpeng's Blog"><meta property="og:type" content="website"><meta property="og:description" content="Portfolio and personal blog of Jinpeng Ma."><meta property="og:image" content="/images/author/john.png"><meta property="og:url" content="https://qingbo12.github.io"><meta name=description content="Notes of optimization methods"><script async src="https://www.googletagmanager.com/gtag/js?id=G-PEB85PS5C8"></script><script>var dnt,doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-PEB85PS5C8")}</script><script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">let theme=localStorage.getItem("theme-scheme")||localStorage.getItem("darkmode:color-scheme")||"light";theme==="system"&&(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?theme="dark":theme="light"),document.documentElement.setAttribute("data-theme",theme)</script></head><body class="type-posts kind-page" data-bs-spy=scroll data-bs-target=#TableOfContents data-bs-offset=80><div class="container-fluid bg-secondary wrapper"><nav class="navbar navbar-expand-xl top-navbar shadow" id=top-navbar><div class=container><button class="navbar-toggler navbar-light" id=sidebar-toggler type=button>
+<i data-feather=sidebar></i>
+</button>
+<a class=navbar-brand href=/><img src=/images/site/horse-grey_hu_2baee952bef8efad.jpg id=logo alt=Logo>
+Jinpeng's Blog</a>
+<button class="navbar-toggler navbar-light" id=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#top-nav-items aria-label=menu>
+<i data-feather=menu></i></button><div class="collapse navbar-collapse dynamic-navbar" id=top-nav-items><ul class="nav navbar-nav ms-auto"><li class=nav-item><a class=nav-link href=/#home>Home</a></li><li class=nav-item><a class=nav-link href=/#about>About</a></li><li class=nav-item><a class=nav-link href=/#education>Education</a></li><li class=nav-item><a class=nav-link href=/#recent-posts>Recent Posts</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-bs-toggle=dropdown aria-haspopup=true aria-expanded=false>More</a><div class=dropdown-menu aria-labelledby=navbarDropdown><a class=dropdown-item href=/#featured-posts>Featured Posts</a>
+<a class=dropdown-item href=/#projects>Projects</a></div></li><div id=top-navbar-divider></div><li class=nav-item><a class=nav-link id=blog-link href=/posts>Posts</a></li><li class=nav-item><a class=nav-link id=note-link href=/notes>Notes</a></li><li class=nav-item><a class=nav-link href=/pomodoro/>Pomodoro Focus</a></li><li class=nav-item><a class=nav-link href=/todo/>Todo List</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=themeSelector role=button data-bs-toggle=dropdown aria-haspopup=true aria-expanded=false><img id=navbar-theme-icon-svg class=theme-icon src=/icons/moon-svgrepo-com.svg width=20 alt="Dark Theme"></a><div id=themeMenu class="dropdown-menu dropdown-menu-icons-only" aria-labelledby=themeSelector><a class="dropdown-item nav-link" href=# data-scheme=light><img class=theme-icon src=/icons/sun-svgrepo-com.svg width=20 alt="Light Theme">
+</a><a class="dropdown-item nav-link" href=# data-scheme=dark><img class=theme-icon src=/icons/moon-svgrepo-com.svg width=20 alt="Dark Theme">
+</a><a class="dropdown-item nav-link" href=# data-scheme=system><img class=theme-icon src=/icons/computer-svgrepo-com.svg width=20 alt="System Theme"></a></div></li></ul></div></div><img src=/images/site/horse-grey_hu_2baee952bef8efad.jpg class=d-none id=main-logo alt=Logo>
+<img src=/images/site/horse-grey_hu_2baee952bef8efad.jpg class=d-none id=inverted-logo alt="Inverted Logo"></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/posts/ data-filter=all>Posts</a></li><div class=subtree><li><a class=list-link href=/posts/building-issues/ title="Building issues">Building issues</a></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/gcd/> Generalized Category Discovery</a><ul><li><a class=list-link href=/posts/gcd/dino/ title="DINO Read">DINO Read</a></li><li><a class=list-link href=/posts/gcd/simgcd/ title="SimGCD Read">SimGCD Read</a></li><li><a class=list-link href=/posts/gcd/transformer/ title="transformer Read">transformer Read</a></li></ul></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/life/> Life</a><ul><li><a class=list-link href=/posts/life/fitness/ title=健身>健身</a></li><li><a class=list-link href=/posts/life/ahart-march/ title=安徽省美术馆3月展打卡手记>安徽省美术馆3月展打卡手记</a></li><li><a class=list-link href=/posts/life/wxmsg/ title=微信聊天记录导出>微信聊天记录导出</a></li><li><a class=list-link href=/posts/life/cycle/ title=非机动车骑行规则>非机动车骑行规则</a></li></ul></li><li><i data-feather=minus-circle></i><a class="active list-link" href=/posts/miscellanea/> Miscellanea</a><ul class=active><li><a class=list-link href=/posts/miscellanea/algorithm/ title=Algorithms>Algorithms</a></li><li><a class=list-link href=/posts/miscellanea/c-lecture/ title="C language lecture 1">C language lecture 1</a></li><li><a class=list-link href=/posts/miscellanea/circuit/ title="Circuit Base">Circuit Base</a></li><li><a class=list-link href=/posts/miscellanea/integral/ title="Curve and surface integral">Curve and surface integral</a></li><li><a class=list-link href=/posts/miscellanea/magnetic-vector-potential/ title="Magnetic vector potential">Magnetic vector potential</a></li><li><a class=list-link href=/posts/miscellanea/matrix-base/ title="Matrix Base">Matrix Base</a></li><li><a class=list-link href=/posts/miscellanea/multimodal-fusion/ title="Multimodal-fusion research">Multimodal-fusion research</a></li><li><a class="active list-link" href=/posts/miscellanea/optimization/ title="Optimization Methods">Optimization Methods</a></li><li><a class=list-link href=/posts/miscellanea/recommendation-progress/ title="Recommendation Progress">Recommendation Progress</a></li><li><a class=list-link href=/posts/miscellanea/remote-desktop/ title="Remote Desktop">Remote Desktop</a></li><li><a class=list-link href=/posts/miscellanea/word-editing-tips/ title="Word editing tips">Word editing tips</a></li><li><a class=list-link href=/posts/miscellanea/wsl-proxy/ title="WSL proxy">WSL proxy</a></li></ul></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/wpt/> Wireless Power Transfer</a><ul><li><a class=list-link href=/posts/wpt/magmimohotspot/ title="MagMIMOHotspot Read">MagMIMOHotspot Read</a></li><li><a class=list-link href=/posts/wpt/induction/ title="The Induction of Positive and Negative">The Induction of Positive and Negative</a></li><li><a class=list-link href=/posts/wpt/mutual-indcution/ title="The Mutual Induction of Positive and Negative">The Mutual Induction of Positive and Negative</a></li><li><a class=list-link href=/posts/wpt/wspmax/ title="WSPMax Read">WSPMax Read</a></li></ul></li><li><i data-feather=plus-circle></i><a class=list-link href> WPTS</a><ul><li><a class=list-link href=/posts/wpt/first-glance/ title="First glance">First glance</a></li></ul></li></div></ul></div></div></div></section><section class=content-section id=content-section><div class=content><div class="container p-0 read-area"><div class="hero-area col-sm-12" id=hero-area style=background-image:url(/posts/miscellanea/optimization/images/image-miscellanea.jpg)></div><div class=page-content><div class="author-profile ms-auto align-self-lg-center"><img class=rounded-circle src=/images/author/pandas-part2_hu_69b6040ffacf1d40.jpg alt="Author Image"><h5 class=author-name>Jinpeng Ma</h5><p class=text-muted>Thursday, December 12, 2024 | 11 minutes</p></div><div class=title><h1>Optimization Methods</h1></div><div class=tags><ul style=padding-left:0></ul></div><div class=post-content id=post-content><h3 id=lagrangian-relaxation>Lagrangian relaxation</h3><p>The explanation I provide is based on <a href=https://en.wikipedia.org/wiki/Lagrangian_relaxation target=_blank rel=noopener>Lagrangian relaxation-Wikipedia</a> and <a href=https://www.ens-lyon.fr/DI/wp-content/uploads/2012/01/LagrangianRelax.pdf target=_blank rel=noopener>Chapter 12 Lagrangian Relaxation-ens-lyon</a></p><p>Lagrangian relaxation is a relaxation method which approximates a
+difficult problem of constrained optimization by a simpler problem.</p><p>The method penalizes violations of inequality constraints using a Lagrange
+multiplier, which imposes a cost on violations. These added costs are used
+instead of the strict inequality constraints in the optimization. In
+practice, this relaxed problem can often be solved more easily than the
+original problem.</p><p><strong>Mathematical description</strong></p><p>Suppose we are given a linear programming problem, with $ x \in R^n $
+and $ A \in R^{m \times n} $,
+of the following form:</p><p>$$
+\begin{aligned}
+\text{max} \quad & c^{\top} x \\
+\text{s.t.} \quad & (1) A x \leq b
+\end{aligned}
+$$</p><p>We may introduce the constraint <em>(2)</em> into the objective:</p><p>$$
+\begin{aligned}
+\text{max} \quad & c^{\top} x + \lambda^{\top} (b - A x)
+\end{aligned}
+$$</p><p>If we let $ \lambda = (\lambda _{1},\ldots ,\lambda <em>{m</em>{2}}) $ be
+nonnegative weights, we get penalized if we violate the constraint <em>(1)</em>,
+and we are also rewarded if we satisfy the constraint strictly. The above
+system is called the Lagrangian relaxation of our original problem.</p><p><strong>The LR solution as a bound</strong></p><p>Of particular use is the property that for any fixed set of $ \vec{\lambda} \succeq \vec{0} $, values, the optimal result to the Lagrangian
+relaxation problem will be no smaller than the optimal result to the
+original problem. To see this, let $ \hat{x} $ be the optimal solution to
+the original problem, and let $ \bar{x} $ be the optimal solution to the
+Lagrangian relaxation. We can then see that</p><p>$$
+c^{\top} \hat{x} \leq c^{\top} \hat{x} + \vec{\lambda}^{\top} (b - A \hat
+{x}) \leq c^{\top} \bar{x} + \vec{\lambda}^{\top} (b - A \bar{x})
+$$</p><p>The first inequality is true because $ \hat {x} $ is feasible in the
+original problem and the second inequality is true because $ \bar {x} $ is
+the optimal solution to the Lagrangian relaxation.</p><p><strong>Iterating towards a solution of the original problem</strong></p><p>The above inequality tells us that if we minimize the maximum value we
+obtain from the relaxed problem, we obtain a tighter limit on the
+objective value of our original problem. Namely, if we find the minimum
+$ c^{\top} \bar{x} + \vec{\lambda}^{\top} (b - A \bar{x}) $, according to the above inequality, we have $ \hat{x} = \bar{x} $, and the optimal value for the original problem is found.
+Thus we can address the original problem by instead exploring the
+partially dualized problem</p><p>$$
+\text{min} \quad P(\lambda) \quad \text{s.t.} \quad \lambda \geq 0
+$$</p><p>where we define $ P(\lambda) $ as</p><p>$$
+\begin{aligned}
+\text{max} \quad & c^{\top} x + \lambda^{\top} (b - A x)
+\end{aligned}
+$$</p><p>A Lagrangian relaxation algorithm thus proceeds to explore the range of
+feasible $ \lambda $ values while seeking to minimize the result returned
+by the inner $ P $ problem. Each value returned by $ P $ is a candidate
+upper bound to the problem, the smallest of which is kept as the best
+upper bound.
+If we additionally employ a <strong>heuristic</strong>, probably seeded by the
+$ \bar {x} $
+values returned by $ P $, to find feasible solutions to the original
+problem, then we can iterate until the best upper bound and the cost of
+the best feasible solution converge to a desired tolerance.</p><p><strong>Gradient descent method</strong></p><ol start=0><li>Set $ k = 0 $ and choose $ \lambda_0 \in R^n $;</li><li>Compute $ P(\lambda_k) $ and a vector $ x_k \in X $ where it is achieved;</li><li>Calculate gradient $ g_k = b - A x_k $ of the function $ P $ at $ \lambda_k $;</li><li>If $ g_k = 0 $, then stop, the optimal solution is $ P(\lambda_k) $</li><li>Compute $ \lambda_{k+1} = max(0, \lambda_k +\theta^T_k g_k) $ where $ \theta_k $ is the stepsize at this step.</li><li>Increment $ k $ and go to Step 2.</li></ol><h3 id=lagrange-multiplier>Lagrange multiplier</h3><p>The explanation I provide is based on <a href=https://en.wikipedia.org/wiki/Lagrange_multiplier target=_blank rel=noopener>Lagrange multiplier-Wikipedia</a> and <a href=https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/constrained-optimization/a/lagrange-multipliers-single-constraint target=_blank rel=noopener>Lagrange multipliers intro | Constrained optimization (article)-Khan Academy</a></p><p>In mathematical optimization, the method of Lagrange multipliers is a
+strategy for finding the local maxima and minima of a function subject to
+equation constraints.</p><p><strong>Statement</strong></p><p>Let $ f: \mathbb{R}^n \to \mathbb{R} $ be the objective function,
+$ g: \mathbb{R}^n \to \mathbb{R}^c $ be the constraints function,
+both belonging to $ C^1 $ (i.e., having continuous first derivatives).
+Our optimization problem is:</p><p>$$
+\begin{aligned}
+\text{max} \quad & f(x) \\
+\text{s.t.} \quad & g(x) = c,
+\end{aligned}
+$$</p><p>where $ c \in \mathbb{R}^c $.</p><p><strong>Method</strong></p><ol><li><p><strong>Introduce the Lagrangian</strong></p><p>Define a new function, the <em>Lagrangian</em>, by introducing a variable,
+known as the <em>Lagrange multiplier</em>. The Lagrangian function is given
+by:
+$$
+\mathcal{L}(\lambda, x) = f(x) + \lambda^{\top} (g(x) - c)
+$$</p></li><li><p><strong>Find Critical Points</strong></p><p>Set the gradient of $ \mathcal{L} $ with respect to both $ \lambda $
+and $ x $ equal to the zero vector:
+$$
+\nabla {\mathcal{L}} (\lambda, x) = \vec{0}
+$$
+This yields the system of equations:
+$$
+\begin{aligned}
+\nabla_x \mathcal{L}(\lambda, x) &= \nabla f(x) + \nabla g(x)^{\top} \lambda = \vec{0}, \\
+\nabla_{\lambda} \mathcal{L}(\lambda, x) &= g(x) - c = \vec{0}.
+\end{aligned}
+$$</p></li><li><p><strong>Evaluate Solutions</strong></p><p>Solve the system to find the critical points, denoted
+$ (x_0, \lambda_0) $. Evaluate $ f(x) $ at each solution $ x_0 $.
+The solution corresponding to the highest value of $ f(x) $ is the
+maximum, and the one corresponding to the lowest value is the minimum
+(if required).</p></li></ol><p><strong>Single constraint</strong></p><div><center><img src=images/LagrangeMultipliers2D.png alt=LagrangeMultipliers2D></center><center><strong>Figure 1:</strong> The red curve shows the constraint $ g(x, y) = c $. The blue curves are contours of $ f(x, y) $. The point where the red constraint tangentially touches a blue contour is the maximum of $ f(x, y) $ along the constraint, since $ d1 > d2 $.</center></div><br><p>For the case of only one constraint and only two choice variables (as
+exemplified in Figure 1), consider the optimization problem</p><p>$$
+\begin{aligned}
+\underset{x,y}{\text{maximize}} \quad& f(x,y) \
+\text{subject to}\quad& g(x,y) = c.
+\end{aligned}
+$$</p><p>We assume that both $ f $ and $ g $ have continuous first partial
+derivatives.</p><p>The method of Lagrange multipliers relies on the intuition that at a
+maximum, $ f(x, y) $ cannot be increasing in the direction of any such
+neighboring point that also has $ g(x, y) = 0 $. If it were, we could walk
+along $ g = 0 $ to get higher, meaning that the starting point wasn&rsquo;t
+actually the maximum. Viewed in this way, it is an exact analogue to
+testing if the derivative of an unconstrained function is $ 0 $, that is,
+we are verifying that the directional derivative is 0 in any relevant
+(viable) direction.</p><p>We can visualize contours of $ f $ given by $ f(x, y) = d $ for various
+values of $ d $, and the contour of $ g $ given by $ g(x, y) = c $.</p><p>Suppose we walk along the contour line with $ g = c $. We are interested
+in finding points where $ f $ almost does not change as we walk, since
+these points might be maxima.</p><p>There are two ways this could happen:</p><ol><li>We could touch a contour line of $ f $ (<strong>walk along the contour line with $ g = c $ and a contour line of $ f $ simultaneously</strong>), since by definition $ f $ does
+not change as we walk along its contour lines. This would mean that the
+tangents to the contour lines of $ f $ and $ g $ are parallel here.</li><li>We have reached a &ldquo;level&rdquo; part of $ f $, meaning that $ f $ does not
+change in any direction.</li></ol><p>To check the first possibility (we touch a contour line of $ f $), notice
+that since the gradient of a function is perpendicular to the contour
+lines, the tangents to the contour lines of $ f $ and $ g $ are parallel
+if and only if <strong>the gradients of $ f $ and $ g $ are parallel</strong>. Thus we want
+points $ (x, y) $ where $ g(x, y) = c $ and</p><p>$$
+\nabla_{x,y} f = \lambda \nabla_{x,y} g,
+$$</p><p>for some $ \lambda $</p><p>where</p><p>$$
+\nabla_{x,y} f = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right), \qquad \nabla_{x,y} g = \left( \frac{\partial g}{\partial x}, \frac{\partial g}{\partial y} \right)
+$$</p><p>are the respective gradients. The constant $ \lambda $ is required because
+although the two gradient vectors are parallel, the magnitudes of the
+gradient vectors are generally not equal. This constant is called the
+Lagrange multiplier. (In some conventions $ \lambda $ is preceded by a
+minus sign).</p><p>Notice that this method also solves the second possibility, that $ f $ is
+level: if $ f $ is level, then its gradient is zero, and setting
+$ \lambda = 0 $ is a solution regardless of $ \nabla_{x,y} g $.</p><p>To incorporate these conditions into one equation, we introduce an
+auxiliary function</p><p>$$ \mathcal{L}(x,y,\lambda) \equiv f(x,y) + \lambda \cdot g(x,y), ,$$</p><p>and solve</p><p>$$ \nabla_{x,y,\lambda} \mathcal{L}(x, y, \lambda) = 0 ~.$$</p><p>Note that this amounts to solving three equations in three unknowns. This
+is the method of Lagrange multipliers.</p><p>Note that $ \nabla_{\lambda} \mathcal{L}(x, y, \lambda) = 0 $ implies $ g(x,y) = 0 $, as the partial derivative of $ \mathcal{L} $ with respect to $ \lambda $ is $ g(x,y) ~. $</p><p>To summarize</p><p>$$
+\nabla_{x,y,\lambda} \mathcal{L}(x, y, \lambda) = 0 \iff
+\begin{cases}
+\nabla_{x,y} f(x , y) = -\lambda , \nabla_{x,y} g(x , y) \\
+g(x,y) = 0
+\end{cases}
+$$</p><p>The method generalizes readily to functions on $ n $ variables</p><p>$$
+\nabla_{x_1, \dots, x_n,\lambda} \mathcal{L}(x_1, \dots, x_n, \lambda) = 0
+$$</p><p>which amounts to solving $ n + 1 $ equations in $ n + 1 $ unknowns.</p><p>The constrained extrema of $ f $ are critical point of the Lagrangian
+$ \mathcal{L} $, but they are not necessarily local extrema of $ \mathcal{L} $.</p><p><strong>Multiple constraints</strong></p><div><center><img src=images/As_wiki_lgm_parab.png alt=As_wiki_lgm_parab></center><center><strong>Figure 2:</strong> A paraboloid constrained along two intersecting lines.</center></div><div><center><img src=images/As_wiki_lgm_levelsets.png alt=As_wiki_lgm_levelsets></center><center><strong>Figure 3:</strong> Contour map of Figure 2.</center></div><br><p>The method of Lagrange multipliers can be extended to solve problems with
+multiple constraints using a similar argument. Consider a paraboloid
+subject to two line constraints that intersect at a single point. As the
+only feasible solution, this point is obviously a constrained extremum.
+However, the level set of $ f $ is clearly not parallel to either
+constraint at the intersection point (see Figure 3); instead, it is a
+linear combination of the two constraints&rsquo; gradients. In the case of
+multiple constraints, that will be what we seek in general: The method of
+Lagrange seeks points not at which the gradient of $ f $ is a multiple of
+any single constraint&rsquo;s gradient necessarily, but in which it is a linear
+combination of all the constraints&rsquo; gradients.</p><p>Concretely, suppose we have $ M $ constraints and are walking along the
+set of points satisfying $ g_i(\mathbf{x}) = 0, i=1, \dots, M ,.$ Every
+point $ \mathbf{x} $ on the contour of a given constraint function $g_i$
+has a space of allowable directions: the space of vectors perpendicular to
+$ \nabla g_i(\mathbf{x}) , .$ The set of directions that are allowed by
+all constraints is thus the space of directions perpendicular to all of
+the constraints&rsquo; gradients. Denote this space of allowable moves by $\ A\
+$ and denote the span of the constraints&rsquo; gradients by $ S ,.$ Then $ A =
+S^{\perp}, ,$ the space of vectors perpendicular to every element of $ S
+,.$</p><p>We are still interested in <strong>finding points where $ f $ does not change as
+we walk, since these points might be (constrained) extrema</strong>. We therefore
+seek $ \mathbf{x} $ such that any allowable direction of movement away
+from $\mathbf{x}$ is perpendicular to $ \nabla f(\mathbf{x}) $ (otherwise
+we could increase $f$ by moving along that allowable direction). In other
+words, $ \nabla f(\mathbf{x}) \in A^{\perp} = S ,.$ Thus there are
+scalars $ \lambda_1, \lambda_2,\ \dots, \lambda_M $ such that</p><p>$$
+\nabla f(\mathbf{x}) = \sum_{k=1}^M \lambda_k , \nabla g_k (\mathbf{x}) \quad \iff \quad \nabla f(\mathbf{x}) - \sum_{k=1}^M {\lambda_k \nabla g_k (\mathbf{x})} = 0 ~.
+$$</p><p>These scalars are the Lagrange multipliers. We now have $ M $ of them, one
+for every constraint.</p><p>As before, we introduce an auxiliary function</p><p>$$
+\mathcal{L} (x_1, \ldots, x_n, \lambda_1, \ldots, \lambda_M) = f (x_1, \ldots, x_n) - \sum\limits_{k=1}^M {\lambda_k g_k ( x_1, \ldots , x_n )}
+$$</p><p>and solve</p><p>$$
+\nabla_{x_1, \ldots , x_n, \lambda_1, \ldots, \lambda_M} \mathcal{L} (x_1, \ldots, x_n, \lambda_1, \ldots, \lambda_M) = 0 \iff
+\begin{cases}
+\nabla f(\mathbf{x}) - \sum_{k=1}^M {\lambda_k , \nabla g_k (\mathbf{x})} = 0 \\
+g_1(\mathbf{x}) = \cdots = g_M(\mathbf{x}) = 0
+\end{cases}
+$$</p><p>which amounts to solving $ n+M $ equations in $ n+M $ unknowns.</p><p>The constraint qualification assumption when there are multiple
+constraints is that the constraint gradients at the relevant point are
+linearly independent.</p></div><div class="row ps-3 pe-3"><div class="col-md-6 share-buttons"></div><div class="col-md-6 btn-improve-page"><a href=https://github.com/qingbo12/qingbo12.github.io/edit/main/content/posts/Miscellanea/optimization/index.md title="Improve this page" target=_blank rel=noopener><i class="fas fa-code-branch"></i>
+Improve this page</a></div></div><hr><div class="row next-prev-navigator"><div class="col-md-6 previous-article"><a href=/posts/miscellanea/multimodal-fusion/ title="Multimodal-fusion research" class="btn filled-button"><div><i class="fas fa-chevron-circle-left"></i> Prev</div><div class=next-prev-text>Multimodal-fusion research</div></a></div><div class="col-md-6 next-article"><a href=/posts/miscellanea/recommendation-progress/ title="Recommendation Progress" class="btn filled-button"><div>Next <i class="fas fa-chevron-circle-right"></i></div><div class=next-prev-text>Recommendation Progress</div></a></div></div><hr><div id=utteranc_thread></div><div id=comments class=comments><div id=comments-container></div></div><script type=text/javascript>(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.setAttribute("repo","qingbo12/comments"),e.setAttribute("issue-term","title"),e.setAttribute("theme","github-light"),e.crossorigin="anonymous",e.src="https://utteranc.es/client.js",document.getElementById("comments-container").appendChild(e)})()</script></div></div></div><a id=scroll-to-top class=btn type=button data-bs-toggle=tooltip data-bs-placement=left title="Scroll to top"><i class="fas fa-chevron-circle-up"></i></a></section><section class=toc-section id=toc-section><div class=toc-holder><h5 class="text-center ps-3">Table of Contents</h5><hr><div class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#lagrangian-relaxation>Lagrangian relaxation</a></li><li><a href=#lagrange-multiplier>Lagrange multiplier</a></li></ul></li></ul></nav></div></div></section></div><footer id=footer class="container-fluid text-center align-content-center footer pb-2"><div class="container pt-5"><div class="row text-start"><div class="col-md-4 col-sm-12"><h5>Navigation</h5><ul><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#about>About</a></li><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#education>Education</a></li><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#recent-posts>Recent Posts</a></li><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#featured-posts>Featured Posts</a></li><li class=nav-item><a class=smooth-scroll href=https://qingbo12.github.io/#projects>Projects</a></li></ul></div><div class="col-md-4 col-sm-12"><h5>Contact me:</h5><ul><li><a href=mailto:qingbo12@gmail.com target=_blank rel=noopener><span><i class="fas fa-envelope"></i></span> <span>qingbo12@gmail.com</span></a></li></ul></div></div></div><hr><div class=container><p id=disclaimer><strong>Liability Notice:</strong> This theme is under MIT license. So, you can use it for non-commercial, commercial, or private uses. You can modify or distribute the theme without requiring any permission from the theme author. However, the theme author does not provide any warranty or takes any liability for any issue with the theme.</p></div><hr><div class=container><div class="row text-start"><div class=col-md-4><a id=theme href=https://github.com/hugo-toha/toha target=_blank rel=noopener><img src=/images/theme-logo_hu_3c512113a2f8fd09.png alt="Toha Theme Logo">
+Toha</a></div><div class="col-md-4 text-center">© 2025 Copyright.</div><div class="col-md-4 text-end"><a id=hugo href=https://gohugo.io/ target=_blank rel=noopener>Powered by
+<img src=/images/hugo-logo.svg alt="Hugo Logo" height=18></a></div></div></div></footer><script src=/application.b0634215b87d318a1c3b9b5d2baaae445f8534bf266d0e634863204b3047fa2c.js integrity="sha256-sGNCFbh9MYocO5tdK6quRF+FNL8mbQ5jSGMgSzBH+iw=" defer></script></body></html>
