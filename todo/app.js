@@ -18,6 +18,7 @@ let pendingTodoSync = false;
 
 let recurringRules = [];
 let recurringRulesSha = null;
+let recurringRulesLoaded = false;
 const RECURRING_FILE_PATH = 'recurring_rules.json';
 let isSyncingRules = false;
 let pendingRuleSync = false;
@@ -232,9 +233,14 @@ async function fetchTodos() {
         saveToLocal(dateStr, currentTodos);
         markLocalSynced(dateStr);
     } else {
-        // Merge: add any GitHub items not present locally (by id)
+        // Merge: add any GitHub items not present locally (and not previously synced then deleted locally)
+        let syncedIds = new Set();
+        try {
+            const syncedRaw = localStorage.getItem(LOCAL_TODO_PREFIX + dateStr + '_synced');
+            if (syncedRaw) syncedIds = new Set(JSON.parse(syncedRaw).map(t => t.id));
+        } catch {}
         const localIds = new Set(currentTodos.map(t => t.id));
-        const newFromGH = result.todos.filter(t => !localIds.has(t.id));
+        const newFromGH = result.todos.filter(t => !localIds.has(t.id) && !syncedIds.has(t.id));
         if (newFromGH.length > 0) {
             currentTodos = [...currentTodos, ...newFromGH];
             saveToLocal(dateStr, currentTodos);
@@ -388,12 +394,14 @@ async function fetchRecurringRules() {
         if (response.status === 404) {
             recurringRules = [];
             recurringRulesSha = null;
+            recurringRulesLoaded = true;
             return;
         }
         if (!response.ok) throw new Error('API Error: ' + response.statusText);
         const data = await response.json();
         recurringRulesSha = data.sha;
         recurringRules = JSON.parse(atou(data.content));
+        recurringRulesLoaded = true;
     } catch (e) {
         console.error('Fetch recurring error:', e);
     }
@@ -457,16 +465,24 @@ async function syncRecurringRulesToGitHub(retries = 3) {
 }
 
 function injectRecurringTodos() {
-    if (!recurringRules || recurringRules.length === 0) return;
+    if (!recurringRules) return;
 
     let injectedAny = false;
     let removedAny = false;
 
-    // Clean up any uncompleted recurring tasks mistakenly added before the rule's startDate
+    // Clean up uncompleted recurring tasks:
+    // 1. Whose rule has been deleted (once rules are loaded from GitHub)
+    // 2. Or that were mistakenly added before the rule's startDate
     currentTodos = currentTodos.filter(t => {
         if (!t.recurringRuleId || t.completed) return true;
         const rule = recurringRules.find(r => r.id === t.recurringRuleId);
-        if (!rule) return true;
+        if (!rule) {
+            if (recurringRulesLoaded) {
+                removedAny = true;
+                return false;
+            }
+            return true;
+        }
         const ruleStart = getRuleStartDate(rule);
         if (selectedDate < ruleStart) {
             removedAny = true;
@@ -475,42 +491,44 @@ function injectRecurringTodos() {
         return true;
     });
 
-    const [sy, sm, sd] = selectedDate.split('-').map(Number);
-    const current = new Date(sy, sm - 1, sd);
+    if (recurringRules.length > 0) {
+        const [sy, sm, sd] = selectedDate.split('-').map(Number);
+        const current = new Date(sy, sm - 1, sd);
 
-    recurringRules.forEach(rule => {
-        const ruleStart = getRuleStartDate(rule);
+        recurringRules.forEach(rule => {
+            const ruleStart = getRuleStartDate(rule);
 
-        // Never inject before the rule's start date
-        if (selectedDate < ruleStart) return;
+            // Never inject before the rule's start date
+            if (selectedDate < ruleStart) return;
 
-        const [ry, rm, rd] = ruleStart.split('-').map(Number);
-        const start = new Date(ry, rm - 1, rd);
+            const [ry, rm, rd] = ruleStart.split('-').map(Number);
+            const start = new Date(ry, rm - 1, rd);
 
-        let applies = false;
-        if (rule.type === 'daily') applies = true;
-        if (rule.type === 'weekly' && current.getDay() === start.getDay()) applies = true;
-        if (rule.type === 'monthly' && current.getDate() === start.getDate()) applies = true;
-        if (rule.type === 'custom') {
-            const diffMs = current.getTime() - start.getTime();
-            const diffDays = Math.round(diffMs / 86400000);
-            if (diffDays >= 0 && diffDays < rule.interval) applies = true;
-        }
-
-        if (applies) {
-            const exists = currentTodos.find(t => t.recurringRuleId === rule.id);
-            if (!exists) {
-                currentTodos.push({
-                    id: generateId(),
-                    recurringRuleId: rule.id,
-                    text: rule.text,
-                    completed: false,
-                    createdAt: getBeijingISOString()
-                });
-                injectedAny = true;
+            let applies = false;
+            if (rule.type === 'daily') applies = true;
+            if (rule.type === 'weekly' && current.getDay() === start.getDay()) applies = true;
+            if (rule.type === 'monthly' && current.getDate() === start.getDate()) applies = true;
+            if (rule.type === 'custom') {
+                const diffMs = current.getTime() - start.getTime();
+                const diffDays = Math.round(diffMs / 86400000);
+                if (diffDays >= 0 && diffDays < rule.interval) applies = true;
             }
-        }
-    });
+
+            if (applies) {
+                const exists = currentTodos.find(t => t.recurringRuleId === rule.id);
+                if (!exists) {
+                    currentTodos.push({
+                        id: generateId(),
+                        recurringRuleId: rule.id,
+                        text: rule.text,
+                        completed: false,
+                        createdAt: getBeijingISOString()
+                    });
+                    injectedAny = true;
+                }
+            }
+        });
+    }
 
     if (injectedAny || removedAny) {
         renderTodos();
@@ -744,15 +762,38 @@ function toggleTodo(id, completed) {
     }
 }
 
+function purgeDeletedRuleFromLocal(ruleId) {
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && key.startsWith(LOCAL_TODO_PREFIX) && !key.endsWith('_synced')) {
+            try {
+                const list = JSON.parse(localStorage.getItem(key));
+                if (Array.isArray(list)) {
+                    const filtered = list.filter(t => !(t.recurringRuleId === ruleId && !t.completed));
+                    if (filtered.length !== list.length) {
+                        localStorage.setItem(key, JSON.stringify(filtered));
+                    }
+                }
+            } catch {}
+        }
+    }
+}
+
 function deleteTodo(id) {
     const todo = currentTodos.find(t => t.id === id);
     if (!todo) return;
 
     if (todo.recurringRuleId) {
-        const delFuture = confirm("这是一个重复任务。\n\n[确定] 删除此规则，未来不再循环。\n[取消] 仅作废本日的任务。");
-        if (delFuture) {
-            recurringRules = recurringRules.filter(r => r.id !== todo.recurringRuleId);
-            debouncedRuleSync();
+        const ruleExists = recurringRules.some(r => r.id === todo.recurringRuleId);
+        if (ruleExists) {
+            const delFuture = confirm("这是一个重复任务。\n\n[确定] 删除此规则，未来不再循环。\n[取消] 仅作废本日的任务。");
+            if (delFuture) {
+                recurringRules = recurringRules.filter(r => r.id !== todo.recurringRuleId);
+                purgeDeletedRuleFromLocal(todo.recurringRuleId);
+                debouncedRuleSync();
+            }
+        } else {
+            purgeDeletedRuleFromLocal(todo.recurringRuleId);
         }
     }
 
